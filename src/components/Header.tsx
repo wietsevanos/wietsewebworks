@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import logoWW from "@/assets/logo-ww.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,8 +31,13 @@ const Header = () => {
       <nav className="container mx-auto flex items-center justify-between py-6">
         <Link 
           to="/" 
-          className="text-lg font-normal tracking-tight text-foreground transition-colors hover:text-blue-sky"
+          className="flex items-center gap-3 text-lg font-normal tracking-tight text-foreground transition-colors hover:text-blue-sky"
         >
+          <img 
+            src={logoWW} 
+            alt="Wietse Webworks logo" 
+            className="h-8 w-auto brightness-0 invert"
+          />
           Wietse Webworks
         </Link>
 
