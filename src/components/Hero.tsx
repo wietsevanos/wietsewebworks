@@ -28,11 +28,11 @@ const Hero = () => {
         
         <p className="text-body-lg text-muted-foreground max-w-2xl mb-12 animate-fade-in-up stagger-3">Van idee tot livegang, helder en zorgvuldig uitgevoerd.</p>
         
-        <div className="flex flex-wrap gap-4 animate-fade-in-up stagger-4">
-          <GradientButton onClick={() => scrollToSection("werk")}>
+        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-4">
+          <GradientButton onClick={() => scrollToSection("werk")} className="w-full sm:w-auto">
             Bekijk werk
           </GradientButton>
-          <GradientButton variant="variant" onClick={() => scrollToSection("contact")}>
+          <GradientButton variant="variant" onClick={() => scrollToSection("contact")} className="w-full sm:w-auto">
             Neem contact op
           </GradientButton>
         </div>
