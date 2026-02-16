@@ -16,11 +16,11 @@ const About = () => {
               <span className="font-display italic text-gradient">van Os</span>
             </h2>
             <div className="space-y-6 text-body-lg text-muted-foreground animate-fade-in-up stagger-2">
-              <p>Als digital designer geloof ik in de kracht van eenvoud. Goede websites hoeven niet ingewikkeld te zijn, ze moeten werken voor jou en je klanten.</p>
+              <p>Als digital designer combineer ik creatief vakmanschap met technische precisie. Elke website die ik bouw is doordacht, op maat gemaakt en afgestemd op jouw doelen en doelgroep.</p>
               <p>
-                Mijn aanpak is duidelijk en no-nonsense: ik lever strak ontwerp, snelle 
-                laadtijden en een website die je bedrijf echt vooruit helpt. Geen overbodige 
-                features, wel transparante prijzen en directe communicatie.
+                Mijn aanpak is helder en resultaatgericht: ik lever hoogwaardig ontwerp, 
+                optimale performance en een website die je merk versterkt. Altijd met 
+                transparante prijzen en persoonlijke begeleiding.
               </p>
               <p className="text-blue-sky">
                 Gevestigd in Nederland, werkend voor ondernemers met ambities.
