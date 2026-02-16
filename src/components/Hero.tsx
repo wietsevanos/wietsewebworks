@@ -1,4 +1,5 @@
 import { GradientButton } from "@/components/ui/gradient-button";
+import { TextShimmer } from "@/components/ui/text-shimmer";
 const Hero = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -18,8 +19,22 @@ const Hero = () => {
       
       <div className="container mx-auto max-w-5xl relative z-10">
         <h1 className="text-display font-light text-foreground mb-4 animate-fade-in-up stagger-1">
-          <span className="tracking-wide">Wietse</span>{" "}
-          <span className="font-display italic text-gradient tracking-wide">Webworks</span>
+          <TextShimmer
+            as="span"
+            duration={3}
+            spread={3}
+            className="tracking-wide text-display font-light [--base-color:hsl(210,30%,60%)] [--base-gradient-color:hsl(200,100%,85%)] dark:[--base-color:hsl(210,30%,60%)] dark:[--base-gradient-color:hsl(200,100%,85%)]"
+          >
+            Wietse
+          </TextShimmer>{" "}
+          <TextShimmer
+            as="span"
+            duration={3}
+            spread={3}
+            className="font-display italic tracking-wide text-display [--base-color:hsl(210,100%,55%)] [--base-gradient-color:hsl(195,100%,85%)] dark:[--base-color:hsl(210,100%,55%)] dark:[--base-gradient-color:hsl(195,100%,85%)]"
+          >
+            Webworks
+          </TextShimmer>
         </h1>
         
         <p className="text-display-sm font-light text-muted-foreground mb-8 animate-fade-in-up stagger-2">
