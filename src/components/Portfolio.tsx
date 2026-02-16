@@ -7,7 +7,7 @@ import projectTuana from "@/assets/project-tuana.png";
 import projectHaarFabrique from "@/assets/project-haarfabrique.png";
 import projectVanZoolingen from "@/assets/project-vanzoolingen.png";
 import projectPicoBello from "@/assets/project-picobello.png";
-import projectBonneLouise from "@/assets/project-bonnelouise.png";
+import projectZazoe from "@/assets/project-zazoe.png";
 
 const projects = [
   {
@@ -76,11 +76,11 @@ const projects = [
   },
   {
     id: 9,
-    title: "Bonne Louise",
-    description: "Groente juwelier in het hart van Haarlem",
-    image: projectBonneLouise,
+    title: "Zazoe",
+    description: "Stijlvolle tweedehands dameskleding sinds 1999",
+    image: projectZazoe,
     tags: ["Webdesign", "Retail"],
-    url: "https://bonne-louise-delights.lovable.app",
+    url: "https://zazoe-style-boutique.lovable.app",
   },
 ];
 
