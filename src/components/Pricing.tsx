@@ -3,30 +3,30 @@ import { Check, ChevronDown, X } from "lucide-react";
 import { GradientButton } from "@/components/ui/gradient-button";
 
 const websiteFeatures = [
-  "Modern, strak maatwerk design",
-  "Extra pagina's (per pagina keuze mogelijk)",
-  "Social media integratie",
-  "Copywriting ondersteuning",
-  "Extra revisierondes",
-  "Afspraakmodule indien gewenst",
-  "Branding en kleuradvies",
-  "Performance optimalisatie",
-  "Basis SEO optimalisatie",
-  "Google Analytics integratie",
-  "Meertalige ondersteuning (optioneel)",
-];
+"Modern, strak maatwerk design",
+"Extra pagina's (per pagina keuze mogelijk)",
+"Social media integratie",
+"Copywriting ondersteuning",
+"Extra revisierondes",
+"Afspraakmodule indien gewenst",
+"Branding en kleuradvies",
+"Performance optimalisatie",
+"Basis SEO optimalisatie",
+"Google Analytics integratie",
+"Meertalige ondersteuning (optioneel)"];
+
 
 const serviceFeatures = [
-  "Hosting op snelle premium servers",
-  "Domeinbeheer en DNS-configuratie",
-  "Website beveiliging en bescherming",
-  "Wekelijkse backups",
-  "Kleine maandelijkse aanpassing inbegrepen",
-  "Technische updates en onderhoud",
-  "Monitoring",
-  "Performance checks",
-  "Prioriteit bij kleine vragen",
-];
+"Hosting op snelle premium servers",
+"Domeinbeheer en DNS-configuratie",
+"Website beveiliging en bescherming",
+"Wekelijkse backups",
+"Kleine maandelijkse aanpassing inbegrepen",
+"Technische updates en onderhoud",
+"Monitoring",
+"Performance checks",
+"Prioriteit bij kleine vragen"];
+
 
 const Pricing = () => {
   const [openPanel, setOpenPanel] = useState<"website" | "service" | null>(null);
@@ -76,43 +76,43 @@ const Pricing = () => {
 
               <GradientButton
                 onClick={() => togglePanel("website")}
-                className="w-full mt-auto flex items-center justify-center gap-2"
-              >
+                className="w-full mt-auto flex items-center justify-center gap-2">
+
                 <span>Bekijk opties</span>
-                <ChevronDown 
+                <ChevronDown
                   className={`w-5 h-5 transition-transform duration-300 ${
-                    openPanel === "website" ? "rotate-180" : ""
-                  }`} 
-                />
+                  openPanel === "website" ? "rotate-180" : ""}`
+                  } />
+
               </GradientButton>
             </div>
 
             {/* Website Features Panel */}
-            <div 
+            <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                openPanel === "website" ? "opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
+              openPanel === "website" ? "opacity-100" : "max-h-0 opacity-0"}`
+              }>
+
               <div className="bg-card border border-blue-vibrant/30 p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h4 className="text-lg font-normal text-foreground">Inclusief opties</h4>
-                  <button 
+                  <button
                     onClick={() => setOpenPanel(null)}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
+                    className="text-muted-foreground hover:text-foreground transition-colors">
+
                     <X className="w-5 h-5" />
                   </button>
                 </div>
                 <div className="grid gap-3">
-                  {websiteFeatures.map((feature) => (
-                    <div 
-                      key={feature} 
-                      className="flex items-start gap-3 p-3 bg-secondary/50 border border-blue-vibrant/10"
-                    >
+                  {websiteFeatures.map((feature) =>
+                  <div
+                    key={feature}
+                    className="flex items-start gap-3 p-3 bg-secondary/50 border border-blue-vibrant/10">
+
                       <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-electric" />
                       <span className="text-sm text-foreground/90">{feature}</span>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
             </div>
@@ -130,50 +130,50 @@ const Pricing = () => {
               
               {/* Price - left aligned like reference */}
               <div className="text-left mb-8 mt-5">
-                <span className="text-[2.5rem] font-normal text-background">€20</span>
+                <span className="text-[2.5rem] font-normal text-background">€25</span>
                 <span className="text-background/70 text-xl font-normal ml-2">/ maand</span>
               </div>
 
               <GradientButton
                 variant="variant"
                 onClick={() => togglePanel("service")}
-                className="w-full mt-auto flex items-center justify-center gap-2"
-              >
+                className="w-full mt-auto flex items-center justify-center gap-2">
+
                 <span>Bekijk details</span>
-                <ChevronDown 
+                <ChevronDown
                   className={`w-5 h-5 transition-transform duration-300 ${
-                    openPanel === "service" ? "rotate-180" : ""
-                  }`} 
-                />
+                  openPanel === "service" ? "rotate-180" : ""}`
+                  } />
+
               </GradientButton>
             </div>
 
             {/* Service Features Panel */}
-            <div 
+            <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                openPanel === "service" ? "opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
+              openPanel === "service" ? "opacity-100" : "max-h-0 opacity-0"}`
+              }>
+
               <div className="bg-card border border-blue-vibrant/30 p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h4 className="text-lg font-normal text-foreground">Wat zit erin</h4>
-                  <button 
+                  <button
                     onClick={() => setOpenPanel(null)}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
+                    className="text-muted-foreground hover:text-foreground transition-colors">
+
                     <X className="w-5 h-5" />
                   </button>
                 </div>
                 <div className="grid gap-3">
-                  {serviceFeatures.map((feature) => (
-                    <div 
-                      key={feature} 
-                      className="flex items-start gap-3 p-3 bg-secondary/50 border border-blue-vibrant/10"
-                    >
+                  {serviceFeatures.map((feature) =>
+                  <div
+                    key={feature}
+                    className="flex items-start gap-3 p-3 bg-secondary/50 border border-blue-vibrant/10">
+
                       <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-electric" />
                       <span className="text-sm text-foreground/90">{feature}</span>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
             </div>
@@ -185,8 +185,8 @@ const Pricing = () => {
           De uiteindelijke totaalprijs bestaat uit de eenmalige bouwkosten + de maandelijkse service. Zo weet je altijd waar je aan toe bent.
         </p>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Pricing;
