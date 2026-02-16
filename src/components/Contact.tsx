@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mail, Phone, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -172,14 +172,12 @@ const Contact = () => {
             </div>
 
             <div className="text-center pt-4">
-              <Button
+              <GradientButton
                 type="submit"
-                variant="glow"
-                size="xl"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Versturen..." : "Plan een gesprek"}
-              </Button>
+              </GradientButton>
             </div>
           </form>
 
