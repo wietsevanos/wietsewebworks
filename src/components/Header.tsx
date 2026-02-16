@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import logoWW from "@/assets/logo-ww.png";
 
 const Header = () => {
@@ -24,29 +25,31 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-blue-vibrant/50 ${
-        isScrolled ? "bg-background/90 backdrop-blur-md" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-blue-vibrant/20"
+          : "bg-blue-vibrant/10 backdrop-blur-md border-b border-blue-vibrant/15"
       }`}
     >
-      <nav className="container mx-auto flex items-center justify-between py-6">
-        <Link 
-          to="/" 
-          className="flex items-center gap-3 text-lg font-normal tracking-tight text-foreground transition-colors hover:text-blue-sky"
+      <nav className="container mx-auto flex items-center justify-between py-4">
+        {/* Logo - left */}
+        <Link
+          to="/"
+          className="flex items-center gap-3 text-foreground transition-colors hover:text-blue-sky"
         >
-          <img 
-            src={logoWW} 
-            alt="Wietse Webworks logo" 
+          <img
+            src={logoWW}
+            alt="Wietse Webworks logo"
             className="h-8 w-auto brightness-0 invert"
           />
-          Wietse Webworks
         </Link>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-10">
+        {/* Desktop Navigation - center */}
+        <ul className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           <li>
             <button
               onClick={() => scrollToSection("werk")}
-              className="text-caption text-muted-foreground hover:text-blue-sky transition-colors"
+              className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
               Werk
             </button>
@@ -54,7 +57,7 @@ const Header = () => {
           <li>
             <button
               onClick={() => scrollToSection("over")}
-              className="text-caption text-muted-foreground hover:text-blue-sky transition-colors"
+              className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
               Over
             </button>
@@ -62,7 +65,7 @@ const Header = () => {
           <li>
             <button
               onClick={() => scrollToSection("prijzen")}
-              className="text-caption text-muted-foreground hover:text-blue-sky transition-colors"
+              className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
               Prijzen
             </button>
@@ -70,12 +73,23 @@ const Header = () => {
           <li>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-caption text-blue-sky hover:text-blue-light transition-colors"
+              className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
               Contact
             </button>
           </li>
         </ul>
+
+        {/* CTA button - right */}
+        <div className="hidden md:flex items-center">
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase border border-foreground/80 px-5 py-2.5 text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            Start project
+            <ArrowRight size={14} />
+          </button>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -94,40 +108,37 @@ const Header = () => {
       {/* Mobile Menu */}
       <div
         className={`md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md transition-all duration-500 overflow-hidden ${
-          isMobileMenuOpen ? "max-h-80 border-b border-border" : "max-h-0"
+          isMobileMenuOpen ? "max-h-96 border-b border-border" : "max-h-0"
         }`}
       >
         <ul className="container mx-auto py-6 flex flex-col gap-6">
           <li>
-            <button
-              onClick={() => scrollToSection("werk")}
-              className="text-body text-foreground hover:text-blue-sky"
-            >
+            <button onClick={() => scrollToSection("werk")} className="text-xs tracking-[0.2em] uppercase text-foreground hover:text-blue-sky">
               Werk
             </button>
           </li>
           <li>
-            <button
-              onClick={() => scrollToSection("over")}
-              className="text-body text-foreground hover:text-blue-sky"
-            >
+            <button onClick={() => scrollToSection("over")} className="text-xs tracking-[0.2em] uppercase text-foreground hover:text-blue-sky">
               Over
             </button>
           </li>
           <li>
-            <button
-              onClick={() => scrollToSection("prijzen")}
-              className="text-body text-foreground hover:text-blue-sky"
-            >
+            <button onClick={() => scrollToSection("prijzen")} className="text-xs tracking-[0.2em] uppercase text-foreground hover:text-blue-sky">
               Prijzen
+            </button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection("contact")} className="text-xs tracking-[0.2em] uppercase text-blue-sky">
+              Contact
             </button>
           </li>
           <li>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-body text-blue-sky"
+              className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase border border-foreground/80 px-5 py-2.5 text-foreground hover:bg-foreground hover:text-background transition-all duration-300 w-fit"
             >
-              Contact
+              Start project
+              <ArrowRight size={14} />
             </button>
           </li>
         </ul>
