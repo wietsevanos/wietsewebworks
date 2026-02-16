@@ -4,6 +4,7 @@ import projectTcfOrange from "@/assets/project-tcforange.png";
 import projectJayworxx from "@/assets/project-jayworxx.png";
 import projectMadeliefste from "@/assets/project-madeliefste-new.png";
 import projectTuana from "@/assets/project-tuana.png";
+import projectHaarFabrique from "@/assets/project-haarfabrique.png";
 
 const projects = [
   {
@@ -45,6 +46,14 @@ const projects = [
     image: projectTuana,
     tags: ["Webdesign", "Horeca"],
     url: "https://tuana-eats-fresh.lovable.app",
+  },
+  {
+    id: 6,
+    title: "Haar Fabrique",
+    description: "Stoere kapperszaak zonder afspraak, snel en betaalbaar",
+    image: projectHaarFabrique,
+    tags: ["Webdesign", "Beauty"],
+    url: "https://haar-fabrique-street-style.lovable.app",
   },
 ];
 
