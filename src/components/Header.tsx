@@ -81,11 +81,11 @@ const Header = () => {
           </li>
         </ul>
 
-        {/* CTA button - right */}
-        <div className="hidden md:flex items-center">
+        {/* CTA button - right, positioned at the edge */}
+        <div className="hidden md:flex items-center -mr-1">
           <button
             onClick={() => scrollToSection("contact")}
-            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase bg-foreground text-background font-medium px-5 py-2 hover:bg-foreground/90 hover:shadow-md transition-all duration-300 rounded-lg"
+            className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase bg-white text-background font-semibold px-6 py-2.5 hover:bg-white/90 hover:shadow-lg transition-all duration-300 rounded-md"
           >
             Start project
             <ArrowRight size={14} />
