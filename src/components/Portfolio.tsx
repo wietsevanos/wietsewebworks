@@ -5,6 +5,9 @@ import projectJayworxx from "@/assets/project-jayworxx.png";
 import projectMadeliefste from "@/assets/project-madeliefste-new.png";
 import projectTuana from "@/assets/project-tuana.png";
 import projectHaarFabrique from "@/assets/project-haarfabrique.png";
+import projectVanZoolingen from "@/assets/project-vanzoolingen.png";
+import projectPicoBello from "@/assets/project-picobello.png";
+import projectBonneLouise from "@/assets/project-bonnelouise.png";
 
 const projects = [
   {
@@ -54,6 +57,30 @@ const projects = [
     image: projectHaarFabrique,
     tags: ["Webdesign", "Beauty"],
     url: "https://haar-fabrique-street-style.lovable.app",
+  },
+  {
+    id: 7,
+    title: "Wijnhandel van Zoolingen",
+    description: "Wijnhandel-slijterij met passie voor kwaliteitswijnen",
+    image: projectVanZoolingen,
+    tags: ["Webdesign", "Retail"],
+    url: "https://wijnhandelvanzoolingen.nl",
+  },
+  {
+    id: 8,
+    title: "Pico-Bello",
+    description: "Snackbar & lunchroom met huisgemaakte friet en gastvrijheid",
+    image: projectPicoBello,
+    tags: ["Webdesign", "Horeca"],
+    url: "https://snackbarenlunchroompicobello.nl",
+  },
+  {
+    id: 9,
+    title: "Bonne Louise",
+    description: "Groente juwelier in het hart van Haarlem",
+    image: projectBonneLouise,
+    tags: ["Webdesign", "Retail"],
+    url: "https://bonne-louise-delights.lovable.app",
   },
 ];
 
