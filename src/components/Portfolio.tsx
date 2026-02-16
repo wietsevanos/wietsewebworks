@@ -1,32 +1,50 @@
 import { ExternalLink } from "lucide-react";
-import projectKomo from "@/assets/project-komo.webp";
-import projectMadeliefste from "@/assets/project-madeliefste.png";
 import projectRogerStorm from "@/assets/project-rogerstorm.png";
+import projectTcfOrange from "@/assets/project-tcforange.png";
+import projectJayworxx from "@/assets/project-jayworxx.png";
+import projectMadeliefste from "@/assets/project-madeliefste-new.png";
+import projectTuana from "@/assets/project-tuana.png";
 
 const projects = [
   {
     id: 1,
-    title: "Komo",
-    description: "Specialty Coffee & Matcha bar met zen-uitstraling",
-    image: projectKomo,
-    tags: ["Webdesign", "Horeca"],
-    url: "https://komo-slow-zen-site.lovable.app",
-  },
-  {
-    id: 2,
-    title: "Madeliefste Bloemen",
-    description: "Buurtbloemist in Haarlem met warme, persoonlijke uitstraling",
-    image: projectMadeliefste,
-    tags: ["Webdesign", "Retail"],
-    url: "https://bloemen-van-madeliefste.lovable.app",
-  },
-  {
-    id: 3,
     title: "Roger & Storm",
     description: "Professionele hair salon met moderne, elegante look",
     image: projectRogerStorm,
     tags: ["Webdesign", "Beauty"],
     url: "https://natural-strokes-studio.lovable.app",
+  },
+  {
+    id: 2,
+    title: "TCF Orange",
+    description: "Financing & Risk Management voor commodity traders",
+    image: projectTcfOrange,
+    tags: ["Webdesign", "Finance"],
+    url: "https://tcforange.com",
+  },
+  {
+    id: 3,
+    title: "Jayworxx",
+    description: "Executive Consultancy voor E-Mobility en Renewable Energy",
+    image: projectJayworxx,
+    tags: ["Webdesign", "Consultancy"],
+    url: "https://jayworxx.com",
+  },
+  {
+    id: 4,
+    title: "Madeliefste Bloemen",
+    description: "Buurtbloemist in Haarlem met warme, persoonlijke uitstraling",
+    image: projectMadeliefste,
+    tags: ["Webdesign", "Retail"],
+    url: "https://madeliefstebloemen.nl",
+  },
+  {
+    id: 5,
+    title: "Tuana Eethuis",
+    description: "Familiebedrijf in Haarlem met vers bereid Turks eten",
+    image: projectTuana,
+    tags: ["Webdesign", "Horeca"],
+    url: "https://tuana-eats-fresh.lovable.app",
   },
 ];
 
