@@ -187,7 +187,7 @@
   }
 
   .image-reveal {
-    @apply overflow-hidden rounded-sm;
+    @apply overflow-hidden rounded-xl;
   }
 
   .image-reveal img {

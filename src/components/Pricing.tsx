@@ -59,7 +59,7 @@ const Pricing = () => {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-8">
           {/* Website Options Card + Panel */}
           <div className="flex flex-col gap-4">
-            <div className="animate-fade-in-up stagger-3 bg-card border border-blue-vibrant/20 p-6 flex flex-col">
+            <div className="animate-fade-in-up stagger-3 bg-card border border-blue-vibrant/20 rounded-xl p-6 flex flex-col">
               <h3 className="text-lg font-medium mb-1 tracking-wide text-foreground">
                 Website opties en eenmalige kosten
               </h3>
@@ -93,7 +93,7 @@ const Pricing = () => {
               openPanel === "website" ? "opacity-100" : "max-h-0 opacity-0"}`
               }>
 
-              <div className="bg-card border border-blue-vibrant/30 p-6">
+                <div className="bg-card border border-blue-vibrant/30 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h4 className="text-lg font-normal text-foreground">Inclusief opties</h4>
                   <button
@@ -107,7 +107,7 @@ const Pricing = () => {
                   {websiteFeatures.map((feature) =>
                   <div
                     key={feature}
-                    className="flex items-start gap-3 p-3 bg-secondary/50 border border-blue-vibrant/10">
+                    className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50 border border-blue-vibrant/10">
 
                       <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-electric" />
                       <span className="text-sm text-foreground/90">{feature}</span>
@@ -120,7 +120,7 @@ const Pricing = () => {
 
           {/* Monthly Service Card + Panel */}
           <div className="flex flex-col gap-4">
-            <div className="animate-fade-in-up stagger-4 bg-blue-vibrant border border-blue-vibrant p-6 flex flex-col">
+            <div className="animate-fade-in-up stagger-4 bg-blue-vibrant border border-blue-vibrant rounded-xl p-6 flex flex-col">
               <h3 className="text-lg font-medium mb-1 tracking-wide text-background">
                 Maandelijkse service
               </h3>
@@ -154,7 +154,7 @@ const Pricing = () => {
               openPanel === "service" ? "opacity-100" : "max-h-0 opacity-0"}`
               }>
 
-              <div className="bg-card border border-blue-vibrant/30 p-6">
+              <div className="bg-card border border-blue-vibrant/30 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h4 className="text-lg font-normal text-foreground">Wat zit erin</h4>
                   <button
@@ -168,7 +168,7 @@ const Pricing = () => {
                   {serviceFeatures.map((feature) =>
                   <div
                     key={feature}
-                    className="flex items-start gap-3 p-3 bg-secondary/50 border border-blue-vibrant/10">
+                    className="flex items-start gap-3 p-3 rounded-lg bg-secondary/50 border border-blue-vibrant/10">
 
                       <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-electric" />
                       <span className="text-sm text-foreground/90">{feature}</span>
