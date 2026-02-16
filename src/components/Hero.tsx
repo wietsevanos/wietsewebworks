@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { GradientButton } from "@/components/ui/gradient-button";
 const Hero = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -29,12 +29,12 @@ const Hero = () => {
         <p className="text-body-lg text-muted-foreground max-w-2xl mb-12 animate-fade-in-up stagger-3">Van idee tot livegang, helder en zorgvuldig uitgevoerd.</p>
         
         <div className="flex flex-wrap gap-4 animate-fade-in-up stagger-4">
-          <Button variant="hero" size="lg" onClick={() => scrollToSection("werk")}>
+          <GradientButton onClick={() => scrollToSection("werk")}>
             Bekijk werk
-          </Button>
-          <Button variant="outline" size="lg" onClick={() => scrollToSection("contact")}>
+          </GradientButton>
+          <GradientButton variant="variant" onClick={() => scrollToSection("contact")}>
             Neem contact op
-          </Button>
+          </GradientButton>
         </div>
       </div>
 
