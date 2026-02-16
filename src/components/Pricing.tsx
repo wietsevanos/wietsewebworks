@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Check, ChevronDown, X } from "lucide-react";
+import { GradientButton } from "@/components/ui/gradient-button";
 
 const websiteFeatures = [
   "Modern, strak maatwerk design",
@@ -73,9 +74,9 @@ const Pricing = () => {
                 <span className="text-blue-electric/70 text-xl font-normal ml-2">– €1.800</span>
               </div>
 
-              <button
+              <GradientButton
                 onClick={() => togglePanel("website")}
-                className="w-full bg-blue-vibrant text-background hover:bg-blue-electric transition-all duration-300 py-3.5 px-6 text-center mt-auto flex items-center justify-center gap-2"
+                className="w-full mt-auto flex items-center justify-center gap-2"
               >
                 <span>Bekijk opties</span>
                 <ChevronDown 
@@ -83,7 +84,7 @@ const Pricing = () => {
                     openPanel === "website" ? "rotate-180" : ""
                   }`} 
                 />
-              </button>
+              </GradientButton>
             </div>
 
             {/* Website Features Panel */}
@@ -133,9 +134,10 @@ const Pricing = () => {
                 <span className="text-background/70 text-xl font-normal ml-2">/ maand</span>
               </div>
 
-              <button
+              <GradientButton
+                variant="variant"
                 onClick={() => togglePanel("service")}
-                className="w-full bg-card text-foreground hover:bg-secondary transition-all duration-300 py-3.5 px-6 text-center mt-auto flex items-center justify-center gap-2"
+                className="w-full mt-auto flex items-center justify-center gap-2"
               >
                 <span>Bekijk details</span>
                 <ChevronDown 
@@ -143,7 +145,7 @@ const Pricing = () => {
                     openPanel === "service" ? "rotate-180" : ""
                   }`} 
                 />
-              </button>
+              </GradientButton>
             </div>
 
             {/* Service Features Panel */}
