@@ -30,10 +30,23 @@ const serviceFeatures = [
 
 
 const Pricing = () => {
-  const [openPanel, setOpenPanel] = useState<"website" | "service" | null>(null);
+  const [openPanels, setOpenPanels] = useState<Set<"website" | "service">>(new Set());
 
   const togglePanel = (panel: "website" | "service") => {
-    setOpenPanel(openPanel === panel ? null : panel);
+    setOpenPanels(prev => {
+      const next = new Set(prev);
+      if (next.has(panel)) next.delete(panel);
+      else next.add(panel);
+      return next;
+    });
+  };
+
+  const closePanel = (panel: "website" | "service") => {
+    setOpenPanels(prev => {
+      const next = new Set(prev);
+      next.delete(panel);
+      return next;
+    });
   };
 
   return (
@@ -82,7 +95,7 @@ const Pricing = () => {
                 <span>Bekijk opties</span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform duration-300 ${
-                  openPanel === "website" ? "rotate-180" : ""}`
+                  openPanels.has("website") ? "rotate-180" : ""}`
                   } />
 
               </GradientButton>
@@ -91,14 +104,14 @@ const Pricing = () => {
             {/* Website Features Panel */}
             <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
-              openPanel === "website" ? "opacity-100" : "max-h-0 opacity-0"}`
+              openPanels.has("website") ? "opacity-100" : "max-h-0 opacity-0"}`
               }>
 
                 <div className="bg-card border border-blue-vibrant/30 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h4 className="text-lg font-normal text-foreground">Inclusief opties</h4>
                   <button
-                    onClick={() => setOpenPanel(null)}
+                    onClick={() => closePanel("website")}
                     className="text-muted-foreground hover:text-foreground transition-colors">
 
                     <X className="w-5 h-5" />
@@ -143,7 +156,7 @@ const Pricing = () => {
                 <span>Bekijk details</span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform duration-300 ${
-                  openPanel === "service" ? "rotate-180" : ""}`
+                  openPanels.has("service") ? "rotate-180" : ""}`
                   } />
 
               </GradientButton>
@@ -152,14 +165,14 @@ const Pricing = () => {
             {/* Service Features Panel */}
             <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
-              openPanel === "service" ? "opacity-100" : "max-h-0 opacity-0"}`
+              openPanels.has("service") ? "opacity-100" : "max-h-0 opacity-0"}`
               }>
 
               <div className="bg-card border border-blue-vibrant/30 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h4 className="text-lg font-normal text-foreground">Wat zit erin</h4>
                   <button
-                    onClick={() => setOpenPanel(null)}
+                    onClick={() => closePanel("service")}
                     className="text-muted-foreground hover:text-foreground transition-colors">
 
                     <X className="w-5 h-5" />
