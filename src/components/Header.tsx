@@ -27,11 +27,16 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-blue-vibrant/20"
-          : "bg-blue-vibrant/10 backdrop-blur-md border-b border-blue-vibrant/15"
+          ? "backdrop-blur-xl border-b border-white/10"
+          : "backdrop-blur-md border-b border-white/5"
       }`}
+      style={{
+        background: isScrolled
+          ? "linear-gradient(135deg, hsl(210 80% 45% / 0.85), hsl(200 70% 55% / 0.75))"
+          : "linear-gradient(135deg, hsl(210 80% 45% / 0.6), hsl(200 70% 55% / 0.5))",
+      }}
     >
-      <nav className="container mx-auto flex items-center justify-between py-4">
+      <nav className="container mx-auto flex items-center justify-between py-3">
         {/* Logo - left */}
         <Link
           to="/"
@@ -45,11 +50,11 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation - center */}
-        <ul className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+        <ul className="hidden md:flex items-center gap-12 absolute left-1/2 -translate-x-1/2">
           <li>
             <button
               onClick={() => scrollToSection("werk")}
-              className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white transition-colors duration-300"
             >
               Werk
             </button>
@@ -57,7 +62,7 @@ const Header = () => {
           <li>
             <button
               onClick={() => scrollToSection("over")}
-              className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white transition-colors duration-300"
             >
               Over
             </button>
@@ -65,7 +70,7 @@ const Header = () => {
           <li>
             <button
               onClick={() => scrollToSection("prijzen")}
-              className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white transition-colors duration-300"
             >
               Prijzen
             </button>
@@ -73,7 +78,7 @@ const Header = () => {
           <li>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white transition-colors duration-300"
             >
               Contact
             </button>
@@ -84,7 +89,7 @@ const Header = () => {
         <div className="hidden md:flex items-center">
           <button
             onClick={() => scrollToSection("contact")}
-            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase border border-foreground/80 px-5 py-2.5 text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase border border-white/60 px-5 py-2 text-white hover:bg-white/15 hover:border-white transition-all duration-300 rounded-sm"
           >
             Start project
             <ArrowRight size={14} />
