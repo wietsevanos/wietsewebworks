@@ -25,7 +25,8 @@ const serviceFeatures = [
 "Technische updates en onderhoud",
 "Monitoring",
 "Performance checks",
-"Prioriteit bij kleine vragen"];
+"Prioriteit bij kleine vragen",
+"Zakelijke e-mail inclusief veilige verhuizing"];
 
 
 const Pricing = () => {
