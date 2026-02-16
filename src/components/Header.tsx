@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { GradientButton } from "@/components/ui/gradient-button";
 import logoWW from "@/assets/logo-ww.png";
 
 const Header = () => {
@@ -83,13 +84,14 @@ const Header = () => {
 
         {/* CTA button - right */}
         <div className="hidden md:flex items-center">
-          <button
+          <GradientButton
+            variant="variant"
             onClick={() => scrollToSection("contact")}
-            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase bg-foreground text-background font-medium px-5 py-2 hover:bg-foreground/90 hover:shadow-md transition-all duration-300 rounded-lg"
+            className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase font-medium min-w-0 px-5 py-2"
           >
             Start project
             <ArrowRight size={14} />
-          </button>
+          </GradientButton>
         </div>
 
         {/* Mobile Menu Button */}
