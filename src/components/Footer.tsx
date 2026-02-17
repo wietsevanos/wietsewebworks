@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="py-12 px-6 border-t border-blue-mid/30">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col items-center gap-6">
           <img src={logoWW} alt="Wietse Webworks logo" className="h-8 w-auto brightness-0 invert opacity-70" />
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
             <p className="text-caption text-muted-foreground">
