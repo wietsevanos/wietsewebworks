@@ -30,12 +30,12 @@ const Bevestiging = () => {
           </p>
 
           <div className="animate-fade-in-up stagger-2">
-            <LiquidButton asChild size="xl">
-              <Link to="/" className="inline-flex items-center gap-2">
+            <Link to="/">
+              <LiquidButton size="xl">
                 <ArrowLeft className="w-4 h-4" />
                 Terug naar home
-              </Link>
-            </LiquidButton>
+              </LiquidButton>
+            </Link>
           </div>
         </div>
       </div>
