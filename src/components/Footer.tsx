@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-6">
           <img src={logoWW} alt="Wietse Webworks logo" className="h-8 w-auto brightness-0 invert opacity-70" />
-          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+          <div className="flex flex-col md:flex-row items-center text-center gap-2 md:gap-4">
             <p className="text-caption text-muted-foreground">
               © {currentYear} Wietse Webworks. Alle rechten voorbehouden.
             </p>
