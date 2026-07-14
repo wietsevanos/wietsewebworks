@@ -299,81 +299,76 @@ const Werk = () => {
         </div>
       </section>
 
-      {/* Rustige resultatensectie */}
-      <section className="relative py-24 md:py-32 dark-section overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent" />
-        <div
-          aria-hidden
-          className="absolute -top-40 left-1/2 -translate-x-1/2 w-[50rem] h-[50rem] rounded-full bg-primary/10 blur-[160px] opacity-60"
-        />
+      {/* Waarom-sectie in FAQ stijl */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <Reveal>
+              <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">
+                Waarom Wietse Webworks
+              </p>
+            </Reveal>
+            <Reveal delay={80}>
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight mb-5">
+                Waarom ondernemers voor Wietse Webworks kiezen
+              </h2>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="text-muted-foreground leading-relaxed">
+                Geen dure bureaus, geen wachttijden, geen onnodige poespas.
+                Wel een vast aanspreekpunt, snelle oplevering en een website
+                waar u trots op bent.
+              </p>
+            </Reveal>
+          </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left copy */}
-            <div className="lg:col-span-5">
-              <Reveal>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm mb-6">
-                  <Sparkles size={13} className="text-primary-light" />
-                  <span className="text-white/75 text-xs tracking-wider uppercase font-medium">
-                    Resultaat dat telt
-                  </span>
-                </div>
-              </Reveal>
-              <Reveal delay={80}>
-                <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight mb-6">
-                  Waarom ondernemers voor Wietse Webworks kiezen
-                </h2>
-              </Reveal>
-              <Reveal delay={160}>
-                <p className="text-white/70 text-lg leading-relaxed">
-                  Geen dure bureaus, geen wachttijden, geen onnodige poespas.
-                  Wel een vast aanspreekpunt, snelle oplevering en een website
-                  waar u trots op bent.
-                </p>
-              </Reveal>
-            </div>
-
-            {/* Right stat cards */}
-            <div className="lg:col-span-7 space-y-4">
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
               {[
                 {
-                  value: "48u",
-                  title: "Eerste ontwerp op maat",
-                  text: "Binnen twee werkdagen ligt er een eerste concept, gratis en vrijblijvend.",
+                  title: "Eerste ontwerp binnen 48 uur",
+                  text: "Binnen twee werkdagen ligt er een eerste concept op maat, volledig gratis en vrijblijvend. Zo weet u meteen wat u krijgt.",
                 },
                 {
-                  value: "2 – 3",
-                  title: "Weken tot livegang",
-                  text: "Gemiddelde doorlooptijd van kennismaking tot live website.",
+                  title: "Twee tot drie weken tot livegang",
+                  text: "De gemiddelde doorlooptijd van kennismaking tot een volledig werkende website. Korte lijnen, geen onnodige vertraging.",
                 },
                 {
-                  value: "1 op 1",
-                  title: "Vast aanspreekpunt",
-                  text: "Altijd dezelfde persoon, van eerste gesprek tot jaren na livegang.",
+                  title: "Altijd hetzelfde aanspreekpunt",
+                  text: "U werkt van begin tot eind met dezelfde persoon. Geen callcenter, geen accountmanagers, gewoon direct contact.",
                 },
-              ].map((r, i) => (
-                <Reveal key={r.title} delay={i * 100}>
-                  <TiltCard>
-                    <div className="flex items-center gap-6 md:gap-8">
-                      <div className="text-4xl md:text-5xl font-semibold text-white tracking-tight min-w-[5rem] md:min-w-[7rem]">
-                        {r.value}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-white text-base md:text-lg font-semibold mb-1">
-                          {r.title}
-                        </h3>
-                        <p className="text-white/65 text-[0.9375rem] leading-relaxed">
-                          {r.text}
-                        </p>
-                      </div>
-                    </div>
-                  </TiltCard>
+                {
+                  title: "Transparante prijzen zonder verrassingen",
+                  text: "Vooraf een duidelijke offerte, achteraf precies wat is afgesproken. Geen verborgen kosten of onverwachte facturen.",
+                },
+                {
+                  title: "Ook na livegang bereikbaar",
+                  text: "Kleine aanpassingen, vragen of advies? Bel of app gerust. Ondersteuning stopt niet na oplevering.",
+                },
+              ].map((item, index) => (
+                <Reveal key={item.title} delay={index * 60}>
+                  <AccordionItem
+                    value={`waarom-${index}`}
+                    className="border-0 rounded-xl bg-muted/30 px-6 data-[state=open]:bg-primary/5 data-[state=open]:ring-1 data-[state=open]:ring-primary/20 transition-all duration-300 hover:bg-muted/50"
+                  >
+                    <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-5 text-[0.9375rem] gap-4 [&>svg]:text-primary [&>svg]:w-5 [&>svg]:h-5">
+                      <span className="flex items-center gap-3">
+                        <span className="w-1 h-5 rounded-full bg-primary/60 group-data-[state=open]:bg-primary transition-colors" />
+                        {item.title}
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed pb-6 pl-4 text-[0.9375rem]">
+                      {item.text}
+                    </AccordionContent>
+                  </AccordionItem>
                 </Reveal>
               ))}
-            </div>
+            </Accordion>
           </div>
         </div>
       </section>
+
+
 
 
 
