@@ -31,7 +31,7 @@ export const Hero = () => {
               <ArrowRight size={18} />
             </Link>
             <Link to="/werk" className="btn-outline inline-flex items-center justify-center w-full sm:w-auto">
-              Bekijk ons werk
+              Bekijk mijn werk
             </Link>
           </div>
         </div>

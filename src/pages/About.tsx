@@ -13,7 +13,7 @@ const waarden = [
   },
   {
     title: "Duidelijke communicatie",
-    text: "Geen ingewikkelde technische verhalen. Wij leggen alles uit in gewone taal, zodat u precies weet wat er gebeurt.",
+    text: "Geen ingewikkelde technische verhalen. Ik leg alles uit in gewone taal, zodat u precies weet wat er gebeurt.",
   },
   {
     title: "Lokale betrokkenheid",

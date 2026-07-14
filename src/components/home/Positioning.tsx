@@ -7,7 +7,7 @@ export const Positioning = () => {
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>
             <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">
-              Onze aanpak
+              Mijn aanpak
             </p>
           </Reveal>
           <Reveal delay={80}>
@@ -26,7 +26,7 @@ export const Positioning = () => {
             </Reveal>
             <Reveal delay={240}>
               <p>
-                Wij bouwen websites die vertrouwen uitstralen, beter gevonden
+                Ik bouw websites die vertrouwen uitstralen, beter gevonden
                 worden en actief bijdragen aan meer aanvragen. Alles onder één
                 dak, ontwerp, ontwikkeling, hosting en onderhoud, met korte
                 lijnen, transparante prijzen en persoonlijk contact.

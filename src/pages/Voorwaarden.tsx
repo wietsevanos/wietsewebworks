@@ -8,7 +8,7 @@ const Voorwaarden = () => {
       <PageHeader
         label="Juridisch"
         title="Algemene voorwaarden"
-        description="Duidelijke afspraken zorgen voor een prettige samenwerking. Hieronder vindt u onze algemene voorwaarden."
+        description="Duidelijke afspraken zorgen voor een prettige samenwerking. Hieronder vindt u mijn algemene voorwaarden."
       />
 
       <section className="py-24 md:py-32 bg-background">
@@ -117,8 +117,8 @@ const Voorwaarden = () => {
 
       <GlassCTA
         eyebrow="Vragen over de voorwaarden?"
-        title="Wij denken graag met u mee"
-        description="Onduidelijkheden of vragen over deze voorwaarden? Neem contact op, dan lopen wij ze samen door."
+        title="Ik denk graag met u mee"
+        description="Onduidelijkheden of vragen over deze voorwaarden? Neem contact op, dan loop ik ze samen door."
         primaryLabel="Neem contact op"
       />
     </Layout>

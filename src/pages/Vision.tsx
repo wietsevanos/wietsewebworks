@@ -8,7 +8,7 @@ const steps = [
     number: "01",
     title: "Kennismaking",
     description:
-      "Een vrijblijvend eerste gesprek, telefonisch, via WhatsApp of op locatie in Haarlem. We leren uw bedrijf, uw doelgroep en uw wensen kennen.",
+      "Een vrijblijvend eerste gesprek, telefonisch, via WhatsApp of op locatie in Haarlem. Ik leer uw bedrijf, uw doelgroep en uw wensen kennen.",
   },
   {
     number: "02",
@@ -20,25 +20,25 @@ const steps = [
     number: "03",
     title: "Ontwerp",
     description:
-      "Op basis van de intake maken wij een eerste ontwerp, volledig gratis en zonder verplichtingen. U ziet direct hoe uw nieuwe website eruit gaat zien.",
+      "Op basis van de intake maak ik een eerste ontwerp, volledig gratis en zonder verplichtingen. U ziet direct hoe uw nieuwe website eruit gaat zien.",
   },
   {
     number: "04",
     title: "Revisies",
     description:
-      "Drie revisierondes zijn standaard inbegrepen. Zo scherpen we het ontwerp aan tot het exact past bij uw bedrijf en uw wensen.",
+      "Drie revisierondes zijn standaard inbegrepen. Zo scherp ik het ontwerp aan tot het exact past bij uw bedrijf en uw wensen.",
   },
   {
     number: "05",
     title: "Livegang",
     description:
-      "Na uw goedkeuring bouwen wij de website en plaatsen deze online op uw eigen domeinnaam. Alles wordt zorgvuldig getest voor lancering.",
+      "Na uw goedkeuring bouw ik de website en plaats deze online op uw eigen domeinnaam. Alles wordt zorgvuldig getest voor lancering.",
   },
   {
     number: "06",
     title: "Onderhoud",
     description:
-      "Na livegang blijven wij uw website beveiligen, updaten en monitoren. U heeft één vast aanspreekpunt voor vragen en aanpassingen.",
+      "Na livegang blijf ik uw website beveiligen, updaten en monitoren. U heeft één vast aanspreekpunt voor vragen en aanpassingen.",
   },
 ];
 
@@ -107,7 +107,7 @@ const Vision = () => {
       <GlassCTA
         eyebrow="Klaar voor stap 1?"
         title="Zullen we vrijblijvend kennismaken?"
-        description="Neem contact op voor een vrijblijvende kennismaking. Wij denken graag met u mee."
+        description="Neem contact op voor een vrijblijvende kennismaking. Ik denk graag met u mee."
         primaryLabel="Plan een kennismaking"
       />
     </Layout>

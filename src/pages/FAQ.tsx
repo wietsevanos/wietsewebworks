@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "Hoeveel revisierondes zijn inbegrepen?",
     answer:
-      "Drie volledige revisierondes zijn standaard inbegrepen. In deze rondes scherpen we het ontwerp en de teksten aan totdat alles exact aansluit bij uw wensen.",
+      "Drie volledige revisierondes zijn standaard inbegrepen. In deze rondes scherp ik het ontwerp en de teksten aan totdat alles exact aansluit bij uw wensen.",
   },
   {
     question: "Hoe lang duurt het voordat mijn website online staat?",
@@ -43,27 +43,27 @@ const faqs = [
   {
     question: "Werken jullie alleen in Haarlem?",
     answer:
-      "De focus ligt op Haarlem, Bloemendaal en Heemstede, maar wij werken voor klanten door heel Nederland. Door persoonlijk (digitaal) contact voelt de samenwerking altijd dichtbij.",
+      "De focus ligt op Haarlem, Bloemendaal en Heemstede, maar ik werk voor klanten door heel Nederland. Door persoonlijk (digitaal) contact voelt de samenwerking altijd dichtbij.",
   },
   {
     question: "Kan ik zelf de teksten of afbeeldingen later aanpassen?",
     answer:
-      "Kleine aanpassingen aan teksten of afbeeldingen kunt u gewoon aan ons doorgeven, die voeren wij binnen het onderhoudscontract voor u door. U hoeft dus zelf geen technische kennis te hebben.",
+      "Kleine aanpassingen aan teksten of afbeeldingen kunt u gewoon aan mij doorgeven, die voer ik binnen het onderhoudscontract voor u door. U hoeft dus zelf geen technische kennis te hebben.",
   },
   {
     question: "Wat gebeurt er als ik na livegang extra pagina's wil?",
     answer:
-      "Uitbreidingen zijn altijd mogelijk. Voor grotere aanpassingen of extra pagina's maken wij vooraf een duidelijke offerte, zodat u nooit voor verrassingen komt te staan.",
+      "Uitbreidingen zijn altijd mogelijk. Voor grotere aanpassingen of extra pagina's maak ik vooraf een duidelijke offerte, zodat u nooit voor verrassingen komt te staan.",
   },
   {
     question: "Is de website ook geschikt voor mobiel?",
     answer:
-      "Elke website die wij bouwen is volledig responsive. Dat betekent dat de website er op laptop, tablet én mobiel perfect uitziet en overal snel laadt.",
+      "Elke website die ik bouwen is volledig responsive. Dat betekent dat de website er op laptop, tablet én mobiel perfect uitziet en overal snel laadt.",
   },
   {
     question: "Zorgen jullie ook voor de domeinnaam?",
     answer:
-      "Ja. Wij kunnen uw bestaande domeinnaam koppelen of een nieuwe domeinnaam voor u registreren en beheren. Alles wordt voor u geregeld.",
+      "Ja. Ik kan uw bestaande domeinnaam koppelen of een nieuwe domeinnaam voor u registreren en beheren. Alles wordt voor u geregeld.",
   },
   {
     question: "Bij wie kan ik terecht na livegang?",
@@ -78,7 +78,7 @@ const FAQ = () => {
       <PageHeader
         label="Veelgestelde vragen"
         title="FAQ"
-        description="Antwoorden op de vragen die ondernemers ons het vaakst stellen, over prijzen, doorlooptijd, hosting en samenwerken."
+        description="Antwoorden op de vragen die ondernemers mij het vaakst stellen, over prijzen, doorlooptijd, hosting en samenwerken."
       />
 
       <section className="py-24 md:py-32 bg-background">

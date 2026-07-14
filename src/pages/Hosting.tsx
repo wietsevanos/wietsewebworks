@@ -13,27 +13,27 @@ const items = [
   {
     icon: Shield,
     title: "Beveiligingsupdates",
-    text: "Wij houden alle software up-to-date en installeren beveiligingspatches zodra ze beschikbaar zijn.",
+    text: "Ik houd alle software up-to-date en installeer beveiligingspatches zodra ze beschikbaar zijn.",
   },
   {
     icon: Database,
     title: "Dagelijkse back-ups",
-    text: "Elke dag maken wij automatisch een back-up, zodat er nooit iets verloren gaat.",
+    text: "Elke dag maak ik automatisch een back-up, zodat er nooit iets verloren gaat.",
   },
   {
     icon: Activity,
     title: "24/7 monitoring",
-    text: "Wij houden uw website continu in de gaten en grijpen direct in als er iets niet klopt.",
+    text: "Ik houd uw website continu in de gaten en grijp direct in als er iets niet klopt.",
   },
   {
     icon: RefreshCw,
     title: "Technisch onderhoud",
-    text: "Software-updates en technische controles voeren wij automatisch voor u uit.",
+    text: "Software-updates en technische controles voer ik automatisch voor u uit.",
   },
   {
     icon: LifeBuoy,
     title: "Doorlopende support",
-    text: "Vragen of kleine tekstwijzigingen? U kunt altijd bij ons terecht, u spreekt altijd dezelfde persoon.",
+    text: "Vragen of kleine tekstwijzigingen? U kunt altijd bij mij terecht, u spreekt altijd dezelfde persoon.",
   },
 ];
 
@@ -43,7 +43,7 @@ const Hosting = () => {
       <PageHeader
         label="Zorgeloos online"
         title="Hosting & onderhoud"
-        description="Voor één vast maandbedrag van €37,95 regelen wij alles wat er technisch bij komt kijken. U heeft nergens omkijken naar."
+        description="Voor één vast maandbedrag van €37,95 regel ik alles wat er technisch bij komt kijken. U heeft nergens omkijken naar."
       />
 
       {/* Wat zit erbij */}

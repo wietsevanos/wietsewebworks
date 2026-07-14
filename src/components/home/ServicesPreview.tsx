@@ -31,7 +31,7 @@ const services = [
   {
     title: "Doorlopende ondersteuning",
     description:
-      "Ook na livegang blijven wij bereikbaar voor vragen, aanpassingen en advies.",
+      "Ook na livegang blijf ik bereikbaar voor vragen, aanpassingen en advies.",
   },
 ];
 
@@ -42,7 +42,7 @@ export const ServicesPreview = () => {
         <div className="text-center mb-16">
           <Reveal>
             <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">
-              Wat wij doen
+              Wat ik doe
             </p>
           </Reveal>
           <Reveal delay={80}>
@@ -76,7 +76,7 @@ export const ServicesPreview = () => {
               to="/werk"
               className="btn-outline-dark inline-flex items-center gap-2 group"
             >
-              Bekijk ons werk
+              Bekijk mijn werk
               <ArrowRight
                 size={18}
                 className="transition-transform duration-200 group-hover:translate-x-1"
