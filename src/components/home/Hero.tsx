@@ -7,22 +7,21 @@ export const Hero = () => {
     <section className="relative min-h-[85vh] flex items-center overflow-hidden py-20 lg:py-28">
       <OrangeWaveBackground />
 
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
+      <div className="max-w-[92rem] mx-auto px-6 w-full relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Text column */}
-          <div className="lg:col-span-6 max-w-2xl">
+          <div className="lg:col-span-5 max-w-2xl">
             <p className="text-white/85 font-medium mb-5 text-sm tracking-wide uppercase animate-fade-up">
               Webbureau uit Haarlem
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-white leading-[1.15] mb-8 animate-fade-up">
-              Websites die uw bedrijf online net zo sterk maken als in het echt.
+              Professionele websites voor lokale ondernemers.
             </h1>
             <p
               className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-xl animate-fade-up"
               style={{ animationDelay: "0.1s" }}
             >
-              Wietse Webworks ontwerpt en bouwt professionele websites voor lokale
-              ondernemers. Meer vertrouwen, meer aanvragen en beter gevonden worden, zonder ingewikkelde techniek en met persoonlijk contact.
+              Persoonlijk contact, duidelijke prijzen en een website die werkt.
             </p>
             <div
               className="flex flex-col sm:flex-row sm:flex-wrap gap-4 animate-fade-up"
@@ -40,7 +39,7 @@ export const Hero = () => {
 
           {/* Mockup column */}
           <div
-            className="lg:col-span-6 relative animate-fade-up"
+            className="lg:col-span-7 relative animate-fade-up lg:-mr-6 xl:-mr-12"
             style={{ animationDelay: "0.3s" }}
           >
             <HeroMockup />
@@ -97,72 +96,73 @@ const HeroMockup = () => {
             </div>
           </div>
 
-          {/* Hero */}
-          <div className="relative px-5 md:px-8 py-7 md:py-9 grid grid-cols-12 gap-5 items-center overflow-hidden">
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-transparent to-accent-indigo/[0.06]"
-            />
-            <div className="col-span-7 relative">
-              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[0.6rem] font-semibold tracking-wider uppercase mb-3">
-                <span className="w-1 h-1 rounded-full bg-primary" />
-                Nieuw
+          {/* Wide hero banner */}
+          <div className="relative aspect-[16/7] overflow-hidden bg-gradient-to-br from-primary via-accent-indigo to-primary-navy">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,hsl(0_0%_100%/0.28),transparent_55%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_90%,hsl(186_80%_60%/0.4),transparent_50%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_10%,hsl(262_70%_65%/0.25),transparent_55%)]" />
+
+            {/* Hero copy overlay */}
+            <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-10 max-w-[62%]">
+              <div className="inline-flex w-fit items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/15 backdrop-blur text-white text-[0.55rem] font-semibold tracking-wider uppercase mb-2.5">
+                <span className="w-1 h-1 rounded-full bg-white" />
+                Welkom
               </div>
-              <div className="space-y-2">
-                <div className="h-3 w-[92%] rounded-full bg-foreground/85" />
-                <div className="h-3 w-[75%] rounded-full bg-foreground/85" />
-                <div className="h-3 w-[55%] rounded-full bg-foreground/25" />
+              <div className="space-y-1.5">
+                <div className="h-2.5 w-[85%] rounded-full bg-white/90" />
+                <div className="h-2.5 w-[65%] rounded-full bg-white/90" />
               </div>
-              <div className="mt-4 space-y-1.5 max-w-[85%]">
-                <div className="h-1.5 rounded-full bg-foreground/15" />
-                <div className="h-1.5 rounded-full bg-foreground/15 w-[85%]" />
-                <div className="h-1.5 rounded-full bg-foreground/15 w-[60%]" />
+              <div className="mt-3 space-y-1 max-w-[75%]">
+                <div className="h-1 rounded-full bg-white/40" />
+                <div className="h-1 rounded-full bg-white/40 w-[80%]" />
               </div>
-              <div className="mt-5 flex items-center gap-2.5">
-                <div className="h-7 px-3.5 rounded-full bg-primary text-white text-[0.65rem] font-medium flex items-center gap-1.5">
-                  Aan de slag
-                  <ArrowRight size={11} />
-                </div>
-                <div className="h-7 px-3.5 rounded-full border border-foreground/15 text-foreground/70 text-[0.65rem] font-medium flex items-center">
-                  Meer weten
-                </div>
+              <div className="mt-4 h-6 w-fit px-3 rounded-full bg-white text-primary text-[0.6rem] font-semibold flex items-center gap-1.5">
+                Aan de slag
+                <ArrowRight size={10} />
               </div>
             </div>
 
-            <div className="col-span-5 relative">
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-gradient-to-br from-primary via-accent-indigo to-primary-navy shadow-[0_15px_35px_-15px_rgba(0,0,0,0.4)]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(0_0%_100%/0.25),transparent_55%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_90%,hsl(186_80%_60%/0.4),transparent_50%)]" />
-                <div className="absolute left-2.5 bottom-2.5 bg-white/95 backdrop-blur rounded-md px-2 py-1.5 shadow-lg flex items-center gap-2">
-                  <span className="w-5 h-5 rounded bg-gradient-to-br from-accent-teal to-primary" />
-                  <div className="space-y-1">
-                    <div className="h-1.5 w-12 rounded-full bg-foreground/70" />
-                    <div className="h-1 w-8 rounded-full bg-foreground/25" />
-                  </div>
-                </div>
+            {/* Floating tile */}
+            <div className="absolute right-4 bottom-4 bg-white/95 backdrop-blur rounded-md px-2 py-1.5 shadow-lg flex items-center gap-2">
+              <span className="w-5 h-5 rounded bg-gradient-to-br from-accent-teal to-primary" />
+              <div className="space-y-1">
+                <div className="h-1.5 w-14 rounded-full bg-foreground/70" />
+                <div className="h-1 w-9 rounded-full bg-foreground/25" />
               </div>
             </div>
           </div>
 
-          {/* Cards */}
-          <div className="px-5 md:px-8 pb-6 md:pb-8 grid grid-cols-3 gap-2.5 md:gap-3">
-            {[
-              { dot: "bg-primary" },
-              { dot: "bg-accent-indigo" },
-              { dot: "bg-accent-teal" },
-            ].map((c, i) => (
-              <div
-                key={i}
-                className="rounded-lg border border-black/[0.06] bg-white p-2.5 md:p-3 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <span className={`inline-block w-4 h-4 rounded ${c.dot} mb-1.5`} />
-                <div className="space-y-1">
-                  <div className="h-1.5 rounded-full bg-foreground/70 w-[80%]" />
-                  <div className="h-1 rounded-full bg-foreground/15" />
-                  <div className="h-1 rounded-full bg-foreground/15 w-[70%]" />
-                </div>
+          {/* Content section under banner */}
+          <div className="px-5 md:px-8 py-6 md:py-7">
+            {/* Section heading */}
+            <div className="flex items-end justify-between mb-4">
+              <div className="space-y-1.5">
+                <div className="h-2 w-24 rounded-full bg-foreground/80" />
+                <div className="h-1.5 w-40 rounded-full bg-foreground/20" />
               </div>
-            ))}
+              <div className="h-1 w-12 rounded-full bg-primary/60 hidden md:block" />
+            </div>
+
+            {/* Content blocks */}
+            <div className="grid grid-cols-3 gap-2.5 md:gap-3">
+              {[
+                { dot: "bg-primary" },
+                { dot: "bg-accent-indigo" },
+                { dot: "bg-accent-teal" },
+              ].map((c, i) => (
+                <div
+                  key={i}
+                  className="rounded-lg border border-black/[0.06] bg-white p-2.5 md:p-3 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <span className={`inline-block w-4 h-4 rounded ${c.dot} mb-1.5`} />
+                  <div className="space-y-1">
+                    <div className="h-1.5 rounded-full bg-foreground/70 w-[80%]" />
+                    <div className="h-1 rounded-full bg-foreground/15" />
+                    <div className="h-1 rounded-full bg-foreground/15 w-[70%]" />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
