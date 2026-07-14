@@ -486,82 +486,105 @@ const Prijzen = () => {
 
 
       <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
-              Zorgeloos online
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
-              Hosting &amp; onderhoud
-            </h2>
-          </div>
-
+        <div className="max-w-6xl mx-auto px-6">
           <Reveal>
-            <div className="bg-white rounded-3xl border border-border/60 p-8 md:p-12 shadow-sm">
-              {/* Toggle */}
-              <div className="flex justify-center mb-8">
-                <div className="inline-flex bg-secondary rounded-full p-1 border border-border/60">
-                  <button
-                    onClick={() => setBilling("maand")}
-                    className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
-                      billing === "maand"
-                        ? "bg-primary text-white shadow"
-                        : "text-foreground/70 hover:text-foreground"
-                    }`}
-                  >
-                    Maandelijks
-                  </button>
-                  <button
-                    onClick={() => setBilling("jaar")}
-                    className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
-                      billing === "jaar"
-                        ? "bg-primary text-white shadow"
-                        : "text-foreground/70 hover:text-foreground"
-                    }`}
-                  >
-                    Jaarlijks
-                  </button>
-                </div>
-              </div>
+            <div className="relative bg-white rounded-[2rem] border border-border/60 shadow-[0_30px_80px_-40px_hsl(210_95%_50%/0.18)] overflow-hidden">
+              {/* Subtle ambient accent */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -top-32 -right-32 w-[30rem] h-[30rem] rounded-full bg-primary/[0.05] blur-3xl"
+              />
 
-              {/* Prijs */}
-              <div className="text-center mb-8">
-                <div
-                  key={billing}
-                  className="text-6xl md:text-7xl font-semibold text-foreground tabular-nums animate-fade-up"
-                >
-                  €{hostingPrice}
-                </div>
-                <p className="text-muted-foreground mt-2">{hostingSuffix}</p>
-                {billing === "jaar" && (
-                  <p className="mt-4 inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-4 py-2 rounded-full animate-fade-in">
-                    <Sparkles className="w-4 h-4" />
-                    Bij jaarlijkse betaling ontvangt u automatisch één maand gratis
+              <div className="relative grid grid-cols-1 lg:grid-cols-5 gap-0">
+                {/* Left: intro + price + CTA */}
+                <div className="lg:col-span-2 p-10 md:p-12 lg:border-r lg:border-border/60 flex flex-col">
+                  <p className="text-primary font-medium mb-3 text-xs tracking-[0.2em] uppercase">
+                    Zorgeloos online
                   </p>
-                )}
-              </div>
+                  <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-[1.15] tracking-tight mb-5">
+                    Hosting &amp; onderhoud
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-8">
+                    Eén vast maandbedrag voor alles wat er technisch bij komt
+                    kijken. U heeft nergens omkijken naar.
+                  </p>
 
-              {/* Includes */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10 items-start">
-                {hostingIncludes.map((item) => (
-                  <HostingIncludeItem key={item.label} item={item} />
-                ))}
-              </div>
+                  {/* Toggle */}
+                  <div className="inline-flex self-start bg-secondary rounded-full p-1 border border-border/60 mb-6">
+                    <button
+                      onClick={() => setBilling("maand")}
+                      className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                        billing === "maand"
+                          ? "bg-primary text-white shadow"
+                          : "text-foreground/70 hover:text-foreground"
+                      }`}
+                    >
+                      Maandelijks
+                    </button>
+                    <button
+                      onClick={() => setBilling("jaar")}
+                      className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                        billing === "jaar"
+                          ? "bg-primary text-white shadow"
+                          : "text-foreground/70 hover:text-foreground"
+                      }`}
+                    >
+                      Jaarlijks
+                    </button>
+                  </div>
 
+                  {/* Prijs */}
+                  <div className="mb-8">
+                    <div className="flex items-baseline gap-2">
+                      <span
+                        key={billing}
+                        className="text-6xl md:text-7xl font-semibold text-foreground tabular-nums animate-fade-up leading-none"
+                      >
+                        €{hostingPrice}
+                      </span>
+                      <span className="text-muted-foreground text-sm">
+                        {hostingSuffix}
+                      </span>
+                    </div>
+                    {billing === "jaar" && (
+                      <p className="mt-4 inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-4 py-2 rounded-full animate-fade-in">
+                        <Sparkles className="w-4 h-4" />
+                        Eén maand gratis bij jaarlijkse betaling
+                      </p>
+                    )}
+                  </div>
 
-              <div className="text-center">
-                <Link
-                  to="/contact"
-                  className="btn-primary inline-flex items-center gap-2"
-                >
-                  Kies uw abonnement
-                  <ArrowRight size={18} />
-                </Link>
+                  <div className="mt-auto">
+                    <Link
+                      to="/contact"
+                      className="btn-primary inline-flex items-center gap-2 group/btn"
+                    >
+                      Kies uw abonnement
+                      <ArrowRight
+                        size={18}
+                        className="transition-transform duration-200 group-hover/btn:translate-x-1"
+                      />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Right: includes */}
+                <div className="lg:col-span-3 p-10 md:p-12 bg-secondary/30">
+                  <p className="text-xs uppercase tracking-[0.15em] text-foreground/60 font-medium mb-6">
+                    Inbegrepen
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {hostingIncludes.map((item) => (
+                      <HostingIncludeItem key={item.label} item={item} />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </Reveal>
         </div>
       </section>
+
 
       {/* E-mail uitklap */}
       <section className="py-24 md:py-32 bg-secondary">
