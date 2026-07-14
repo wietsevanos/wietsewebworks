@@ -34,6 +34,7 @@ import {
   Info,
   Sparkles,
   UserCheck,
+  Clock,
 } from "lucide-react";
 
 /* -------------------------- Count-up hook -------------------------- */
@@ -204,10 +205,10 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
 
 /* -------------------------- Build progress (install-style) -------------------------- */
 const buildSteps = [
-  { icon: "✓", label: "Kennismaking voltooid", threshold: 15 },
-  { icon: "✓", label: "Ontwerp afgerond", threshold: 40 },
-  { icon: "⚡", label: "Ontwikkeling bezig", threshold: 65 },
-  { icon: "⏳", label: "Oplevering binnenkort", threshold: 74 },
+  { icon: Check, label: "Kennismaking voltooid", threshold: 15, pulse: false },
+  { icon: Check, label: "Ontwerp afgerond", threshold: 40, pulse: false },
+  { icon: Zap, label: "Ontwikkeling bezig", threshold: 65, pulse: true },
+  { icon: Clock, label: "Oplevering binnenkort", threshold: 74, pulse: false },
 ];
 
 const BuildProgress = () => {
@@ -282,6 +283,7 @@ const BuildProgress = () => {
               active &&
               (i === buildSteps.length - 1 ||
                 progress < buildSteps[i + 1].threshold);
+            const Icon = step.icon;
             return (
               <li
                 key={step.label}
@@ -292,13 +294,13 @@ const BuildProgress = () => {
                 }`}
               >
                 <span
-                  className={`w-7 h-7 rounded-full flex items-center justify-center text-sm flex-shrink-0 ${
+                  className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${
                     active
                       ? "bg-primary/10 text-primary"
                       : "bg-secondary text-muted-foreground"
-                  } ${isCurrent && step.icon === "⚡" ? "animate-pulse" : ""}`}
+                  } ${isCurrent && step.pulse ? "animate-pulse" : ""}`}
                 >
-                  {step.icon}
+                  <Icon className="w-3.5 h-3.5" strokeWidth={2.5} />
                 </span>
                 <span
                   className={`text-[0.9375rem] ${
