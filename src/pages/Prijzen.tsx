@@ -444,7 +444,7 @@ const Prijzen = () => {
               </div>
 
               {/* Includes */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10 items-start">
                 {hostingIncludes.map((item) => (
                   <HostingIncludeItem key={item.label} item={item} />
                 ))}
