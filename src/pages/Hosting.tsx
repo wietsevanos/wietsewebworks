@@ -13,7 +13,7 @@ const items = [
   {
     icon: Shield,
     title: "Beveiligingsupdates",
-    text: "Ik houd alle software up-to-date en installeren beveiligingspatches zodra ze beschikbaar zijn.",
+    text: "Ik houd alle software up-to-date en installeer beveiligingspatches zodra ze beschikbaar zijn.",
   },
   {
     icon: Database,
