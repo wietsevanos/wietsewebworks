@@ -32,7 +32,7 @@ const steps = [
     number: "05",
     title: "Livegang",
     description:
-      "Na uw goedkeuring bouwen wij de website en plaatsen deze online op uw eigen domeinnaam. Alles wordt zorgvuldig getest voor lancering.",
+      "Na uw goedkeuring bouw ik de website en plaats deze online op uw eigen domeinnaam. Alles wordt zorgvuldig getest voor lancering.",
   },
   {
     number: "06",
