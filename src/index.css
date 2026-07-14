@@ -120,7 +120,7 @@
   
   .service-card:hover {
     @apply border-primary/20;
-    box-shadow: 0 8px 40px -12px hsl(25, 95%, 50%, 0.15);
+    box-shadow: 0 8px 40px -12px hsl(210, 95%, 50%, 0.15);
   }
   
   /* Dark Section */
