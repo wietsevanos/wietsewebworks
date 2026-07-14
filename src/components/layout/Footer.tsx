@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Instagram, Mail, Phone } from "lucide-react";
 import logo from "@/assets/wietse-webworks-logo.png.asset.json";
+import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
 
 const diensten = [
   { label: "Webdesign", href: "/werk" },
@@ -53,6 +54,20 @@ export const Footer = () => {
                 className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-deep transition-colors"
               >
                 <Instagram size={18} />
+              </a>
+              <a
+                href="https://wa.me/31647872734"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-white/60 transition-colors"
+              >
+                <img
+                  src={whatsappLogo.url}
+                  alt="WhatsApp"
+                  className="w-4 h-4 object-contain"
+                  style={{ filter: "brightness(0) invert(1)" }}
+                />
               </a>
               <a
                 href="mailto:wietsevanos@gmail.com"
@@ -136,28 +151,36 @@ export const Footer = () => {
               >
                 @wietsevanos
               </a>
-              <p className="pt-2 text-xs text-white/50">
-                Haarlem, Bloemendaal, Heemstede en heel Nederland
+              <p className="pt-2 text-xs text-white/50 leading-relaxed">
+                Bloemendaalseweg 315, 2051 GH Overveen
+                <br />
+                Werkzaam in heel Nederland
               </p>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-16 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/50">
-            © {new Date().getFullYear()} Wietse Webworks. Alle rechten voorbehouden. KvK 99105578.
+        <div className="border-t border-white/10 mt-16 pt-8 flex flex-col items-center gap-4">
+          <p className="text-sm text-white/60 tracking-wide text-center">
+            KvK 99105578 &middot; Vrijgesteld van btw (KOR)
           </p>
-          <div className="flex items-center gap-6">
-            {juridisch.map((j) => (
-              <Link
-                key={j.href}
-                to={j.href}
-                className="text-sm text-white/60 hover:text-white transition-colors"
-              >
-                {j.label}
-              </Link>
-            ))}
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <p className="text-sm text-white/45">
+              © {new Date().getFullYear()} Wietse Webworks. Alle rechten voorbehouden.
+            </p>
+            <span className="hidden sm:inline text-white/20">·</span>
+            <div className="flex items-center gap-6">
+              {juridisch.map((j) => (
+                <Link
+                  key={j.href}
+                  to={j.href}
+                  className="text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  {j.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
