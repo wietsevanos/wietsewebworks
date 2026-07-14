@@ -335,50 +335,7 @@ const Prijzen = () => {
           </ul>
 
           <Reveal delay={300}>
-            <div className="mt-16 bg-foreground text-white rounded-3xl p-12 md:p-16 text-center">
-              <p className="text-white/50 text-xs uppercase tracking-[0.2em] mb-6">
-                En misschien nog wel het belangrijkste
-              </p>
-
-              <h3 className="text-3xl md:text-4xl font-semibold mb-4">
-                Eén vast aanspreekpunt
-              </h3>
-
-              <p className="text-white/70 max-w-md mx-auto mb-10 leading-relaxed">
-                Van eerste schets tot jarenlang onderhoud — u spreekt altijd
-                dezelfde persoon.
-              </p>
-
-              {/* Simple U → Wietse line */}
-              <div className="flex items-center justify-center gap-4 mb-10 text-sm">
-                <span className="text-white/60">U</span>
-                <div className="relative w-24 h-px bg-white/20 overflow-hidden">
-                  <div
-                    className="absolute inset-y-0 left-0 w-full bg-primary"
-                    style={{
-                      animation: "loadBar 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards",
-                      transformOrigin: "left",
-                    }}
-                  />
-                </div>
-                <span className="text-primary font-medium">Wietse</span>
-              </div>
-
-              <p className="text-white/60 text-sm mb-6">
-                Geen ticketsystemen &nbsp;·&nbsp; Geen helpdesks &nbsp;·&nbsp; Geen afdelingen
-              </p>
-
-              <p className="text-white/90">
-                Gewoon rechtstreeks contact met mij.
-              </p>
-
-              <style>{`
-                @keyframes loadBar {
-                  from { transform: scaleX(0); }
-                  to { transform: scaleX(1); }
-                }
-              `}</style>
-            </div>
+            <BuildProgress />
           </Reveal>
         </div>
       </section>
