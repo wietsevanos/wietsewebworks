@@ -29,11 +29,17 @@ export const GlassCTA = ({
   primaryHref = "/contact",
 }: GlassCTAProps) => {
   return (
-    <section className="relative bg-secondary/40 py-14 md:py-32 overflow-hidden">
+    <section className="relative bg-gradient-soft py-14 md:py-32 overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute top-0 left-1/4 w-[40rem] h-[40rem] rounded-full bg-primary/[0.06] blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute bottom-0 right-0 w-[36rem] h-[36rem] rounded-full bg-accent-violet/[0.08] blur-3xl" />
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
         <Reveal>
-          <div className="relative bg-background border border-border/70 rounded-2xl md:rounded-[2rem] px-5 py-10 md:px-16 md:py-24 shadow-[0_20px_60px_-30px_hsl(210_95%_50%/0.15)] overflow-hidden">
+          <div className="relative bg-background border border-border/70 rounded-2xl md:rounded-[2rem] px-5 py-10 md:px-16 md:py-24 shadow-[0_20px_60px_-30px_hsl(222_70%_24%/0.25)] overflow-hidden">
             {/* Subtle ambient accent inside the card */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-24 -right-24 w-[26rem] h-[26rem] rounded-full bg-accent-teal/[0.08] blur-3xl"
+            />
             <div
               aria-hidden
               className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[30rem] rounded-full bg-primary/[0.05] blur-3xl"
