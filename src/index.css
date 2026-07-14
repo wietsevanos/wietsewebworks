@@ -35,9 +35,9 @@
     --muted: 220 10% 96%;
     --muted-foreground: 220 10% 45%;
     
-    /* Accent - Subtle Orange Tint */
-    --accent: 30 40% 97%;
-    --accent-foreground: 25 95% 38%;
+    /* Accent - Subtle Blue Tint */
+    --accent: 210 40% 97%;
+    --accent-foreground: 210 95% 38%;
     
     /* Dark Sections */
     --dark: 220 20% 14%;
@@ -50,19 +50,19 @@
     /* Borders & Input */
     --border: 220 10% 92%;
     --input: 220 10% 92%;
-    --ring: 25 95% 50%;
+    --ring: 210 95% 50%;
     
-    --radius: 0.375rem;
+    --radius: 0.75rem;
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 220 15% 20%;
-    --sidebar-primary: 25 95% 50%;
+    --sidebar-primary: 210 95% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 30 40% 97%;
-    --sidebar-accent-foreground: 25 95% 38%;
+    --sidebar-accent: 210 40% 97%;
+    --sidebar-accent-foreground: 210 95% 38%;
     --sidebar-border: 220 10% 92%;
-    --sidebar-ring: 25 95% 50%;
+    --sidebar-ring: 210 95% 50%;
   }
 }
 
