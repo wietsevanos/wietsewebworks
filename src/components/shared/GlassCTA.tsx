@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Check, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
+import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
 
 interface GlassCTAProps {
   eyebrow?: string;
@@ -11,95 +12,101 @@ interface GlassCTAProps {
   whatsappLabel?: string;
 }
 
+const benefits = [
+  "Transparante prijzen",
+  "Eén vast aanspreekpunt",
+  "Binnen enkele weken online",
+];
+
 /**
- * Consistent glassmorphism closing CTA used on every page.
- * Uses the same visual language as the original login/hero panel:
- * frosted white surface, rounded corners, subtle glow and blur.
+ * Premium closing section — clean, spacious, studio-grade.
  */
 export const GlassCTA = ({
   eyebrow = "Klaar om te starten?",
-  title = "Vrijblijvend kennismaken over uw nieuwe website",
-  description = "Bel, WhatsApp of mail. U krijgt altijd persoonlijk antwoord van Wietse zelf. Het eerste ontwerp is gratis en zonder verplichtingen.",
-  primaryLabel = "Start uw project",
+  title = "Klaar om online net zo professioneel over te komen als uw bedrijf?",
+  description = "Een gratis eerste ontwerp, een eerlijk gesprek en geen verplichtingen. Zo weet u precies wat u kunt verwachten.",
+  primaryLabel = "Vraag vrijblijvend een offerte aan",
   primaryHref = "/contact",
-  whatsappLabel = "WhatsApp 06 47 87 27 34",
 }: GlassCTAProps) => {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden dark-section">
-      {/* Ambient glow layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/5" />
+    <section className="relative bg-background py-28 md:py-40 overflow-hidden">
+      {/* Ultra-subtle ambient accents */}
       <div
         aria-hidden
-        className="absolute -top-32 -left-24 w-[36rem] h-[36rem] rounded-full bg-primary/30 blur-[120px] opacity-70"
-      />
-      <div
-        aria-hidden
-        className="absolute -bottom-32 -right-24 w-[32rem] h-[32rem] rounded-full bg-primary-glow/25 blur-[120px] opacity-70"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80rem] h-[40rem] rounded-full bg-primary/[0.04] blur-3xl"
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <Reveal>
-          <div className="relative rounded-[2rem] md:rounded-[2.5rem] p-10 md:p-16 border border-white/15 bg-white/[0.06] backdrop-blur-xl shadow-[0_30px_120px_-30px_rgba(0,0,0,0.55)] overflow-hidden group transition-all duration-500 hover:border-white/25 hover:bg-white/[0.08]">
-            {/* Inner sheen */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-b from-white/10 via-transparent to-transparent opacity-80"
-            />
-            {/* Soft glow inside the card */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -top-1/2 left-1/2 -translate-x-1/2 w-[120%] h-[120%] rounded-full bg-primary/10 blur-3xl transition-opacity duration-700 group-hover:opacity-70 opacity-50"
-            />
+          <p className="text-primary font-medium mb-6 text-xs tracking-[0.2em] uppercase">
+            {eyebrow}
+          </p>
+        </Reveal>
 
-            <div className="relative text-center max-w-2xl mx-auto">
-              <Reveal delay={80}>
-                <p className="text-primary-light font-medium mb-4 text-sm tracking-wide uppercase">
-                  {eyebrow}
-                </p>
-              </Reveal>
-              <Reveal delay={160}>
-                <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
-                  {title}
-                </h2>
-              </Reveal>
-              <Reveal delay={240}>
-                <p className="text-white/75 text-lg leading-relaxed mb-10">
-                  {description}
-                </p>
-              </Reveal>
-              <Reveal delay={320}>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <Link
-                    to={primaryHref}
-                    className="btn-primary inline-flex items-center gap-2 group/btn"
-                  >
-                    {primaryLabel}
-                    <ArrowRight
-                      size={18}
-                      className="transition-transform duration-200 group-hover/btn:translate-x-1"
-                    />
-                  </Link>
-                  <a
-                    href="https://wa.me/31647872734"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-outline inline-flex items-center gap-2 group/wa"
-                  >
-                    <MessageCircle
-                      size={18}
-                      className="transition-transform duration-200 group-hover/wa:scale-110"
-                    />
-                    {whatsappLabel}
-                  </a>
-                  <a
-                    href="tel:+31647872734"
-                    className="btn-outline inline-flex items-center gap-2"
-                  >
-                    <Phone size={18} />
-                    Bel direct
-                  </a>
-                </div>
-              </Reveal>
+        <Reveal delay={80}>
+          <h2 className="text-4xl md:text-6xl font-semibold text-foreground leading-[1.1] tracking-tight mb-8 max-w-3xl mx-auto">
+            {title}
+          </h2>
+        </Reveal>
+
+        <Reveal delay={160}>
+          <p className="text-foreground/60 text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-12">
+            {description}
+          </p>
+        </Reveal>
+
+        <Reveal delay={220}>
+          <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-14">
+            {benefits.map((b) => (
+              <li
+                key={b}
+                className="inline-flex items-center gap-2 text-sm md:text-[0.9375rem] text-foreground/80"
+              >
+                <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Check size={12} className="text-primary" strokeWidth={3} />
+                </span>
+                {b}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal delay={300}>
+          <div className="flex flex-col items-center gap-6">
+            <Link
+              to={primaryHref}
+              className="btn-primary inline-flex items-center gap-2 group/btn text-base px-8 py-4"
+            >
+              {primaryLabel}
+              <ArrowRight
+                size={18}
+                className="transition-transform duration-200 group-hover/btn:translate-x-1"
+              />
+            </Link>
+
+            <div className="flex items-center gap-3 text-sm text-foreground/50">
+              <span>of</span>
+              <a
+                href="https://wa.me/31647872734"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-foreground/70 hover:text-primary transition-colors"
+              >
+                <img
+                  src={whatsappLogo.url}
+                  alt=""
+                  className="w-4 h-4 object-contain"
+                />
+                WhatsApp
+              </a>
+              <span className="text-foreground/20">·</span>
+              <a
+                href="tel:+31647872734"
+                className="inline-flex items-center gap-1.5 text-foreground/70 hover:text-primary transition-colors"
+              >
+                <Phone size={14} />
+                Bel direct
+              </a>
             </div>
           </div>
         </Reveal>
