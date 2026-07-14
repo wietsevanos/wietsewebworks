@@ -109,13 +109,13 @@ export const Navbar = () => {
                   Contact
                 </Link>
                 <a
-                  href="https://instagram.com/wietsevanos"
+                  href="https://wa.me/31647872734"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram"
+                  aria-label="WhatsApp 06 47 87 27 34"
                   className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white"
                 >
-                  <Instagram size={18} />
+                  <MessageCircle size={18} />
                 </a>
               </div>
             </div>
