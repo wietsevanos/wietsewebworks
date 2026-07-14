@@ -95,7 +95,7 @@ const Vision = () => {
                   verhalen. Zo weet u precies waar u aan toe bent.
                 </p>
                 <p>
-                  Gemiddeld staat uw nieuwe website binnen 2 tot 4 weken online,
+                  Gemiddeld staat uw nieuwe website binnen 1 tot 2 weken online,
                   afhankelijk van de omvang en uw eigen input.
                 </p>
               </div>
