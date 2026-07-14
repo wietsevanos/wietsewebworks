@@ -108,6 +108,7 @@ const checklist = [
   "Professionele uitstraling",
   "Hulp bij teksten en structuur",
   "Oplevering binnen enkele weken",
+  "Cookiemelding volgens AVG",
 ];
 
 const timeline = [
