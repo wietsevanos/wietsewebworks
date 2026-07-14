@@ -101,6 +101,8 @@ const Hosting = () => {
             </p>
           </div>
         </div>
+      </section>
+
       <GlassCTA
         eyebrow="Zorgeloos in de lucht"
         title="Start vandaag nog met professionele hosting"
