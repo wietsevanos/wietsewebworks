@@ -605,54 +605,24 @@ const Prijzen = () => {
                     )
                   )}
                 </div>
-                <p className="text-muted-foreground">
-                  Perfect voor ondernemers die simpelweg professioneel willen
-                  mailen zonder onnodige extra functies.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem
-              value="business-basic"
-              className="bg-white border border-border/60 rounded-2xl px-6 data-[state=open]:shadow-md transition-shadow"
-            >
-              <AccordionTrigger className="hover:no-underline py-6">
-                <div className="flex items-center gap-4 text-left">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Cloud className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-primary font-medium mb-1">
-                      Wilt u méér dan alleen e-mail?
-                    </p>
-                    <p className="text-lg font-semibold text-foreground">
-                      Microsoft 365 Business Basic
-                    </p>
-                  </div>
+                <div className="mt-6 pt-6 border-t border-border/60 space-y-3 text-muted-foreground">
+                  <p>
+                    Ideaal voor ondernemers die gebruikmaken van Microsoft
+                    Outlook en behoefte hebben aan betrouwbare synchronisatie
+                    tussen computer, telefoon en tablet.
+                  </p>
+                  <p>
+                    In tegenstelling tot een standaard IMAP-mailbox worden bij
+                    Microsoft 365 Mail Only niet alleen uw e-mails, maar ook uw
+                    agenda en contactpersonen automatisch gesynchroniseerd op al
+                    uw apparaten.
+                  </p>
+                  <p>
+                    Perfect wanneer een eenvoudige IMAP-mailbox niet meer
+                    voldoende is of wanneer u al werkt met Outlook en alles
+                    centraal wilt beheren.
+                  </p>
                 </div>
-              </AccordionTrigger>
-              <AccordionContent className="pb-6 text-[0.9375rem] text-foreground/85 leading-relaxed">
-                <p className="mb-4">Naast e-mail ontvangt u ook:</p>
-                <ul className="space-y-3 mb-4">
-                  {[
-                    { i: Cloud, t: "OneDrive opslag" },
-                    { i: Users, t: "Microsoft Teams" },
-                    { i: FileText, t: "Online Office apps" },
-                    { i: Calendar, t: "Geavanceerde agenda functies" },
-                    { i: FolderOpen, t: "Bestanden delen met collega's" },
-                  ].map(({ i: Icon, t }) => (
-                    <li key={t} className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-4 h-4 text-primary" />
-                      </div>
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-muted-foreground">
-                  Ideaal voor bedrijven met meerdere medewerkers of
-                  samenwerking op afstand.
-                </p>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
