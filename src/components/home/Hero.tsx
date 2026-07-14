@@ -8,9 +8,9 @@ export const Hero = () => {
       <OrangeWaveBackground />
 
       <div className="max-w-[92rem] mx-auto px-6 w-full relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-stretch">
           {/* Text column */}
-          <div className="lg:col-span-5 max-w-2xl">
+          <div className="lg:col-span-5 max-w-2xl flex flex-col justify-center">
             <p className="text-white/85 font-medium mb-5 text-sm tracking-wide uppercase animate-fade-up">
               Webbureau uit Haarlem
             </p>
@@ -40,7 +40,7 @@ export const Hero = () => {
 
           {/* Mockup column */}
           <div
-            className="hidden lg:block lg:col-span-7 relative animate-fade-up lg:-mr-6 xl:-mr-12"
+            className="hidden lg:flex lg:col-span-7 relative animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
             <HeroMockup />
@@ -48,12 +48,13 @@ export const Hero = () => {
         </div>
       </div>
     </section>
+
   );
 };
 
 const HeroMockup = () => {
   return (
-    <div className="relative group [perspective:1600px]">
+    <div className="relative group [perspective:1600px] w-full lg:h-full flex">
       {/* Floating offset accent */}
       <div
         aria-hidden
@@ -61,7 +62,8 @@ const HeroMockup = () => {
       />
 
       {/* Browser window */}
-      <div className="relative rounded-2xl overflow-hidden bg-white ring-1 ring-white/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out group-hover:-translate-y-1.5 group-hover:[transform:translateY(-6px)_rotateX(1.2deg)]">
+      <div className="relative w-full flex flex-col rounded-2xl overflow-hidden bg-white ring-1 ring-white/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out group-hover:-translate-y-1.5 group-hover:[transform:translateY(-6px)_rotateX(1.2deg)]">
+
         {/* Chrome bar */}
         <div className="flex items-center gap-3 px-4 py-2.5 bg-secondary border-b border-black/5">
           <div className="flex gap-1.5">
