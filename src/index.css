@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TCF Orange Design System - Premium Corporate Finance Advisory */
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 20%;
+    
+    /* Primary Orange Palette - Rich Warm Tones */
+    --primary: 25 95% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-deep: 20 90% 38%;
+    --primary-glow: 30 100% 55%;
+    --primary-light: 35 100% 65%;
+    
+    /* Card & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
+    
+    /* Secondary - Very Soft Grey */
+    --secondary: 30 10% 97%;
+    --secondary-foreground: 220 15% 20%;
+    
+    /* Muted */
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 45%;
+    
+    /* Accent - Subtle Orange Tint */
+    --accent: 30 40% 97%;
+    --accent-foreground: 25 95% 38%;
+    
+    /* Dark Sections */
+    --dark: 220 20% 14%;
+    --dark-foreground: 0 0% 98%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders & Input */
+    --border: 220 10% 92%;
+    --input: 220 10% 92%;
+    --ring: 25 95% 50%;
+    
+    --radius: 0.375rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 15% 20%;
+    --sidebar-primary: 25 95% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 40% 97%;
+    --sidebar-accent-foreground: 25 95% 38%;
+    --sidebar-border: 220 10% 92%;
+    --sidebar-ring: 25 95% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Clean Navigation Link */
+  .nav-link {
+    @apply relative text-foreground/70 font-medium transition-colors duration-200 hover:text-foreground;
+    font-size: 0.9375rem;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-full h-0.5 bg-primary scale-x-0 origin-left transition-transform duration-200;
+  }
+  
+  .nav-link:hover::after {
+    @apply scale-x-100;
+  }
+  
+  .nav-link.active {
+    @apply text-foreground;
+  }
+  
+  .nav-link.active::after {
+    @apply scale-x-100;
+  }
+  
+  /* Premium Service Card */
+  .service-card {
+    @apply bg-card border border-border/60 p-8 transition-all duration-300;
+  }
+  
+  .service-card:hover {
+    @apply border-primary/20;
+    box-shadow: 0 8px 40px -12px hsl(25, 95%, 50%, 0.15);
+  }
+  
+  /* Dark Section */
+  .dark-section {
+    @apply bg-dark text-dark-foreground;
+  }
+  
+  /* Premium Buttons */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-7 py-3.5 font-medium transition-all duration-200;
+    font-size: 0.9375rem;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-primary-deep;
+    transform: translateY(-1px);
+  }
+  
+  .btn-outline {
+    @apply border border-white/30 text-white px-7 py-3.5 font-medium transition-all duration-200 hover:bg-white/10;
+    font-size: 0.9375rem;
+  }
+  
+  .btn-outline-dark {
+    @apply border border-border text-foreground px-7 py-3.5 font-medium transition-all duration-200 hover:border-primary hover:text-primary;
+    font-size: 0.9375rem;
+  }
+  
+  .btn-ghost {
+    @apply text-foreground px-6 py-3 font-medium transition-colors duration-200 hover:text-primary;
+    font-size: 0.9375rem;
+  }
+}
+
+@layer utilities {
+  .text-gradient-orange {
+    background: linear-gradient(135deg, hsl(20, 90%, 38%) 0%, hsl(30, 100%, 55%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
