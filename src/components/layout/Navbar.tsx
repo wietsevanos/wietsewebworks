@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Instagram } from "lucide-react";
+import logo from "@/assets/wietse-webworks-logo.png.asset.json";
 
 const navItems = [
   { label: "Diensten", href: "/diensten" },
@@ -18,12 +19,12 @@ export const Navbar = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-primary" />
-            <span className="text-xl font-semibold tracking-tight">
-              <span className="text-foreground">Wietse</span>
-              <span className="text-primary ml-1.5">Webworks</span>
-            </span>
+          <Link to="/" className="flex items-center" aria-label="Wietse Webworks, home">
+            <img
+              src={logo.url}
+              alt="Wietse Webworks"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
