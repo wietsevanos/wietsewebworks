@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { GlassCTA } from "@/components/shared/GlassCTA";
+import { Reveal } from "@/components/shared/Reveal";
 
 const services = [
   {
@@ -91,59 +91,45 @@ const Services = () => {
       <section className="py-24 md:py-32 bg-secondary">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="group bg-white shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col h-full overflow-hidden rounded-xl"
-              >
-                <div className="h-1 bg-primary w-full" />
-                <div className="p-8 flex flex-col flex-1">
-                  <p className="text-primary font-medium text-sm tracking-wide uppercase mb-2">
-                    {service.subtitle}
-                  </p>
-                  <h2 className="text-xl font-semibold text-foreground mb-4 leading-tight">
-                    {service.title}
-                  </h2>
-                  <p className="text-muted-foreground text-[0.9375rem] leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-                  <div className="space-y-3 mb-2 flex-1">
-                    {service.features.map((feature) => (
-                      <div
-                        key={feature}
-                        className="flex items-start gap-3 text-muted-foreground text-[0.9375rem]"
-                      >
-                        <span className="w-2 h-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                        {feature}
-                      </div>
-                    ))}
+            {services.map((service, i) => (
+              <Reveal key={service.title} delay={i * 70}>
+                <div className="group bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full overflow-hidden rounded-xl">
+                  <div className="h-1 bg-primary w-full transition-all duration-300 group-hover:h-1.5" />
+                  <div className="p-8 flex flex-col flex-1">
+                    <p className="text-primary font-medium text-sm tracking-wide uppercase mb-2">
+                      {service.subtitle}
+                    </p>
+                    <h2 className="text-xl font-semibold text-foreground mb-4 leading-tight">
+                      {service.title}
+                    </h2>
+                    <p className="text-muted-foreground text-[0.9375rem] leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+                    <div className="space-y-3 mb-2 flex-1">
+                      {service.features.map((feature) => (
+                        <div
+                          key={feature}
+                          className="flex items-start gap-3 text-muted-foreground text-[0.9375rem]"
+                        >
+                          <span className="w-2 h-2 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 md:py-32 dark-section relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/5" />
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
-              Benieuwd wat wij voor uw bedrijf kunnen doen?
-            </h2>
-            <p className="text-white/70 text-lg leading-relaxed mb-10">
-              Elke onderneming is anders. Laten we vrijblijvend kennismaken en
-              bespreken hoe uw nieuwe website eruit kan zien.
-            </p>
-            <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
-              Plan een kennismaking
-              <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <GlassCTA
+        eyebrow="Benieuwd naar de mogelijkheden?"
+        title="Benieuwd wat wij voor uw bedrijf kunnen doen?"
+        description="Elke onderneming is anders. Laten we vrijblijvend kennismaken en bespreken hoe uw nieuwe website eruit kan zien."
+        primaryLabel="Plan een kennismaking"
+      />
     </Layout>
   );
 };
