@@ -174,7 +174,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       {/* Offset accent shadow */}
       <div
         aria-hidden
-        className="absolute inset-0 rounded-2xl bg-primary translate-x-2 translate-y-2 transition-all duration-500 ease-out group-hover:translate-x-4 group-hover:translate-y-4 group-hover:bg-primary-deep"
+        className="absolute inset-0 rounded-2xl bg-primary translate-x-1 translate-y-1 transition-all duration-500 ease-out group-hover:translate-x-2 group-hover:translate-y-2 group-hover:bg-primary-deep"
       />
 
       {/* Browser mockup */}
