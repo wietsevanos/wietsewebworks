@@ -15,13 +15,14 @@ export const Hero = () => {
               Webbureau uit Haarlem
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-white leading-[1.15] mb-8 animate-fade-up">
-              Professionele websites voor lokale ondernemers.
+              Websites die uw bedrijf online net zo sterk maken als in het echt.
             </h1>
             <p
               className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-xl animate-fade-up"
               style={{ animationDelay: "0.1s" }}
             >
-              Persoonlijk contact, duidelijke prijzen en een website die werkt.
+              Wietse Webworks ontwerpt en bouwt professionele websites voor lokale
+              ondernemers. Meer vertrouwen, meer aanvragen en beter gevonden worden, zonder ingewikkelde techniek en met persoonlijk contact.
             </p>
             <div
               className="flex flex-col sm:flex-row sm:flex-wrap gap-4 animate-fade-up"
@@ -39,7 +40,7 @@ export const Hero = () => {
 
           {/* Mockup column */}
           <div
-            className="lg:col-span-7 relative animate-fade-up lg:-mr-6 xl:-mr-12"
+            className="hidden lg:block lg:col-span-7 relative animate-fade-up lg:-mr-6 xl:-mr-12"
             style={{ animationDelay: "0.3s" }}
           >
             <HeroMockup />
