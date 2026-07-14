@@ -2,7 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
+import { useRef, type MouseEvent } from "react";
 
 import jayworxx from "@/assets/portfolio-jayworxx.jpg.asset.json";
 import tcforange from "@/assets/portfolio-tcforange.jpg.asset.json";
@@ -153,6 +154,145 @@ const projects: Project[] = [
   },
 ];
 
+const ProjectCard = ({ project }: { project: Project }) => {
+  const ref = useRef<HTMLAnchorElement | null>(null);
+
+  const handleMove = (e: MouseEvent<HTMLAnchorElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 6;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -6;
+    el.style.setProperty("--rx", `${y}deg`);
+    el.style.setProperty("--ry", `${x}deg`);
+  };
+
+  const handleLeave = () => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.setProperty("--rx", `0deg`);
+    el.style.setProperty("--ry", `0deg`);
+  };
+
+  return (
+    <a
+      ref={ref}
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseMove={handleMove}
+      onMouseLeave={handleLeave}
+      className="group block [transform:perspective(1200px)_rotateX(var(--rx,0))_rotateY(var(--ry,0))] transition-transform duration-300 ease-out will-change-transform"
+    >
+      <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-secondary shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 group-hover:shadow-[0_25px_60px_-20px_rgba(0,0,0,0.25)] group-hover:-translate-y-1 ring-1 ring-black/[0.04]">
+        <img
+          src={project.image}
+          alt={`Website van ${project.name}`}
+          loading="lazy"
+          className="w-full h-full object-cover object-top transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-foreground/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 shadow-lg">
+          <ArrowUpRight size={18} className="text-foreground" />
+        </div>
+      </div>
+
+      <div className="pt-5">
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          {project.tags.map((t) => (
+            <span
+              key={t}
+              className="text-[0.7rem] font-medium tracking-wider uppercase text-primary"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+        <h3 className="text-xl font-semibold text-foreground mb-1.5 transition-colors duration-200 group-hover:text-primary">
+          {project.name}
+        </h3>
+        <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">
+          {project.short}
+        </p>
+      </div>
+    </a>
+  );
+};
+
+const MarqueeRow = ({
+  items,
+  direction,
+  accent = false,
+}: {
+  items: string[];
+  direction: "left" | "right";
+  accent?: boolean;
+}) => {
+  const doubled = [...items, ...items];
+  return (
+    <div
+      className="group relative overflow-hidden"
+      style={{
+        maskImage:
+          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+      }}
+    >
+      <div
+        className={`flex gap-4 w-max ${
+          direction === "left" ? "animate-marquee-left" : "animate-marquee-right"
+        } group-hover:[animation-play-state:paused]`}
+      >
+        {doubled.map((item, i) => (
+          <div
+            key={`${item}-${i}`}
+            className={`shrink-0 px-7 py-4 rounded-full border backdrop-blur-sm text-base md:text-lg font-medium tracking-tight whitespace-nowrap transition-colors ${
+              accent
+                ? "border-primary/40 bg-primary/10 text-white hover:bg-primary/20"
+                : "border-white/15 bg-white/[0.04] text-white/85 hover:bg-white/[0.08]"
+            }`}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const TiltCard = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  const handleMove = (e: MouseEvent<HTMLDivElement>) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    el.style.setProperty("--mx", `${x}%`);
+    el.style.setProperty("--my", `${y}%`);
+  };
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMove}
+      className="relative h-full p-8 md:p-10 rounded-2xl border border-white/12 bg-white/[0.04] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-white/25 hover:bg-white/[0.07] hover:-translate-y-1 group/tilt"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-0 group-hover/tilt:opacity-100 transition-opacity duration-500"
+        style={{
+          background:
+            "radial-gradient(500px circle at var(--mx,50%) var(--my,50%), hsl(var(--primary) / 0.25), transparent 45%)",
+        }}
+      />
+      <div className="relative">{children}</div>
+    </div>
+  );
+};
+
 const Werk = () => {
   return (
     <Layout>
@@ -190,191 +330,117 @@ const Werk = () => {
       {/* Portfolio Grid */}
       <section className="pb-24 md:pb-32 bg-background">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((p, i) => (
               <Reveal key={p.name} delay={(i % 3) * 80}>
-                <a
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block"
-                >
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-secondary shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1">
-                    <img
-                      src={p.image}
-                      alt={`Website van ${p.name}`}
-                      loading="lazy"
-                      className="w-full h-full object-cover object-top transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                      <ArrowUpRight size={18} className="text-foreground" />
-                    </div>
-                  </div>
-
-                  <div className="pt-5">
-                    <div className="flex flex-wrap items-center gap-2 mb-2">
-                      {p.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="text-[0.7rem] font-medium tracking-wider uppercase text-primary"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2 transition-colors duration-200 group-hover:text-primary">
-                      {p.name}
-                    </h3>
-                    <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">
-                      {p.short}
-                    </p>
-                  </div>
-                </a>
+                <ProjectCard project={p} />
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Case studies / verhaal achter */}
-      <section className="py-24 md:py-32 bg-secondary">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl mb-16">
+      {/* Premium moving marquee section */}
+      <section className="relative py-24 md:py-32 dark-section overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/5" />
+        <div
+          aria-hidden
+          className="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] rounded-full bg-primary/15 blur-[140px] opacity-70"
+        />
+
+        <div className="relative z-10 max-w-6xl mx-auto px-6 mb-16">
+          <div className="max-w-3xl mx-auto text-center">
             <Reveal>
-              <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">
-                Het verhaal achter het werk
-              </p>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm mb-6">
+                <Sparkles size={14} className="text-primary-light" />
+                <span className="text-white/80 text-xs tracking-wider uppercase font-medium">
+                  Werk in beeld
+                </span>
+              </div>
             </Reveal>
             <Reveal delay={80}>
-              <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
-                Niet zomaar een website, maar een online visitekaartje dat werkt
+              <h2 className="text-3xl md:text-5xl font-semibold text-white leading-tight mb-6">
+                Van lokale ondernemer tot internationaal merk
               </h2>
             </Reveal>
-          </div>
-
-          <div className="space-y-16 md:space-y-24">
-            {projects.slice(0, 4).map((p, i) => (
-              <Reveal key={p.name} delay={i * 60}>
-                <div
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${
-                    i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-                  }`}
-                >
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block relative aspect-[4/3] rounded-2xl overflow-hidden bg-background shadow-md"
-                  >
-                    <img
-                      src={p.image}
-                      alt={`Website van ${p.name}`}
-                      loading="lazy"
-                      className="w-full h-full object-cover object-top transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
-                    />
-                  </a>
-                  <div>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {p.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="text-[0.7rem] font-medium tracking-wider uppercase text-primary"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                    <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-4 leading-tight">
-                      {p.name}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      {p.description}
-                    </p>
-                    <ul className="space-y-3 mb-6">
-                      {p.highlights.map((h) => (
-                        <li
-                          key={h}
-                          className="flex items-start gap-3 text-foreground/85 text-[0.9375rem]"
-                        >
-                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                          {h}
-                        </li>
-                      ))}
-                    </ul>
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
-                    >
-                      Bekijk de website
-                      <ArrowUpRight size={18} />
-                    </a>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+            <Reveal delay={160}>
+              <p className="text-white/70 text-lg leading-relaxed">
+                Elke sector heeft zijn eigen taal, sfeer en publiek. Wij vertalen
+                die identiteit naar een website die past, opvalt en verkoopt.
+              </p>
+            </Reveal>
           </div>
         </div>
-      </section>
 
-      {/* Aanpak */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <Reveal>
-              <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">
-                Onze werkwijze
-              </p>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
-                Zo pakken wij elk project aan
-              </h2>
-            </Reveal>
-          </div>
+        {/* Marquee rows */}
+        <div className="relative z-10 space-y-6">
+          <MarqueeRow
+            items={[
+              "Horeca",
+              "Beauty & Hair",
+              "Retail",
+              "Consultancy",
+              "Zorg voor dieren",
+              "Finance",
+              "Ambacht",
+              "Lokaal ondernemerschap",
+            ]}
+            direction="left"
+          />
+          <MarqueeRow
+            items={[
+              "Roger & Storm",
+              "TCF Orange",
+              "Jayworxx",
+              "Grand Café Vreeburg",
+              "De Houten Hond",
+              "Picobello",
+              "Telefoonwereld Haarlem",
+              "Elswout",
+            ]}
+            direction="right"
+            accent
+          />
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Interactive result cards */}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                step: "01",
-                title: "Kennismaken",
-                text: "We bespreken uw bedrijf, uw doelen en waar u online naartoe wilt.",
+                value: "48u",
+                title: "Eerste ontwerp",
+                text: "Binnen twee werkdagen ligt er al een concept, gratis en vrijblijvend.",
               },
               {
-                step: "02",
-                title: "Ontwerpen",
-                text: "U krijgt gratis en vrijblijvend een eerste ontwerp op maat.",
+                value: "3x",
+                title: "Meer aanvragen",
+                text: "Klanten zien gemiddeld een duidelijke stijging in contactaanvragen na livegang.",
               },
               {
-                step: "03",
-                title: "Bouwen",
-                text: "Wij bouwen uw website snel, veilig en volledig responsive.",
+                value: "100%",
+                title: "Persoonlijk",
+                text: "Altijd dezelfde contactpersoon, van eerste gesprek tot jaren erna.",
               },
-              {
-                step: "04",
-                title: "Live en onderhoud",
-                text: "Na livegang blijven wij bereikbaar voor updates en support.",
-              },
-            ].map((s, i) => (
-              <Reveal key={s.step} delay={i * 80}>
-                <div className="service-card h-full group hover:-translate-y-1">
-                  <div className="text-primary font-semibold text-sm tracking-wider mb-4">
-                    {s.step}
+            ].map((r, i) => (
+              <Reveal key={r.title} delay={i * 100}>
+                <TiltCard>
+                  <div className="text-5xl md:text-6xl font-semibold text-white mb-4 tracking-tight">
+                    {r.value}
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">
-                    {s.title}
+                  <h3 className="text-white text-lg font-semibold mb-2">
+                    {r.title}
                   </h3>
-                  <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">
-                    {s.text}
+                  <p className="text-white/65 text-[0.9375rem] leading-relaxed">
+                    {r.text}
                   </p>
-                </div>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
+
 
       <GlassCTA
         eyebrow="Uw bedrijf hierbij?"
