@@ -79,13 +79,13 @@ const About = () => {
                   <ArrowRight size={18} />
                 </Link>
                 <a
-                  href="https://instagram.com/wietsevanos"
+                  href="https://wa.me/31647872734"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline-dark inline-flex items-center gap-2"
                 >
-                  <Instagram size={18} />
-                  @wietsevanos
+                  <MessageCircle size={18} />
+                  WhatsApp
                 </a>
               </div>
             </div>
@@ -106,16 +106,18 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {waarden.map((w) => (
-              <div key={w.title} className="bg-white rounded-xl p-8 shadow-sm">
-                <div className="h-1 bg-primary w-12 mb-6 rounded-full" />
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  {w.title}
-                </h3>
-                <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">
-                  {w.text}
-                </p>
-              </div>
+            {waarden.map((w, i) => (
+              <Reveal key={w.title} delay={i * 80}>
+                <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
+                  <div className="h-1 bg-primary w-12 mb-6 rounded-full transition-all duration-300 hover:w-20" />
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    {w.title}
+                  </h3>
+                  <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">
+                    {w.text}
+                  </p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -143,34 +145,14 @@ const About = () => {
 
       {/* Contact strip */}
       <section className="py-20 dark-section">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <a
-              href="tel:+31647872734"
-              className="flex flex-col items-center gap-3 text-white/85 hover:text-primary transition-colors"
-            >
-              <Phone className="w-6 h-6 text-primary" />
-              <span className="text-[0.9375rem]">06 47 87 27 34</span>
-            </a>
-            <a
-              href="mailto:wietsevanos@gmail.com"
-              className="flex flex-col items-center gap-3 text-white/85 hover:text-primary transition-colors"
-            >
-              <Mail className="w-6 h-6 text-primary" />
-              <span className="text-[0.9375rem]">wietsevanos@gmail.com</span>
-            </a>
-            <a
-              href="https://instagram.com/wietsevanos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-3 text-white/85 hover:text-primary transition-colors"
-            >
-              <Instagram className="w-6 h-6 text-primary" />
-              <span className="text-[0.9375rem]">@wietsevanos</span>
-            </a>
-          </div>
-        </div>
       </section>
+
+      <GlassCTA
+        eyebrow="Even kennismaken?"
+        title="Laten we vrijblijvend praten over uw website"
+        description="Bel, WhatsApp of mail. U krijgt altijd persoonlijk antwoord van mij, meestal binnen één werkdag."
+        primaryLabel="Neem contact op"
+      />
     </Layout>
   );
 };
