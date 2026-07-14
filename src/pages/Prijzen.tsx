@@ -32,6 +32,8 @@ import {
   Calendar,
   FolderOpen,
   Info,
+  Sparkles,
+  UserCheck,
 } from "lucide-react";
 
 /* -------------------------- Count-up hook -------------------------- */
@@ -108,31 +110,9 @@ const checklist = [
   "Professionele uitstraling",
   "Hulp bij teksten en structuur",
   "Oplevering binnen enkele weken",
+  "Cookiemelding volgens AVG",
 ];
 
-const timeline = [
-  {
-    step: "Stap 1",
-    icon: "🎨",
-    text: "Ik ontwerp en bouw uw website.",
-  },
-  {
-    step: "Stap 2",
-    icon: "🌍",
-    text: "De website wordt online geplaatst op snelle Nederlandse servers.",
-  },
-  {
-    step: "Stap 3",
-    icon: "🔒",
-    text: "Ik zorg ervoor dat alles veilig, snel en up-to-date blijft.",
-  },
-  {
-    step: "Stap 4",
-    icon: "📞",
-    text:
-      "Heeft u vragen of wilt u iets wijzigen? Dan kunt u gewoon contact opnemen.",
-  },
-];
 
 const hostingIncludes = [
   { icon: Server, label: "Nederlandse hosting" },
@@ -179,7 +159,7 @@ const faqs = [
 const Prijzen = () => {
   const { value: price, ref: priceRef } = useCountUp(495);
   const [billing, setBilling] = useState<"maand" | "jaar">("maand");
-  const hostingPrice = billing === "maand" ? "37,95" : "417,45";
+  const hostingPrice = billing === "maand" ? "29,95" : "329,45";
   const hostingSuffix = billing === "maand" ? "per maand" : "per jaar";
 
   return (
@@ -308,82 +288,77 @@ const Prijzen = () => {
           </ul>
 
           <Reveal delay={300}>
-            <div className="mt-14 bg-foreground text-white rounded-2xl p-10 text-center">
-              <p className="text-white/70 text-sm uppercase tracking-wide mb-3">
-                En misschien nog wel het belangrijkste
-              </p>
-              <h3 className="text-2xl md:text-3xl font-semibold mb-6">
-                Eén vast aanspreekpunt
-              </h3>
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-white/80 mb-6">
-                <span>Geen ticketsystemen.</span>
-                <span>Geen helpdesks.</span>
-                <span>Geen verschillende afdelingen.</span>
+            <div className="mt-16 relative overflow-hidden bg-foreground text-white rounded-3xl p-10 md:p-14 text-center">
+              {/* Subtle animated gradient glow */}
+              <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-3xl" />
+
+              <div className="relative">
+                <div className="inline-flex items-center gap-2 text-white/60 text-xs uppercase tracking-[0.2em] mb-5">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  En misschien nog wel het belangrijkste
+                </div>
+
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/15 border border-primary/30 mb-6">
+                  <UserCheck className="w-7 h-7 text-primary" />
+                </div>
+
+                <h3 className="text-3xl md:text-4xl font-semibold mb-4">
+                  Eén vast aanspreekpunt
+                </h3>
+                <p className="text-white/70 max-w-md mx-auto mb-10">
+                  Van eerste schets tot jarenlang onderhoud — u spreekt altijd
+                  dezelfde persoon.
+                </p>
+
+                {/* Animated "route" bar */}
+                <div className="max-w-lg mx-auto mb-8">
+                  <div className="relative h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div
+                      className="absolute inset-y-0 left-0 bg-primary rounded-full"
+                      style={{
+                        width: "100%",
+                        animation: "loadBar 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+                        transformOrigin: "left",
+                      }}
+                    />
+                  </div>
+                  <div className="mt-3 flex justify-between text-xs text-white/60">
+                    <span>U</span>
+                    <span className="text-white/40">→</span>
+                    <span className="text-primary font-medium">Wietse</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-3 mb-6">
+                  {["Geen ticketsystemen", "Geen helpdesks", "Geen afdelingen"].map(
+                    (t) => (
+                      <span
+                        key={t}
+                        className="text-sm text-white/80 bg-white/5 border border-white/10 rounded-full px-4 py-1.5"
+                      >
+                        {t}
+                      </span>
+                    )
+                  )}
+                </div>
+
+                <p className="text-white/90 text-lg">
+                  Gewoon rechtstreeks contact met mij.
+                </p>
               </div>
-              <p className="text-white/90">
-                Gewoon rechtstreeks contact met mij.
-              </p>
+
+              <style>{`
+                @keyframes loadBar {
+                  from { transform: scaleX(0); }
+                  to { transform: scaleX(1); }
+                }
+              `}</style>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Tijdlijn hosting */}
-      <section className="py-24 md:py-32 bg-secondary">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
-              Werkwijze
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
-              Hoe werkt hosting en onderhoud?
-            </h2>
-          </div>
 
-          <div className="relative">
-            <div className="absolute left-6 top-2 bottom-2 w-px bg-border md:left-1/2 md:-translate-x-1/2" />
-            <div className="space-y-10">
-              {timeline.map((t, i) => (
-                <Reveal key={t.step} delay={i * 100}>
-                  <div className="relative pl-16 md:pl-0 md:grid md:grid-cols-2 md:gap-8 md:items-center">
-                    <div
-                      className={`absolute left-0 top-2 md:static ${
-                        i % 2 === 0 ? "md:text-right md:pr-10" : "md:col-start-2 md:pl-10"
-                      }`}
-                    >
-                      <div className="hidden md:block">
-                        <p className="text-primary text-sm font-medium uppercase tracking-wide">
-                          {t.step}
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      className={`bg-white rounded-2xl p-6 border border-border/60 shadow-sm ${
-                        i % 2 === 0 ? "md:col-start-2" : "md:col-start-1 md:row-start-1"
-                      }`}
-                    >
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-2xl">
-                          {t.icon}
-                        </div>
-                        <div>
-                          <p className="text-primary text-xs font-medium uppercase tracking-wide mb-1 md:hidden">
-                            {t.step}
-                          </p>
-                          <p className="text-foreground leading-relaxed">
-                            {t.text}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="absolute left-4 top-6 w-4 h-4 rounded-full bg-primary border-4 border-secondary md:left-1/2 md:-translate-x-1/2" />
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Hosting kaart met toggle */}
       <section className="py-24 md:py-32 bg-background">
@@ -435,9 +410,9 @@ const Prijzen = () => {
                 </div>
                 <p className="text-muted-foreground mt-2">{hostingSuffix}</p>
                 {billing === "jaar" && (
-                  <p className="mt-4 inline-block bg-primary/10 text-primary text-sm font-medium px-4 py-2 rounded-full animate-fade-in">
-                    🎁 Bij jaarlijkse betaling ontvangt u automatisch één maand
-                    gratis
+                  <p className="mt-4 inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-4 py-2 rounded-full animate-fade-in">
+                    <Sparkles className="w-4 h-4" />
+                    Bij jaarlijkse betaling ontvangt u automatisch één maand gratis
                   </p>
                 )}
               </div>
