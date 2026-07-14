@@ -410,9 +410,9 @@ const Prijzen = () => {
                 </div>
                 <p className="text-muted-foreground mt-2">{hostingSuffix}</p>
                 {billing === "jaar" && (
-                  <p className="mt-4 inline-block bg-primary/10 text-primary text-sm font-medium px-4 py-2 rounded-full animate-fade-in">
-                    🎁 Bij jaarlijkse betaling ontvangt u automatisch één maand
-                    gratis
+                  <p className="mt-4 inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-4 py-2 rounded-full animate-fade-in">
+                    <Sparkles className="w-4 h-4" />
+                    Bij jaarlijkse betaling ontvangt u automatisch één maand gratis
                   </p>
                 )}
               </div>
