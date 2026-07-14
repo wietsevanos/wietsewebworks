@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Instagram, Mail, Phone } from "lucide-react";
 import logo from "@/assets/wietse-webworks-logo.png.asset.json";
+import { WhatsAppLink, WhatsAppIcon } from "@/components/shared/WhatsAppLink";
 
 const diensten = [
   { label: "Webdesign", href: "/diensten" },
@@ -45,28 +46,39 @@ export const Footer = () => {
               transparante prijzen en alles onder één dak.
             </p>
             <div className="flex items-center gap-3 mt-7">
+              <WhatsAppLink
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg shadow-emerald-900/30"
+                ariaLabel="WhatsApp"
+              >
+                <span
+                  className="w-full h-full rounded-full flex items-center justify-center"
+                  style={{ background: "linear-gradient(135deg, #25D366 0%, #128C7E 100%)" }}
+                >
+                  <WhatsAppIcon size={18} />
+                </span>
+              </WhatsAppLink>
+              <a
+                href="tel:+31647872734"
+                aria-label="Telefoon"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-all duration-300 hover:scale-110"
+              >
+                <Phone size={18} />
+              </a>
+              <a
+                href="mailto:wietsevanos@gmail.com"
+                aria-label="Email"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-all duration-300 hover:scale-110"
+              >
+                <Mail size={18} />
+              </a>
               <a
                 href="https://instagram.com/wietsevanos"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-deep transition-colors"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-all duration-300 hover:scale-110"
               >
                 <Instagram size={18} />
-              </a>
-              <a
-                href="mailto:wietsevanos@gmail.com"
-                aria-label="Email"
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-colors"
-              >
-                <Mail size={18} />
-              </a>
-              <a
-                href="tel:+31647872734"
-                aria-label="Telefoon"
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-colors"
-              >
-                <Phone size={18} />
               </a>
             </div>
           </div>
