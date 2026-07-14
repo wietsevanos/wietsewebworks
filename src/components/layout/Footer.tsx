@@ -151,28 +151,36 @@ export const Footer = () => {
               >
                 @wietsevanos
               </a>
-              <p className="pt-2 text-xs text-white/50">
-                Haarlem, Bloemendaal, Heemstede en heel Nederland
+              <p className="pt-2 text-xs text-white/50 leading-relaxed">
+                Bloemendaalseweg 315, 2051 GH Overveen
+                <br />
+                Werkzaam in heel Nederland
               </p>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-16 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/50">
-            © {new Date().getFullYear()} Wietse Webworks. Alle rechten voorbehouden. KvK 99105578.
+        <div className="border-t border-white/10 mt-16 pt-8 flex flex-col items-center gap-4">
+          <p className="text-sm text-white/60 tracking-wide text-center">
+            KvK 99105578 &middot; Vrijgesteld van btw (KOR)
           </p>
-          <div className="flex items-center gap-6">
-            {juridisch.map((j) => (
-              <Link
-                key={j.href}
-                to={j.href}
-                className="text-sm text-white/60 hover:text-white transition-colors"
-              >
-                {j.label}
-              </Link>
-            ))}
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <p className="text-sm text-white/45">
+              © {new Date().getFullYear()} Wietse Webworks. Alle rechten voorbehouden.
+            </p>
+            <span className="hidden sm:inline text-white/20">·</span>
+            <div className="flex items-center gap-6">
+              {juridisch.map((j) => (
+                <Link
+                  key={j.href}
+                  to={j.href}
+                  className="text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  {j.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
