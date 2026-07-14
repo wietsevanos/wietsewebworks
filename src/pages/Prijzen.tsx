@@ -155,6 +155,53 @@ const faqs = [
   },
 ];
 
+/* -------------------------- Hosting include item -------------------------- */
+type HostingItem = {
+  icon: typeof Server;
+  label: string;
+  info?: string;
+};
+
+const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
+  const [open, setOpen] = useState(false);
+  const Icon = item.icon;
+  return (
+    <div className="bg-secondary/60 rounded-xl border border-border/40 overflow-hidden">
+      <div className="flex items-center gap-3 px-4 py-3">
+        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <Icon className="w-4 h-4 text-primary" />
+        </div>
+        <div className="flex-1 flex items-center justify-between gap-2 text-foreground/90 text-[0.9375rem]">
+          <span>{item.label}</span>
+          {item.info && (
+            <button
+              type="button"
+              onClick={() => setOpen((o) => !o)}
+              aria-expanded={open}
+              aria-label="Meer informatie"
+              className="w-6 h-6 rounded-full hover:bg-primary/10 flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Info className="w-4 h-4" />
+            </button>
+          )}
+        </div>
+      </div>
+      {item.info && (
+        <div
+          className="grid transition-all duration-300 ease-out"
+          style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+        >
+          <div className="overflow-hidden">
+            <p className="px-4 pb-3 text-sm text-muted-foreground leading-relaxed">
+              {item.info}
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 /* -------------------------- Component -------------------------- */
 const Prijzen = () => {
   const { value: price, ref: priceRef } = useCountUp(495);
