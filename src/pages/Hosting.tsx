@@ -23,7 +23,7 @@ const items = [
   {
     icon: Activity,
     title: "24/7 monitoring",
-    text: "Ik houd uw website continu in de gaten en grijpen direct in als er iets niet klopt.",
+    text: "Ik houd uw website continu in de gaten en grijp direct in als er iets niet klopt.",
   },
   {
     icon: RefreshCw,
