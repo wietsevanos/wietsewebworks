@@ -47,11 +47,11 @@ export const Footer = () => {
             </p>
             <div className="flex items-center gap-3 mt-7">
               <WhatsAppLink
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg shadow-emerald-900/30"
                 ariaLabel="WhatsApp"
               >
                 <span
-                  className="w-10 h-10 rounded-full flex items-center justify-center"
+                  className="w-full h-full rounded-full flex items-center justify-center"
                   style={{ background: "linear-gradient(135deg, #25D366 0%, #128C7E 100%)" }}
                 >
                   <WhatsAppIcon size={18} />
