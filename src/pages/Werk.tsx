@@ -2,7 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
+import { useRef, type MouseEvent } from "react";
 
 import jayworxx from "@/assets/portfolio-jayworxx.jpg.asset.json";
 import tcforange from "@/assets/portfolio-tcforange.jpg.asset.json";
