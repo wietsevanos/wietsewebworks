@@ -1,7 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Instagram, Mail, Phone } from "lucide-react";
+import { ArrowRight, Mail, Phone } from "lucide-react";
 import portrait from "@/assets/wietse-portrait.jpg.asset.json";
+import { WhatsAppLink, WhatsAppIcon } from "@/components/shared/WhatsAppLink";
 
 const waarden = [
   {
