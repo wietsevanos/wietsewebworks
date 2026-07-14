@@ -204,10 +204,10 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
 
 /* -------------------------- Build progress (install-style) -------------------------- */
 const buildSteps = [
-  { icon: "✓", label: "Kennismaking voltooid", threshold: 15 },
-  { icon: "✓", label: "Ontwerp afgerond", threshold: 40 },
-  { icon: "⚡", label: "Ontwikkeling bezig", threshold: 65 },
-  { icon: "⏳", label: "Oplevering binnenkort", threshold: 74 },
+  { icon: Check, label: "Kennismaking voltooid", threshold: 15, pulse: false },
+  { icon: Check, label: "Ontwerp afgerond", threshold: 40, pulse: false },
+  { icon: Zap, label: "Ontwikkeling bezig", threshold: 65, pulse: true },
+  { icon: Clock, label: "Oplevering binnenkort", threshold: 74, pulse: false },
 ];
 
 const BuildProgress = () => {
