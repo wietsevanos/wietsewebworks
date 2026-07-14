@@ -460,7 +460,31 @@ const Prijzen = () => {
 
 
 
-      {/* Hosting kaart met toggle */}
+      {/* Tussentekst: persoonlijke uitleg */}
+      <section className="py-24 md:py-32 bg-secondary/40">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <Reveal>
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight mb-6">
+              Transparant, persoonlijk en zonder verrassingen
+            </h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="text-foreground/70 text-lg leading-relaxed mb-4">
+              U werkt tijdens het hele traject rechtstreeks met mij. Korte lijnen,
+              snelle reacties en heldere afspraken, zonder ingewikkelde
+              technische verhalen.
+            </p>
+          </Reveal>
+          <Reveal delay={180}>
+            <p className="text-foreground/70 text-lg leading-relaxed">
+              Vooraf weet u precies wat u krijgt en wat u betaalt. Zo houdt u de
+              regie en komt u nooit voor verrassingen te staan.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
