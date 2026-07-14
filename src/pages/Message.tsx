@@ -57,36 +57,23 @@ const Message = () => {
               <div className="space-y-5 mb-10">
                 <a
                   href="tel:+31647872734"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
+                  className="flex items-start gap-4 text-muted-foreground hover:text-primary transition-colors group"
                 >
-                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors flex-shrink-0">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-[0.9375rem]">06 47 87 27 34</span>
-                </a>
-
-                <a
-                  href="https://wa.me/31647872734"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
-                >
-                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors overflow-hidden">
-                    <img
-                      src={whatsappLogo.url}
-                      alt="WhatsApp"
-                      className="w-5 h-5 object-contain"
-                      style={{ filter: "brightness(0) saturate(100%) invert(38%) sepia(96%) saturate(1352%) hue-rotate(191deg) brightness(97%) contrast(96%)" }}
-                    />
-                  </div>
-                  <span className="text-[0.9375rem]">WhatsApp 06 47 87 27 34, snelste antwoord</span>
+                  <span className="text-[0.9375rem] leading-relaxed">
+                    06 47872734
+                    <br />
+                    <span className="text-muted-foreground/80 text-sm">Binnen 24 uur antwoord</span>
+                  </span>
                 </a>
 
                 <a
                   href="mailto:wietsevanos@gmail.com"
                   className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                 >
-                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors flex-shrink-0">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <span className="text-[0.9375rem]">wietsevanos@gmail.com</span>
@@ -111,7 +98,50 @@ const Message = () => {
                   altijd gratis en zonder verplichtingen, inclusief een gratis
                   eerste ontwerp van uw nieuwe website.
                 </p>
-                <p className="mt-3 text-xs">KvK 99105578 &middot; Vrijgesteld van btw (KOR)</p>
+
+                <div className="mt-4 flex items-center gap-3 flex-wrap">
+                  <p className="text-xs text-muted-foreground/90">
+                    KvK 99105578 &middot; Vrijgesteld van btw (KOR)
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setShowKor((v) => !v)}
+                    aria-expanded={showKor}
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-medium transition-all ${
+                      showKor
+                        ? "border-primary/40 bg-primary/10 text-primary"
+                        : "border-primary/25 bg-primary/[0.06] text-primary/90 hover:bg-primary/10"
+                    }`}
+                  >
+                    <Info size={12} />
+                    {showKor ? "Minder info" : "Wat is KOR?"}
+                    <ChevronDown
+                      size={12}
+                      className={`transition-transform duration-300 ${showKor ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                </div>
+
+                <div
+                  className={`grid transition-all duration-300 ease-out ${
+                    showKor ? "grid-rows-[1fr] opacity-100 mt-3" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="rounded-xl border border-primary/15 bg-primary/[0.04] p-4 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                      <p className="font-medium text-foreground mb-1.5">
+                        Wat is een KOR onderneming?
+                      </p>
+                      <p>
+                        KOR staat voor de Kleineondernemersregeling. Als KOR
+                        ondernemer breng ik geen btw in rekening, dus u betaalt
+                        het bedrag op de offerte, zonder btw eroverheen. Handig
+                        en overzichtelijk, zeker voor particulieren en kleine
+                        ondernemers die geen btw kunnen verrekenen.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
