@@ -30,8 +30,8 @@ export const Hero = () => {
               Vraag een offerte aan
               <ArrowRight size={18} />
             </Link>
-            <Link to="/diensten" className="btn-outline inline-flex items-center justify-center w-full sm:w-auto">
-              Bekijk onze diensten
+            <Link to="/werk" className="btn-outline inline-flex items-center justify-center w-full sm:w-auto">
+              Bekijk ons werk
             </Link>
           </div>
         </div>
