@@ -5,7 +5,7 @@ import logo from "@/assets/wietse-webworks-logo.png.asset.json";
 import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
 
 const navItems = [
-  { label: "Diensten", href: "/diensten" },
+  { label: "Werk", href: "/werk" },
   { label: "Werkwijze", href: "/werkwijze" },
   { label: "Prijzen", href: "/prijzen" },
   { label: "Over mij", href: "/over-mij" },
