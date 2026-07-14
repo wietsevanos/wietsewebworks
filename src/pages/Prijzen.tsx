@@ -159,7 +159,7 @@ const faqs = [
 const Prijzen = () => {
   const { value: price, ref: priceRef } = useCountUp(495);
   const [billing, setBilling] = useState<"maand" | "jaar">("maand");
-  const hostingPrice = billing === "maand" ? "37,95" : "417,45";
+  const hostingPrice = billing === "maand" ? "29,95" : "329,45";
   const hostingSuffix = billing === "maand" ? "per maand" : "per jaar";
 
   return (
