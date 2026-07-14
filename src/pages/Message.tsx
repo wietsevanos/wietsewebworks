@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
+import { Mail, Phone, MapPin, Send, Info, ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Message = () => {
