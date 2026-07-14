@@ -56,6 +56,20 @@ export const Footer = () => {
                 <Instagram size={18} />
               </a>
               <a
+                href="https://wa.me/31647872734"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-white/60 transition-colors"
+              >
+                <img
+                  src={whatsappLogo.url}
+                  alt="WhatsApp"
+                  className="w-4 h-4 object-contain"
+                  style={{ filter: "brightness(0) invert(1)" }}
+                />
+              </a>
+              <a
                 href="mailto:wietsevanos@gmail.com"
                 aria-label="Email"
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-colors"
