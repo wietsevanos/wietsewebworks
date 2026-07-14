@@ -23,14 +23,14 @@ export const Hero = () => {
             ondernemers. Meer vertrouwen, meer aanvragen en beter gevonden worden, zonder ingewikkelde techniek en met persoonlijk contact.
           </p>
           <div
-            className="flex flex-wrap gap-4 animate-fade-up"
+            className="flex flex-col sm:flex-row sm:flex-wrap gap-4 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+            <Link to="/contact" className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto">
               Vraag een offerte aan
               <ArrowRight size={18} />
             </Link>
-            <Link to="/diensten" className="btn-outline">
+            <Link to="/diensten" className="btn-outline inline-flex items-center justify-center w-full sm:w-auto">
               Bekijk onze diensten
             </Link>
           </div>
