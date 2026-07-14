@@ -56,7 +56,7 @@ export const Footer = () => {
               </a>
               <a
                 href="mailto:wietsevanos@gmail.com"
-                aria-label="E, mail"
+                aria-label="Email"
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-colors"
               >
                 <Mail size={18} />
