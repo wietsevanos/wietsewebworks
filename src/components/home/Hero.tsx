@@ -40,7 +40,7 @@ export const Hero = () => {
 
           {/* Mockup column */}
           <div
-            className="lg:col-span-7 relative animate-fade-up lg:-mr-6 xl:-mr-12"
+            className="hidden lg:block lg:col-span-7 relative animate-fade-up lg:-mr-6 xl:-mr-12"
             style={{ animationDelay: "0.3s" }}
           >
             <HeroMockup />
