@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { GlassCTA } from "@/components/shared/GlassCTA";
+import { Reveal } from "@/components/shared/Reveal";
 import {
   Accordion,
   AccordionContent,
@@ -86,45 +86,34 @@ const FAQ = () => {
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="border-0 rounded-xl bg-muted/30 px-6 data-[state=open]:bg-primary/5 data-[state=open]:ring-1 data-[state=open]:ring-primary/20 transition-all duration-200"
-                >
-                  <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-5 text-[0.9375rem] gap-4 [&>svg]:text-primary [&>svg]:w-5 [&>svg]:h-5">
-                    <span className="flex items-center gap-3">
-                      <span className="w-1 h-5 rounded-full bg-primary/60 group-data-[state=open]:bg-primary transition-colors" />
-                      {faq.question}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed pb-6 pl-4 text-[0.9375rem]">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+                <Reveal key={index} delay={index * 50}>
+                  <AccordionItem
+                    value={`item-${index}`}
+                    className="border-0 rounded-xl bg-muted/30 px-6 data-[state=open]:bg-primary/5 data-[state=open]:ring-1 data-[state=open]:ring-primary/20 transition-all duration-300 hover:bg-muted/50"
+                  >
+                    <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-5 text-[0.9375rem] gap-4 [&>svg]:text-primary [&>svg]:w-5 [&>svg]:h-5">
+                      <span className="flex items-center gap-3">
+                        <span className="w-1 h-5 rounded-full bg-primary/60 group-data-[state=open]:bg-primary transition-colors" />
+                        {faq.question}
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed pb-6 pl-4 text-[0.9375rem]">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Reveal>
               ))}
             </Accordion>
           </div>
         </div>
       </section>
 
-      <section className="py-24 md:py-32 dark-section relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/5" />
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
-              Staat uw vraag er niet tussen?
-            </h2>
-            <p className="text-white/70 text-lg leading-relaxed mb-10">
-              Stuur gerust een appje of mail. U krijgt altijd persoonlijk
-              antwoord, meestal binnen één werkdag.
-            </p>
-            <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
-              Stel uw vraag
-              <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <GlassCTA
+        eyebrow="Nog vragen?"
+        title="Staat uw vraag er niet tussen?"
+        description="Stuur gerust een appje of mail. U krijgt altijd persoonlijk antwoord, meestal binnen één werkdag."
+        primaryLabel="Stel uw vraag"
+      />
     </Layout>
   );
 };
