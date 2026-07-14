@@ -34,6 +34,7 @@ import {
   Info,
   Sparkles,
   UserCheck,
+  Clock,
 } from "lucide-react";
 
 /* -------------------------- Count-up hook -------------------------- */
