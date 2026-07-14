@@ -113,29 +113,6 @@ const checklist = [
   "Cookiemelding volgens AVG",
 ];
 
-const timeline = [
-  {
-    step: "Stap 1",
-    icon: "🎨",
-    text: "Ik ontwerp en bouw uw website.",
-  },
-  {
-    step: "Stap 2",
-    icon: "🌍",
-    text: "De website wordt online geplaatst op snelle Nederlandse servers.",
-  },
-  {
-    step: "Stap 3",
-    icon: "🔒",
-    text: "Ik zorg ervoor dat alles veilig, snel en up-to-date blijft.",
-  },
-  {
-    step: "Stap 4",
-    icon: "📞",
-    text:
-      "Heeft u vragen of wilt u iets wijzigen? Dan kunt u gewoon contact opnemen.",
-  },
-];
 
 const hostingIncludes = [
   { icon: Server, label: "Nederlandse hosting" },
