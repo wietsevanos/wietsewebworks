@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Link } from "react-router-dom";
 import { ArrowRight, Server, Shield, RefreshCw, Activity, LifeBuoy, Database } from "lucide-react";
 
