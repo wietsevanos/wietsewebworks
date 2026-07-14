@@ -234,37 +234,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
 };
 
 
-const TiltCard = ({ children }: { children: React.ReactNode }) => {
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  const handleMove = (e: MouseEvent<HTMLDivElement>) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    el.style.setProperty("--mx", `${x}%`);
-    el.style.setProperty("--my", `${y}%`);
-  };
-
-  return (
-    <div
-      ref={ref}
-      onMouseMove={handleMove}
-      className="relative h-full p-8 md:p-10 rounded-2xl border border-white/12 bg-white/[0.04] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-white/25 hover:bg-white/[0.07] hover:-translate-y-1 group/tilt"
-    >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-0 group-hover/tilt:opacity-100 transition-opacity duration-500"
-        style={{
-          background:
-            "radial-gradient(500px circle at var(--mx,50%) var(--my,50%), hsl(var(--primary) / 0.25), transparent 45%)",
-        }}
-      />
-      <div className="relative">{children}</div>
-    </div>
-  );
-};
 
 const Werk = () => {
   return (
