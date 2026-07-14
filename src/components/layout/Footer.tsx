@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Mail, Phone } from "lucide-react";
+import logo from "@/assets/wietse-webworks-logo.png.asset.json";
 
 const diensten = [
   { label: "Webdesign", href: "/diensten" },
@@ -9,7 +10,7 @@ const diensten = [
   { label: "Microsoft 365", href: "/diensten" },
 ];
 
-const infoLinks = [
+const navigatie = [
   { label: "Werk", href: "/werk" },
   { label: "Werkwijze", href: "/werkwijze" },
   { label: "Prijzen", href: "/prijzen" },
@@ -25,23 +26,25 @@ const juridisch = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-foreground text-white">
+      <div className="max-w-6xl mx-auto px-6 pt-20 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Brand */}
-          <div>
-            <Link to="/" className="inline-block mb-6">
-              <span className="text-xl font-semibold tracking-tight">
-                <span className="text-foreground">Wietse</span>
-                <span className="text-primary ml-1.5">Webworks</span>
-              </span>
+          <div className="md:col-span-4">
+            <Link to="/" className="inline-flex items-center gap-3 mb-6" aria-label="Wietse Webworks, home">
+              <img
+                src={logo.url}
+                alt="Wietse Webworks"
+                className="h-10 w-auto object-contain invert brightness-0"
+                style={{ filter: "invert(1) brightness(2)" }}
+              />
+              <span className="text-lg font-semibold tracking-tight">Wietse Webworks</span>
             </Link>
-            <div className="space-y-1 text-muted-foreground text-[0.9375rem]">
-              <p>Websites voor lokale ondernemers</p>
-              <p>Haarlem &middot; Bloemendaal &middot; Heemstede</p>
-              <p>Actief in heel Nederland</p>
-            </div>
-            <div className="flex items-center gap-3 mt-6">
+            <p className="text-white/70 text-[0.9375rem] leading-relaxed max-w-sm">
+              Professionele websites voor lokale ondernemers. Persoonlijk contact,
+              transparante prijzen en alles onder één dak.
+            </p>
+            <div className="flex items-center gap-3 mt-7">
               <a
                 href="https://instagram.com/wietsevanos"
                 target="_blank"
@@ -53,15 +56,15 @@ export const Footer = () => {
               </a>
               <a
                 href="mailto:wietsevanos@gmail.com"
-                aria-label="E-mail"
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+                aria-label="Email"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-colors"
               >
                 <Mail size={18} />
               </a>
               <a
                 href="tel:+31647872734"
                 aria-label="Telefoon"
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/60 transition-colors"
               >
                 <Phone size={18} />
               </a>
@@ -69,14 +72,16 @@ export const Footer = () => {
           </div>
 
           {/* Diensten */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-5">Diensten</h4>
+          <div className="md:col-span-2">
+            <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-wide">
+              Diensten
+            </h4>
             <ul className="space-y-3">
               {diensten.map((d) => (
                 <li key={d.label}>
                   <Link
                     to={d.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-[0.9375rem]"
+                    className="text-white/70 hover:text-primary transition-colors text-[0.9375rem]"
                   >
                     {d.label}
                   </Link>
@@ -85,15 +90,17 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Info */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-5">Navigatie</h4>
+          {/* Navigatie */}
+          <div className="md:col-span-3">
+            <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-wide">
+              Navigatie
+            </h4>
             <ul className="space-y-3">
-              {infoLinks.map((link) => (
+              {navigatie.map((link) => (
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-[0.9375rem]"
+                    className="text-white/70 hover:text-primary transition-colors text-[0.9375rem]"
                   >
                     {link.label}
                   </Link>
@@ -103,21 +110,23 @@ export const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-5">Contact</h4>
-            <div className="space-y-3 text-muted-foreground text-[0.9375rem]">
-              <p className="text-foreground font-medium">Wietse van Os</p>
-              <a
-                href="mailto:wietsevanos@gmail.com"
-                className="block hover:text-primary transition-colors"
-              >
-                wietsevanos@gmail.com
-              </a>
+          <div className="md:col-span-3">
+            <h4 className="font-semibold text-white mb-5 text-sm uppercase tracking-wide">
+              Contact
+            </h4>
+            <div className="space-y-3 text-white/70 text-[0.9375rem]">
+              <p className="text-white font-medium">Wietse van Os</p>
               <a
                 href="tel:+31647872734"
                 className="block hover:text-primary transition-colors"
               >
                 06 47 87 27 34
+              </a>
+              <a
+                href="mailto:wietsevanos@gmail.com"
+                className="block hover:text-primary transition-colors"
+              >
+                wietsevanos@gmail.com
               </a>
               <a
                 href="https://instagram.com/wietsevanos"
@@ -127,24 +136,24 @@ export const Footer = () => {
               >
                 @wietsevanos
               </a>
-              <p className="pt-2 text-xs">KvK 99105578 &middot; Vrijgesteld van btw (KOR)</p>
+              <p className="pt-2 text-xs text-white/50">
+                Haarlem, Bloemendaal, Heemstede en heel Nederland
+              </p>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Wietse Webworks. Alle rechten voorbehouden.
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 mt-16 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-white/50">
+            © {new Date().getFullYear()} Wietse Webworks. Alle rechten voorbehouden. KvK 99105578.
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-6">
             {juridisch.map((j) => (
               <Link
                 key={j.href}
                 to={j.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm text-white/60 hover:text-white transition-colors"
               >
                 {j.label}
               </Link>

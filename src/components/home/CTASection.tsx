@@ -16,7 +16,7 @@ export const CTASection = () => {
             Vrijblijvend kennismaken over uw nieuwe website
           </h2>
           <p className="text-white/70 text-lg leading-relaxed mb-10">
-            Bel, app of mail — u krijgt altijd direct antwoord van Wietse zelf.
+            Bel, app of mail, u krijgt altijd direct antwoord van Wietse zelf.
             Het eerste ontwerp is gratis en zonder verplichtingen.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

@@ -32,7 +32,7 @@ const items = [
   {
     icon: LifeBuoy,
     title: "Doorlopende support",
-    text: "Vragen of kleine tekstwijzigingen? U kunt altijd bij ons terecht — u spreekt altijd dezelfde persoon.",
+    text: "Vragen of kleine tekstwijzigingen? U kunt altijd bij ons terecht, u spreekt altijd dezelfde persoon.",
   },
 ];
 
@@ -53,7 +53,7 @@ const Hosting = () => {
               Wat zit erin
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
-              Alles inbegrepen — geen kleine lettertjes
+              Alles inbegrepen, geen kleine lettertjes
             </h2>
           </div>
 

@@ -48,7 +48,7 @@ const faqs = [
   {
     question: "Kan ik zelf de teksten of afbeeldingen later aanpassen?",
     answer:
-      "Kleine aanpassingen aan teksten of afbeeldingen kunt u gewoon aan ons doorgeven — die voeren wij binnen het onderhoudscontract voor u door. U hoeft dus zelf geen technische kennis te hebben.",
+      "Kleine aanpassingen aan teksten of afbeeldingen kunt u gewoon aan ons doorgeven, die voeren wij binnen het onderhoudscontract voor u door. U hoeft dus zelf geen technische kennis te hebben.",
   },
   {
     question: "Wat gebeurt er als ik na livegang extra pagina's wil?",
@@ -68,7 +68,7 @@ const faqs = [
   {
     question: "Bij wie kan ik terecht na livegang?",
     answer:
-      "Bij dezelfde persoon als tijdens het hele traject: Wietse zelf. U kunt bellen, WhatsAppen of mailen — geen callcenter, geen wachttijden.",
+      "Bij dezelfde persoon als tijdens het hele traject: Wietse zelf. U kunt bellen, WhatsAppen of mailen, geen callcenter, geen wachttijden.",
   },
 ];
 
@@ -78,7 +78,7 @@ const FAQ = () => {
       <PageHeader
         label="Veelgestelde vragen"
         title="FAQ"
-        description="Antwoorden op de vragen die ondernemers ons het vaakst stellen — over prijzen, doorlooptijd, hosting en samenwerken."
+        description="Antwoorden op de vragen die ondernemers ons het vaakst stellen, over prijzen, doorlooptijd, hosting en samenwerken."
       />
 
       <section className="py-24 md:py-32 bg-background">
@@ -116,7 +116,7 @@ const FAQ = () => {
             </h2>
             <p className="text-white/70 text-lg leading-relaxed mb-10">
               Stuur gerust een appje of mail. U krijgt altijd persoonlijk
-              antwoord — meestal binnen één werkdag.
+              antwoord, meestal binnen één werkdag.
             </p>
             <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
               Stel uw vraag

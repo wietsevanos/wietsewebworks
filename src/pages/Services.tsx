@@ -32,7 +32,7 @@ const services = [
     title: "Hosting",
     subtitle: "Uw website altijd bereikbaar",
     description:
-      "Betrouwbare Nederlandse hosting met monitoring, beveiliging en dagelijkse back-ups. U hoeft geen aparte hostingpartij te regelen — alles loopt via één contactpersoon.",
+      "Betrouwbare Nederlandse hosting met monitoring, beveiliging en dagelijkse back-ups. U hoeft geen aparte hostingpartij te regelen, alles loopt via één contactpersoon.",
     features: [
       "Nederlandse servers",
       "Dagelijkse back-ups",
@@ -68,7 +68,7 @@ const services = [
     title: "Doorlopende ondersteuning",
     subtitle: "Wij blijven uw aanspreekpunt",
     description:
-      "Ook na livegang blijft u altijd hetzelfde aanspreekpunt houden. Bel, app of mail wanneer u iets nodig heeft — u hoeft nooit tegen een callcenter aan te praten.",
+      "Ook na livegang blijft u altijd hetzelfde aanspreekpunt houden. Bel, app of mail wanneer u iets nodig heeft, u hoeft nooit tegen een callcenter aan te praten.",
     features: [
       "Persoonlijk contactpersoon",
       "Snelle reactietijden",
@@ -84,7 +84,7 @@ const Services = () => {
       <PageHeader
         label="Wat wij doen"
         title="Diensten"
-        description="Van ontwerp en ontwikkeling tot hosting, onderhoud en zakelijke e-mail. Alles wat u nodig heeft voor een professionele online uitstraling — onder één dak."
+        description="Van ontwerp en ontwikkeling tot hosting, onderhoud en zakelijke e-mail. Alles wat u nodig heeft voor een professionele online uitstraling, onder één dak."
       />
 
       {/* Services Grid */}

@@ -21,16 +21,16 @@ const doelgroepen = [
   { icon: Sparkles, title: "Schoonheidssalons", description: "Sfeervolle sites die uw behandelingen en aanbod uitstralen." },
   { icon: Store, title: "Winkels", description: "Lokale winkels die online gevonden willen worden en klanten willen aantrekken." },
   { icon: Dumbbell, title: "Sportbedrijven", description: "Sportscholen, personal trainers en yoga-studio's met roosters en aanmeldingen." },
-  { icon: Stethoscope, title: "Praktijken", description: "Fysio, tandarts, huisarts of therapie — vertrouwenwekkend en informatief." },
+  { icon: Stethoscope, title: "Praktijken", description: "Fysio, tandarts, huisarts of therapie, vertrouwenwekkend en informatief." },
   { icon: HeartHandshake, title: "Coaches", description: "Persoonlijke websites die uw verhaal, aanpak en aanbod krachtig neerzetten." },
   { icon: Briefcase, title: "ZZP'ers", description: "Betaalbare, professionele websites die direct aanvragen opleveren." },
-  { icon: Users, title: "Lokale dienstverleners", description: "Van hovenier tot administratiekantoor — duidelijk en betrouwbaar in beeld." },
+  { icon: Users, title: "Lokale dienstverleners", description: "Van hovenier tot administratiekantoor, duidelijk en betrouwbaar in beeld." },
   { icon: Building2, title: "MKB-bedrijven", description: "Websites voor kleine en middelgrote bedrijven met meerdere diensten of vestigingen." },
 ];
 
 const resultaten = [
   { metric: "100%", label: "Persoonlijk contact met Wietse zelf" },
-  { metric: "2–4 wk", label: "Gemiddelde doorlooptijd tot livegang" },
+  { metric: "2, 4 wk", label: "Gemiddelde doorlooptijd tot livegang" },
   { metric: "3", label: "Revisierondes standaard inbegrepen" },
   { metric: "0%", label: "Btw dankzij de KOR-regeling" },
 ];
@@ -41,7 +41,7 @@ const Partnerships = () => {
       <PageHeader
         label="Voor wie wij werken"
         title="Werk"
-        description="Wij bouwen websites voor lokale ondernemers in Haarlem, Bloemendaal en Heemstede — en voor klanten door heel Nederland."
+        description="Wij bouwen websites voor lokale ondernemers in Haarlem, Bloemendaal en Heemstede, en voor klanten door heel Nederland."
       />
 
       {/* Doelgroepen Grid */}
@@ -85,7 +85,7 @@ const Partnerships = () => {
               Duidelijke afspraken, duidelijke resultaten
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Wij houden het simpel — geen kleine lettertjes en geen verborgen kosten.
+              Wij houden het simpel, geen kleine lettertjes en geen verborgen kosten.
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -115,7 +115,7 @@ const Partnerships = () => {
               Herkent u zich in één van deze branches?
             </h2>
             <p className="text-white/70 text-lg leading-relaxed mb-10">
-              Neem contact op — dan bespreken we vrijblijvend hoe uw nieuwe
+              Neem contact op, dan bespreken we vrijblijvend hoe uw nieuwe
               website eruit kan zien en wat u ermee kunt bereiken.
             </p>
             <Link to="/contact" className="btn-primary inline-flex items-center gap-2">

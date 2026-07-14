@@ -1,11 +1,12 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight, Instagram, Mail, Phone } from "lucide-react";
+import portrait from "@/assets/wietse-portrait.jpg.asset.json";
 
 const waarden = [
   {
     title: "Persoonlijk contact",
-    text: "U spreekt tijdens het hele traject altijd dezelfde persoon — geen callcenter, geen wisselende accountmanagers.",
+    text: "U spreekt tijdens het hele traject altijd dezelfde persoon, geen callcenter, geen wisselende accountmanagers.",
   },
   {
     title: "Duidelijke communicatie",
@@ -32,15 +33,14 @@ const About = () => {
             <div className="flex justify-center lg:justify-start">
               <div className="relative">
                 <div className="absolute -left-4 top-0 bottom-0 w-1 bg-primary rounded-full" />
-                <div className="w-72 h-72 md:w-80 md:h-80 overflow-hidden rounded-2xl shadow-lg bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center">
-                  <div className="text-center">
-                    <p className="text-7xl md:text-8xl font-semibold text-primary/70 leading-none">
-                      W
-                    </p>
-                    <p className="mt-4 font-medium text-foreground/80">Wietse van Os</p>
-                    <p className="text-sm text-muted-foreground">Haarlem</p>
-                  </div>
+                <div className="w-72 h-96 md:w-80 md:h-[26rem] overflow-hidden rounded-2xl shadow-xl">
+                  <img
+                    src={portrait.url}
+                    alt="Wietse van Os, oprichter Wietse Webworks"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/15 rounded-2xl -z-10" />
               </div>
             </div>
 
@@ -57,7 +57,7 @@ const About = () => {
                   Vanuit Haarlem bouw ik websites voor lokale ondernemers en
                   kleine bedrijven door heel Nederland. Ik geloof dat elke
                   ondernemer online net zo professioneel moet kunnen overkomen
-                  als in het echt — ongeacht budget of technische kennis.
+                  als in het echt, ongeacht budget of technische kennis.
                 </p>
                 <p>
                   Bij Wietse Webworks krijgt u geen standaardpakket, maar een
@@ -67,7 +67,7 @@ const About = () => {
                 </p>
                 <p>
                   Naast websites verzorg ik ook hosting, onderhoud en zakelijke
-                  e-mail via Microsoft 365 — alles onder één dak, zodat u geen
+                  e-mail via Microsoft 365, alles onder één dak, zodat u geen
                   gedoe heeft met verschillende leveranciers.
                 </p>
               </div>
@@ -133,7 +133,7 @@ const About = () => {
               De focus ligt op Haarlem, Bloemendaal en Heemstede, maar ik werk
               met plezier voor klanten door heel Nederland. Dankzij korte
               digitale lijnen en persoonlijk contact voelt de samenwerking altijd
-              dichtbij — of u nu om de hoek of aan de andere kant van het land zit.
+              dichtbij, of u nu om de hoek of aan de andere kant van het land zit.
             </p>
           </div>
         </div>
