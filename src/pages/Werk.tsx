@@ -3,7 +3,7 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
 import { ArrowUpRight } from "lucide-react";
-import { useRef, type MouseEvent } from "react";
+
 import {
   Accordion,
   AccordionContent,
@@ -160,103 +160,80 @@ const projects: Project[] = [
   },
 ];
 
+const getDomain = (url: string) =>
+  url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
+
 const ProjectCard = ({ project }: { project: Project }) => {
-  const ref = useRef<HTMLAnchorElement | null>(null);
-
-  const handleMove = (e: MouseEvent<HTMLAnchorElement>) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 6;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -6;
-    el.style.setProperty("--rx", `${y}deg`);
-    el.style.setProperty("--ry", `${x}deg`);
-  };
-
-  const handleLeave = () => {
-    const el = ref.current;
-    if (!el) return;
-    el.style.setProperty("--rx", `0deg`);
-    el.style.setProperty("--ry", `0deg`);
-  };
-
   return (
     <a
-      ref={ref}
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      onMouseMove={handleMove}
-      onMouseLeave={handleLeave}
-      className="group block [transform:perspective(1200px)_rotateX(var(--rx,0))_rotateY(var(--ry,0))] transition-transform duration-300 ease-out will-change-transform"
+      className="group block relative"
     >
-      <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-secondary shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 group-hover:shadow-[0_25px_60px_-20px_rgba(0,0,0,0.25)] group-hover:-translate-y-1 ring-1 ring-black/[0.04]">
-        <img
-          src={project.image}
-          alt={`Website van ${project.name}`}
-          loading="lazy"
-          className="w-full h-full object-cover object-top transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-foreground/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 shadow-lg">
-          <ArrowUpRight size={18} className="text-foreground" />
+      {/* Offset accent shadow */}
+      <div
+        aria-hidden
+        className="absolute inset-0 rounded-2xl bg-primary translate-x-2 translate-y-2 transition-all duration-500 ease-out group-hover:translate-x-4 group-hover:translate-y-4 group-hover:bg-primary-deep"
+      />
+
+      {/* Browser mockup */}
+      <div className="relative rounded-2xl overflow-hidden bg-secondary/60 ring-1 ring-black/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 ease-out group-hover:-translate-x-1.5 group-hover:-translate-y-1.5 group-hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.25)]">
+        {/* Chrome bar */}
+        <div className="flex items-center gap-3 px-4 py-2.5 bg-secondary border-b border-black/5">
+          <div className="flex gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+          </div>
+          <div className="flex-1 h-6 rounded-md bg-background/80 flex items-center justify-center px-3 text-[0.7rem] text-muted-foreground/80 font-medium truncate">
+            {getDomain(project.url)}
+          </div>
+          <div className="w-6" />
+        </div>
+
+        {/* Screenshot */}
+        <div className="relative aspect-[16/10] overflow-hidden bg-background">
+          <img
+            src={project.image}
+            alt={`Website van ${project.name}`}
+            loading="lazy"
+            className="w-full h-full object-cover object-top transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+          />
+          <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 shadow-lg">
+            <ArrowUpRight size={16} className="text-foreground" />
+          </div>
         </div>
       </div>
 
-      <div className="pt-5">
+      {/* Meta below */}
+      <div className="pt-6">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           {project.tags.map((t) => (
             <span
               key={t}
-              className="text-[0.7rem] font-medium tracking-wider uppercase text-primary"
+              className="text-[0.7rem] font-semibold tracking-wider uppercase text-primary"
             >
               {t}
             </span>
           ))}
         </div>
-        <h3 className="text-xl font-semibold text-foreground mb-1.5 transition-colors duration-200 group-hover:text-primary">
+        <h3 className="text-2xl font-semibold text-foreground mb-2 tracking-tight transition-colors duration-200 group-hover:text-primary">
           {project.name}
         </h3>
         <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">
           {project.short}
         </p>
+        <span className="inline-flex items-center gap-1.5 mt-4 text-primary font-medium text-sm border-b border-primary/40 pb-0.5 transition-all duration-200 group-hover:gap-2.5 group-hover:border-primary">
+          Bekijk de live site
+          <ArrowUpRight size={15} />
+        </span>
       </div>
     </a>
   );
 };
 
 
-const TiltCard = ({ children }: { children: React.ReactNode }) => {
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  const handleMove = (e: MouseEvent<HTMLDivElement>) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    el.style.setProperty("--mx", `${x}%`);
-    el.style.setProperty("--my", `${y}%`);
-  };
-
-  return (
-    <div
-      ref={ref}
-      onMouseMove={handleMove}
-      className="relative h-full p-8 md:p-10 rounded-2xl border border-white/12 bg-white/[0.04] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-white/25 hover:bg-white/[0.07] hover:-translate-y-1 group/tilt"
-    >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-0 group-hover/tilt:opacity-100 transition-opacity duration-500"
-        style={{
-          background:
-            "radial-gradient(500px circle at var(--mx,50%) var(--my,50%), hsl(var(--primary) / 0.25), transparent 45%)",
-        }}
-      />
-      <div className="relative">{children}</div>
-    </div>
-  );
-};
 
 const Werk = () => {
   return (
