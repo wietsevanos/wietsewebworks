@@ -28,22 +28,21 @@ const waarden = [
 const About = () => {
   return (
     <Layout>
-      {/* Intro Section */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="pt-24 md:pt-28 pb-20 md:pb-24 bg-background">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[auto,1fr] gap-10 lg:gap-14 items-start max-w-5xl mx-auto">
             {/* Visual */}
-            <div className="flex justify-center lg:justify-start">
-              <div className="relative">
-                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-primary rounded-full" />
-                <div className="w-72 h-96 md:w-80 md:h-[26rem] overflow-hidden rounded-2xl shadow-xl">
+            <div className="flex justify-center lg:justify-start lg:sticky lg:top-28">
+              <div className="relative group">
+                <div className="absolute -left-3 top-0 bottom-0 w-1 bg-primary rounded-full" />
+                <div className="w-64 h-80 md:w-72 md:h-[24rem] overflow-hidden rounded-2xl shadow-xl transition-transform duration-500 group-hover:-translate-y-1">
                   <img
                     src={portrait.url}
                     alt="Wietse van Os, oprichter Wietse Webworks"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/15 rounded-2xl -z-10" />
+                <div className="absolute -bottom-3 -right-3 w-20 h-20 bg-primary/15 rounded-2xl -z-10 transition-all duration-500 group-hover:bg-primary/25" />
               </div>
             </div>
 
@@ -57,21 +56,39 @@ const About = () => {
               </h1>
               <div className="space-y-4 text-muted-foreground leading-relaxed text-[0.9375rem]">
                 <p>
-                  Vanuit Haarlem bouw ik websites voor lokale ondernemers en
-                  kleine bedrijven door heel Nederland. Ik geloof dat elke
-                  ondernemer online net zo professioneel moet kunnen overkomen
-                  als in het echt, ongeacht budget of technische kennis.
+                  Vanuit Haarlem ontwerp en bouw ik websites voor lokale
+                  ondernemers en kleine bedrijven door heel Nederland. Wat begon
+                  als een interesse in design en techniek, is inmiddels
+                  uitgegroeid tot een echte passie voor het bouwen van websites
+                  die niet alleen mooi zijn, maar ook daadwerkelijk klanten
+                  opleveren.
+                </p>
+                <p>
+                  Naast mijn werk als webdesigner studeer ik Bouwkunde aan de
+                  TU Delft. Tijdens mijn tussenjaar ben ik me steeds verder
+                  gaan verdiepen in webdesign en ondernemerschap, en ontdekte
+                  ik hoeveel energie ik haal uit het creëren van sterke online
+                  presentaties voor bedrijven. Inmiddels combineer ik mijn
+                  studie en mijn bedrijf met veel plezier naast elkaar.
+                </p>
+                <p>
+                  Voorlopig woon ik nog thuis, waardoor ik alle ruimte heb om
+                  te investeren in mijn ontwikkeling en in mijn klanten. Ik ben
+                  ambitieus, leer iedere dag bij en ben van plan mij de komende
+                  jaren nog veel verder te verdiepen in zowel design, techniek
+                  als online marketing.
                 </p>
                 <p>
                   Bij Wietse Webworks krijgt u geen standaardpakket, maar een
-                  website die past bij uw bedrijf, uw doelgroep en uw doelen.
-                  Van eerste ontwerp tot doorlopend onderhoud werk ik met u
-                  samen, en u heeft altijd één vast aanspreekpunt: mij.
+                  website die volledig aansluit op uw bedrijf, doelgroep en
+                  doelstellingen. Van het eerste ontwerp tot onderhoud en
+                  ondersteuning heeft u één vast aanspreekpunt en korte lijnen,
+                  zodat u nooit van het kastje naar de muur wordt gestuurd.
                 </p>
                 <p>
                   Naast websites verzorg ik ook hosting, onderhoud en zakelijke
-                  e-mail via Microsoft 365, alles onder één dak, zodat u geen
-                  gedoe heeft met verschillende leveranciers.
+                  e-mail via Microsoft 365, zodat alles onder één dak geregeld
+                  is en u zich volledig kunt richten op uw onderneming.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 mt-8">
@@ -85,7 +102,11 @@ const About = () => {
                   rel="noopener noreferrer"
                   className="btn-outline-dark inline-flex items-center gap-2"
                 >
-                  <MessageCircle size={18} />
+                  <img
+                    src={whatsappLogo.url}
+                    alt="WhatsApp"
+                    className="w-5 h-5 object-contain"
+                  />
                   WhatsApp
                 </a>
               </div>
