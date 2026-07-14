@@ -6,11 +6,11 @@ export const OrangeWaveBackground = () => {
         className="absolute inset-0"
         style={{
           background: `linear-gradient(145deg, 
-            hsl(25, 85%, 45%) 0%, 
-            hsl(22, 90%, 50%) 25%, 
-            hsl(20, 85%, 42%) 50%, 
-            hsl(18, 80%, 38%) 75%, 
-            hsl(15, 75%, 32%) 100%
+            hsl(210, 85%, 45%) 0%, 
+            hsl(207, 90%, 50%) 25%, 
+            hsl(205, 85%, 42%) 50%, 
+            hsl(203, 80%, 38%) 75%, 
+            hsl(200, 75%, 32%) 100%
           )`
         }}
       />
@@ -20,8 +20,8 @@ export const OrangeWaveBackground = () => {
         className="absolute -top-1/4 -left-1/4 w-3/4 h-3/4"
         style={{
           background: `radial-gradient(ellipse at center, 
-            hsla(28, 95%, 55%, 0.6) 0%, 
-            hsla(25, 90%, 50%, 0.3) 30%, 
+            hsla(213, 95%, 55%, 0.6) 0%, 
+            hsla(210, 90%, 50%, 0.3) 30%, 
             transparent 70%
           )`,
           filter: 'blur(60px)',
@@ -33,8 +33,8 @@ export const OrangeWaveBackground = () => {
         className="absolute top-1/4 left-1/3 w-2/3 h-2/3"
         style={{
           background: `radial-gradient(ellipse at center, 
-            hsla(30, 100%, 58%, 0.4) 0%, 
-            hsla(25, 90%, 52%, 0.2) 40%, 
+            hsla(215, 100%, 58%, 0.4) 0%, 
+            hsla(210, 90%, 52%, 0.2) 40%, 
             transparent 70%
           )`,
           filter: 'blur(80px)',
@@ -46,8 +46,8 @@ export const OrangeWaveBackground = () => {
         className="absolute -bottom-1/4 -right-1/4 w-3/4 h-3/4"
         style={{
           background: `radial-gradient(ellipse at center, 
-            hsla(15, 70%, 25%, 0.5) 0%, 
-            hsla(18, 75%, 30%, 0.3) 40%, 
+            hsla(200, 70%, 25%, 0.5) 0%, 
+            hsla(203, 75%, 30%, 0.3) 40%, 
             transparent 70%
           )`,
           filter: 'blur(60px)',
@@ -59,7 +59,7 @@ export const OrangeWaveBackground = () => {
         className="absolute top-0 right-0 w-1/2 h-full"
         style={{
           background: `radial-gradient(ellipse at 80% 30%, 
-            hsla(22, 85%, 48%, 0.35) 0%, 
+            hsla(207, 85%, 48%, 0.35) 0%, 
             transparent 60%
           )`,
           filter: 'blur(50px)',
@@ -71,7 +71,7 @@ export const OrangeWaveBackground = () => {
         className="absolute bottom-0 left-0 w-2/3 h-1/2"
         style={{
           background: `radial-gradient(ellipse at 20% 80%, 
-            hsla(18, 80%, 35%, 0.4) 0%, 
+            hsla(203, 80%, 35%, 0.4) 0%, 
             transparent 50%
           )`,
           filter: 'blur(70px)',
