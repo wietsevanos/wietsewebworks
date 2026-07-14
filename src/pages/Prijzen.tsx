@@ -168,9 +168,9 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
   const [open, setOpen] = useState(false);
   const Icon = item.icon;
   return (
-    <div className="bg-secondary/60 rounded-xl border border-border/40 overflow-hidden">
-      <div className="flex items-center gap-3 px-4 py-3">
-        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+    <div className="group border-b border-border/50 last:border-b-0 py-3">
+      <div className="flex items-center gap-3">
+        <div className="w-9 h-9 rounded-full bg-primary/8 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-primary/15">
           <Icon className="w-4 h-4 text-primary" />
         </div>
         <div className="flex-1 flex items-center justify-between gap-2 text-foreground/90 text-[0.9375rem]">
@@ -194,7 +194,7 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
           style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
         >
           <div className="overflow-hidden">
-            <p className="px-4 pb-3 text-sm text-muted-foreground leading-relaxed">
+            <p className="pl-12 pt-2 text-sm text-muted-foreground leading-relaxed">
               {item.info}
             </p>
           </div>
@@ -203,6 +203,7 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
     </div>
   );
 };
+
 
 /* -------------------------- Build progress (install-style) -------------------------- */
 const buildSteps = [
@@ -485,105 +486,120 @@ const Prijzen = () => {
       </section>
 
 
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-6xl mx-auto px-6">
-          <Reveal>
-            <div className="relative bg-white rounded-[2rem] border border-border/60 shadow-[0_30px_80px_-40px_hsl(210_95%_50%/0.18)] overflow-hidden">
-              {/* Subtle ambient accent */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -top-32 -right-32 w-[30rem] h-[30rem] rounded-full bg-primary/[0.05] blur-3xl"
-              />
+      <section className="relative py-24 md:py-36 bg-background overflow-hidden">
+        {/* Ambient accent glows */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-0 -right-40 w-[40rem] h-[40rem] rounded-full bg-primary/[0.06] blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute bottom-0 -left-40 w-[32rem] h-[32rem] rounded-full bg-primary/[0.04] blur-3xl"
+        />
 
-              <div className="relative grid grid-cols-1 lg:grid-cols-5 gap-0">
-                {/* Left: intro + price + CTA */}
-                <div className="lg:col-span-2 p-10 md:p-12 lg:border-r lg:border-border/60 flex flex-col">
-                  <p className="text-primary font-medium mb-3 text-xs tracking-[0.2em] uppercase">
-                    Zorgeloos online
-                  </p>
-                  <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-[1.15] tracking-tight mb-5">
-                    Hosting &amp; onderhoud
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-8">
-                    Eén vast maandbedrag voor alles wat er technisch bij komt
-                    kijken. U heeft nergens omkijken naar.
-                  </p>
+        <div className="relative max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
+            {/* Left: editorial intro + price */}
+            <div className="lg:col-span-5 lg:sticky lg:top-32">
+              <Reveal>
+                <p className="text-primary font-medium mb-4 text-xs tracking-[0.2em] uppercase">
+                  Zorgeloos online
+                </p>
+              </Reveal>
+              <Reveal delay={80}>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-[1.05] tracking-tight mb-6">
+                  Hosting &amp;<br />onderhoud
+                </h2>
+              </Reveal>
+              <Reveal delay={160}>
+                <p className="text-muted-foreground text-lg leading-relaxed mb-10 max-w-md">
+                  Eén vast maandbedrag voor alles wat er technisch bij komt
+                  kijken. U heeft nergens omkijken naar.
+                </p>
+              </Reveal>
 
-                  {/* Toggle */}
-                  <div className="inline-flex self-start bg-secondary rounded-full p-1 border border-border/60 mb-6">
-                    <button
-                      onClick={() => setBilling("maand")}
-                      className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                        billing === "maand"
-                          ? "bg-primary text-white shadow"
-                          : "text-foreground/70 hover:text-foreground"
-                      }`}
-                    >
-                      Maandelijks
-                    </button>
-                    <button
-                      onClick={() => setBilling("jaar")}
-                      className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                        billing === "jaar"
-                          ? "bg-primary text-white shadow"
-                          : "text-foreground/70 hover:text-foreground"
-                      }`}
-                    >
-                      Jaarlijks
-                    </button>
-                  </div>
-
-                  {/* Prijs */}
-                  <div className="mb-8">
-                    <div className="flex items-baseline gap-2">
-                      <span
-                        key={billing}
-                        className="text-6xl md:text-7xl font-semibold text-foreground tabular-nums animate-fade-up leading-none"
-                      >
-                        €{hostingPrice}
-                      </span>
-                      <span className="text-muted-foreground text-sm">
-                        {hostingSuffix}
-                      </span>
-                    </div>
-                    {billing === "jaar" && (
-                      <p className="mt-4 inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-4 py-2 rounded-full animate-fade-in">
-                        <Sparkles className="w-4 h-4" />
-                        Eén maand gratis bij jaarlijkse betaling
-                      </p>
-                    )}
-                  </div>
-
-                  <div className="mt-auto">
-                    <Link
-                      to="/contact"
-                      className="btn-primary inline-flex items-center gap-2 group/btn"
-                    >
-                      Kies uw abonnement
-                      <ArrowRight
-                        size={18}
-                        className="transition-transform duration-200 group-hover/btn:translate-x-1"
-                      />
-                    </Link>
-                  </div>
+              {/* Toggle */}
+              <Reveal delay={220}>
+                <div className="inline-flex bg-secondary rounded-full p-1 border border-border/60 mb-10">
+                  <button
+                    onClick={() => setBilling("maand")}
+                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                      billing === "maand"
+                        ? "bg-primary text-white shadow"
+                        : "text-foreground/70 hover:text-foreground"
+                    }`}
+                  >
+                    Maandelijks
+                  </button>
+                  <button
+                    onClick={() => setBilling("jaar")}
+                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                      billing === "jaar"
+                        ? "bg-primary text-white shadow"
+                        : "text-foreground/70 hover:text-foreground"
+                    }`}
+                  >
+                    Jaarlijks
+                  </button>
                 </div>
+              </Reveal>
 
-                {/* Right: includes */}
-                <div className="lg:col-span-3 p-10 md:p-12 bg-secondary/30">
-                  <p className="text-xs uppercase tracking-[0.15em] text-foreground/60 font-medium mb-6">
-                    Inbegrepen
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {hostingIncludes.map((item) => (
-                      <HostingIncludeItem key={item.label} item={item} />
-                    ))}
-                  </div>
+              {/* Prijs — groot en open */}
+              <div className="mb-10">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-2xl font-medium text-foreground/40">€</span>
+                  <span
+                    key={billing}
+                    className="text-[6rem] md:text-[8rem] font-semibold text-foreground tabular-nums animate-fade-up leading-[0.9] tracking-tight"
+                  >
+                    {hostingPrice}
+                  </span>
                 </div>
+                <p className="text-muted-foreground mt-3 text-sm tracking-wide">
+                  {hostingSuffix}
+                </p>
+                {billing === "jaar" && (
+                  <p className="mt-5 inline-flex items-center gap-2 text-primary text-sm font-medium animate-fade-in">
+                    <Sparkles className="w-4 h-4" />
+                    Eén maand gratis bij jaarlijkse betaling
+                  </p>
+                )}
               </div>
+
+              <Link
+                to="/contact"
+                className="btn-primary inline-flex items-center gap-2 group/btn"
+              >
+                Kies uw abonnement
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-200 group-hover/btn:translate-x-1"
+                />
+              </Link>
             </div>
-          </Reveal>
+
+            {/* Right: includes as clean editorial list */}
+            <div className="lg:col-span-7">
+              <Reveal>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="w-8 h-px bg-primary" />
+                  <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 font-medium">
+                    Wat u ontvangt
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delay={100}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10">
+                  {hostingIncludes.map((item) => (
+                    <HostingIncludeItem key={item.label} item={item} />
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+          </div>
         </div>
       </section>
+
 
 
       {/* E-mail uitklap */}
