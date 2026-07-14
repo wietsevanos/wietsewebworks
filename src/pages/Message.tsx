@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { Linkedin, Mail, Phone, MapPin, Send } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Message = () => {
@@ -18,105 +18,117 @@ const Message = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
+    await new Promise((resolve) => setTimeout(resolve, 800));
     toast({
-      title: "Message sent",
-      description: "Thank you for reaching out. We'll respond shortly.",
+      title: "Bericht verzonden",
+      description: "Bedankt voor uw bericht — u krijgt zo snel mogelijk antwoord van Wietse zelf.",
     });
-
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      subject: "",
-      message: "",
-    });
+    setFormData({ name: "", email: "", company: "", subject: "", message: "" });
     setIsSubmitting(false);
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   return (
     <Layout>
       <PageHeader
         label="Contact"
-        title="Get in touch"
-        description="Ready to discuss your trade finance or insurance needs? We welcome your enquiry."
+        title="Neem contact op"
+        description="Bel, app of mail — u krijgt altijd direct persoonlijk antwoord van Wietse. Vragen stellen en kennismaken is altijd vrijblijvend."
       />
 
-      {/* Contact Section */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
             {/* Contact Info */}
             <div>
-              <h2 className="text-xl font-semibold text-foreground mb-8">
-                Christiaan van den Brink
+              <h2 className="text-xl font-semibold text-foreground mb-2">
+                Wietse van Os
               </h2>
+              <p className="text-muted-foreground mb-8 text-[0.9375rem]">
+                Oprichter Wietse Webworks &middot; Haarlem
+              </p>
 
               <div className="space-y-5 mb-10">
                 <a
-                  href="mailto:hello@tcforange.com"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
-                >
-                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                    <Mail className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-[0.9375rem]">hello@tcforange.com</span>
-                </a>
-
-                <a
-                  href="tel:+31618473476"
+                  href="tel:+31647872734"
                   className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                 >
                   <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-[0.9375rem]">+31 618 473 476</span>
+                  <span className="text-[0.9375rem]">06 47 87 27 34</span>
+                </a>
+
+                <a
+                  href="https://wa.me/31647872734"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
+                >
+                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                    <MessageCircle className="w-5 h-5 text-primary" />
+                  </div>
+                  <span className="text-[0.9375rem]">WhatsApp — snelste antwoord</span>
+                </a>
+
+                <a
+                  href="mailto:wietsevanos@gmail.com"
+                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
+                >
+                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                    <Mail className="w-5 h-5 text-primary" />
+                  </div>
+                  <span className="text-[0.9375rem]">wietsevanos@gmail.com</span>
+                </a>
+
+                <a
+                  href="https://instagram.com/wietsevanos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
+                >
+                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                    <Instagram className="w-5 h-5 text-primary" />
+                  </div>
+                  <span className="text-[0.9375rem]">@wietsevanos</span>
                 </a>
 
                 <div className="flex items-center gap-4 text-muted-foreground">
                   <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-[0.9375rem]">Gatwickstraat 15, 1043 GL Amsterdam</span>
+                  <span className="text-[0.9375rem]">
+                    Haarlem &middot; werkzaam in heel Nederland
+                  </span>
                 </div>
               </div>
 
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center gap-2"
-              >
-                <Linkedin size={18} />
-                Connect on LinkedIn
-              </a>
+              <div className="rounded-xl bg-secondary p-6 text-sm text-muted-foreground">
+                <p className="font-medium text-foreground mb-1">Goed om te weten</p>
+                <p>
+                  Reactietijd is doorgaans binnen één werkdag. Kennismaken is
+                  altijd gratis en zonder verplichtingen — inclusief een gratis
+                  eerste ontwerp van uw nieuwe website.
+                </p>
+                <p className="mt-3 text-xs">KvK 99105578 &middot; Vrijgesteld van btw (KOR)</p>
+              </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-secondary p-8">
+            <div className="bg-secondary p-8 rounded-xl">
               <h3 className="text-lg font-semibold text-foreground mb-6">
-                Send a message
+                Stuur een bericht
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Name
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      Naam
                     </label>
                     <input
                       type="text"
@@ -125,15 +137,12 @@ const Message = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-[0.9375rem]"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-[0.9375rem]"
                     />
                   </div>
                   <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-foreground mb-2"
-                    >
-                      Email
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      E-mail
                     </label>
                     <input
                       type="email"
@@ -142,17 +151,14 @@ const Message = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-[0.9375rem]"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-[0.9375rem]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-medium text-foreground mb-2"
-                  >
-                    Company
+                  <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                    Bedrijf (optioneel)
                   </label>
                   <input
                     type="text"
@@ -160,16 +166,13 @@ const Message = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-[0.9375rem]"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-[0.9375rem]"
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-foreground mb-2"
-                  >
-                    Subject
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    Onderwerp
                   </label>
                   <input
                     type="text"
@@ -178,16 +181,13 @@ const Message = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-[0.9375rem]"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-[0.9375rem]"
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-foreground mb-2"
-                  >
-                    Message
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    Bericht
                   </label>
                   <textarea
                     id="message"
@@ -196,7 +196,8 @@ const Message = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none text-[0.9375rem]"
+                    placeholder="Vertel kort wat u voor ogen heeft — dan neem ik zo snel mogelijk contact op."
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none text-[0.9375rem]"
                   />
                 </div>
 
@@ -206,10 +207,10 @@ const Message = () => {
                   className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-70"
                 >
                   {isSubmitting ? (
-                    "Sending..."
+                    "Versturen..."
                   ) : (
                     <>
-                      Send message
+                      Verstuur bericht
                       <Send size={18} />
                     </>
                   )}

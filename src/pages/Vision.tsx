@@ -1,27 +1,44 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
-const principles = [
+const steps = [
   {
-    title: "Finance must be executable, not theoretical",
+    number: "01",
+    title: "Kennismaking",
     description:
-      "We structure facilities that work in real trading environments, not just on paper. Every term, covenant and condition is designed for practical application.",
+      "Een vrijblijvend eerste gesprek — telefonisch, via WhatsApp of op locatie in Haarlem. We leren uw bedrijf, uw doelgroep en uw wensen kennen.",
   },
   {
-    title: "Facilities must function under real trading pressure",
+    number: "02",
+    title: "Intake",
     description:
-      "Trading desks operate in fast-moving markets. Finance solutions must keep pace with operational demands without creating bottlenecks or friction.",
+      "We bepalen samen de doelen van uw website: welke uitstraling past bij uw bedrijf, wat moet de website opleveren en welke functionaliteiten heeft u nodig.",
   },
   {
-    title: "Risk must be understood legally, financially and operationally",
+    number: "03",
+    title: "Ontwerp",
     description:
-      "We approach risk from every angle — the legal implications, the financial exposure and the operational reality. This comprehensive view enables better decisions.",
+      "Op basis van de intake maken wij een eerste ontwerp — volledig gratis en zonder verplichtingen. U ziet direct hoe uw nieuwe website eruit gaat zien.",
   },
   {
-    title: "Claims must be pursued strategically and relentlessly",
+    number: "04",
+    title: "Revisies",
     description:
-      "Insurance recoveries require persistence and expertise. We navigate complex claims with strategic precision, protecting trading companies from financial losses.",
+      "Drie revisierondes zijn standaard inbegrepen. Zo scherpen we het ontwerp aan tot het exact past bij uw bedrijf en uw wensen.",
+  },
+  {
+    number: "05",
+    title: "Livegang",
+    description:
+      "Na uw goedkeuring bouwen wij de website en plaatsen deze online op uw eigen domeinnaam. Alles wordt zorgvuldig getest voor lancering.",
+  },
+  {
+    number: "06",
+    title: "Onderhoud",
+    description:
+      "Na livegang blijven wij uw website beveiligen, updaten en monitoren. U heeft één vast aanspreekpunt voor vragen en aanpassingen.",
   },
 ];
 
@@ -29,31 +46,32 @@ const Vision = () => {
   return (
     <Layout>
       <PageHeader
-        label="Our Philosophy"
-        title="Vision"
-        description="At TCF Orange, we believe that effective commodity finance must bridge the gap between strategic intent and operational reality."
-        backgroundImage="/images/vision-cocoa-bg.webp"
+        label="Van idee tot livegang"
+        title="Werkwijze"
+        description="In zes duidelijke stappen naar een professionele website. Transparant, persoonlijk en zonder ingewikkelde technische verhalen."
       />
 
-      {/* Principles Section */}
+      {/* Steps */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-12 text-center">
-              Core Principles
-            </h2>
-            <div className="space-y-10">
-              {principles.map((principle, index) => (
-                <div key={index} className="flex gap-5">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mt-1">
-                    <Check className="w-4 h-4 text-primary" />
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {steps.map((step) => (
+                <div
+                  key={step.number}
+                  className="group flex gap-6 md:gap-10 p-8 rounded-xl bg-white border border-border/60 hover:border-primary/30 transition-all duration-300 hover:shadow-md"
+                >
+                  <div className="flex-shrink-0">
+                    <span className="text-4xl md:text-5xl font-semibold text-primary/30 group-hover:text-primary transition-colors">
+                      {step.number}
+                    </span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {principle.title}
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
+                      {step.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {principle.description}
+                    <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">
+                      {step.description}
                     </p>
                   </div>
                 </div>
@@ -63,26 +81,44 @@ const Vision = () => {
         </div>
       </section>
 
-      {/* Bottom Statement */}
+      {/* Reassurance block */}
+      <section className="py-24 md:py-32 bg-secondary">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              Duidelijk, snel en persoonlijk
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                U spreekt tijdens het hele traject altijd dezelfde persoon.
+                Korte lijnen, snelle reacties en geen ingewikkelde technische
+                verhalen. Zo weet u precies waar u aan toe bent.
+              </p>
+              <p>
+                Gemiddeld staat uw nieuwe website binnen 2 tot 4 weken online,
+                afhankelijk van de omvang en uw eigen input.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="py-24 md:py-32 dark-section relative overflow-hidden">
-        {/* Background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-50"
-          style={{ backgroundImage: "url('/images/vision-cta-bg.png')" }}
-        />
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-background-dark/50" />
-        
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/5" />
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
-              Built on Experience, Driven by Results
+              Klaar voor stap 1?
             </h2>
-            <p className="text-white/70 text-lg leading-relaxed">
-              Every engagement at TCF Orange is guided by these principles. We
-              measure our success not by the documents we produce, but by the
-              outcomes we deliver for our clients.
+            <p className="text-white/70 text-lg leading-relaxed mb-10">
+              Neem contact op voor een vrijblijvende kennismaking. Wij denken
+              graag met u mee.
             </p>
+            <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+              Plan een kennismaking
+              <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
