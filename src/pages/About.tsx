@@ -1,8 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Mail, Phone } from "lucide-react";
+import { ArrowRight, Instagram, Mail, Phone } from "lucide-react";
 import portrait from "@/assets/wietse-portrait.jpg.asset.json";
-import { WhatsAppLink, WhatsAppIcon } from "@/components/shared/WhatsAppLink";
 
 const waarden = [
   {
@@ -73,14 +72,19 @@ const About = () => {
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 mt-8">
-                <WhatsAppLink className="btn-whatsapp">
-                  <WhatsAppIcon size={18} />
-                  Chat via WhatsApp
-                </WhatsAppLink>
-                <Link to="/contact" className="btn-outline-dark inline-flex items-center gap-2 group">
+                <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
                   Neem contact op
-                  <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight size={18} />
                 </Link>
+                <a
+                  href="https://instagram.com/wietsevanos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline-dark inline-flex items-center gap-2"
+                >
+                  <Instagram size={18} />
+                  @wietsevanos
+                </a>
               </div>
             </div>
           </div>
@@ -153,10 +157,15 @@ const About = () => {
               <Mail className="w-6 h-6 text-primary" />
               <span className="text-[0.9375rem]">wietsevanos@gmail.com</span>
             </a>
-            <WhatsAppLink className="flex flex-col items-center gap-3 text-white/85 hover:text-primary transition-colors">
-              <WhatsAppIcon size={22} className="text-primary" />
-              <span className="text-[0.9375rem]">WhatsApp, snelste antwoord</span>
-            </WhatsAppLink>
+            <a
+              href="https://instagram.com/wietsevanos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-3 text-white/85 hover:text-primary transition-colors"
+            >
+              <Instagram className="w-6 h-6 text-primary" />
+              <span className="text-[0.9375rem]">@wietsevanos</span>
+            </a>
           </div>
         </div>
       </section>
