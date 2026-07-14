@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Instagram, Mail, Phone } from "lucide-react";
 import logo from "@/assets/wietse-webworks-logo.png.asset.json";
+import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
 
 const diensten = [
   { label: "Webdesign", href: "/werk" },
