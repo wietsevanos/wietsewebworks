@@ -283,6 +283,7 @@ const BuildProgress = () => {
               active &&
               (i === buildSteps.length - 1 ||
                 progress < buildSteps[i + 1].threshold);
+            const Icon = step.icon;
             return (
               <li
                 key={step.label}
@@ -293,13 +294,13 @@ const BuildProgress = () => {
                 }`}
               >
                 <span
-                  className={`w-7 h-7 rounded-full flex items-center justify-center text-sm flex-shrink-0 ${
+                  className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${
                     active
                       ? "bg-primary/10 text-primary"
                       : "bg-secondary text-muted-foreground"
-                  } ${isCurrent && step.icon === "⚡" ? "animate-pulse" : ""}`}
+                  } ${isCurrent && step.pulse ? "animate-pulse" : ""}`}
                 >
-                  {step.icon}
+                  <Icon className="w-3.5 h-3.5" strokeWidth={2.5} />
                 </span>
                 <span
                   className={`text-[0.9375rem] ${
