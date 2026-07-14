@@ -572,6 +572,14 @@ const Prijzen = () => {
                 </div>
               </AccordionTrigger>
               <AccordionContent className="pb-6 text-[0.9375rem] text-foreground/85 leading-relaxed">
+                <div className="mb-6 rounded-xl overflow-hidden border border-border/60">
+                  <img
+                    src={microsoft365Image.url}
+                    alt="Microsoft 365"
+                    className="w-full h-40 md:h-48 object-cover"
+                    loading="lazy"
+                  />
+                </div>
                 <p className="mb-4">
                   Niet iedere ondernemer heeft behoefte aan het volledige
                   Microsoft 365 pakket met Teams, Word en OneDrive. Daarom bied
