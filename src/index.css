@@ -13,11 +13,11 @@
     --foreground: 220 15% 20%;
     
     /* Primary Orange Palette - Rich Warm Tones */
-    --primary: 25 95% 50%;
+    --primary: 210 95% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-deep: 20 90% 38%;
-    --primary-glow: 30 100% 55%;
-    --primary-light: 35 100% 65%;
+    --primary-deep: 215 90% 38%;
+    --primary-glow: 205 100% 55%;
+    --primary-light: 200 100% 65%;
     
     /* Card & Surfaces */
     --card: 0 0% 100%;
