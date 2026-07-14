@@ -202,6 +202,120 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
   );
 };
 
+/* -------------------------- Build progress (install-style) -------------------------- */
+const buildSteps = [
+  { icon: "✓", label: "Kennismaking voltooid", threshold: 15 },
+  { icon: "✓", label: "Ontwerp afgerond", threshold: 40 },
+  { icon: "⚡", label: "Ontwikkeling bezig", threshold: 65 },
+  { icon: "⏳", label: "Oplevering binnenkort", threshold: 74 },
+];
+
+const BuildProgress = () => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [progress, setProgress] = useState(0);
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting && !started) {
+            setStarted(true);
+            const start = performance.now();
+            const duration = 2600;
+            const target = 75;
+            const tick = (now: number) => {
+              const p = Math.min(1, (now - start) / duration);
+              const eased = 1 - Math.pow(1 - p, 3);
+              setProgress(Math.round(target * eased));
+              if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [started]);
+
+  return (
+    <div
+      ref={ref}
+      className="mt-16 bg-white rounded-3xl border border-border/60 shadow-sm p-8 md:p-14"
+    >
+      <div className="text-center mb-10">
+        <p className="text-primary font-medium mb-3 text-xs tracking-[0.2em] uppercase">
+          Van idee tot livegang
+        </p>
+        <h3 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
+          Uw website wordt gebouwd<span className="text-primary">...</span>
+        </h3>
+      </div>
+
+      {/* Progress bar */}
+      <div className="max-w-2xl mx-auto">
+        <div className="flex items-center justify-between mb-3 text-sm">
+          <span className="text-muted-foreground">Voortgang</span>
+          <span className="tabular-nums font-medium text-foreground">
+            {progress}%
+          </span>
+        </div>
+        <div className="relative h-2 w-full bg-secondary rounded-full overflow-hidden">
+          <div
+            className="absolute inset-y-0 left-0 bg-primary rounded-full transition-[width] duration-100 ease-out"
+            style={{
+              width: `${progress}%`,
+              boxShadow: "0 0 12px hsl(var(--primary) / 0.4)",
+            }}
+          />
+        </div>
+
+        {/* Steps */}
+        <ul className="mt-10 space-y-3">
+          {buildSteps.map((step, i) => {
+            const active = progress >= step.threshold;
+            const isCurrent =
+              active &&
+              (i === buildSteps.length - 1 ||
+                progress < buildSteps[i + 1].threshold);
+            return (
+              <li
+                key={step.label}
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-all duration-500 ${
+                  active
+                    ? "bg-secondary/60 border-border/60 opacity-100 translate-y-0"
+                    : "bg-transparent border-transparent opacity-40 translate-y-1"
+                }`}
+              >
+                <span
+                  className={`w-7 h-7 rounded-full flex items-center justify-center text-sm flex-shrink-0 ${
+                    active
+                      ? "bg-primary/10 text-primary"
+                      : "bg-secondary text-muted-foreground"
+                  } ${isCurrent && step.icon === "⚡" ? "animate-pulse" : ""}`}
+                >
+                  {step.icon}
+                </span>
+                <span
+                  className={`text-[0.9375rem] ${
+                    active ? "text-foreground" : "text-muted-foreground"
+                  }`}
+                >
+                  {step.label}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
 /* -------------------------- Component -------------------------- */
 const Prijzen = () => {
   const { value: price, ref: priceRef } = useCountUp(495);
@@ -335,50 +449,7 @@ const Prijzen = () => {
           </ul>
 
           <Reveal delay={300}>
-            <div className="mt-16 bg-foreground text-white rounded-3xl p-12 md:p-16 text-center">
-              <p className="text-white/50 text-xs uppercase tracking-[0.2em] mb-6">
-                En misschien nog wel het belangrijkste
-              </p>
-
-              <h3 className="text-3xl md:text-4xl font-semibold mb-4">
-                Eén vast aanspreekpunt
-              </h3>
-
-              <p className="text-white/70 max-w-md mx-auto mb-10 leading-relaxed">
-                Van eerste schets tot jarenlang onderhoud — u spreekt altijd
-                dezelfde persoon.
-              </p>
-
-              {/* Simple U → Wietse line */}
-              <div className="flex items-center justify-center gap-4 mb-10 text-sm">
-                <span className="text-white/60">U</span>
-                <div className="relative w-24 h-px bg-white/20 overflow-hidden">
-                  <div
-                    className="absolute inset-y-0 left-0 w-full bg-primary"
-                    style={{
-                      animation: "loadBar 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards",
-                      transformOrigin: "left",
-                    }}
-                  />
-                </div>
-                <span className="text-primary font-medium">Wietse</span>
-              </div>
-
-              <p className="text-white/60 text-sm mb-6">
-                Geen ticketsystemen &nbsp;·&nbsp; Geen helpdesks &nbsp;·&nbsp; Geen afdelingen
-              </p>
-
-              <p className="text-white/90">
-                Gewoon rechtstreeks contact met mij.
-              </p>
-
-              <style>{`
-                @keyframes loadBar {
-                  from { transform: scaleX(0); }
-                  to { transform: scaleX(1); }
-                }
-              `}</style>
-            </div>
+            <BuildProgress />
           </Reveal>
         </div>
       </section>
@@ -444,7 +515,7 @@ const Prijzen = () => {
               </div>
 
               {/* Includes */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10 items-start">
                 {hostingIncludes.map((item) => (
                   <HostingIncludeItem key={item.label} item={item} />
                 ))}
