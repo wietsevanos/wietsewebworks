@@ -168,9 +168,9 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
   const [open, setOpen] = useState(false);
   const Icon = item.icon;
   return (
-    <div className="group border-b border-border/50 last:border-b-0 py-3">
-      <div className="flex items-center gap-3">
-        <div className="w-9 h-9 rounded-full bg-primary/8 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-primary/15">
+    <div className="group bg-white rounded-2xl border border-border/60 hover:border-primary/30 transition-all hover:shadow-[0_10px_30px_-15px_hsl(210_95%_50%/0.2)]">
+      <div className="flex items-center gap-3 px-4 py-3.5">
+        <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-primary/15">
           <Icon className="w-4 h-4 text-primary" />
         </div>
         <div className="flex-1 flex items-center justify-between gap-2 text-foreground/90 text-[0.9375rem]">
@@ -194,7 +194,7 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
           style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
         >
           <div className="overflow-hidden">
-            <p className="pl-12 pt-2 text-sm text-muted-foreground leading-relaxed">
+            <p className="px-4 pb-3 pl-16 text-sm text-muted-foreground leading-relaxed">
               {item.info}
             </p>
           </div>
@@ -203,6 +203,7 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
     </div>
   );
 };
+
 
 
 /* -------------------------- Build progress (install-style) -------------------------- */
@@ -589,7 +590,7 @@ const Prijzen = () => {
                 </div>
               </Reveal>
               <Reveal delay={100}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {hostingIncludes.map((item) => (
                     <HostingIncludeItem key={item.label} item={item} />
                   ))}
