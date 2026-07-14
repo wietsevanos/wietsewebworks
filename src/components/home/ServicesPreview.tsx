@@ -2,31 +2,37 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const services = [
-{
-  title: "Trade Finance Structuring & Advisory",
-  description: "Designing bespoke trade finance facilities tailored to your commodity flows."
-},
-{
-  title: "Facility Optimisation & Renewal",
-  description: "Reviewing arrangements to enhance flexibility and optimise headroom."
-},
-{
-  title: "Transactional Support & Execution",
-  description: "Supporting traders in day-to-day use of their credit lines."
-},
-{
-  title: "Marine Cargo Insurance",
-  description: "Find and purchase the best insurance programs that protect your cargo and/or receivables."
-},
-{
-  title: "Complex Claims Handling & Recovery",
-  description: "Managing complex marine cargo claims to secure recovery."
-},
-{
-  title: "Advisory & Interim Risk Leadership",
-  description: "Interim and project-based support for finance and risk."
-}];
-
+  {
+    title: "Webdesign",
+    description:
+      "Moderne, herkenbare ontwerpen die volledig aansluiten op de uitstraling van uw bedrijf.",
+  },
+  {
+    title: "Website ontwikkeling",
+    description:
+      "Snelle, veilige websites die op laptop, tablet en mobiel perfect werken.",
+  },
+  {
+    title: "Hosting",
+    description:
+      "Betrouwbare hosting inclusief monitoring, beveiliging en dagelijkse back-ups.",
+  },
+  {
+    title: "Onderhoud",
+    description:
+      "Updates, technische controles en support — u hoeft nergens naar om te kijken.",
+  },
+  {
+    title: "Microsoft 365",
+    description:
+      "Zakelijke e-mail en professionele communicatie via Microsoft 365 Business Basic.",
+  },
+  {
+    title: "Doorlopende ondersteuning",
+    description:
+      "Ook na livegang blijven wij bereikbaar voor vragen, aanpassingen en advies.",
+  },
+];
 
 export const ServicesPreview = () => {
   return (
@@ -34,19 +40,16 @@ export const ServicesPreview = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">
-            What We Do
+            Wat wij doen
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">Services
-
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
+            Alles onder één dak
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) =>
-          <div
-            key={service.title}
-            className="service-card group">
-
+          {services.map((service) => (
+            <div key={service.title} className="service-card group">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
                 <div className="w-2 h-2 rounded-full bg-primary" />
               </div>
@@ -57,19 +60,19 @@ export const ServicesPreview = () => {
                 {service.description}
               </p>
             </div>
-          )}
+          ))}
         </div>
 
         <div className="text-center mt-14">
           <Link
-            to="/services"
-            className="btn-outline-dark inline-flex items-center gap-2">
-
-            Explore all services
+            to="/diensten"
+            className="btn-outline-dark inline-flex items-center gap-2"
+          >
+            Bekijk alle diensten
             <ArrowRight size={18} />
           </Link>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };

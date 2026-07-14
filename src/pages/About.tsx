@@ -1,32 +1,45 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Linkedin } from "lucide-react";
+import { ArrowRight, Instagram, Mail, Phone } from "lucide-react";
 
-const languages = [
-  { name: "English", level: "Fluent" },
-  { name: "Dutch", level: "Fluent" },
-  { name: "Spanish", level: "Fluent" },
-  { name: "Portuguese", level: "Proficient" },
-  { name: "French", level: "Proficient" },
+const waarden = [
+  {
+    title: "Persoonlijk contact",
+    text: "U spreekt tijdens het hele traject altijd dezelfde persoon — geen callcenter, geen wisselende accountmanagers.",
+  },
+  {
+    title: "Duidelijke communicatie",
+    text: "Geen ingewikkelde technische verhalen. Wij leggen alles uit in gewone taal, zodat u precies weet wat er gebeurt.",
+  },
+  {
+    title: "Lokale betrokkenheid",
+    text: "Als ondernemer uit Haarlem ken ik de regio en snap ik wat lokale bedrijven nodig hebben om zich te onderscheiden.",
+  },
+  {
+    title: "Eerlijke prijzen",
+    text: "Transparante tarieven, geen verborgen kosten en geen dure extra's die u eigenlijk niet nodig heeft.",
+  },
 ];
 
 const About = () => {
   return (
     <Layout>
-      {/* Hero Section with Photo */}
+      {/* Intro Section */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Photo with orange accent */}
+            {/* Visual */}
             <div className="flex justify-center lg:justify-start">
               <div className="relative">
                 <div className="absolute -left-4 top-0 bottom-0 w-1 bg-primary rounded-full" />
-                <div className="w-72 h-72 md:w-80 md:h-80 overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src="/images/christiaan-portrait.png"
-                    alt="Christiaan van den Brink"
-                    className="w-full h-full object-cover object-top"
-                  />
+                <div className="w-72 h-72 md:w-80 md:h-80 overflow-hidden rounded-2xl shadow-lg bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center">
+                  <div className="text-center">
+                    <p className="text-7xl md:text-8xl font-semibold text-primary/70 leading-none">
+                      W
+                    </p>
+                    <p className="mt-4 font-medium text-foreground/80">Wietse van Os</p>
+                    <p className="text-sm text-muted-foreground">Haarlem</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -34,42 +47,43 @@ const About = () => {
             {/* Introduction */}
             <div>
               <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
-                Founder & Principal Advisor
+                Oprichter &amp; webdesigner
               </p>
               <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-6 leading-tight">
-                Christiaan van den Brink
+                Hallo, ik ben Wietse
               </h1>
               <div className="space-y-4 text-muted-foreground leading-relaxed text-[0.9375rem]">
                 <p>
-                  With over 15 years of experience in commodity trade finance and marine insurance, 
-                  Christiaan brings deep expertise to every engagement. His career spans structuring 
-                  complex financing facilities, advising trading companies on risk management, and 
-                  recovering substantial claims from insurers.
+                  Vanuit Haarlem bouw ik websites voor lokale ondernemers en
+                  kleine bedrijven door heel Nederland. Ik geloof dat elke
+                  ondernemer online net zo professioneel moet kunnen overkomen
+                  als in het echt — ongeacht budget of technische kennis.
                 </p>
                 <p>
-                Previously at Aon as a marine cargo insurance specialist, he developed comprehensive 
-                  coverage programs for commodity traders and built extensive claims handling experience. 
-                  Before Aon, Christiaan has worked at the commodity finance desks of ABN Amro/Deutsche Bank, 
-                  Garantibank International BBVA and Maersk. His legal background underpins a rigorous, 
-                  analytical approach to every challenge.
+                  Bij Wietse Webworks krijgt u geen standaardpakket, maar een
+                  website die past bij uw bedrijf, uw doelgroep en uw doelen.
+                  Van eerste ontwerp tot doorlopend onderhoud werk ik met u
+                  samen, en u heeft altijd één vast aanspreekpunt: mij.
+                </p>
+                <p>
+                  Naast websites verzorg ik ook hosting, onderhoud en zakelijke
+                  e-mail via Microsoft 365 — alles onder één dak, zodat u geen
+                  gedoe heeft met verschillende leveranciers.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 mt-8">
-                <Link
-                  to="/message"
-                  className="btn-primary inline-flex items-center gap-2"
-                >
-                  Get in touch
+                <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+                  Neem contact op
                   <ArrowRight size={18} />
                 </Link>
                 <a
-                  href="https://linkedin.com"
+                  href="https://instagram.com/wietsevanos"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline-dark inline-flex items-center gap-2"
                 >
-                  <Linkedin size={18} />
-                  LinkedIn
+                  <Instagram size={18} />
+                  @wietsevanos
                 </a>
               </div>
             </div>
@@ -77,138 +91,81 @@ const About = () => {
         </div>
       </section>
 
-      {/* Expertise & Background */}
+      {/* Waarden */}
       <section className="py-24 md:py-32 bg-secondary">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
-              Background
+              Waar ik voor sta
             </p>
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-              Expertise & Experience
+              Vier principes waar ik nooit op inlever
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Trade Finance */}
-            <div className="bg-white rounded-lg p-8 shadow-sm">
-              <div className="h-1 bg-primary w-12 mb-6 rounded-full" />
-              <h3 className="text-lg font-semibold text-foreground mb-4">
-                Commodity Trade Finance
-              </h3>
-              <div className="space-y-3 text-muted-foreground text-[0.9375rem] leading-relaxed">
-                <p>
-                  Extensive experience structuring transactional financing facilities for trading 
-                  companies across energy, metals and agricultural commodities.
-                </p>
-                <p>
-                  Deep understanding of bank requirements, covenant frameworks and 
-                  security structures that enable practical, usable credit lines.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {waarden.map((w) => (
+              <div key={w.title} className="bg-white rounded-xl p-8 shadow-sm">
+                <div className="h-1 bg-primary w-12 mb-6 rounded-full" />
+                <h3 className="text-lg font-semibold text-foreground mb-3">
+                  {w.title}
+                </h3>
+                <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">
+                  {w.text}
                 </p>
               </div>
-            </div>
-
-            {/* Insurance */}
-            <div className="bg-white rounded-lg p-8 shadow-sm">
-              <div className="h-1 bg-primary w-12 mb-6 rounded-full" />
-              <h3 className="text-lg font-semibold text-foreground mb-4">
-                Marine Cargo Insurance
-              </h3>
-              <div className="space-y-3 text-muted-foreground text-[0.9375rem] leading-relaxed">
-                <p>
-                  Former Aon specialist with deep expertise in designing marine cargo 
-                  insurance programs tailored to commodity trading operations.
-                </p>
-                <p>
-                  Comprehensive knowledge of policy structures, coverage triggers and 
-                  the specific risks commodity traders face.
-                </p>
-              </div>
-            </div>
-
-            {/* Claims */}
-            <div className="bg-white rounded-lg p-8 shadow-sm">
-              <div className="h-1 bg-primary w-12 mb-6 rounded-full" />
-              <h3 className="text-lg font-semibold text-foreground mb-4">
-                Claims & Recovery
-              </h3>
-              <div className="space-y-3 text-muted-foreground text-[0.9375rem] leading-relaxed">
-                <p>
-                  Proven track record in complex marine cargo claims, combining legal 
-                  precision with commercial pragmatism to secure recoveries.
-                </p>
-                <p>
-                  Understanding of insurer tactics and coverage disputes enables 
-                  strategic, persistent pursuit of client interests.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Positioning */}
+      {/* Regio */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
-                Our Approach
-              </p>
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-                Independent & Client-Focused
-              </h2>
-            </div>
-
-            <div className="space-y-6 text-muted-foreground leading-relaxed text-center">
-              <p>
-                TCF Orange operates with complete independence. We maintain no lending 
-                relationships, brokerage arrangements or other conflicts that might 
-                compromise our advice. Every recommendation serves client interests exclusively.
-              </p>
-              <p>
-                Based in Amsterdam, we combine Dutch directness with international reach, 
-                serving commodity traders across Europe and beyond. Our approach emphasizes 
-                practical execution — solutions that work in real market conditions, not just on paper.
-              </p>
-            </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
+              Regio
+            </p>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+              Lokaal betrokken, landelijk actief
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              De focus ligt op Haarlem, Bloemendaal en Heemstede, maar ik werk
+              met plezier voor klanten door heel Nederland. Dankzij korte
+              digitale lijnen en persoonlijk contact voelt de samenwerking altijd
+              dichtbij — of u nu om de hoek of aan de andere kant van het land zit.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Languages Section */}
-      <section className="py-24 md:py-32 dark-section">
+      {/* Contact strip */}
+      <section className="py-20 dark-section">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-20">
-              {/* Title */}
-              <div className="lg:w-1/3">
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="w-1 h-12 bg-primary rounded-full" />
-                  <h2 className="text-2xl md:text-3xl font-semibold text-white">
-                    Languages
-                  </h2>
-                </div>
-                <p className="text-white/60 text-sm ml-5">
-                  Christiaan speaks five languages
-                </p>
-              </div>
-
-              {/* Language Grid */}
-              <div className="lg:w-2/3">
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  {languages.map((language) => (
-                    <div
-                      key={language.name}
-                      className="px-6 py-4 border-2 border-primary text-center text-white font-medium"
-                    >
-                      <div>{language.name}</div>
-                      <div className="text-xs text-white/70 font-normal mt-1">{language.level}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <a
+              href="tel:+31647872734"
+              className="flex flex-col items-center gap-3 text-white/85 hover:text-primary transition-colors"
+            >
+              <Phone className="w-6 h-6 text-primary" />
+              <span className="text-[0.9375rem]">06 47 87 27 34</span>
+            </a>
+            <a
+              href="mailto:wietsevanos@gmail.com"
+              className="flex flex-col items-center gap-3 text-white/85 hover:text-primary transition-colors"
+            >
+              <Mail className="w-6 h-6 text-primary" />
+              <span className="text-[0.9375rem]">wietsevanos@gmail.com</span>
+            </a>
+            <a
+              href="https://instagram.com/wietsevanos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-3 text-white/85 hover:text-primary transition-colors"
+            >
+              <Instagram className="w-6 h-6 text-primary" />
+              <span className="text-[0.9375rem]">@wietsevanos</span>
+            </a>
           </div>
         </div>
       </section>

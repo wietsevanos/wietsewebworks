@@ -11,54 +11,64 @@ import {
 
 const faqs = [
   {
-    question: "What services does TCF Orange offer?",
+    question: "Wat kost een website bij Wietse Webworks?",
     answer:
-      "TCF Orange provides specialised financial advisory for commodity traders, including structured trade finance, risk management, marine cargo insurance support and professional claims handling.",
+      "Een website begint bij €495 en loopt op tot ongeveer €1.200, afhankelijk van de omvang, de gewenste functionaliteiten en het aantal pagina's. Het eerste ontwerp is altijd gratis, zodat u zonder verplichtingen kunt zien wat u krijgt.",
   },
   {
-    question: "How can TCF Orange help me manage risk?",
+    question: "Wordt er btw berekend?",
     answer:
-      "We analyse transaction and operational exposure within commodity trading structures and implement targeted risk mitigation strategies, including insurance optimisation and claims recovery to protect margins and capital.",
+      "Nee. Wietse Webworks valt onder de KOR-regeling (Kleineondernemersregeling) en berekent daarom geen btw. Alle prijzen op de website zijn definitieve bedragen.",
   },
   {
-    question: "What makes TCF Orange different from other financial advisors?",
+    question: "Wat kost hosting en onderhoud per maand?",
     answer:
-      "Our expertise is fully focused on the commodity trading sector. We combine trade finance knowledge with hands on insurance and claims experience, allowing us to deliver practical, transaction driven solutions rather than generic financial advice.",
+      "Hosting en onderhoud kost €37,95 per maand. Daarin zit alles inbegrepen: hosting op Nederlandse servers, dagelijkse back-ups, beveiligingsupdates, monitoring en doorlopende ondersteuning. Zo hoeft u nergens meer naar om te kijken.",
   },
   {
-    question: "How does TCF Orange charge for its services?",
+    question: "Krijg ik ook een zakelijk e-mailadres?",
     answer:
-      "Our fee structures are tailored to each engagement. For project-based work such as facility structuring or claims handling, we typically agree fixed or capped fees. For ongoing advisory relationships or interim roles, we offer retainer or day-rate arrangements. We're always transparent about costs before commencing work.",
+      "Ja, dat kan. Via Microsoft 365 Business Basic krijgt u voor €12,49 per maand extra een professioneel e-mailadres op uw eigen domein, inclusief Outlook, Teams, agenda en cloudopslag.",
   },
   {
-    question: "Can you work alongside our existing bank relationships?",
+    question: "Hoeveel revisierondes zijn inbegrepen?",
     answer:
-      "Absolutely. We're designed to enhance, not replace, your banking relationships. We work collaboratively with your relationship banks, helping to structure facilities that meet both your needs and their credit requirements. Our involvement typically improves dialogue and outcomes.",
+      "Drie volledige revisierondes zijn standaard inbegrepen. In deze rondes scherpen we het ontwerp en de teksten aan totdat alles exact aansluit bij uw wensen.",
   },
   {
-    question: "What's your approach to insurance claims?",
+    question: "Hoe lang duurt het voordat mijn website online staat?",
     answer:
-      "We approach claims strategically and persistently. This means thorough documentation, clear coverage analysis, professional adjuster management and firm negotiation when required. We understand insurer tactics and how to counter them effectively while maintaining professional relationships.",
+      "Gemiddeld staat uw website binnen 2 tot 4 weken online. De doorlooptijd hangt af van de omvang van de website en hoe snel u feedback en materiaal kunt aanleveren.",
   },
   {
-    question: "Do you provide legal advice?",
+    question: "Werken jullie alleen in Haarlem?",
     answer:
-      "While Christiaan has a legal background, TCF Orange provides commercial advisory services rather than formal legal advice. For matters requiring legal opinions or litigation, we work alongside qualified law firms, providing commercial context and coordination.",
+      "De focus ligt op Haarlem, Bloemendaal en Heemstede, maar wij werken voor klanten door heel Nederland. Door persoonlijk (digitaal) contact voelt de samenwerking altijd dichtbij.",
   },
   {
-    question: "How quickly can you mobilise for a new engagement?",
+    question: "Kan ik zelf de teksten of afbeeldingen later aanpassen?",
     answer:
-      "We maintain flexibility to respond quickly when needed. For urgent matters such as active claims or transaction issues, we can typically begin work within days. For larger projects, we'll discuss timeline and resource requirements during initial conversations.",
+      "Kleine aanpassingen aan teksten of afbeeldingen kunt u gewoon aan ons doorgeven — die voeren wij binnen het onderhoudscontract voor u door. U hoeft dus zelf geen technische kennis te hebben.",
   },
   {
-    question: "What geographical areas do you cover?",
+    question: "Wat gebeurt er als ik na livegang extra pagina's wil?",
     answer:
-      "Based in Amsterdam, we primarily serve clients in Europe. However, commodity trade finance is inherently international, and we regularly work on matters involving banks and counterparties across major trading centres worldwide.",
+      "Uitbreidingen zijn altijd mogelijk. Voor grotere aanpassingen of extra pagina's maken wij vooraf een duidelijke offerte, zodat u nooit voor verrassingen komt te staan.",
   },
   {
-    question: "Can you help with banking relationships during difficult times?",
+    question: "Is de website ook geschikt voor mobiel?",
     answer:
-      "Yes, this is often when our involvement is most valuable. We help trading companies navigate challenging conversations with banks, whether related to covenant breaches, facility renewals during difficult markets or credit line pressure. Our experience enables pragmatic solutions.",
+      "Elke website die wij bouwen is volledig responsive. Dat betekent dat de website er op laptop, tablet én mobiel perfect uitziet en overal snel laadt.",
+  },
+  {
+    question: "Zorgen jullie ook voor de domeinnaam?",
+    answer:
+      "Ja. Wij kunnen uw bestaande domeinnaam koppelen of een nieuwe domeinnaam voor u registreren en beheren. Alles wordt voor u geregeld.",
+  },
+  {
+    question: "Bij wie kan ik terecht na livegang?",
+    answer:
+      "Bij dezelfde persoon als tijdens het hele traject: Wietse zelf. U kunt bellen, WhatsAppen of mailen — geen callcenter, geen wachttijden.",
   },
 ];
 
@@ -66,13 +76,11 @@ const FAQ = () => {
   return (
     <Layout>
       <PageHeader
-        label="Questions"
+        label="Veelgestelde vragen"
         title="FAQ"
-        description="Common questions about our services, approach and how we work with clients."
-        backgroundImage="/images/faq-header-bg-v2.png"
+        description="Antwoorden op de vragen die ondernemers ons het vaakst stellen — over prijzen, doorlooptijd, hosting en samenwerken."
       />
 
-      {/* FAQ Accordion */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mx-auto">
@@ -81,7 +89,7 @@ const FAQ = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="border-0 rounded-lg bg-muted/30 px-6 data-[state=open]:bg-primary/5 data-[state=open]:ring-1 data-[state=open]:ring-primary/20 transition-all duration-200"
+                  className="border-0 rounded-xl bg-muted/30 px-6 data-[state=open]:bg-primary/5 data-[state=open]:ring-1 data-[state=open]:ring-primary/20 transition-all duration-200"
                 >
                   <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-5 text-[0.9375rem] gap-4 [&>svg]:text-primary [&>svg]:w-5 [&>svg]:h-5">
                     <span className="flex items-center gap-3">
@@ -99,30 +107,19 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-24 md:py-32 dark-section relative overflow-hidden">
-        {/* Background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-50"
-          style={{ backgroundImage: "url('/images/faq-silver-bg.png')" }}
-        />
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-background-dark/50" />
-        
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/5" />
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
-              Have other questions?
+              Staat uw vraag er niet tussen?
             </h2>
             <p className="text-white/70 text-lg leading-relaxed mb-10">
-              We're happy to discuss your specific situation and how TCF Orange
-              might be able to help.
+              Stuur gerust een appje of mail. U krijgt altijd persoonlijk
+              antwoord — meestal binnen één werkdag.
             </p>
-            <Link
-              to="/message"
-              className="btn-primary inline-flex items-center gap-2"
-            >
-              Get in touch
+            <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+              Stel uw vraag
               <ArrowRight size={18} />
             </Link>
           </div>
