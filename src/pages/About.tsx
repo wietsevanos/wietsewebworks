@@ -1,7 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import portrait from "@/assets/wietse-portrait.jpg.asset.json";
+import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
 
