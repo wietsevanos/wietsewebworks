@@ -219,47 +219,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
   );
 };
 
-const MarqueeRow = ({
-  items,
-  direction,
-  accent = false,
-}: {
-  items: string[];
-  direction: "left" | "right";
-  accent?: boolean;
-}) => {
-  const doubled = [...items, ...items];
-  return (
-    <div
-      className="group relative overflow-hidden"
-      style={{
-        maskImage:
-          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-      }}
-    >
-      <div
-        className={`flex gap-4 w-max ${
-          direction === "left" ? "animate-marquee-left" : "animate-marquee-right"
-        } group-hover:[animation-play-state:paused]`}
-      >
-        {doubled.map((item, i) => (
-          <div
-            key={`${item}-${i}`}
-            className={`shrink-0 px-7 py-4 rounded-full border backdrop-blur-sm text-base md:text-lg font-medium tracking-tight whitespace-nowrap transition-colors ${
-              accent
-                ? "border-primary/40 bg-primary/10 text-white hover:bg-primary/20"
-                : "border-white/15 bg-white/[0.04] text-white/85 hover:bg-white/[0.08]"
-            }`}
-          >
-            {item}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 const TiltCard = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef<HTMLDivElement | null>(null);
