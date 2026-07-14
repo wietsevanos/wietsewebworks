@@ -590,7 +590,7 @@ const Prijzen = () => {
                 </div>
               </Reveal>
               <Reveal delay={100}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {hostingIncludes.map((item) => (
                     <HostingIncludeItem key={item.label} item={item} />
                   ))}
