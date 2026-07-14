@@ -14,6 +14,7 @@ const Message = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showKor, setShowKor] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
