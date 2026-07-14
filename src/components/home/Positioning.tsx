@@ -1,12 +1,19 @@
+import { Reveal } from "@/components/shared/Reveal";
+
 export const Positioning = () => {
   return (
-    <section className="py-24 md:py-32 bg-background">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">
+    <section className="relative py-24 md:py-32 bg-background overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/2 -left-40 -translate-y-1/2 w-[30rem] h-[30rem] rounded-full blur-3xl animate-orb-drift-a"
+        style={{ background: "radial-gradient(circle at center, hsla(210,95%,55%,0.08), transparent 65%)" }}
+      />
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <Reveal className="max-w-3xl mx-auto text-center">
+          <p className="text-primary font-medium mb-4 text-sm tracking-[0.14em] uppercase">
             Onze aanpak
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-8 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-8 leading-tight tracking-tight">
             Online net zo professioneel overkomen als in het echt
           </h2>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
@@ -23,7 +30,7 @@ export const Positioning = () => {
               lijnen, transparante prijzen en persoonlijk contact.
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
