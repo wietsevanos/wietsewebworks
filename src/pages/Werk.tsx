@@ -363,7 +363,7 @@ const Werk = () => {
       <GlassCTA
         eyebrow="Uw bedrijf hierbij?"
         title="Klaar voor een website die uw bedrijf laat groeien?"
-        description="Elk project op deze pagina begon met een vrijblijvende kennismaking. Laten we ontdekken wat ik voor uw bedrijf kunnen betekenen."
+        description="Elk project op deze pagina begon met een vrijblijvende kennismaking. Laten we ontdekken wat ik voor uw bedrijf kan betekenen."
         primaryLabel="Start uw project"
       />
     </Layout>
