@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "Hoeveel revisierondes zijn inbegrepen?",
     answer:
-      "Drie volledige revisierondes zijn standaard inbegrepen. In deze rondes scherpen we het ontwerp en de teksten aan totdat alles exact aansluit bij uw wensen.",
+      "Drie volledige revisierondes zijn standaard inbegrepen. In deze rondes scherp ik het ontwerp en de teksten aan totdat alles exact aansluit bij uw wensen.",
   },
   {
     question: "Hoe lang duurt het voordat mijn website online staat?",
