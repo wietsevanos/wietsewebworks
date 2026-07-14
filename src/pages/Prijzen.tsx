@@ -155,6 +155,53 @@ const faqs = [
   },
 ];
 
+/* -------------------------- Hosting include item -------------------------- */
+type HostingItem = {
+  icon: typeof Server;
+  label: string;
+  info?: string;
+};
+
+const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
+  const [open, setOpen] = useState(false);
+  const Icon = item.icon;
+  return (
+    <div className="bg-secondary/60 rounded-xl border border-border/40 overflow-hidden">
+      <div className="flex items-center gap-3 px-4 py-3">
+        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <Icon className="w-4 h-4 text-primary" />
+        </div>
+        <div className="flex-1 flex items-center justify-between gap-2 text-foreground/90 text-[0.9375rem]">
+          <span>{item.label}</span>
+          {item.info && (
+            <button
+              type="button"
+              onClick={() => setOpen((o) => !o)}
+              aria-expanded={open}
+              aria-label="Meer informatie"
+              className="w-6 h-6 rounded-full hover:bg-primary/10 flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Info className="w-4 h-4" />
+            </button>
+          )}
+        </div>
+      </div>
+      {item.info && (
+        <div
+          className="grid transition-all duration-300 ease-out"
+          style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+        >
+          <div className="overflow-hidden">
+            <p className="px-4 pb-3 text-sm text-muted-foreground leading-relaxed">
+              {item.info}
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 /* -------------------------- Component -------------------------- */
 const Prijzen = () => {
   const { value: price, ref: priceRef } = useCountUp(495);
@@ -288,64 +335,42 @@ const Prijzen = () => {
           </ul>
 
           <Reveal delay={300}>
-            <div className="mt-16 relative overflow-hidden bg-foreground text-white rounded-3xl p-10 md:p-14 text-center">
-              {/* Subtle animated gradient glow */}
-              <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-3xl" />
+            <div className="mt-16 bg-foreground text-white rounded-3xl p-12 md:p-16 text-center">
+              <p className="text-white/50 text-xs uppercase tracking-[0.2em] mb-6">
+                En misschien nog wel het belangrijkste
+              </p>
 
-              <div className="relative">
-                <div className="inline-flex items-center gap-2 text-white/60 text-xs uppercase tracking-[0.2em] mb-5">
-                  <Sparkles className="w-4 h-4 text-primary" />
-                  En misschien nog wel het belangrijkste
+              <h3 className="text-3xl md:text-4xl font-semibold mb-4">
+                Eén vast aanspreekpunt
+              </h3>
+
+              <p className="text-white/70 max-w-md mx-auto mb-10 leading-relaxed">
+                Van eerste schets tot jarenlang onderhoud — u spreekt altijd
+                dezelfde persoon.
+              </p>
+
+              {/* Simple U → Wietse line */}
+              <div className="flex items-center justify-center gap-4 mb-10 text-sm">
+                <span className="text-white/60">U</span>
+                <div className="relative w-24 h-px bg-white/20 overflow-hidden">
+                  <div
+                    className="absolute inset-y-0 left-0 w-full bg-primary"
+                    style={{
+                      animation: "loadBar 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+                      transformOrigin: "left",
+                    }}
+                  />
                 </div>
-
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/15 border border-primary/30 mb-6">
-                  <UserCheck className="w-7 h-7 text-primary" />
-                </div>
-
-                <h3 className="text-3xl md:text-4xl font-semibold mb-4">
-                  Eén vast aanspreekpunt
-                </h3>
-                <p className="text-white/70 max-w-md mx-auto mb-10">
-                  Van eerste schets tot jarenlang onderhoud — u spreekt altijd
-                  dezelfde persoon.
-                </p>
-
-                {/* Animated "route" bar */}
-                <div className="max-w-lg mx-auto mb-8">
-                  <div className="relative h-1.5 bg-white/10 rounded-full overflow-hidden">
-                    <div
-                      className="absolute inset-y-0 left-0 bg-primary rounded-full"
-                      style={{
-                        width: "100%",
-                        animation: "loadBar 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards",
-                        transformOrigin: "left",
-                      }}
-                    />
-                  </div>
-                  <div className="mt-3 flex justify-between text-xs text-white/60">
-                    <span>U</span>
-                    <span className="text-white/40">→</span>
-                    <span className="text-primary font-medium">Wietse</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap justify-center gap-3 mb-6">
-                  {["Geen ticketsystemen", "Geen helpdesks", "Geen afdelingen"].map(
-                    (t) => (
-                      <span
-                        key={t}
-                        className="text-sm text-white/80 bg-white/5 border border-white/10 rounded-full px-4 py-1.5"
-                      >
-                        {t}
-                      </span>
-                    )
-                  )}
-                </div>
-
-                <p className="text-white/90 text-lg">
-                  Gewoon rechtstreeks contact met mij.
-                </p>
+                <span className="text-primary font-medium">Wietse</span>
               </div>
+
+              <p className="text-white/60 text-sm mb-6">
+                Geen ticketsystemen &nbsp;·&nbsp; Geen helpdesks &nbsp;·&nbsp; Geen afdelingen
+              </p>
+
+              <p className="text-white/90">
+                Gewoon rechtstreeks contact met mij.
+              </p>
 
               <style>{`
                 @keyframes loadBar {
@@ -357,6 +382,7 @@ const Prijzen = () => {
           </Reveal>
         </div>
       </section>
+
 
 
 
@@ -419,31 +445,11 @@ const Prijzen = () => {
 
               {/* Includes */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-                {hostingIncludes.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={item.label}
-                      className="flex items-start gap-3 bg-secondary/60 rounded-xl px-4 py-3 border border-border/40"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-4 h-4 text-primary" />
-                      </div>
-                      <div className="flex items-center gap-2 text-foreground/90 text-[0.9375rem]">
-                        {item.label}
-                        {item.info && (
-                          <span className="group relative inline-flex">
-                            <Info className="w-4 h-4 text-muted-foreground cursor-help" />
-                            <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-64 rounded-lg bg-foreground text-white text-xs p-3 opacity-0 group-hover:opacity-100 transition-opacity z-10 shadow-lg">
-                              {item.info}
-                            </span>
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
+                {hostingIncludes.map((item) => (
+                  <HostingIncludeItem key={item.label} item={item} />
+                ))}
               </div>
+
 
               <div className="text-center">
                 <Link
