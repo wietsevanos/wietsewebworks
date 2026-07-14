@@ -115,7 +115,7 @@
   
   /* Premium Service Card */
   .service-card {
-    @apply bg-card border border-border/60 p-8 transition-all duration-300;
+    @apply bg-card border border-border/60 p-8 rounded-xl transition-all duration-300;
   }
   
   .service-card:hover {
@@ -130,7 +130,7 @@
   
   /* Premium Buttons */
   .btn-primary {
-    @apply bg-primary text-primary-foreground px-7 py-3.5 font-medium transition-all duration-200;
+    @apply bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-medium transition-all duration-200;
     font-size: 0.9375rem;
   }
   
@@ -140,17 +140,17 @@
   }
   
   .btn-outline {
-    @apply border border-white/30 text-white px-7 py-3.5 font-medium transition-all duration-200 hover:bg-white/10;
+    @apply border border-white/30 text-white px-7 py-3.5 rounded-full font-medium transition-all duration-200 hover:bg-white/10;
     font-size: 0.9375rem;
   }
   
   .btn-outline-dark {
-    @apply border border-border text-foreground px-7 py-3.5 font-medium transition-all duration-200 hover:border-primary hover:text-primary;
+    @apply border border-border text-foreground px-7 py-3.5 rounded-full font-medium transition-all duration-200 hover:border-primary hover:text-primary;
     font-size: 0.9375rem;
   }
   
   .btn-ghost {
-    @apply text-foreground px-6 py-3 font-medium transition-colors duration-200 hover:text-primary;
+    @apply text-foreground px-6 py-3 rounded-full font-medium transition-colors duration-200 hover:text-primary;
     font-size: 0.9375rem;
   }
 }
