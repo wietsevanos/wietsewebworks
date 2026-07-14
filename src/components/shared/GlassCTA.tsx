@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Phone } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Reveal } from "./Reveal";
 import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
 
