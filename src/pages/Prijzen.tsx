@@ -398,31 +398,11 @@ const Prijzen = () => {
 
               {/* Includes */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-                {hostingIncludes.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={item.label}
-                      className="flex items-start gap-3 bg-secondary/60 rounded-xl px-4 py-3 border border-border/40"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-4 h-4 text-primary" />
-                      </div>
-                      <div className="flex items-center gap-2 text-foreground/90 text-[0.9375rem]">
-                        {item.label}
-                        {item.info && (
-                          <span className="group relative inline-flex">
-                            <Info className="w-4 h-4 text-muted-foreground cursor-help" />
-                            <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-64 rounded-lg bg-foreground text-white text-xs p-3 opacity-0 group-hover:opacity-100 transition-opacity z-10 shadow-lg">
-                              {item.info}
-                            </span>
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
+                {hostingIncludes.map((item) => (
+                  <HostingIncludeItem key={item.label} item={item} />
+                ))}
               </div>
+
 
               <div className="text-center">
                 <Link
