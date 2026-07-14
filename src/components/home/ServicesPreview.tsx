@@ -36,6 +36,14 @@ const services = [
 ];
 
 export const ServicesPreview = () => {
+  const accents = [
+    { text: "text-primary", bg: "bg-primary/10", hover: "group-hover:bg-primary/20", dot: "bg-primary" },
+    { text: "text-accent-indigo", bg: "bg-accent-indigo/10", hover: "group-hover:bg-accent-indigo/20", dot: "bg-[hsl(var(--accent-indigo))]" },
+    { text: "text-accent-teal", bg: "bg-accent-teal/10", hover: "group-hover:bg-accent-teal/20", dot: "bg-[hsl(var(--accent-teal))]" },
+    { text: "text-accent-violet", bg: "bg-accent-violet/10", hover: "group-hover:bg-accent-violet/20", dot: "bg-[hsl(var(--accent-violet))]" },
+    { text: "text-accent-copper", bg: "bg-accent-copper/10", hover: "group-hover:bg-accent-copper/20", dot: "bg-[hsl(var(--accent-copper))]" },
+    { text: "text-primary-deep", bg: "bg-[hsl(var(--primary-deep))]/10", hover: "group-hover:bg-[hsl(var(--primary-deep))]/20", dot: "bg-[hsl(var(--primary-deep))]" },
+  ];
   return (
     <section className="py-24 md:py-32 bg-secondary">
       <div className="max-w-6xl mx-auto px-6">
@@ -53,11 +61,13 @@ export const ServicesPreview = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
+          {services.map((service, i) => {
+            const a = accents[i % accents.length];
+            return (
             <Reveal key={service.title} delay={i * 80}>
               <div className="service-card group h-full hover:-translate-y-1">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
+                <div className={`w-10 h-10 rounded-full ${a.bg} flex items-center justify-center mb-6 transition-all duration-300 ${a.hover} group-hover:scale-110`}>
+                  <div className={`w-2 h-2 rounded-full ${a.dot}`} />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-3">
                   {service.title}
@@ -67,8 +77,10 @@ export const ServicesPreview = () => {
                 </p>
               </div>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
+
 
         <Reveal delay={200}>
           <div className="text-center mt-14">
