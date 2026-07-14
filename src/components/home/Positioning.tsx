@@ -19,7 +19,7 @@ export const Positioning = () => {
             <p>
               Wij bouwen websites die vertrouwen uitstralen, beter gevonden
               worden en actief bijdragen aan meer aanvragen. Alles onder één
-              dak — ontwerp, ontwikkeling, hosting en onderhoud — met korte
+              dak, ontwerp, ontwikkeling, hosting en onderhoud, met korte
               lijnen, transparante prijzen en persoonlijk contact.
             </p>
           </div>

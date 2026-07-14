@@ -21,7 +21,7 @@ const Message = () => {
     await new Promise((resolve) => setTimeout(resolve, 800));
     toast({
       title: "Bericht verzonden",
-      description: "Bedankt voor uw bericht — u krijgt zo snel mogelijk antwoord van Wietse zelf.",
+      description: "Bedankt voor uw bericht, u krijgt zo snel mogelijk antwoord van Wietse zelf.",
     });
     setFormData({ name: "", email: "", company: "", subject: "", message: "" });
     setIsSubmitting(false);
@@ -38,7 +38,7 @@ const Message = () => {
       <PageHeader
         label="Contact"
         title="Neem contact op"
-        description="Bel, app of mail — u krijgt altijd direct persoonlijk antwoord van Wietse. Vragen stellen en kennismaken is altijd vrijblijvend."
+        description="Bel, app of mail, u krijgt altijd direct persoonlijk antwoord van Wietse. Vragen stellen en kennismaken is altijd vrijblijvend."
       />
 
       <section className="py-24 md:py-32 bg-background">
@@ -73,7 +73,7 @@ const Message = () => {
                   <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
                     <MessageCircle className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-[0.9375rem]">WhatsApp — snelste antwoord</span>
+                  <span className="text-[0.9375rem]">WhatsApp, snelste antwoord</span>
                 </a>
 
                 <a
@@ -112,7 +112,7 @@ const Message = () => {
                 <p className="font-medium text-foreground mb-1">Goed om te weten</p>
                 <p>
                   Reactietijd is doorgaans binnen één werkdag. Kennismaken is
-                  altijd gratis en zonder verplichtingen — inclusief een gratis
+                  altijd gratis en zonder verplichtingen, inclusief een gratis
                   eerste ontwerp van uw nieuwe website.
                 </p>
                 <p className="mt-3 text-xs">KvK 99105578 &middot; Vrijgesteld van btw (KOR)</p>
@@ -196,7 +196,7 @@ const Message = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    placeholder="Vertel kort wat u voor ogen heeft — dan neem ik zo snel mogelijk contact op."
+                    placeholder="Vertel kort wat u voor ogen heeft, dan neem ik zo snel mogelijk contact op."
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none text-[0.9375rem]"
                   />
                 </div>

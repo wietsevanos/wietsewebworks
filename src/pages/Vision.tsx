@@ -8,7 +8,7 @@ const steps = [
     number: "01",
     title: "Kennismaking",
     description:
-      "Een vrijblijvend eerste gesprek — telefonisch, via WhatsApp of op locatie in Haarlem. We leren uw bedrijf, uw doelgroep en uw wensen kennen.",
+      "Een vrijblijvend eerste gesprek, telefonisch, via WhatsApp of op locatie in Haarlem. We leren uw bedrijf, uw doelgroep en uw wensen kennen.",
   },
   {
     number: "02",
@@ -20,7 +20,7 @@ const steps = [
     number: "03",
     title: "Ontwerp",
     description:
-      "Op basis van de intake maken wij een eerste ontwerp — volledig gratis en zonder verplichtingen. U ziet direct hoe uw nieuwe website eruit gaat zien.",
+      "Op basis van de intake maken wij een eerste ontwerp, volledig gratis en zonder verplichtingen. U ziet direct hoe uw nieuwe website eruit gaat zien.",
   },
   {
     number: "04",

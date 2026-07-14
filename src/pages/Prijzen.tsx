@@ -63,7 +63,7 @@ const Prijzen = () => {
       <PageHeader
         label="Prijzen"
         title="Transparante tarieven"
-        description="Duidelijke prijzen zonder verborgen kosten. Dankzij de KOR-regeling berekenen wij geen btw — u ziet direct wat u betaalt."
+        description="Duidelijke prijzen zonder verborgen kosten. Dankzij de KOR-regeling berekenen wij geen btw, u ziet direct wat u betaalt."
       />
 
       {/* Pakketten */}
@@ -155,7 +155,7 @@ const Prijzen = () => {
               { t: "Gratis eerste ontwerp", d: "U ziet zonder risico wat u krijgt voordat u iets betaalt." },
               { t: "Drie revisierondes", d: "Standaard inbegrepen, zodat het ontwerp altijd naar wens is." },
               { t: "Geen btw", d: "Dankzij de KOR-regeling betaalt u het prijskaartje, niets extra's." },
-              { t: "Vast aanspreekpunt", d: "U spreekt altijd dezelfde persoon — snel en persoonlijk." },
+              { t: "Vast aanspreekpunt", d: "U spreekt altijd dezelfde persoon, snel en persoonlijk." },
               { t: "Transparante offerte", d: "Vooraf duidelijk wat u betaalt, geen verrassingen achteraf." },
               { t: "Geen verborgen kosten", d: "Ook na livegang blijven de tarieven overzichtelijk." },
             ].map((i) => (

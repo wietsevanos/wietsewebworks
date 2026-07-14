@@ -20,8 +20,7 @@ export const Hero = () => {
             style={{ animationDelay: "0.1s" }}
           >
             Wietse Webworks ontwerpt en bouwt professionele websites voor lokale
-            ondernemers. Meer vertrouwen, meer aanvragen en beter gevonden worden —
-            zonder ingewikkelde techniek en met persoonlijk contact.
+            ondernemers. Meer vertrouwen, meer aanvragen en beter gevonden worden, zonder ingewikkelde techniek en met persoonlijk contact.
           </p>
           <div
             className="flex flex-wrap gap-4 animate-fade-up"

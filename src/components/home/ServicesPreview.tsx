@@ -20,7 +20,7 @@ const services = [
   {
     title: "Onderhoud",
     description:
-      "Updates, technische controles en support — u hoeft nergens naar om te kijken.",
+      "Updates, technische controles en support, u hoeft nergens naar om te kijken.",
   },
   {
     title: "Microsoft 365",
