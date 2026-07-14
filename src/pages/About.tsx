@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, MessageCircle, Mail, Phone, Instagram } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import portrait from "@/assets/wietse-portrait.jpg.asset.json";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
@@ -143,9 +143,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Contact strip */}
-      <section className="py-20 dark-section">
-      </section>
 
       <GlassCTA
         eyebrow="Even kennismaken?"
