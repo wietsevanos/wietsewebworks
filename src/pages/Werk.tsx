@@ -169,42 +169,46 @@ const ProjectCard = ({ project }: { project: Project }) => {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block relative"
+      className="group block"
     >
-      {/* Offset accent shadow */}
-      <div
-        aria-hidden
-        className="absolute inset-0 rounded-2xl bg-primary translate-x-1 translate-y-1 transition-all duration-500 ease-out group-hover:translate-x-2 group-hover:translate-y-2 group-hover:bg-primary-deep"
-      />
+      {/* Mockup wrapper with offset accent */}
+      <div className="relative">
+        {/* Offset accent shadow */}
+        <div
+          aria-hidden
+          className="absolute inset-0 rounded-2xl bg-primary translate-x-1 translate-y-1 transition-all duration-500 ease-out group-hover:translate-x-2 group-hover:translate-y-2 group-hover:bg-primary-deep"
+        />
 
-      {/* Browser mockup */}
-      <div className="relative rounded-2xl overflow-hidden bg-secondary/60 ring-1 ring-black/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 ease-out group-hover:-translate-x-1.5 group-hover:-translate-y-1.5 group-hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.25)]">
-        {/* Chrome bar */}
-        <div className="flex items-center gap-3 px-4 py-2.5 bg-secondary border-b border-black/5">
-          <div className="flex gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+        {/* Browser mockup */}
+        <div className="relative rounded-2xl overflow-hidden bg-secondary/60 ring-1 ring-black/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 ease-out group-hover:-translate-x-1.5 group-hover:-translate-y-1.5 group-hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.25)]">
+          {/* Chrome bar */}
+          <div className="flex items-center gap-3 px-4 py-2.5 bg-secondary border-b border-black/5">
+            <div className="flex gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+            </div>
+            <div className="flex-1 h-6 rounded-md bg-background/80 flex items-center justify-center px-3 text-[0.7rem] text-muted-foreground/80 font-medium truncate">
+              {getDomain(project.url)}
+            </div>
+            <div className="w-6" />
           </div>
-          <div className="flex-1 h-6 rounded-md bg-background/80 flex items-center justify-center px-3 text-[0.7rem] text-muted-foreground/80 font-medium truncate">
-            {getDomain(project.url)}
-          </div>
-          <div className="w-6" />
-        </div>
 
-        {/* Screenshot */}
-        <div className="relative aspect-[16/10] overflow-hidden bg-background">
-          <img
-            src={project.image}
-            alt={`Website van ${project.name}`}
-            loading="lazy"
-            className="w-full h-full object-cover object-top transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
-          />
-          <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 shadow-lg">
-            <ArrowUpRight size={16} className="text-foreground" />
+          {/* Screenshot */}
+          <div className="relative aspect-[16/10] overflow-hidden bg-background">
+            <img
+              src={project.image}
+              alt={`Website van ${project.name}`}
+              loading="lazy"
+              className="w-full h-full object-cover object-top transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+            />
+            <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 shadow-lg">
+              <ArrowUpRight size={16} className="text-foreground" />
+            </div>
           </div>
         </div>
       </div>
+
 
       {/* Meta below */}
       <div className="pt-6">
