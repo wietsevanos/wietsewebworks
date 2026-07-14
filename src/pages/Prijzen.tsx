@@ -554,9 +554,17 @@ const Prijzen = () => {
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem
               value="mail-only"
-              className="bg-white border border-border/60 rounded-2xl px-6 data-[state=open]:shadow-md transition-shadow"
+              className="bg-white border border-border/60 rounded-2xl overflow-hidden data-[state=open]:shadow-md transition-shadow"
             >
-              <AccordionTrigger className="hover:no-underline py-6">
+              <div className="border-b border-border/60">
+                <img
+                  src={microsoft365Image.url}
+                  alt="Microsoft 365"
+                  className="w-full h-40 md:h-48 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <AccordionTrigger className="hover:no-underline py-6 px-6">
                 <div className="flex items-center gap-4 text-left">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-primary" />
@@ -571,15 +579,7 @@ const Prijzen = () => {
                   </div>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="pb-6 text-[0.9375rem] text-foreground/85 leading-relaxed">
-                <div className="mb-6 rounded-xl overflow-hidden border border-border/60">
-                  <img
-                    src={microsoft365Image.url}
-                    alt="Microsoft 365"
-                    className="w-full h-40 md:h-48 object-cover"
-                    loading="lazy"
-                  />
-                </div>
+              <AccordionContent className="pb-6 px-6 text-[0.9375rem] text-foreground/85 leading-relaxed">
                 <p className="mb-4">
                   Niet iedere ondernemer heeft behoefte aan het volledige
                   Microsoft 365 pakket met Teams, Word en OneDrive. Daarom bied
