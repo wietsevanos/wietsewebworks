@@ -39,7 +39,7 @@ const projects: Project[] = [
     tags: ["Webdesign", "Consultancy"],
     short: "Executive Consultancy voor E-Mobility en Renewable Energy",
     description:
-      "Voor Jayworxx bouwden wij een strakke, internationale website die past bij de rol van executive consultancy in de energietransitie. Donkere kleuren, veel rust in de lay-out en subtiele animaties zorgen voor een premium uitstraling die vertrouwen wekt bij directies en investeerders.",
+      "Voor Jayworxx bouwde ik een strakke, internationale website die past bij de rol van executive consultancy in de energietransitie. Donkere kleuren, veel rust in de lay-out en subtiele animaties zorgen voor een premium uitstraling die vertrouwen wekt bij directies en investeerders.",
     highlights: [
       "Volledig meertalige structuur",
       "Focus op autoriteit en leiderschap",
@@ -67,7 +67,7 @@ const projects: Project[] = [
     tags: ["Webdesign", "Horeca"],
     short: "Sfeervol grand café in het hart van de stad",
     description:
-      "Voor Grand Café Vreeburg ontwierpen wij een warme, uitnodigende website die de sfeer van het café online voelbaar maakt. Bezoekers vinden meteen de menukaart, openingstijden en reserveringen zonder te hoeven zoeken.",
+      "Voor Grand Café Vreeburg ontwierp ik een warme, uitnodigende website die de sfeer van het café online voelbaar maakt. Bezoekers vinden meteen de menukaart, openingstijden en reserveringen zonder te hoeven zoeken.",
     highlights: [
       "Directe reservering en menu inzage",
       "Warme, sfeervolle beeldtaal",
@@ -81,7 +81,7 @@ const projects: Project[] = [
     tags: ["Webdesign", "Horeca"],
     short: "Vertrouwde snackbar en lunchroom met veel vaste klanten",
     description:
-      "Picobello had behoefte aan een frisse, moderne website die aansluit bij de gemoedelijke sfeer van de zaak. Wij bouwden een overzichtelijke site met menu, contactinformatie en een uitstraling waar zowel jong als oud zich welkom voelt.",
+      "Picobello had behoefte aan een frisse, moderne website die aansluit bij de gemoedelijke sfeer van de zaak. Ik bouwde een overzichtelijke site met menu, contactinformatie en een uitstraling waar zowel jong als oud zich welkom voelt.",
     highlights: [
       "Menukaart snel te bekijken",
       "Toegankelijk ontwerp voor iedere doelgroep",
@@ -109,7 +109,7 @@ const projects: Project[] = [
     tags: ["Webdesign", "Zorg"],
     short: "Gespecialiseerde zorg voor honden",
     description:
-      "Voor het Hondengezondheidscentrum bouwden wij een rustige, professionele website waar baasjes zich direct op hun gemak voelen. Behandelingen, tarieven en contactmogelijkheden zijn met één klik te vinden.",
+      "Voor het Hondengezondheidscentrum bouwde ik een rustige, professionele website waar baasjes zich direct op hun gemak voelen. Behandelingen, tarieven en contactmogelijkheden zijn met één klik te vinden.",
     highlights: [
       "Vertrouwenwekkende uitstraling",
       "Duidelijke informatie over behandelingen",
@@ -151,7 +151,7 @@ const projects: Project[] = [
     tags: ["Webdesign", "Retail"],
     short: "Reparatie en verkoop van smartphones in Haarlem",
     description:
-      "Voor Telefoonwereld Haarlem ontwierpen wij een directe, toegankelijke website waar klanten in één oogopslag zien welke reparaties er mogelijk zijn en hoe snel ze terecht kunnen. Vertrouwen en gemak stonden centraal in het ontwerp.",
+      "Voor Telefoonwereld Haarlem ontwierp ik een directe, toegankelijke website waar klanten in één oogopslag zien welke reparaties er mogelijk zijn en hoe snel ze terecht kunnen. Vertrouwen en gemak stonden centraal in het ontwerp.",
     highlights: [
       "Duidelijk overzicht van reparaties",
       "Lokale vindbaarheid in Haarlem",
@@ -245,7 +245,7 @@ const Werk = () => {
       <PageHeader
         label="Geselecteerd werk"
         title="Recente projecten"
-        description="Een selectie van websites die wij mochten ontwerpen en bouwen voor lokale ondernemers, horecazaken, salons en zakelijke professionals. Elk project is op maat gemaakt, met aandacht voor uitstraling, gebruiksgemak en resultaat."
+        description="Een selectie van websites die ik mocht ontwerpen en bouwen voor lokale ondernemers, horecazaken, salons en zakelijke professionals. Elk project is op maat gemaakt, met aandacht voor uitstraling, gebruiksgemak en resultaat."
       />
 
       {/* Intro stats */}
@@ -363,7 +363,7 @@ const Werk = () => {
       <GlassCTA
         eyebrow="Uw bedrijf hierbij?"
         title="Klaar voor een website die uw bedrijf laat groeien?"
-        description="Elk project op deze pagina begon met een vrijblijvende kennismaking. Laten we ontdekken wat wij voor uw bedrijf kunnen betekenen."
+        description="Elk project op deze pagina begon met een vrijblijvende kennismaking. Laten we ontdekken wat ik voor uw bedrijf kunnen betekenen."
         primaryLabel="Start uw project"
       />
     </Layout>

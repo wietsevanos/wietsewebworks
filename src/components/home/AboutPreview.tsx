@@ -45,7 +45,7 @@ export const AboutPreview = () => {
               <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                 <p>
                   Wietse Webworks is een modern webbureau uit Haarlem, opgericht
-                  door Wietse van Os. Wij helpen horeca, kappers, schoonheids­salons,
+                  door Wietse van Os. Ik help horeca, kappers, schoonheids­salons,
                   winkels, praktijken, coaches en ZZP'ers om online serieus voor de
                   dag te komen.
                 </p>

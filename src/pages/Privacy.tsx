@@ -8,14 +8,14 @@ const Privacy = () => {
       <PageHeader
         label="Juridisch"
         title="Privacybeleid"
-        description="Wij gaan zorgvuldig om met uw persoonsgegevens. Hieronder leest u welke gegevens wij verzamelen en waarvoor."
+        description="Ik ga zorgvuldig om met uw persoonsgegevens. Hieronder leest u welke gegevens ik verzamel en waarvoor."
       />
 
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-3xl mx-auto px-6 prose-content">
           <div className="space-y-10 text-muted-foreground leading-relaxed text-[0.9375rem]">
             <div>
-              <h2 className="text-xl font-semibold text-foreground mb-3">1. Wie zijn wij</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-3">1. Wie ben ik</h2>
               <p>
                 Wietse Webworks, gevestigd te Haarlem, ingeschreven bij de Kamer
                 van Koophandel onder nummer 99105578, is verantwoordelijk voor
@@ -25,8 +25,8 @@ const Privacy = () => {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-foreground mb-3">2. Welke gegevens verwerken wij</h2>
-              <p>Wij verwerken de gegevens die u zelf aan ons verstrekt, zoals:</p>
+              <h2 className="text-xl font-semibold text-foreground mb-3">2. Welke gegevens verwerk ik</h2>
+              <p>Ik verwerk de gegevens die u zelf aan mij verstrekt, zoals:</p>
               <ul className="list-disc pl-6 mt-3 space-y-1">
                 <li>Naam en bedrijfsnaam</li>
                 <li>E-mailadres en telefoonnummer</li>
@@ -36,10 +36,10 @@ const Privacy = () => {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-foreground mb-3">3. Waarvoor gebruiken wij deze gegevens</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-3">3. Waarvoor gebruik ik deze gegevens</h2>
               <ul className="list-disc pl-6 space-y-1">
                 <li>Om uw aanvraag of vraag te beantwoorden</li>
-                <li>Om onze diensten uit te voeren</li>
+                <li>Om mijn diensten uit te voeren</li>
                 <li>Om te voldoen aan wettelijke administratieve verplichtingen</li>
               </ul>
             </div>
@@ -47,7 +47,7 @@ const Privacy = () => {
             <div>
               <h2 className="text-xl font-semibold text-foreground mb-3">4. Bewaartermijn</h2>
               <p>
-                Wij bewaren uw gegevens niet langer dan noodzakelijk voor de
+                Ik bewaar uw gegevens niet langer dan noodzakelijk voor de
                 doelen waarvoor ze zijn verzameld, of zoals wettelijk verplicht.
               </p>
             </div>
@@ -55,7 +55,7 @@ const Privacy = () => {
             <div>
               <h2 className="text-xl font-semibold text-foreground mb-3">5. Delen met derden</h2>
               <p>
-                Wij verstrekken uw gegevens uitsluitend aan derden als dit
+                Ik verstrek uw gegevens uitsluitend aan derden als dit
                 nodig is voor de uitvoering van onze overeenkomst (bijvoorbeeld
                 aan een hostingpartij) of om te voldoen aan een wettelijke
                 verplichting.
@@ -75,7 +75,7 @@ const Privacy = () => {
             <div>
               <h2 className="text-xl font-semibold text-foreground mb-3">7. Beveiliging</h2>
               <p>
-                Wij nemen passende maatregelen om uw gegevens te beveiligen
+                Ik neem passende maatregelen om uw gegevens te beveiligen
                 tegen verlies, misbruik of ongeoorloofde toegang.
               </p>
             </div>
