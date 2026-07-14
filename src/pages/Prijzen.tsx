@@ -206,51 +206,36 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
 
 
 
-/* -------------------------- Build progress (install-style) -------------------------- */
-const buildSteps = [
-  { icon: Check, label: "Kennismaking voltooid", threshold: 15, pulse: false },
-  { icon: Check, label: "Ontwerp afgerond", threshold: 40, pulse: false },
-  { icon: Zap, label: "Ontwikkeling bezig", threshold: 65, pulse: true },
-  { icon: Clock, label: "Oplevering binnenkort", threshold: 74, pulse: false },
-];
-
+/* -------------------------- Build progress (loop-style) -------------------------- */
 const BuildProgress = () => {
-  const ref = useRef<HTMLDivElement | null>(null);
   const [progress, setProgress] = useState(0);
-  const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting && !started) {
-            setStarted(true);
-            const start = performance.now();
-            const duration = 2600;
-            const target = 75;
-            const tick = (now: number) => {
-              const p = Math.min(1, (now - start) / duration);
-              const eased = 1 - Math.pow(1 - p, 3);
-              setProgress(Math.round(target * eased));
-              if (p < 1) requestAnimationFrame(tick);
-            };
-            requestAnimationFrame(tick);
-          }
-        });
-      },
-      { threshold: 0.35 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [started]);
+    let raf = 0;
+    let start = performance.now();
+    const cycle = 3800; // ms per volledige loop
+    const pause = 600; // korte pauze op 100%
+
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      if (elapsed < cycle) {
+        const p = elapsed / cycle;
+        const eased = 1 - Math.pow(1 - p, 3);
+        setProgress(Math.round(100 * eased));
+      } else if (elapsed < cycle + pause) {
+        setProgress(100);
+      } else {
+        start = now;
+        setProgress(0);
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
 
   return (
-    <div
-      ref={ref}
-      className="mt-16 bg-white rounded-3xl border border-border/60 shadow-sm p-8 md:p-14"
-    >
+    <div className="mt-16 bg-white rounded-3xl border border-border/60 shadow-sm p-8 md:p-14">
       <div className="text-center mb-10">
         <p className="text-primary font-medium mb-3 text-xs tracking-[0.2em] uppercase">
           Van idee tot livegang
@@ -270,56 +255,18 @@ const BuildProgress = () => {
         </div>
         <div className="relative h-2 w-full bg-secondary rounded-full overflow-hidden">
           <div
-            className="absolute inset-y-0 left-0 bg-primary rounded-full transition-[width] duration-100 ease-out"
+            className="absolute inset-y-0 left-0 bg-primary rounded-full"
             style={{
               width: `${progress}%`,
               boxShadow: "0 0 12px hsl(var(--primary) / 0.4)",
             }}
           />
         </div>
-
-        {/* Steps */}
-        <ul className="mt-10 space-y-3">
-          {buildSteps.map((step, i) => {
-            const active = progress >= step.threshold;
-            const isCurrent =
-              active &&
-              (i === buildSteps.length - 1 ||
-                progress < buildSteps[i + 1].threshold);
-            const Icon = step.icon;
-            return (
-              <li
-                key={step.label}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-all duration-500 ${
-                  active
-                    ? "bg-secondary/60 border-border/60 opacity-100 translate-y-0"
-                    : "bg-transparent border-transparent opacity-40 translate-y-1"
-                }`}
-              >
-                <span
-                  className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${
-                    active
-                      ? "bg-primary/10 text-primary"
-                      : "bg-secondary text-muted-foreground"
-                  } ${isCurrent && step.pulse ? "animate-pulse" : ""}`}
-                >
-                  <Icon className="w-3.5 h-3.5" strokeWidth={2.5} />
-                </span>
-                <span
-                  className={`text-[0.9375rem] ${
-                    active ? "text-foreground" : "text-muted-foreground"
-                  }`}
-                >
-                  {step.label}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
       </div>
     </div>
   );
 };
+
 
 /* -------------------------- Component -------------------------- */
 const Prijzen = () => {
