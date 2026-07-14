@@ -71,10 +71,15 @@ const Message = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                 >
-                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                    <MessageCircle className="w-5 h-5 text-primary" />
+                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors overflow-hidden">
+                    <img
+                      src={whatsappLogo.url}
+                      alt="WhatsApp"
+                      className="w-5 h-5 object-contain"
+                      style={{ filter: "brightness(0) saturate(100%) invert(38%) sepia(96%) saturate(1352%) hue-rotate(191deg) brightness(97%) contrast(96%)" }}
+                    />
                   </div>
-                  <span className="text-[0.9375rem]">WhatsApp, snelste antwoord</span>
+                  <span className="text-[0.9375rem]">WhatsApp 06 47 87 27 34, snelste antwoord</span>
                 </a>
 
                 <a
@@ -87,24 +92,14 @@ const Message = () => {
                   <span className="text-[0.9375rem]">wietsevanos@gmail.com</span>
                 </a>
 
-                <a
-                  href="https://wa.me/31647872734"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
-                >
-                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                    <MessageCircle className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-[0.9375rem]">WhatsApp 06 47 87 27 34</span>
-                </a>
-
-                <div className="flex items-center gap-4 text-muted-foreground">
-                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="flex items-start gap-4 text-muted-foreground">
+                  <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-[0.9375rem]">
-                    Haarlem &middot; werkzaam in heel Nederland
+                  <span className="text-[0.9375rem] leading-relaxed">
+                    Bloemendaalseweg 315, 2051 GH Overveen
+                    <br />
+                    <span className="text-muted-foreground/80 text-sm">Werkzaam in heel Nederland</span>
                   </span>
                 </div>
               </div>
