@@ -29,10 +29,10 @@ export const GlassCTA = ({
   primaryHref = "/contact",
 }: GlassCTAProps) => {
   return (
-    <section className="relative bg-secondary/40 py-24 md:py-32 overflow-hidden">
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+    <section className="relative bg-secondary/40 py-14 md:py-32 overflow-hidden">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6">
         <Reveal>
-          <div className="relative bg-background border border-border/70 rounded-[2rem] px-8 py-16 md:px-16 md:py-24 shadow-[0_30px_80px_-40px_hsl(210_95%_50%/0.15)] overflow-hidden">
+          <div className="relative bg-background border border-border/70 rounded-2xl md:rounded-[2rem] px-5 py-10 md:px-16 md:py-24 shadow-[0_20px_60px_-30px_hsl(210_95%_50%/0.15)] overflow-hidden">
             {/* Subtle ambient accent inside the card */}
             <div
               aria-hidden
@@ -40,24 +40,24 @@ export const GlassCTA = ({
             />
 
             <div className="relative text-center max-w-3xl mx-auto">
-              <p className="text-primary font-medium mb-6 text-xs tracking-[0.2em] uppercase">
+              <p className="text-primary font-medium mb-3 md:mb-6 text-[0.65rem] md:text-xs tracking-[0.2em] uppercase">
                 {eyebrow}
               </p>
 
               <Reveal delay={80}>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-[1.1] tracking-tight mb-8">
+                <h2 className="text-[1.75rem] md:text-5xl lg:text-6xl font-semibold text-foreground leading-[1.15] md:leading-[1.1] tracking-tight mb-4 md:mb-8">
                   {title}
                 </h2>
               </Reveal>
 
               <Reveal delay={160}>
-                <p className="text-foreground/60 text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-12">
+                <p className="text-foreground/60 text-[0.9375rem] md:text-xl leading-relaxed max-w-xl mx-auto mb-6 md:mb-12">
                   {description}
                 </p>
               </Reveal>
 
               <Reveal delay={220}>
-                <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-12">
+                <ul className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-2 md:gap-x-8 md:gap-y-3 mb-8 md:mb-12">
                   {benefits.map((b) => (
                     <li
                       key={b}
@@ -75,7 +75,7 @@ export const GlassCTA = ({
               <Reveal delay={300}>
                 <Link
                   to={primaryHref}
-                  className="btn-primary inline-flex items-center gap-2 group/btn text-base px-8 py-4"
+                  className="btn-primary inline-flex items-center gap-2 group/btn text-sm md:text-base px-6 md:px-8 py-3.5 md:py-4"
                 >
                   {primaryLabel}
                   <ArrowRight
