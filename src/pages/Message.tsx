@@ -91,23 +91,35 @@ const Message = () => {
                 </div>
               </div>
 
-              <div className="rounded-xl bg-secondary p-6 text-sm text-muted-foreground">
-                <p className="font-medium text-foreground mb-1">Goed om te weten</p>
-                <p>
-                  Reactietijd is doorgaans binnen één werkdag. Kennismaken is
-                  altijd gratis en zonder verplichtingen, inclusief een gratis
-                  eerste ontwerp van uw nieuwe website.
-                </p>
-
-                <div className="mt-4 flex items-center gap-3 flex-wrap">
-                  <p className="text-xs text-muted-foreground/90">
-                    KvK 99105578 &middot; Vrijgesteld van btw (KOR)
+              <div className="relative rounded-2xl border border-border/70 bg-secondary/50 p-7">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  <p className="text-xs font-medium uppercase tracking-[0.15em] text-foreground/70">
+                    Goed om te weten
                   </p>
+                </div>
+
+                <div className="space-y-3 text-[0.9375rem] leading-relaxed text-muted-foreground">
+                  <p>
+                    Ik reageer doorgaans binnen één werkdag op nieuwe aanvragen.
+                  </p>
+                  <p>
+                    Een eerste kennismaking is altijd vrijblijvend en kosteloos.
+                    Bij serieuze interesse ontvangt u daarnaast een eerste
+                    voorstel of ontwerp voor uw nieuwe website.
+                  </p>
+                </div>
+
+                <div className="mt-6 pt-5 border-t border-border/60 flex items-center justify-between gap-3 flex-wrap">
+                  <div className="text-xs text-muted-foreground/90 leading-relaxed">
+                    <p>KvK: 99105578</p>
+                    <p>Vrijgesteld van btw via de KOR-regeling</p>
+                  </div>
                   <button
                     type="button"
                     onClick={() => setShowKor((v) => !v)}
                     aria-expanded={showKor}
-                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-medium transition-all ${
+                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-medium transition-all ${
                       showKor
                         ? "border-primary/40 bg-primary/10 text-primary"
                         : "border-primary/25 bg-primary/[0.06] text-primary/90 hover:bg-primary/10"
