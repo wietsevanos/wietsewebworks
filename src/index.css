@@ -10,48 +10,64 @@
   :root {
     /* Core Background & Text */
     --background: 0 0% 100%;
-    --foreground: 220 15% 20%;
-    
-    /* Primary Orange Palette - Rich Warm Tones */
-    --primary: 210 95% 50%;
+    --foreground: 220 25% 16%;
+
+    /* Primary Blue Palette - Layered depth */
+    --primary: 212 95% 48%;
     --primary-foreground: 0 0% 100%;
-    --primary-deep: 215 90% 38%;
-    --primary-glow: 205 100% 55%;
-    --primary-light: 200 100% 65%;
-    
+    --primary-deep: 222 70% 24%;      /* deep navy */
+    --primary-navy: 226 55% 18%;      /* even deeper */
+    --primary-glow: 205 100% 58%;
+    --primary-light: 200 90% 70%;
+    --primary-soft: 210 100% 94%;     /* washed sky */
+
+    /* Accent Family - within the blue spectrum, used sparingly */
+    --accent-indigo: 240 55% 42%;
+    --accent-violet: 262 55% 55%;
+    --accent-teal: 186 70% 42%;
+    --accent-turquoise: 178 65% 48%;
+    --accent-copper: 22 78% 55%;
+
     /* Card & Surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
-    
+    --card-foreground: 220 25% 16%;
+
     /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
-    
-    /* Secondary - Very Soft Grey */
-    --secondary: 30 10% 97%;
-    --secondary-foreground: 220 15% 20%;
-    
+    --popover-foreground: 220 25% 16%;
+
+    /* Secondary - Cool ice blue */
+    --secondary: 212 40% 97%;
+    --secondary-foreground: 222 55% 22%;
+
     /* Muted */
-    --muted: 220 10% 96%;
-    --muted-foreground: 220 10% 45%;
-    
+    --muted: 214 30% 96%;
+    --muted-foreground: 220 15% 42%;
+
     /* Accent - Subtle Blue Tint */
-    --accent: 210 40% 97%;
-    --accent-foreground: 210 95% 38%;
-    
-    /* Dark Sections */
-    --dark: 220 20% 14%;
+    --accent: 218 60% 96%;
+    --accent-foreground: 222 70% 32%;
+
+    /* Dark Sections - deep navy instead of neutral */
+    --dark: 224 55% 12%;
     --dark-foreground: 0 0% 98%;
-    
+
     /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
+
     /* Borders & Input */
-    --border: 220 10% 92%;
-    --input: 220 10% 92%;
-    --ring: 210 95% 50%;
-    
+    --border: 216 30% 90%;
+    --input: 216 30% 90%;
+    --ring: 212 95% 48%;
+
+    /* Gradients & shadows */
+    --gradient-hero: linear-gradient(140deg, hsl(226 60% 20%) 0%, hsl(215 85% 38%) 45%, hsl(200 95% 55%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(212 60% 98%) 0%, hsl(218 55% 95%) 100%);
+    --gradient-mist: linear-gradient(160deg, hsl(210 100% 97%) 0%, hsl(232 45% 96%) 100%);
+    --shadow-elegant: 0 20px 60px -30px hsl(222 70% 24% / 0.25);
+    --shadow-glow: 0 10px 40px -15px hsl(205 100% 58% / 0.35);
+
     --radius: 0.75rem;
 
     /* Sidebar */
