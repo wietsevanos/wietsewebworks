@@ -168,9 +168,9 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
   const [open, setOpen] = useState(false);
   const Icon = item.icon;
   return (
-    <div className="bg-secondary/60 rounded-xl border border-border/40 overflow-hidden">
-      <div className="flex items-center gap-3 px-4 py-3">
-        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+    <div className="group border-b border-border/50 last:border-b-0 py-3">
+      <div className="flex items-center gap-3">
+        <div className="w-9 h-9 rounded-full bg-primary/8 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-primary/15">
           <Icon className="w-4 h-4 text-primary" />
         </div>
         <div className="flex-1 flex items-center justify-between gap-2 text-foreground/90 text-[0.9375rem]">
@@ -194,7 +194,7 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
           style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
         >
           <div className="overflow-hidden">
-            <p className="px-4 pb-3 text-sm text-muted-foreground leading-relaxed">
+            <p className="pl-12 pt-2 text-sm text-muted-foreground leading-relaxed">
               {item.info}
             </p>
           </div>
@@ -203,6 +203,7 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
     </div>
   );
 };
+
 
 /* -------------------------- Build progress (install-style) -------------------------- */
 const buildSteps = [
