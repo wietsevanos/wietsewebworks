@@ -7,22 +7,21 @@ export const Hero = () => {
     <section className="relative min-h-[85vh] flex items-center overflow-hidden py-20 lg:py-28">
       <OrangeWaveBackground />
 
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
+      <div className="max-w-[92rem] mx-auto px-6 w-full relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Text column */}
-          <div className="lg:col-span-6 max-w-2xl">
+          <div className="lg:col-span-5 max-w-2xl">
             <p className="text-white/85 font-medium mb-5 text-sm tracking-wide uppercase animate-fade-up">
               Webbureau uit Haarlem
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-white leading-[1.15] mb-8 animate-fade-up">
-              Websites die uw bedrijf online net zo sterk maken als in het echt.
+              Professionele websites voor lokale ondernemers.
             </h1>
             <p
               className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-xl animate-fade-up"
               style={{ animationDelay: "0.1s" }}
             >
-              Wietse Webworks ontwerpt en bouwt professionele websites voor lokale
-              ondernemers. Meer vertrouwen, meer aanvragen en beter gevonden worden, zonder ingewikkelde techniek en met persoonlijk contact.
+              Persoonlijk contact, duidelijke prijzen en een website die werkt.
             </p>
             <div
               className="flex flex-col sm:flex-row sm:flex-wrap gap-4 animate-fade-up"
@@ -40,7 +39,7 @@ export const Hero = () => {
 
           {/* Mockup column */}
           <div
-            className="lg:col-span-6 relative animate-fade-up"
+            className="lg:col-span-7 relative animate-fade-up lg:-mr-6 xl:-mr-12"
             style={{ animationDelay: "0.3s" }}
           >
             <HeroMockup />
