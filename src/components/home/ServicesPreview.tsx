@@ -73,10 +73,10 @@ export const ServicesPreview = () => {
         <Reveal delay={200}>
           <div className="text-center mt-14">
             <Link
-              to="/diensten"
+              to="/werk"
               className="btn-outline-dark inline-flex items-center gap-2 group"
             >
-              Bekijk alle diensten
+              Bekijk ons werk
               <ArrowRight
                 size={18}
                 className="transition-transform duration-200 group-hover:translate-x-1"

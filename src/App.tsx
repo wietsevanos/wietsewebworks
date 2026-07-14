@@ -6,9 +6,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import Index from "./pages/Index";
 import Vision from "./pages/Vision";
-import Services from "./pages/Services";
+import Werk from "./pages/Werk";
 import About from "./pages/About";
-import Partnerships from "./pages/Partnerships";
 import FAQ from "./pages/FAQ";
 import Message from "./pages/Message";
 import Prijzen from "./pages/Prijzen";
@@ -30,9 +29,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
 
           {/* Primary NL routes */}
-          <Route path="/werk" element={<Partnerships />} />
+          <Route path="/werk" element={<Werk />} />
           <Route path="/werkwijze" element={<Vision />} />
-          <Route path="/diensten" element={<Services />} />
           <Route path="/prijzen" element={<Prijzen />} />
           <Route path="/hosting" element={<Hosting />} />
           <Route path="/over-mij" element={<About />} />
@@ -43,7 +41,8 @@ const App = () => (
 
           {/* Backwards-compatible redirects from old paths */}
           <Route path="/vision" element={<Navigate to="/werkwijze" replace />} />
-          <Route path="/services" element={<Navigate to="/diensten" replace />} />
+          <Route path="/diensten" element={<Navigate to="/werk" replace />} />
+          <Route path="/services" element={<Navigate to="/werk" replace />} />
           <Route path="/about" element={<Navigate to="/over-mij" replace />} />
           <Route path="/partnerships" element={<Navigate to="/werk" replace />} />
           <Route path="/message" element={<Navigate to="/contact" replace />} />

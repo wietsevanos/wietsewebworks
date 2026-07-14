@@ -3,11 +3,11 @@ import { Instagram, Mail, Phone } from "lucide-react";
 import logo from "@/assets/wietse-webworks-logo.png.asset.json";
 
 const diensten = [
-  { label: "Webdesign", href: "/diensten" },
-  { label: "Website ontwikkeling", href: "/diensten" },
+  { label: "Webdesign", href: "/werk" },
+  { label: "Website ontwikkeling", href: "/werk" },
   { label: "Hosting", href: "/hosting" },
   { label: "Onderhoud", href: "/hosting" },
-  { label: "Microsoft 365", href: "/diensten" },
+  { label: "Microsoft 365", href: "/werk" },
 ];
 
 const navigatie = [
