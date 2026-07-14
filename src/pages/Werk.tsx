@@ -340,106 +340,83 @@ const Werk = () => {
         </div>
       </section>
 
-      {/* Premium moving marquee section */}
+      {/* Rustige resultatensectie */}
       <section className="relative py-24 md:py-32 dark-section overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent" />
         <div
           aria-hidden
-          className="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] rounded-full bg-primary/15 blur-[140px] opacity-70"
+          className="absolute -top-40 left-1/2 -translate-x-1/2 w-[50rem] h-[50rem] rounded-full bg-primary/10 blur-[160px] opacity-60"
         />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 mb-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <Reveal>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm mb-6">
-                <Sparkles size={14} className="text-primary-light" />
-                <span className="text-white/80 text-xs tracking-wider uppercase font-medium">
-                  Werk in beeld
-                </span>
-              </div>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="text-3xl md:text-5xl font-semibold text-white leading-tight mb-6">
-                Van lokale ondernemer tot internationaal merk
-              </h2>
-            </Reveal>
-            <Reveal delay={160}>
-              <p className="text-white/70 text-lg leading-relaxed">
-                Elke sector heeft zijn eigen taal, sfeer en publiek. Wij vertalen
-                die identiteit naar een website die past, opvalt en verkoopt.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-
-        {/* Marquee rows */}
-        <div className="relative z-10 space-y-6">
-          <MarqueeRow
-            items={[
-              "Horeca",
-              "Beauty & Hair",
-              "Retail",
-              "Consultancy",
-              "Zorg voor dieren",
-              "Finance",
-              "Ambacht",
-              "Lokaal ondernemerschap",
-            ]}
-            direction="left"
-          />
-          <MarqueeRow
-            items={[
-              "Roger & Storm",
-              "TCF Orange",
-              "Jayworxx",
-              "Grand Café Vreeburg",
-              "De Houten Hond",
-              "Picobello",
-              "Telefoonwereld Haarlem",
-              "Elswout",
-            ]}
-            direction="right"
-            accent
-          />
-        </div>
-
-        {/* Interactive result cards */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                value: "48u",
-                title: "Eerste ontwerp",
-                text: "Binnen twee werkdagen ligt er al een concept, gratis en vrijblijvend.",
-              },
-              {
-                value: "3x",
-                title: "Meer aanvragen",
-                text: "Klanten zien gemiddeld een duidelijke stijging in contactaanvragen na livegang.",
-              },
-              {
-                value: "100%",
-                title: "Persoonlijk",
-                text: "Altijd dezelfde contactpersoon, van eerste gesprek tot jaren erna.",
-              },
-            ].map((r, i) => (
-              <Reveal key={r.title} delay={i * 100}>
-                <TiltCard>
-                  <div className="text-5xl md:text-6xl font-semibold text-white mb-4 tracking-tight">
-                    {r.value}
-                  </div>
-                  <h3 className="text-white text-lg font-semibold mb-2">
-                    {r.title}
-                  </h3>
-                  <p className="text-white/65 text-[0.9375rem] leading-relaxed">
-                    {r.text}
-                  </p>
-                </TiltCard>
+        <div className="relative z-10 max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left copy */}
+            <div className="lg:col-span-5">
+              <Reveal>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm mb-6">
+                  <Sparkles size={13} className="text-primary-light" />
+                  <span className="text-white/75 text-xs tracking-wider uppercase font-medium">
+                    Resultaat dat telt
+                  </span>
+                </div>
               </Reveal>
-            ))}
+              <Reveal delay={80}>
+                <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight mb-6">
+                  Waarom ondernemers voor Wietse Webworks kiezen
+                </h2>
+              </Reveal>
+              <Reveal delay={160}>
+                <p className="text-white/70 text-lg leading-relaxed">
+                  Geen dure bureaus, geen wachttijden, geen onnodige poespas.
+                  Wel een vast aanspreekpunt, snelle oplevering en een website
+                  waar u trots op bent.
+                </p>
+              </Reveal>
+            </div>
+
+            {/* Right stat cards */}
+            <div className="lg:col-span-7 space-y-4">
+              {[
+                {
+                  value: "48u",
+                  title: "Eerste ontwerp op maat",
+                  text: "Binnen twee werkdagen ligt er een eerste concept, gratis en vrijblijvend.",
+                },
+                {
+                  value: "2 – 3",
+                  title: "Weken tot livegang",
+                  text: "Gemiddelde doorlooptijd van kennismaking tot live website.",
+                },
+                {
+                  value: "1 op 1",
+                  title: "Vast aanspreekpunt",
+                  text: "Altijd dezelfde persoon, van eerste gesprek tot jaren na livegang.",
+                },
+              ].map((r, i) => (
+                <Reveal key={r.title} delay={i * 100}>
+                  <TiltCard>
+                    <div className="flex items-center gap-6 md:gap-8">
+                      <div className="text-4xl md:text-5xl font-semibold text-white tracking-tight min-w-[5rem] md:min-w-[7rem]">
+                        {r.value}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-white text-base md:text-lg font-semibold mb-1">
+                          {r.title}
+                        </h3>
+                        <p className="text-white/65 text-[0.9375rem] leading-relaxed">
+                          {r.text}
+                        </p>
+                      </div>
+                    </div>
+                  </TiltCard>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+
 
 
       <GlassCTA
