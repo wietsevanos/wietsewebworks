@@ -54,7 +54,7 @@ export const Hero = () => {
 
 const HeroMockup = () => {
   return (
-    <div className="relative group [perspective:1600px]">
+    <div className="relative group [perspective:1600px] w-full lg:h-full flex">
       {/* Floating offset accent */}
       <div
         aria-hidden
@@ -62,7 +62,8 @@ const HeroMockup = () => {
       />
 
       {/* Browser window */}
-      <div className="relative rounded-2xl overflow-hidden bg-white ring-1 ring-white/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out group-hover:-translate-y-1.5 group-hover:[transform:translateY(-6px)_rotateX(1.2deg)]">
+      <div className="relative w-full flex flex-col rounded-2xl overflow-hidden bg-white ring-1 ring-white/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out group-hover:-translate-y-1.5 group-hover:[transform:translateY(-6px)_rotateX(1.2deg)]">
+
         {/* Chrome bar */}
         <div className="flex items-center gap-3 px-4 py-2.5 bg-secondary border-b border-black/5">
           <div className="flex gap-1.5">
