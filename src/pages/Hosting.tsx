@@ -101,7 +101,12 @@ const Hosting = () => {
             </p>
           </div>
         </div>
-      </section>
+      <GlassCTA
+        eyebrow="Zorgeloos in de lucht"
+        title="Start vandaag nog met professionele hosting"
+        description="U regelt hosting, onderhoud en support in één abonnement. Persoonlijk contact, altijd hetzelfde aanspreekpunt."
+        primaryLabel="Start met hosting"
+      />
     </Layout>
   );
 };
