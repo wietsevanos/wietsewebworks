@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import logo from "@/assets/wietse-webworks-logo.png.asset.json";
-import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
 
 const navItems = [
   { label: "Diensten", href: "/diensten" },
@@ -69,9 +68,9 @@ export const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp 06 47 87 27 34"
-              className="w-11 h-11 rounded-full overflow-hidden flex items-center justify-center transition-all duration-200 hover:scale-110 hover:shadow-[0_8px_24px_-6px_rgba(37,211,102,0.55)]"
+              className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-deep transition-all duration-200 hover:scale-105 hover:shadow-[0_8px_24px_-8px_hsl(var(--primary))]"
             >
-              <img src={whatsappLogo.url} alt="WhatsApp" className="w-full h-full object-cover" />
+              <MessageCircle size={18} />
             </a>
           </div>
 
@@ -114,9 +113,9 @@ export const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp 06 47 87 27 34"
-                  className="w-11 h-11 rounded-full overflow-hidden flex items-center justify-center"
+                  className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white"
                 >
-                  <img src={whatsappLogo.url} alt="WhatsApp" className="w-full h-full object-cover" />
+                  <MessageCircle size={18} />
                 </a>
               </div>
             </div>
