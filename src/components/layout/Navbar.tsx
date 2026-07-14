@@ -116,7 +116,7 @@ export const Navbar = () => {
                   aria-label="WhatsApp 06 47 87 27 34"
                   className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white"
                 >
-                  <MessageCircle size={18} />
+                  <img src={whatsappLogo.url} alt="WhatsApp" className="w-5 h-5 object-contain" style={{ filter: "brightness(0) invert(1)" }} />
                 </a>
               </div>
             </div>
