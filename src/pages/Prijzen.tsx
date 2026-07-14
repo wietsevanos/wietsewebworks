@@ -32,6 +32,8 @@ import {
   Calendar,
   FolderOpen,
   Info,
+  Sparkles,
+  UserCheck,
 } from "lucide-react";
 
 /* -------------------------- Count-up hook -------------------------- */
