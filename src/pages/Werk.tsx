@@ -253,7 +253,7 @@ const Werk = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "9+", label: "Projecten opgeleverd" },
+              { value: "10+", label: "Projecten opgeleverd" },
               { value: "100%", label: "Op maat gebouwd" },
               { value: "24/7", label: "Betrouwbare hosting" },
               { value: "1 op 1", label: "Persoonlijk contact" },
