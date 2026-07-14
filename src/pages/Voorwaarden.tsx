@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { GlassCTA } from "@/components/shared/GlassCTA";
 
 const Voorwaarden = () => {
   return (
@@ -113,6 +114,13 @@ const Voorwaarden = () => {
           </div>
         </div>
       </section>
+
+      <GlassCTA
+        eyebrow="Vragen over de voorwaarden?"
+        title="Wij denken graag met u mee"
+        description="Onduidelijkheden of vragen over deze voorwaarden? Neem contact op, dan lopen wij ze samen door."
+        primaryLabel="Neem contact op"
+      />
     </Layout>
   );
 };

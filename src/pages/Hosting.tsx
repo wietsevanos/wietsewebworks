@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Link } from "react-router-dom";
 import { ArrowRight, Server, Shield, RefreshCw, Activity, LifeBuoy, Database } from "lucide-react";
 
@@ -101,6 +102,13 @@ const Hosting = () => {
           </div>
         </div>
       </section>
+
+      <GlassCTA
+        eyebrow="Zorgeloos in de lucht"
+        title="Start vandaag nog met professionele hosting"
+        description="U regelt hosting, onderhoud en support in één abonnement. Persoonlijk contact, altijd hetzelfde aanspreekpunt."
+        primaryLabel="Start met hosting"
+      />
     </Layout>
   );
 };

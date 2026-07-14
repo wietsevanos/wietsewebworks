@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 
@@ -175,25 +176,12 @@ const Prijzen = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 md:py-32 dark-section relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/5" />
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
-              Vraag een vrijblijvende offerte aan
-            </h2>
-            <p className="text-white/70 text-lg leading-relaxed mb-10">
-              Vertel kort wat u nodig heeft, dan ontvangt u binnen één werkdag
-              een duidelijk voorstel op maat.
-            </p>
-            <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
-              Vraag offerte aan
-              <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <GlassCTA
+        eyebrow="Duidelijk voorstel op maat"
+        title="Vraag een vrijblijvende offerte aan"
+        description="Vertel kort wat u nodig heeft, dan ontvangt u binnen één werkdag een duidelijk voorstel op maat."
+        primaryLabel="Vraag offerte aan"
+      />
     </Layout>
   );
 };

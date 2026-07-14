@@ -3,8 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { Positioning } from "@/components/home/Positioning";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { AboutPreview } from "@/components/home/AboutPreview";
-import { CTASection } from "@/components/home/CTASection";
-
+import { GlassCTA } from "@/components/shared/GlassCTA";
 
 const Index = () => {
   return (
@@ -13,8 +12,7 @@ const Index = () => {
       <Positioning />
       <ServicesPreview />
       <AboutPreview />
-      
-      <CTASection />
+      <GlassCTA />
     </Layout>
   );
 };

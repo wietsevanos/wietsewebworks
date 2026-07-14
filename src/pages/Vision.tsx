@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { GlassCTA } from "@/components/shared/GlassCTA";
+import { Reveal } from "@/components/shared/Reveal";
 
 const steps = [
   {
@@ -56,25 +56,24 @@ const Vision = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
-              {steps.map((step) => (
-                <div
-                  key={step.number}
-                  className="group flex gap-6 md:gap-10 p-8 rounded-xl bg-white border border-border/60 hover:border-primary/30 transition-all duration-300 hover:shadow-md"
-                >
-                  <div className="flex-shrink-0">
-                    <span className="text-4xl md:text-5xl font-semibold text-primary/30 group-hover:text-primary transition-colors">
-                      {step.number}
-                    </span>
+              {steps.map((step, i) => (
+                <Reveal key={step.number} delay={i * 80}>
+                  <div className="group flex gap-6 md:gap-10 p-8 rounded-xl bg-white border border-border/60 hover:border-primary/30 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+                    <div className="flex-shrink-0">
+                      <span className="text-4xl md:text-5xl font-semibold text-primary/30 group-hover:text-primary transition-colors duration-300">
+                        {step.number}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -84,44 +83,33 @@ const Vision = () => {
       {/* Reassurance block */}
       <section className="py-24 md:py-32 bg-secondary">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-              Duidelijk, snel en persoonlijk
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                U spreekt tijdens het hele traject altijd dezelfde persoon.
-                Korte lijnen, snelle reacties en geen ingewikkelde technische
-                verhalen. Zo weet u precies waar u aan toe bent.
-              </p>
-              <p>
-                Gemiddeld staat uw nieuwe website binnen 2 tot 4 weken online,
-                afhankelijk van de omvang en uw eigen input.
-              </p>
+          <Reveal>
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Duidelijk, snel en persoonlijk
+              </h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  U spreekt tijdens het hele traject altijd dezelfde persoon.
+                  Korte lijnen, snelle reacties en geen ingewikkelde technische
+                  verhalen. Zo weet u precies waar u aan toe bent.
+                </p>
+                <p>
+                  Gemiddeld staat uw nieuwe website binnen 2 tot 4 weken online,
+                  afhankelijk van de omvang en uw eigen input.
+                </p>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 md:py-32 dark-section relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/5" />
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 leading-tight">
-              Klaar voor stap 1?
-            </h2>
-            <p className="text-white/70 text-lg leading-relaxed mb-10">
-              Neem contact op voor een vrijblijvende kennismaking. Wij denken
-              graag met u mee.
-            </p>
-            <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
-              Plan een kennismaking
-              <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <GlassCTA
+        eyebrow="Klaar voor stap 1?"
+        title="Zullen we vrijblijvend kennismaken?"
+        description="Neem contact op voor een vrijblijvende kennismaking. Wij denken graag met u mee."
+        primaryLabel="Plan een kennismaking"
+      />
     </Layout>
   );
 };

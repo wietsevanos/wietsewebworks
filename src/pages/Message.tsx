@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { Instagram, Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Message = () => {
@@ -87,15 +87,15 @@ const Message = () => {
                 </a>
 
                 <a
-                  href="https://instagram.com/wietsevanos"
+                  href="https://wa.me/31647872734"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                 >
                   <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                    <Instagram className="w-5 h-5 text-primary" />
+                    <MessageCircle className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-[0.9375rem]">@wietsevanos</span>
+                  <span className="text-[0.9375rem]">WhatsApp 06 47 87 27 34</span>
                 </a>
 
                 <div className="flex items-center gap-4 text-muted-foreground">

@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { GlassCTA } from "@/components/shared/GlassCTA";
 
 const Privacy = () => {
   return (
@@ -94,6 +95,13 @@ const Privacy = () => {
           </div>
         </div>
       </section>
+
+      <GlassCTA
+        eyebrow="Vragen over uw gegevens?"
+        title="Neem gerust contact op"
+        description="Voor vragen over deze privacyverklaring of het verwerken van uw gegevens bent u altijd welkom om contact op te nemen."
+        primaryLabel="Neem contact op"
+      />
     </Layout>
   );
 };

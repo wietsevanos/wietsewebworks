@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Instagram } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import logo from "@/assets/wietse-webworks-logo.png.asset.json";
 
 const navItems = [
@@ -14,8 +14,23 @@ const navItems = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b-2 border-primary">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/85 backdrop-blur-xl shadow-[0_4px_30px_-12px_rgba(0,0,0,0.08)]"
+          : "bg-white/60 backdrop-blur-md"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -49,13 +64,13 @@ export const Navbar = () => {
               Contact
             </Link>
             <a
-              href="https://instagram.com/wietsevanos"
+              href="https://wa.me/31647872734"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-deep transition-colors"
+              aria-label="WhatsApp 06 47 87 27 34"
+              className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-deep transition-all duration-200 hover:scale-105 hover:shadow-[0_8px_24px_-8px_hsl(var(--primary))]"
             >
-              <Instagram size={18} />
+              <MessageCircle size={18} />
             </a>
           </div>
 
@@ -94,13 +109,13 @@ export const Navbar = () => {
                   Contact
                 </Link>
                 <a
-                  href="https://instagram.com/wietsevanos"
+                  href="https://wa.me/31647872734"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram"
+                  aria-label="WhatsApp 06 47 87 27 34"
                   className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white"
                 >
-                  <Instagram size={18} />
+                  <MessageCircle size={18} />
                 </a>
               </div>
             </div>
