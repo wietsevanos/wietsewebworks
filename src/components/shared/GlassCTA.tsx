@@ -5,6 +5,7 @@ interface GlassCTAProps {
   eyebrow?: string;
   title?: string;
   titleMuted?: string;
+  description?: string;
   primaryLabel?: string;
   primaryHref?: string;
 }
