@@ -36,14 +36,11 @@ const services = [
 ];
 
 export const ServicesPreview = () => {
-  const accents = [
-    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--brand-light))]" },
-    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--accent-orange))]" },
-    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-white" },
-    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--brand-light))]" },
-    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--accent-orange-soft))]" },
-    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--brand-light))]" },
-  ];
+  const accents = Array.from({ length: services.length }, () => ({
+    bg: "bg-[hsl(var(--accent-orange))]/15",
+    hover: "group-hover:bg-[hsl(var(--accent-orange))]/25",
+    dot: "bg-[hsl(var(--accent-orange))]",
+  }));
   return (
     <section className="relative py-24 md:py-32 overflow-hidden bg-oceanic">
       {/* Ambient glows for depth */}
@@ -64,14 +61,14 @@ export const ServicesPreview = () => {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {services.map((service, i) => {
             const a = accents[i % accents.length];
             return (
-            <Reveal key={service.title} delay={i * 80}>
-              <div className="group h-full p-8 rounded-2xl glass-on-dark">
+            <Reveal key={service.title} delay={i * 80} className="h-full">
+              <div className="group h-full p-8 rounded-2xl glass-on-dark flex flex-col">
                 <div className={`w-10 h-10 rounded-full ${a.bg} flex items-center justify-center mb-6 transition-all duration-300 ${a.hover} group-hover:scale-110`}>
-                  <div className={`w-2 h-2 rounded-full ${a.dot}`} />
+                  <div className={`w-2.5 h-2.5 rounded-full ${a.dot}`} />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-3">
                   {service.title}
