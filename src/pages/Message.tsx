@@ -317,6 +317,8 @@ const Message = () => {
                   )}
                 </button>
               </form>
+                </>
+              )}
             </div>
           </div>
         </div>
