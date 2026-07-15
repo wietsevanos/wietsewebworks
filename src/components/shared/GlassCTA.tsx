@@ -22,7 +22,7 @@ export const GlassCTA = ({
   primaryHref = "/contact",
 }: GlassCTAProps) => {
   return (
-    <section className="bg-background py-20 md:py-28">
+    <section className="bg-secondary/50 py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
         <div className="cta-panel relative overflow-hidden rounded-[36px] border border-white/10 bg-[hsl(var(--brand-navy))] px-8 py-20 md:px-20 md:py-28 shadow-[0_40px_100px_-40px_rgba(8,15,40,0.7)]">
           {/* Slow drifting orange blob */}
