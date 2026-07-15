@@ -24,11 +24,17 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isHome = location.pathname === "/";
+  const heroTransparent = isHome && !scrolled;
+  const navStateClass = isHome
+    ? scrolled
+      ? "nav-hero-glass nav-on-dark"
+      : "nav-hero-transparent nav-on-dark"
+    : "nav-glass";
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
-        scrolled ? "nav-glass" : "nav-solid"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${navStateClass}`}
     >
       <div className="w-full px-6 lg:px-10">
         <div className="flex items-center justify-between h-20">
@@ -38,7 +44,7 @@ export const Navbar = () => {
             <img
               src={logo.url}
               alt="Wietse Webworks"
-              className="h-10 w-auto object-contain"
+              className="nav-logo h-10 w-auto object-contain transition-[filter] duration-500"
             />
           </Link>
 
@@ -59,7 +65,7 @@ export const Navbar = () => {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               to="/contact"
-              className="px-6 py-2.5 rounded-full border-2 border-foreground/20 text-foreground font-medium text-[0.9375rem] hover:border-primary hover:text-primary transition-colors"
+              className="nav-contact-btn px-6 py-2.5 rounded-full border-2 border-foreground/20 text-foreground font-medium text-[0.9375rem] hover:border-primary hover:text-primary transition-colors"
             >
               Contact
             </Link>
@@ -77,7 +83,7 @@ export const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="nav-menu-btn lg:hidden p-2 text-foreground"
             aria-label="Menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}

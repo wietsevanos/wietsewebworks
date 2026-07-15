@@ -324,13 +324,14 @@
       linear-gradient(180deg, hsl(214 65% 96%) 0%, hsl(214 55% 92%) 100%);
   }
 
-  /* Navbar states — solid at top, glass on scroll */
+  /* Navbar states — solid/glass/hero-transparent */
   .nav-solid {
     background-color: hsl(0 0% 100%);
     border-bottom: 1px solid transparent;
     box-shadow: none;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
+    transition: background-color 400ms ease, backdrop-filter 400ms ease, border-color 400ms ease, box-shadow 400ms ease;
   }
   .nav-glass {
     background: linear-gradient(180deg, hsl(0 0% 100% / 0.6) 0%, hsl(214 60% 98% / 0.42) 100%);
@@ -340,7 +341,46 @@
     box-shadow:
       0 1px 0 0 hsl(0 0% 100% / 0.8) inset,
       0 10px 40px -20px hsl(217 63% 27% / 0.22);
+    transition: background 400ms ease, backdrop-filter 400ms ease, border-color 400ms ease, box-shadow 400ms ease;
   }
+
+  /* Homepage hero — transparent, blends with navy hero background */
+  .nav-hero-transparent {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: background 400ms ease, backdrop-filter 400ms ease, border-color 400ms ease, box-shadow 400ms ease;
+  }
+
+  /* Homepage scrolled — dark navy glass */
+  .nav-hero-glass {
+    background: linear-gradient(180deg, hsl(224 64% 14% / 0.72) 0%, hsl(217 63% 22% / 0.62) 100%);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border-bottom: 1px solid hsl(0 0% 100% / 0.08);
+    box-shadow:
+      0 1px 0 0 hsl(0 0% 100% / 0.06) inset,
+      0 10px 40px -20px hsl(224 64% 5% / 0.5);
+    transition: background 400ms ease, backdrop-filter 400ms ease, border-color 400ms ease, box-shadow 400ms ease;
+  }
+
+  /* Light-mode navbar text overrides (used on dark/transparent hero navbar) */
+  .nav-on-dark .nav-link { color: hsl(0 0% 100% / 0.85); }
+  .nav-on-dark .nav-link:hover { color: hsl(0 0% 100%); }
+  .nav-on-dark .nav-link.active { color: hsl(0 0% 100%); }
+  .nav-on-dark .nav-logo { filter: brightness(0) invert(1); }
+  .nav-on-dark .nav-contact-btn {
+    border-color: hsl(0 0% 100% / 0.35);
+    color: hsl(0 0% 100%);
+  }
+  .nav-on-dark .nav-contact-btn:hover {
+    border-color: hsl(0 0% 100%);
+    color: hsl(0 0% 100%);
+    background-color: hsl(0 0% 100% / 0.08);
+  }
+  .nav-on-dark .nav-menu-btn { color: hsl(0 0% 100%); }
 
   /* Oceanic Shimmer gradient — used as the default deep-blue surface */
   .bg-oceanic {
