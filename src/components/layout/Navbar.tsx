@@ -100,17 +100,25 @@ export const Navbar = () => {
                   to={item.href}
                   onClick={() => setIsOpen(false)}
                   className={`text-base font-medium py-2 ${
-                    location.pathname === item.href ? "text-primary" : "text-foreground/70"
+                    location.pathname === item.href
+                      ? "text-primary"
+                      : isHome
+                        ? "text-white/85 hover:text-white"
+                        : "text-foreground/70"
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className="flex items-center gap-4 pt-4 border-t border-border mt-2">
+              <div className={`flex items-center gap-4 pt-4 border-t mt-2 ${isHome ? "border-white/15" : "border-border"}`}>
                 <Link
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="px-6 py-2.5 rounded-full border-2 border-foreground/20 text-foreground font-medium"
+                  className={`px-6 py-2.5 rounded-full border-2 font-medium ${
+                    isHome
+                      ? "border-white/35 text-white hover:border-white"
+                      : "border-foreground/20 text-foreground"
+                  }`}
                 >
                   Contact
                 </Link>
