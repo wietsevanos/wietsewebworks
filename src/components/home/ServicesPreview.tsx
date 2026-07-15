@@ -45,9 +45,9 @@ export const ServicesPreview = () => {
     { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--brand-light))]" },
   ];
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-navy">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-oceanic">
       {/* Ambient glows for depth */}
-      <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 w-[36rem] h-[36rem] rounded-full bg-[hsl(var(--brand-light))]/10 blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 w-[36rem] h-[36rem] rounded-full bg-[hsl(var(--brand-light))]/20 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -bottom-32 -right-24 w-[32rem] h-[32rem] rounded-full bg-[hsl(var(--accent-orange))]/10 blur-3xl" />
 
       <div className="relative max-w-6xl mx-auto px-6">
@@ -69,7 +69,7 @@ export const ServicesPreview = () => {
             const a = accents[i % accents.length];
             return (
             <Reveal key={service.title} delay={i * 80}>
-              <div className="group h-full p-8 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.07] hover:border-white/20">
+              <div className="group h-full p-8 rounded-2xl glass-on-dark">
                 <div className={`w-10 h-10 rounded-full ${a.bg} flex items-center justify-center mb-6 transition-all duration-300 ${a.hover} group-hover:scale-110`}>
                   <div className={`w-2 h-2 rounded-full ${a.dot}`} />
                 </div>

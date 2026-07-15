@@ -273,7 +273,9 @@ export const WorkflowFeatures = () => {
   };
 
   return (
-    <section className="relative py-24 md:py-32 bg-[hsl(var(--brand-tint))] overflow-hidden">
+    <section className="relative py-24 md:py-32 surface-aurora overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 w-[34rem] h-[34rem] rounded-full bg-[hsl(var(--brand-light))]/25 blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute -bottom-32 -right-24 w-[30rem] h-[30rem] rounded-full bg-[hsl(var(--accent-orange))]/10 blur-3xl" />
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Reveal>
@@ -301,10 +303,10 @@ export const WorkflowFeatures = () => {
               return (
                 <div
                   key={f.id}
-                  className={`rounded-2xl bg-white transition-all duration-300 ${
+                  className={`rounded-2xl glass transition-all duration-300 ${
                     isOpen
-                      ? "shadow-[0_20px_60px_-30px_rgba(15,30,60,0.25)] ring-1 ring-black/5"
-                      : "shadow-[0_4px_16px_-8px_rgba(15,30,60,0.08)] hover:shadow-[0_10px_30px_-15px_rgba(15,30,60,0.15)]"
+                      ? "shadow-[0_30px_80px_-30px_rgba(15,30,60,0.28)]"
+                      : "hover:-translate-y-0.5"
                   }`}
                 >
                   <button
@@ -371,8 +373,8 @@ export const WorkflowFeatures = () => {
 
           {/* Preview panel — matches accordion column height */}
           <div className="h-full">
-            <div className="rounded-3xl bg-secondary/60 p-4 md:p-6 ring-1 ring-black/5 shadow-[0_30px_80px_-40px_rgba(15,30,60,0.35)] h-full flex">
-              <div className="rounded-2xl bg-background p-5 md:p-7 w-full flex-1 flex flex-col justify-center">
+            <div className="rounded-3xl glass-strong p-4 md:p-6 h-full flex">
+              <div className="rounded-2xl glass w-full flex-1 flex flex-col justify-center p-5 md:p-7">
                 <div key={openId} className="animate-fade-in">
                   <FeaturePreview id={openId} />
                 </div>
