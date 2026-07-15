@@ -61,6 +61,12 @@ export const Hero = () => {
 };
 
 const HeroMockup = () => {
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setTick((t) => t + 1), HERO_LOOP_MS);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <div className="relative group [perspective:1600px] w-full lg:h-full flex">
       {/* Floating offset accent */}
@@ -85,56 +91,76 @@ const HeroMockup = () => {
           <div className="w-6" />
         </div>
 
-        {/* Fake site content */}
-        <div className="relative bg-white">
+        {/* Fake site content — rebuilds every cycle via key */}
+        <div key={tick} className="relative bg-white">
           {/* Nav */}
           <div className="flex items-center justify-between px-5 md:px-8 py-3.5 md:py-4 border-b border-black/[0.04]">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 hero-anim-l" style={d(80)}>
               <span className="w-5 h-5 rounded-md bg-gradient-to-br from-primary to-accent-indigo" />
               <span className="text-[0.75rem] font-semibold tracking-tight text-foreground">
                 Uw&nbsp;Merk
               </span>
             </div>
             <div className="hidden sm:flex items-center gap-5">
-              {["Diensten", "Werk", "Over", "Contact"].map((l) => (
-                <span key={l} className="text-[0.7rem] font-medium text-foreground/60">
+              {["Diensten", "Werk", "Over", "Contact"].map((l, i) => (
+                <span
+                  key={l}
+                  className="text-[0.7rem] font-medium text-foreground/60 hero-anim"
+                  style={d(200 + i * 90)}
+                >
                   {l}
                 </span>
               ))}
             </div>
-            <div className="h-6 px-3 rounded-full bg-foreground/90 text-white text-[0.65rem] font-medium flex items-center">
+            <div
+              className="h-6 px-3 rounded-full bg-foreground/90 text-white text-[0.65rem] font-medium flex items-center hero-anim-r"
+              style={d(620)}
+            >
               Offerte
             </div>
           </div>
 
           {/* Wide hero banner */}
           <div className="relative aspect-[16/7] overflow-hidden bg-gradient-to-br from-primary via-accent-indigo to-primary-navy">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,hsl(0_0%_100%/0.28),transparent_55%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_90%,hsl(186_80%_60%/0.4),transparent_50%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_10%,hsl(262_70%_65%/0.25),transparent_55%)]" />
+            <div
+              className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,hsl(0_0%_100%/0.28),transparent_55%),radial-gradient(circle_at_85%_90%,hsl(186_80%_60%/0.4),transparent_50%),radial-gradient(circle_at_65%_10%,hsl(262_70%_65%/0.25),transparent_55%)]"
+              style={{
+                backgroundSize: "180% 180%, 200% 200%, 220% 220%",
+                animation: "heroGradientDrift 14s ease-in-out infinite",
+              }}
+            />
 
             {/* Hero copy overlay */}
             <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-10 max-w-[62%]">
-              <div className="inline-flex w-fit items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/15 backdrop-blur text-white text-[0.55rem] font-semibold tracking-wider uppercase mb-2.5">
+              <div
+                className="inline-flex w-fit items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/15 backdrop-blur text-white text-[0.55rem] font-semibold tracking-wider uppercase mb-2.5 hero-anim"
+                style={d(900)}
+              >
                 <span className="w-1 h-1 rounded-full bg-white" />
                 Welkom
               </div>
               <div className="space-y-1.5">
-                <div className="h-2.5 w-[85%] rounded-full bg-white/90" />
-                <div className="h-2.5 w-[65%] rounded-full bg-white/90" />
+                <div className="h-2.5 w-[85%] rounded-full bg-white/90 hero-bar" style={d(1050)} />
+                <div className="h-2.5 w-[65%] rounded-full bg-white/90 hero-bar" style={d(1200)} />
               </div>
               <div className="mt-3 space-y-1 max-w-[75%]">
-                <div className="h-1 rounded-full bg-white/40" />
-                <div className="h-1 rounded-full bg-white/40 w-[80%]" />
+                <div className="h-1 rounded-full bg-white/40 hero-bar" style={d(1400)} />
+                <div className="h-1 rounded-full bg-white/40 w-[80%] hero-bar" style={d(1520)} />
               </div>
-              <div className="mt-4 h-6 w-fit px-3 rounded-full bg-white text-primary text-[0.6rem] font-semibold flex items-center gap-1.5">
+              <div
+                className="mt-4 h-6 w-fit px-3 rounded-full bg-white text-primary text-[0.6rem] font-semibold flex items-center gap-1.5 hero-anim-pop"
+                style={d(1750)}
+              >
                 Aan de slag
                 <ArrowRight size={10} />
               </div>
             </div>
 
             {/* Floating tile */}
-            <div className="absolute right-4 bottom-4 bg-white/95 backdrop-blur rounded-md px-2 py-1.5 shadow-lg flex items-center gap-2">
+            <div
+              className="absolute right-4 bottom-4 bg-white/95 backdrop-blur rounded-md px-2 py-1.5 shadow-lg flex items-center gap-2 hero-anim-pop"
+              style={d(2050)}
+            >
               <span className="w-5 h-5 rounded bg-gradient-to-br from-accent-teal to-primary" />
               <div className="space-y-1">
                 <div className="h-1.5 w-14 rounded-full bg-foreground/70" />
@@ -148,10 +174,10 @@ const HeroMockup = () => {
             {/* Section heading */}
             <div className="flex items-end justify-between mb-4">
               <div className="space-y-1.5">
-                <div className="h-2 w-24 rounded-full bg-foreground/80" />
-                <div className="h-1.5 w-40 rounded-full bg-foreground/20" />
+                <div className="h-2 w-24 rounded-full bg-foreground/80 hero-bar" style={d(2350)} />
+                <div className="h-1.5 w-40 rounded-full bg-foreground/20 hero-bar" style={d(2470)} />
               </div>
-              <div className="h-1 w-12 rounded-full bg-primary/60 hidden md:block" />
+              <div className="h-1 w-12 rounded-full bg-primary/60 hidden md:block hero-bar" style={d(2600)} />
             </div>
 
             {/* Content blocks */}
@@ -163,16 +189,43 @@ const HeroMockup = () => {
               ].map((c, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border border-black/[0.06] bg-white p-2.5 md:p-3 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-md"
+                  className="rounded-lg border border-black/[0.06] bg-white p-2.5 md:p-3 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-md hero-anim"
+                  style={d(2800 + i * 180)}
                 >
                   <span className={`inline-block w-4 h-4 rounded ${c.dot} mb-1.5`} />
                   <div className="space-y-1">
-                    <div className="h-1.5 rounded-full bg-foreground/70 w-[80%]" />
-                    <div className="h-1 rounded-full bg-foreground/15" />
-                    <div className="h-1 rounded-full bg-foreground/15 w-[70%]" />
+                    <div className="h-1.5 rounded-full bg-foreground/70 w-[80%] hero-bar" style={d(3050 + i * 180)} />
+                    <div className="h-1 rounded-full bg-foreground/15 hero-bar" style={d(3150 + i * 180)} />
+                    <div className="h-1 rounded-full bg-foreground/15 w-[70%] hero-bar" style={d(3250 + i * 180)} />
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Floating cursor — moves and taps subtly */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute top-0 left-0 z-20"
+            style={{
+              animation: `heroCursor ${HERO_LOOP_MS}ms cubic-bezier(0.65, 0.05, 0.36, 1) infinite`,
+              filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.25))",
+            }}
+          >
+            <div className="relative">
+              <MousePointer2
+                size={18}
+                className="text-white"
+                fill="hsl(var(--foreground))"
+                strokeWidth={1.5}
+              />
+              <span
+                className="absolute -top-1 -left-1 w-6 h-6 rounded-full bg-primary/40"
+                style={{
+                  animation: "heroClickPing 0.6s ease-out infinite",
+                  animationDelay: "2.2s",
+                }}
+              />
             </div>
           </div>
         </div>
@@ -180,3 +233,4 @@ const HeroMockup = () => {
     </div>
   );
 };
+
