@@ -42,7 +42,7 @@ const Hosting = () => {
     <Layout>
       <PageHeader
         label="Zorgeloos online"
-        title="Hosting & onderhoud"
+        title="Hosting" titleMuted="& onderhoud"
         description="Voor één vast maandbedrag van €37,95 regel ik alles wat er technisch bij komt kijken. U heeft nergens omkijken naar."
       />
 

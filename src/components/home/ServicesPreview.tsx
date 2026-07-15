@@ -59,7 +59,7 @@ export const ServicesPreview = () => {
           </Reveal>
           <Reveal delay={80}>
             <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight">
-              Alles onder één dak
+              Alles <span className="text-white/45">onder één dak</span>
             </h2>
           </Reveal>
         </div>

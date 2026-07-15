@@ -7,7 +7,7 @@ const Privacy = () => {
     <Layout>
       <PageHeader
         label="Juridisch"
-        title="Privacybeleid"
+        title="Privacy" titleMuted="beleid"
         description="Ik ga zorgvuldig om met uw persoonsgegevens. Hieronder leest u welke gegevens ik verzamel en waarvoor."
       />
 

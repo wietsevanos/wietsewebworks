@@ -15,7 +15,8 @@ export const Hero = () => {
               Webbureau uit Haarlem
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-white leading-[1.15] mb-8 animate-fade-up">
-              Websites die uw bedrijf online net zo sterk maken als in het echt.
+              Websites die uw bedrijf online net zo sterk maken{" "}
+              <span className="text-white/45">als in het echt.</span>
             </h1>
             <p
               className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-xl animate-fade-up"

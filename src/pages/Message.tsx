@@ -38,7 +38,7 @@ const Message = () => {
     <Layout>
       <PageHeader
         label="Contact"
-        title="Neem contact op"
+        title="Neem" titleMuted="contact op"
         description="Bel, app of mail, u krijgt altijd direct persoonlijk antwoord van Wietse. Vragen stellen en kennismaken is altijd vrijblijvend."
       />
 
