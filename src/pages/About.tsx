@@ -91,8 +91,8 @@ const About = () => {
                   is en u zich volledig kunt richten op uw onderneming.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-4 mt-8">
-                <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+              <div className="flex flex-nowrap gap-3 mt-8">
+                <Link to="/contact" className="btn-primary inline-flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap">
                   Neem contact op
                   <ArrowRight size={18} />
                 </Link>
@@ -100,7 +100,7 @@ const About = () => {
                   href="https://wa.me/31647872734"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline-dark inline-flex items-center gap-2"
+                  className="btn-outline-dark inline-flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap"
                 >
                   <img
                     src={whatsappLogo.url}
