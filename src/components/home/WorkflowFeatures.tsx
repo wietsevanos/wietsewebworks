@@ -334,12 +334,8 @@ export const WorkflowFeatures = () => {
                         {/* Mobile-only preview directly under the open item */}
                         {isOpen && (
                           <div className="lg:hidden mt-5">
-                            <div className="rounded-2xl glass-strong p-3">
-                              <div className="rounded-xl glass w-full p-5">
-                                <div key={openId} className="animate-fade-in">
-                                  <FeaturePreview id={openId} />
-                                </div>
-                              </div>
+                            <div key={openId} className="rounded-2xl glass p-5 animate-fade-in">
+                              <FeaturePreview id={openId} />
                             </div>
                           </div>
                         )}
