@@ -344,9 +344,26 @@ export const WorkflowFeatures = () => {
                         {isOpen && (
                           <div className="mt-4 h-1 w-full rounded-full bg-black/5 overflow-hidden">
                             <div
-                              className="h-full bg-[hsl(var(--accent-orange))] rounded-full transition-[width] duration-100 ease-linear"
-                              style={{ width: `${progress}%` }}
+                              key={openId}
+                              className="h-full bg-[hsl(var(--accent-orange))] rounded-full"
+                              style={{
+                                animation: `workflowProgress ${CYCLE_MS}ms linear forwards`,
+                                willChange: "width",
+                              }}
                             />
+                          </div>
+                        )}
+
+                        {/* Mobile-only preview directly under the open item */}
+                        {isOpen && (
+                          <div className="lg:hidden mt-5">
+                            <div className="rounded-2xl glass-strong p-3">
+                              <div className="rounded-xl glass w-full p-5">
+                                <div key={openId} className="animate-fade-in">
+                                  <FeaturePreview id={openId} />
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         )}
                       </div>
@@ -356,6 +373,7 @@ export const WorkflowFeatures = () => {
               );
             })}
           </div>
+
 
           {/* Preview panel, matches accordion column height */}
           <div className="h-full">
