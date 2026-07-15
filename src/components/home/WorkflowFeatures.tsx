@@ -355,7 +355,10 @@ export const WorkflowFeatures = () => {
                         </ul>
                         {isOpen && (
                           <div className="mt-4 h-1 w-full rounded-full bg-black/5 overflow-hidden">
-                            <div className="h-full w-1/3 bg-[hsl(var(--accent-orange))] rounded-full" />
+                            <div
+                              className="h-full bg-[hsl(var(--accent-orange))] rounded-full transition-[width] duration-100 ease-linear"
+                              style={{ width: `${progress}%` }}
+                            />
                           </div>
                         )}
                       </div>
