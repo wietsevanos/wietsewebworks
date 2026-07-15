@@ -1,6 +1,11 @@
+import { useEffect, useState, CSSProperties } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MousePointer2 } from "lucide-react";
 import { OrangeWaveBackground } from "@/components/shared/OrangeWaveBackground";
+
+const HERO_LOOP_MS = 8000;
+const d = (ms: number): CSSProperties => ({ animationDelay: `${ms}ms` });
+
 
 export const Hero = () => {
   return (
