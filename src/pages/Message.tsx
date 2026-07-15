@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Mail, Phone, MapPin, Send, Info, ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Message = () => {
   const { toast } = useToast();
@@ -19,13 +20,26 @@ const Message = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    toast({
-      title: "Bericht verzonden",
-      description: "Bedankt voor uw bericht, u krijgt zo snel mogelijk antwoord van Wietse zelf.",
-    });
-    setFormData({ name: "", email: "", company: "", subject: "", message: "" });
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+      if (error) throw error;
+      toast({
+        title: "Bericht verzonden",
+        description: "Bedankt voor uw bericht, u krijgt zo snel mogelijk antwoord van Wietse zelf.",
+      });
+      setFormData({ name: "", email: "", company: "", subject: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Verzenden mislukt",
+        description: "Probeer het later opnieuw of mail direct naar wietsevanos@gmail.com.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
