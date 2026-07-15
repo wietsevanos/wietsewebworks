@@ -280,7 +280,7 @@ const Prijzen = () => {
     <Layout>
       <PageHeader
         label="Prijzen"
-        title="Professionele websites vanaf €495"
+        title="Professionele websites" titleMuted="vanaf €495"
         description="Een professionele website hoeft niet duizenden euro's te kosten. Duidelijke tarieven, geen verborgen kosten, en direct contact met de ontwerper."
       />
 

@@ -7,7 +7,7 @@ const Voorwaarden = () => {
     <Layout>
       <PageHeader
         label="Juridisch"
-        title="Algemene voorwaarden"
+        title="Algemene" titleMuted="voorwaarden"
         description="Duidelijke afspraken zorgen voor een prettige samenwerking. Hieronder vindt u mijn algemene voorwaarden."
       />
 
