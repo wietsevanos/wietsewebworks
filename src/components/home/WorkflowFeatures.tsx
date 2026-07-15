@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Plus, X, Check, ArrowUpRight, Gauge, Search, Shield } from "lucide-react";
+
+const CYCLE_MS = 6000;
 import { Reveal } from "@/components/shared/Reveal";
 
 type Feature = {
