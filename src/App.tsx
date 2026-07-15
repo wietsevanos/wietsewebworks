@@ -41,6 +41,7 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacybeleid" element={<Privacy />} />
           <Route path="/voorwaarden" element={<Voorwaarden />} />
+          <Route path="/seo-haarlem" element={<SeoHaarlem />} />
 
           {/* Backwards-compatible redirects from old paths */}
           <Route path="/vision" element={<Navigate to="/werkwijze" replace />} />
