@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Plus, X, Check, ArrowUpRight, Gauge, Search, Shield } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
 
-const CYCLE_MS = 6000;
+const CYCLE_MS = 10000;
 
 type Feature = {
   id: string;
@@ -319,7 +319,7 @@ export const WorkflowFeatures = () => {
                           ))}
                         </ul>
                         {isOpen && (
-                          <div className="mt-4 h-1 w-full rounded-full bg-black/5 overflow-hidden">
+                          <div className="hidden lg:block mt-4 h-1 w-full rounded-full bg-black/5 overflow-hidden">
                             <div
                               key={openId}
                               className="h-full bg-[hsl(var(--accent-orange))] rounded-full"
