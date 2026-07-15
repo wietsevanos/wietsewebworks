@@ -12,61 +12,42 @@
     --background: 0 0% 100%;
     --foreground: 220 25% 16%;
 
-    /* Primary Blue Palette - Layered depth */
-    --primary: 212 95% 48%;
+    /* Brand Palette — refined navy + orange accent */
+    /* Orange is PRIMARY: CTAs, ring, active states, highlights */
+    --primary: 24 95% 56%;             /* #F98125 */
     --primary-foreground: 0 0% 100%;
-    --primary-deep: 222 70% 24%;      /* deep navy */
-    --primary-navy: 226 55% 18%;      /* even deeper */
-    --primary-glow: 205 100% 58%;
-    --primary-light: 200 90% 70%;
-    --primary-soft: 210 100% 94%;     /* washed sky */
+    --primary-deep: 20 90% 48%;        /* darker orange for hover */
+    --primary-glow: 22 96% 65%;        /* #FB9B50 soft orange */
+    --primary-light: 24 95% 72%;
+    --primary-soft: 24 95% 96%;        /* washed peach */
 
-    /* Accent Family - within the blue spectrum, used sparingly */
-    --accent-indigo: 240 55% 42%;
-    --accent-violet: 262 55% 55%;
-    --accent-teal: 186 70% 42%;
-    --accent-turquoise: 178 65% 48%;
-    --accent-copper: 22 78% 55%;
+    /* Brand blues — used for surfaces, dark sections, mockups */
+    --brand-navy: 224 64% 19%;         /* #11224D */
+    --brand-mid: 217 63% 27%;          /* #193A6F */
+    --brand-blue: 214 57% 39%;         /* #2C599D */
+    --brand-light: 214 47% 56%;        /* #5B84C4 */
+    --brand-soft: 214 60% 95%;
+    --brand-tint: 214 70% 97%;
 
-    /* Card & Surfaces */
-    --card: 0 0% 100%;
-    --card-foreground: 220 25% 16%;
+    /* Legacy aliases so existing components keep working */
+    --primary-navy: 224 64% 19%;
 
-    /* Popover */
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 16%;
-
-    /* Secondary - Cool ice blue */
-    --secondary: 212 40% 97%;
-    --secondary-foreground: 222 55% 22%;
-
-    /* Muted */
-    --muted: 214 30% 96%;
-    --muted-foreground: 220 15% 42%;
-
-    /* Accent - Subtle Blue Tint */
-    --accent: 218 60% 96%;
-    --accent-foreground: 222 70% 32%;
-
-    /* Dark Sections - deep navy instead of neutral */
-    --dark: 224 55% 12%;
-    --dark-foreground: 0 0% 98%;
-
-    /* Destructive */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Borders & Input */
-    --border: 216 30% 90%;
-    --input: 216 30% 90%;
-    --ring: 212 95% 48%;
-
-    /* Gradients & shadows */
-    --gradient-hero: linear-gradient(140deg, hsl(226 60% 20%) 0%, hsl(215 85% 38%) 45%, hsl(200 95% 55%) 100%);
-    --gradient-soft: linear-gradient(180deg, hsl(212 60% 98%) 0%, hsl(218 55% 95%) 100%);
-    --gradient-mist: linear-gradient(160deg, hsl(210 100% 97%) 0%, hsl(232 45% 96%) 100%);
-    --shadow-elegant: 0 20px 60px -30px hsl(222 70% 24% / 0.25);
-    --shadow-glow: 0 10px 40px -15px hsl(205 100% 58% / 0.35);
+    /* Accent Family */
+    --accent-orange: 24 95% 56%;
+    --accent-orange-soft: 22 96% 65%;
+    --accent-indigo: 217 63% 27%;
+    --accent-violet: 214 57% 39%;
+    --accent-teal: 214 47% 56%;
+    --accent-turquoise: 214 47% 56%;
+    --accent-copper: 24 95% 56%;
+...
+    --gradient-hero: linear-gradient(140deg, hsl(224 64% 15%) 0%, hsl(217 63% 27%) 45%, hsl(214 57% 39%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(214 70% 98%) 0%, hsl(214 60% 95%) 100%);
+    --gradient-mist: linear-gradient(160deg, hsl(214 70% 97%) 0%, hsl(24 95% 97%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(24 95% 56%) 0%, hsl(22 96% 65%) 100%);
+    --gradient-navy: linear-gradient(160deg, hsl(224 64% 19%) 0%, hsl(217 63% 27%) 60%, hsl(214 57% 39%) 100%);
+    --shadow-elegant: 0 20px 60px -30px hsl(224 64% 19% / 0.28);
+    --shadow-glow: 0 10px 40px -15px hsl(24 95% 56% / 0.4);
 
     --radius: 0.75rem;
 
