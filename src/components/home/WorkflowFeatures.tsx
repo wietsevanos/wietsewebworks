@@ -1,0 +1,357 @@
+import { useState } from "react";
+import { Plus, X, Check, ArrowUpRight, Gauge, Search, Shield } from "lucide-react";
+import { Reveal } from "@/components/shared/Reveal";
+
+type Feature = {
+  id: string;
+  kicker: string;
+  title: string;
+  description: string;
+  bullets: string[];
+};
+
+const features: Feature[] = [
+  {
+    id: "design",
+    kicker: "Ontwerp met karakter",
+    title: "Maatwerk webdesign",
+    description:
+      "Elke website begint met een uniek ontwerp dat past bij uw merk. Geen templates, geen standaard­oplossingen — een uitstraling die aansluit op wie u bent.",
+    bullets: [
+      "Volledig op maat, geen thema's",
+      "Ontwerp­voorstel binnen een week",
+      "Onbeperkte revisies tot het klopt",
+    ],
+  },
+  {
+    id: "development",
+    kicker: "Snel & modern",
+    title: "Razendsnelle websites",
+    description:
+      "Uw website wordt gebouwd met de nieuwste technieken. Perfect leesbaar op elk scherm en supersnel — cruciaal voor bezoekers én Google.",
+    bullets: [
+      "Perfecte weergave op mobiel, tablet en desktop",
+      "Laadtijden onder de seconde",
+      "Schone, toekomst­bestendige code",
+    ],
+  },
+  {
+    id: "seo",
+    kicker: "Beter vindbaar",
+    title: "SEO en vindbaarheid",
+    description:
+      "Een mooie website heeft alleen zin als hij ook gevonden wordt. Ik zorg voor de technische basis waarmee u hoger scoort in Google.",
+    bullets: [
+      "Technische SEO standaard ingebouwd",
+      "Snelle indexatie door zoekmachines",
+      "Meetbare resultaten via analytics",
+    ],
+  },
+  {
+    id: "support",
+    kicker: "Zorgeloos hosten",
+    title: "Hosting en onderhoud",
+    description:
+      "Na livegang blijf ik betrokken. Hosting, updates, back-ups en support — u hoeft er niet naar om te kijken en bereikt mij altijd direct.",
+    bullets: [
+      "99,9% uptime met dagelijkse back-ups",
+      "Wijzigingen binnen 24 uur doorgevoerd",
+      "Persoonlijk contact, geen helpdesk",
+    ],
+  },
+];
+
+const FeaturePreview = ({ id }: { id: string }) => {
+  if (id === "design") {
+    return (
+      <div className="space-y-5">
+        <div className="flex items-center justify-between">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
+            Ontwerp­voorstel
+          </p>
+          <span className="text-xs text-muted-foreground">v1.0 — concept</span>
+        </div>
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            { label: "Hero", tone: "bg-[hsl(var(--accent-orange))]" },
+            { label: "Over ons", tone: "bg-white ring-1 ring-black/5" },
+            { label: "Diensten", tone: "bg-white ring-1 ring-black/5" },
+          ].map((c, i) => (
+            <div
+              key={i}
+              className={`aspect-[4/5] rounded-xl ${c.tone} p-3 flex flex-col justify-between shadow-sm`}
+            >
+              <div className={`h-1.5 w-8 rounded-full ${i === 0 ? "bg-white/60" : "bg-primary/40"}`} />
+              <div className="space-y-1.5">
+                <div className={`h-1.5 rounded-full ${i === 0 ? "bg-white/70" : "bg-foreground/20"} w-full`} />
+                <div className={`h-1.5 rounded-full ${i === 0 ? "bg-white/40" : "bg-foreground/10"} w-2/3`} />
+                <p className={`pt-2 text-[0.65rem] font-medium ${i === 0 ? "text-white" : "text-foreground/70"}`}>
+                  {c.label}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex items-center gap-2 pt-2">
+          <span className="w-6 h-6 rounded-full bg-[hsl(var(--brand-navy))]" />
+          <span className="w-6 h-6 rounded-full bg-[hsl(var(--accent-orange))]" />
+          <span className="w-6 h-6 rounded-full bg-[hsl(var(--brand-light))]" />
+          <span className="w-6 h-6 rounded-full bg-white ring-1 ring-black/10" />
+          <span className="ml-auto text-xs text-muted-foreground">Kleurpalet</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (id === "development") {
+    return (
+      <div className="space-y-5">
+        <div className="flex items-center justify-between">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
+            Performance rapport
+          </p>
+          <span className="text-xs text-muted-foreground flex items-center gap-1">
+            <Gauge size={12} /> live
+          </span>
+        </div>
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            { v: "0.8s", l: "Laadtijd" },
+            { v: "100", l: "Performance" },
+            { v: "A+", l: "Beveiliging" },
+          ].map((s, i) => (
+            <div
+              key={i}
+              className={`rounded-xl p-4 ${
+                i === 0 ? "bg-[hsl(var(--accent-orange))] text-white" : "bg-white ring-1 ring-black/5"
+              }`}
+            >
+              <p className={`text-2xl font-semibold tracking-tight ${i === 0 ? "text-white" : "text-foreground"}`}>
+                {s.v}
+              </p>
+              <p className={`text-[0.7rem] mt-1 ${i === 0 ? "text-white/80" : "text-muted-foreground"}`}>
+                {s.l}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="space-y-2 pt-1">
+          {[
+            { l: "Desktop", w: "w-[96%]" },
+            { l: "Tablet", w: "w-[93%]" },
+            { l: "Mobiel", w: "w-[91%]" },
+          ].map((row, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <span className="text-xs w-14 text-muted-foreground">{row.l}</span>
+              <div className="flex-1 h-2 rounded-full bg-black/5 overflow-hidden">
+                <div className={`h-full ${row.w} rounded-full bg-[hsl(var(--brand-navy))]`} />
+              </div>
+              <span className="text-xs font-medium text-foreground/70">{row.w.match(/\d+/)?.[0]}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (id === "seo") {
+    return (
+      <div className="space-y-5">
+        <div className="flex items-center justify-between">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
+            Zoekresultaten
+          </p>
+          <span className="text-xs text-muted-foreground flex items-center gap-1">
+            <Search size={12} /> google.nl
+          </span>
+        </div>
+        <div className="space-y-2">
+          {[
+            { q: "webdesigner haarlem", pos: "#1", up: true },
+            { q: "website laten maken", pos: "#3", up: true },
+            { q: "lokale webdesign", pos: "#2", up: true },
+          ].map((r, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-between rounded-lg bg-white ring-1 ring-black/5 px-4 py-3"
+            >
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="text-xs font-mono text-muted-foreground">{r.q}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[0.7rem] text-emerald-600 font-medium">▲ 4</span>
+                <span className="text-sm font-semibold text-[hsl(var(--accent-orange))]">{r.pos}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-xl bg-[hsl(var(--brand-navy))] p-4 text-white flex items-center justify-between">
+          <div>
+            <p className="text-[0.7rem] text-white/70 uppercase tracking-wider">Organisch verkeer</p>
+            <p className="text-2xl font-semibold mt-1">+184%</p>
+          </div>
+          <ArrowUpRight size={28} className="text-[hsl(var(--accent-orange-soft))]" />
+        </div>
+      </div>
+    );
+  }
+
+  // support
+  return (
+    <div className="space-y-5">
+      <div className="flex items-center justify-between">
+        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
+          Status &amp; support
+        </p>
+        <span className="text-xs text-emerald-600 flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          Alles operationeel
+        </span>
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        <div className="rounded-xl bg-[hsl(var(--accent-orange))] text-white p-4">
+          <p className="text-2xl font-semibold">99,98%</p>
+          <p className="text-[0.7rem] text-white/80 mt-1">Uptime laatste 90 dagen</p>
+        </div>
+        <div className="rounded-xl bg-white ring-1 ring-black/5 p-4">
+          <p className="text-2xl font-semibold text-foreground">&lt; 2u</p>
+          <p className="text-[0.7rem] text-muted-foreground mt-1">Gemiddelde reactietijd</p>
+        </div>
+      </div>
+      <div className="rounded-xl bg-white ring-1 ring-black/5 p-4 space-y-3">
+        <p className="text-xs text-muted-foreground">Recente activiteit</p>
+        {[
+          { t: "Back-up voltooid", s: "vandaag, 03:00" },
+          { t: "SSL-certificaat vernieuwd", s: "gisteren" },
+          { t: "Tekstwijziging doorgevoerd", s: "2 dagen geleden" },
+        ].map((a, i) => (
+          <div key={i} className="flex items-center gap-3">
+            <div className="w-7 h-7 rounded-full bg-[hsl(var(--brand-soft))] flex items-center justify-center">
+              <Shield size={14} className="text-[hsl(var(--brand-blue))]" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-foreground truncate">{a.t}</p>
+              <p className="text-[0.7rem] text-muted-foreground">{a.s}</p>
+            </div>
+            <Check size={14} className="text-emerald-500" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const WorkflowFeatures = () => {
+  const [openId, setOpenId] = useState<string>(features[0].id);
+
+  return (
+    <section className="relative py-24 md:py-32 bg-[hsl(var(--brand-tint))] overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <Reveal>
+            <h2 className="text-4xl md:text-5xl font-semibold text-foreground leading-tight tracking-tight">
+              Een website die voor u werkt
+            </h2>
+          </Reveal>
+          <Reveal delay={80}>
+            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+              Van ontwerp tot livegang en alles daarna — alles onder één dak,
+              met korte lijnen en persoonlijk contact.
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
+          {/* Accordion */}
+          <div className="space-y-4">
+            {features.map((f) => {
+              const isOpen = openId === f.id;
+              return (
+                <div
+                  key={f.id}
+                  className={`rounded-2xl bg-white transition-all duration-300 ${
+                    isOpen
+                      ? "shadow-[0_20px_60px_-30px_rgba(15,30,60,0.25)] ring-1 ring-black/5"
+                      : "shadow-[0_4px_16px_-8px_rgba(15,30,60,0.08)] hover:shadow-[0_10px_30px_-15px_rgba(15,30,60,0.15)]"
+                  }`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenId(isOpen ? "" : f.id)}
+                    className="w-full flex items-start justify-between gap-4 text-left px-6 py-5"
+                  >
+                    <div className="flex-1 min-w-0">
+                      {isOpen && (
+                        <p className="text-xs tracking-wide text-muted-foreground mb-1">
+                          {f.kicker}
+                        </p>
+                      )}
+                      <h3 className="text-lg font-semibold text-foreground leading-snug">
+                        {f.title}
+                      </h3>
+                    </div>
+                    <span
+                      className={`shrink-0 mt-0.5 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
+                        isOpen
+                          ? "bg-[hsl(var(--accent-orange))] text-white"
+                          : "bg-secondary text-foreground/70"
+                      }`}
+                    >
+                      {isOpen ? <X size={16} /> : <Plus size={16} />}
+                    </span>
+                  </button>
+
+                  <div
+                    className={`grid transition-all duration-300 ease-out ${
+                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-6 pb-6 -mt-1">
+                        <p className="text-[0.95rem] text-muted-foreground leading-relaxed">
+                          {f.description}
+                        </p>
+                        <ul className="mt-4 space-y-2">
+                          {f.bullets.map((b) => (
+                            <li key={b} className="flex items-start gap-2.5 text-sm text-foreground/80">
+                              <span className="mt-0.5 w-4 h-4 rounded-full bg-[hsl(var(--accent-orange))] flex items-center justify-center shrink-0">
+                                <Check size={10} className="text-white" strokeWidth={3} />
+                              </span>
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        {isOpen && (
+                          <div className="mt-4 h-1 w-full rounded-full bg-black/5 overflow-hidden">
+                            <div className="h-full w-1/3 bg-[hsl(var(--accent-orange))] rounded-full" />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Preview panel */}
+          <div className="lg:sticky lg:top-24">
+            <div className="rounded-3xl bg-secondary/60 p-4 md:p-6 ring-1 ring-black/5 shadow-[0_30px_80px_-40px_rgba(15,30,60,0.35)]">
+              <div className="rounded-2xl bg-background p-5 md:p-7 min-h-[420px]">
+                {openId ? (
+                  <div key={openId} className="animate-fade-in">
+                    <FeaturePreview id={openId} />
+                  </div>
+                ) : (
+                  <div className="h-full min-h-[380px] flex items-center justify-center text-sm text-muted-foreground">
+                    Kies een onderwerp om meer te zien
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
