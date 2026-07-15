@@ -240,6 +240,43 @@
     border: 1px solid hsl(0 0% 100% / 0.6);
     box-shadow: 0 6px 20px -10px hsl(217 63% 27% / 0.2);
   }
+  /* Glass panel on dark/navy backgrounds — for cards on oceanic sections */
+  .glass-on-dark {
+    background: linear-gradient(180deg, hsl(0 0% 100% / 0.14) 0%, hsl(0 0% 100% / 0.06) 100%);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid hsl(0 0% 100% / 0.22);
+    box-shadow:
+      0 1px 0 0 hsl(0 0% 100% / 0.25) inset,
+      0 30px 80px -30px hsl(224 64% 8% / 0.55);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  }
+  .glass-on-dark:hover {
+    background: linear-gradient(180deg, hsl(0 0% 100% / 0.20) 0%, hsl(0 0% 100% / 0.09) 100%);
+    border-color: hsl(0 0% 100% / 0.4);
+    transform: translateY(-3px);
+    box-shadow:
+      0 1px 0 0 hsl(0 0% 100% / 0.35) inset,
+      0 40px 100px -30px hsl(224 64% 8% / 0.7);
+  }
+
+  /* Soft, aurora-tinted surface for light sections so glass has something to blur over */
+  .surface-aurora {
+    position: relative;
+    background:
+      radial-gradient(60% 55% at 15% 10%, hsl(214 60% 92% / 0.9) 0%, transparent 60%),
+      radial-gradient(55% 55% at 85% 20%, hsl(214 70% 96% / 0.8) 0%, transparent 65%),
+      radial-gradient(70% 60% at 50% 100%, hsl(214 55% 90% / 0.6) 0%, transparent 65%),
+      linear-gradient(180deg, hsl(214 70% 98%) 0%, hsl(214 60% 96%) 100%);
+  }
+  .surface-aurora-strong {
+    position: relative;
+    background:
+      radial-gradient(45% 45% at 20% 15%, hsl(214 70% 88% / 0.95) 0%, transparent 60%),
+      radial-gradient(45% 45% at 80% 25%, hsl(214 90% 92% / 0.8) 0%, transparent 65%),
+      radial-gradient(55% 55% at 60% 95%, hsl(217 60% 85% / 0.6) 0%, transparent 60%),
+      linear-gradient(180deg, hsl(214 65% 96%) 0%, hsl(214 55% 92%) 100%);
+  }
 
   /* Navbar states — solid at top, glass on scroll */
   .nav-solid {
