@@ -136,7 +136,7 @@ export const FeaturedWork = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {featured.map((p, i) => (
-            <Reveal key={p.name} delay={i * 100}>
+            <Reveal key={p.name} delay={i * 100} className="h-full">
               <FeaturedCard project={p} />
             </Reveal>
           ))}
