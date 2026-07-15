@@ -66,9 +66,9 @@ export const ServicesPreview = () => {
             const a = accents[i % accents.length];
             return (
             <Reveal key={service.title} delay={i * 80} className="h-full">
-              <div className="group h-full min-h-[260px] p-8 rounded-2xl glass-on-dark flex flex-col">
-                <div className={`w-10 h-10 rounded-full ${a.bg} flex items-center justify-center mb-6 transition-all duration-300 ${a.hover} group-hover:scale-110`}>
-                  <div className={`w-2.5 h-2.5 rounded-full ${a.dot}`} />
+              <div className="group h-full min-h-[180px] md:min-h-[260px] p-5 md:p-8 rounded-2xl glass-on-dark flex flex-col">
+                <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full ${a.bg} flex items-center justify-center mb-3 md:mb-6 transition-all duration-300 ${a.hover} group-hover:scale-110`}>
+                  <div className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full ${a.dot}`} />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-3">
                   {service.title}
