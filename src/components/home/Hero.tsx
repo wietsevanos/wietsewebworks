@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { OrangeWaveBackground } from "@/components/shared/OrangeWaveBackground";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
+
 
 export const Hero = () => {
   return (
