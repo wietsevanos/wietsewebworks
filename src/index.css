@@ -12,16 +12,16 @@
     --background: 0 0% 100%;
     --foreground: 220 25% 16%;
 
-    /* Brand Palette — refined navy + orange accent */
-    /* Orange is PRIMARY: CTAs, ring, active states, highlights */
-    --primary: 24 95% 56%;             /* #F98125 */
+    /* Brand Palette — blue PRIMARY + orange SECONDARY accent */
+    /* Blue is primary: buttons, links, rings, icons, active states */
+    --primary: 214 57% 39%;            /* #2C599D middle blue */
     --primary-foreground: 0 0% 100%;
-    --primary-deep: 20 90% 48%;        /* darker orange for hover */
-    --primary-glow: 22 96% 65%;        /* #FB9B50 soft orange */
-    --primary-light: 24 95% 72%;
-    --primary-soft: 24 95% 96%;        /* washed peach */
+    --primary-deep: 217 63% 27%;       /* #193A6F darker on hover */
+    --primary-glow: 214 47% 56%;       /* #5B84C4 light blue */
+    --primary-light: 214 47% 56%;
+    --primary-soft: 214 60% 95%;       /* washed light blue */
 
-    /* Brand blues — used for surfaces, dark sections, mockups */
+    /* Brand blues — surfaces, dark sections, mockups */
     --brand-navy: 224 64% 19%;         /* #11224D */
     --brand-mid: 217 63% 27%;          /* #193A6F */
     --brand-blue: 214 57% 39%;         /* #2C599D */
@@ -29,12 +29,12 @@
     --brand-soft: 214 60% 95%;
     --brand-tint: 214 70% 97%;
 
-    /* Legacy aliases so existing components keep working */
+    /* Legacy aliases */
     --primary-navy: 224 64% 19%;
 
-    /* Accent Family */
-    --accent-orange: 24 95% 56%;
-    --accent-orange-soft: 22 96% 65%;
+    /* Accent Family — orange used sparingly for highlights & top CTAs */
+    --accent-orange: 24 95% 56%;       /* #F98125 */
+    --accent-orange-soft: 22 96% 65%;  /* #FB9B50 */
     --accent-indigo: 217 63% 27%;
     --accent-violet: 214 57% 39%;
     --accent-teal: 214 47% 56%;
@@ -64,14 +64,14 @@
 
     --border: 214 30% 90%;
     --input: 214 30% 90%;
-    --ring: 24 95% 56%;
+    --ring: 214 57% 39%;
     --gradient-hero: linear-gradient(140deg, hsl(224 64% 15%) 0%, hsl(217 63% 27%) 45%, hsl(214 57% 39%) 100%);
     --gradient-soft: linear-gradient(180deg, hsl(214 70% 98%) 0%, hsl(214 60% 95%) 100%);
-    --gradient-mist: linear-gradient(160deg, hsl(214 70% 97%) 0%, hsl(24 95% 97%) 100%);
+    --gradient-mist: linear-gradient(160deg, hsl(214 70% 98%) 0%, hsl(214 55% 93%) 100%);
     --gradient-warm: linear-gradient(135deg, hsl(24 95% 56%) 0%, hsl(22 96% 65%) 100%);
     --gradient-navy: linear-gradient(160deg, hsl(224 64% 19%) 0%, hsl(217 63% 27%) 60%, hsl(214 57% 39%) 100%);
-    --shadow-elegant: 0 20px 60px -30px hsl(224 64% 19% / 0.28);
-    --shadow-glow: 0 10px 40px -15px hsl(24 95% 56% / 0.4);
+    --shadow-elegant: 0 20px 60px -30px hsl(217 63% 27% / 0.28);
+    --shadow-glow: 0 10px 40px -15px hsl(214 57% 39% / 0.4);
 
     --radius: 0.75rem;
 
@@ -149,29 +149,43 @@
     @apply bg-dark text-dark-foreground;
   }
   
-  /* Premium Buttons — orange CTA */
+  /* Premium Buttons — blue primary */
   .btn-primary {
     @apply bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-medium transition-all duration-200;
     font-size: 0.9375rem;
-    box-shadow: 0 10px 30px -12px hsl(24 95% 56% / 0.55);
+    box-shadow: 0 10px 30px -12px hsl(214 57% 39% / 0.55);
   }
 
   .btn-primary:hover {
     @apply bg-primary-deep;
     transform: translateY(-1px);
+    box-shadow: 0 14px 34px -12px hsl(217 63% 27% / 0.65);
+  }
+
+  /* Accent CTA — orange, use only for the single most important call to action */
+  .btn-accent {
+    @apply text-white px-7 py-3.5 rounded-full font-medium transition-all duration-200;
+    font-size: 0.9375rem;
+    background-color: hsl(var(--accent-orange));
+    box-shadow: 0 10px 30px -12px hsl(24 95% 56% / 0.55);
+  }
+
+  .btn-accent:hover {
+    background-color: hsl(20 90% 48%);
+    transform: translateY(-1px);
     box-shadow: 0 14px 34px -12px hsl(20 90% 48% / 0.65);
   }
-  
+
   .btn-outline {
     @apply border border-white/30 text-white px-7 py-3.5 rounded-full font-medium transition-all duration-200 hover:bg-white/10;
     font-size: 0.9375rem;
   }
-  
+
   .btn-outline-dark {
     @apply border border-border text-foreground px-7 py-3.5 rounded-full font-medium transition-all duration-200 hover:border-primary hover:text-primary;
     font-size: 0.9375rem;
   }
-  
+
   .btn-ghost {
     @apply text-foreground px-6 py-3 rounded-full font-medium transition-colors duration-200 hover:text-primary;
     font-size: 0.9375rem;
