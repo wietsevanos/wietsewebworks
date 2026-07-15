@@ -92,10 +92,8 @@ const HeroMockup = () => {
           <div className="relative rounded-[16px] p-[2px] bg-gradient-to-b from-white/10 to-white/[0.02] ring-1 ring-black/40">
             {/* Screen */}
             <div className="relative rounded-[14px] overflow-hidden bg-white">
+              <div className="relative w-full flex flex-col bg-white transition-all duration-700 ease-out group-hover:-translate-y-0.5">
 
-
-      {/* Browser window */}
-      <div className="relative w-full flex flex-col rounded-2xl overflow-hidden bg-white ring-1 ring-white/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out group-hover:-translate-y-1.5 group-hover:[transform:translateY(-6px)_rotateX(1.2deg)]">
 
         {/* Chrome bar */}
         <div className="flex items-center gap-3 px-4 py-2.5 bg-secondary border-b border-black/5">
