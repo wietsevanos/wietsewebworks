@@ -289,7 +289,11 @@ export const WorkflowFeatures = () => {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
+        <div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-stretch"
+          onMouseEnter={() => { pausedRef.current = true; }}
+          onMouseLeave={() => { pausedRef.current = false; startRef.current = Date.now() - (progress / 100) * CYCLE_MS; }}
+        >
           {/* Accordion */}
           <div className="space-y-4">
             {features.map((f) => {
