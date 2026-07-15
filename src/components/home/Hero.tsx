@@ -68,15 +68,32 @@ const HeroMockup = () => {
   }, []);
 
   return (
-    <div className="relative group [perspective:1600px] w-full lg:h-full flex">
-      {/* Floating offset accent */}
+    <div className="relative group [perspective:1600px] w-full lg:h-full flex flex-col items-center justify-center">
+      {/* Ambient floor glow beneath monitor */}
       <div
         aria-hidden
-        className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-glow to-accent-turquoise translate-x-2 translate-y-3 opacity-70 blur-[2px] transition-all duration-700 ease-out group-hover:translate-x-4 group-hover:translate-y-5"
+        className="absolute left-1/2 -translate-x-1/2 bottom-[-30px] w-[70%] h-10 rounded-[50%] bg-black/40 blur-2xl opacity-60"
       />
 
-      {/* Browser window */}
-      <div className="relative w-full flex flex-col rounded-2xl overflow-hidden bg-white ring-1 ring-white/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out group-hover:-translate-y-1.5 group-hover:[transform:translateY(-6px)_rotateX(1.2deg)]">
+      {/* Floating monitor wrapper */}
+      <div
+        className="relative w-full flex flex-col items-center"
+        style={{ animation: "monitorFloat 7s ease-in-out infinite" }}
+      >
+        {/* Floating offset accent (behind the monitor) */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-full rounded-[22px] bg-gradient-to-br from-primary-glow to-accent-turquoise translate-x-2 translate-y-3 opacity-60 blur-[3px] transition-all duration-700 ease-out group-hover:translate-x-4 group-hover:translate-y-5"
+        />
+
+        {/* Monitor bezel */}
+        <div className="relative w-full rounded-[22px] p-[7px] bg-gradient-to-br from-white/25 via-white/10 to-white/15 ring-1 ring-white/25 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.65),0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-md transition-all duration-700 ease-out group-hover:-translate-y-1">
+          {/* Inner darker bezel edge */}
+          <div className="relative rounded-[16px] p-[2px] bg-gradient-to-b from-white/10 to-white/[0.02] ring-1 ring-black/40">
+            {/* Screen */}
+            <div className="relative rounded-[14px] overflow-hidden bg-white">
+              <div className="relative w-full flex flex-col bg-white transition-all duration-700 ease-out group-hover:-translate-y-0.5">
+
 
         {/* Chrome bar */}
         <div className="flex items-center gap-3 px-4 py-2.5 bg-secondary border-b border-black/5">
@@ -229,8 +246,34 @@ const HeroMockup = () => {
             </div>
           </div>
         </div>
+              </div>
+              {/* Slow-moving screen reflection */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 overflow-hidden rounded-[14px]"
+              >
+                <div
+                  className="absolute -inset-y-8 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/12 to-transparent"
+                  style={{ animation: "monitorSheen 9s ease-in-out infinite" }}
+                />
+              </div>
+              {/* Subtle inner glass ring */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-[14px] ring-1 ring-inset ring-white/10"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Neck */}
+        <div className="relative w-16 h-3 bg-gradient-to-b from-white/25 via-white/10 to-white/[0.04] ring-1 ring-white/15 ring-b-0 rounded-b-[3px]" />
+        {/* Base */}
+        <div className="relative w-40 h-1.5 rounded-full bg-gradient-to-b from-white/20 to-white/5 ring-1 ring-white/15 shadow-[0_6px_18px_-6px_rgba(0,0,0,0.6)]" />
       </div>
     </div>
   );
 };
+
+
 
