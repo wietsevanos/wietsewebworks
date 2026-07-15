@@ -3,7 +3,6 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Mail, Phone, MapPin, Send, Info, ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 const Message = () => {
   const { toast } = useToast();
