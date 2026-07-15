@@ -369,19 +369,13 @@ export const WorkflowFeatures = () => {
             })}
           </div>
 
-          {/* Preview panel */}
-          <div className="lg:sticky lg:top-24">
-            <div className="rounded-3xl bg-secondary/60 p-4 md:p-6 ring-1 ring-black/5 shadow-[0_30px_80px_-40px_rgba(15,30,60,0.35)]">
-              <div className="rounded-2xl bg-background p-5 md:p-7 min-h-[420px]">
-                {openId ? (
-                  <div key={openId} className="animate-fade-in">
-                    <FeaturePreview id={openId} />
-                  </div>
-                ) : (
-                  <div className="h-full min-h-[380px] flex items-center justify-center text-sm text-muted-foreground">
-                    Kies een onderwerp om meer te zien
-                  </div>
-                )}
+          {/* Preview panel — matches accordion column height */}
+          <div className="h-full">
+            <div className="rounded-3xl bg-secondary/60 p-4 md:p-6 ring-1 ring-black/5 shadow-[0_30px_80px_-40px_rgba(15,30,60,0.35)] h-full flex">
+              <div className="rounded-2xl bg-background p-5 md:p-7 w-full flex-1 flex flex-col justify-center">
+                <div key={openId} className="animate-fade-in">
+                  <FeaturePreview id={openId} />
+                </div>
               </div>
             </div>
           </div>
