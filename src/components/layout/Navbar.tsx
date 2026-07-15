@@ -27,7 +27,7 @@ export const Navbar = () => {
   const isHome = location.pathname === "/";
   const heroTransparent = isHome && !scrolled;
   const navStateClass = isHome
-    ? scrolled
+    ? scrolled || isOpen
       ? "nav-hero-glass nav-on-dark"
       : "nav-hero-transparent nav-on-dark"
     : "nav-glass";
