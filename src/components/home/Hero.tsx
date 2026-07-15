@@ -187,7 +187,7 @@ const HeroMockup = () => {
           </div>
 
           {/* Content section under banner */}
-          <div className="px-5 md:px-8 py-6 md:py-7">
+          <div className="px-5 md:px-8 py-3.5 md:py-4">
             {/* Section heading */}
             <div className="flex items-end justify-between mb-4">
               <div className="space-y-1.5">
