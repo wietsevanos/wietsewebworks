@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
 import microsoft365Image from "@/assets/microsoft-365.png.asset.json";
+import cloudmonstersLogo from "@/assets/cloudmonsters-logo.svg.asset.json";
 import {
   Accordion,
   AccordionContent,
