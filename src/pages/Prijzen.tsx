@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     q: "Hoe snel staat mijn website online?",
-    a: "Gemiddeld binnen 2 tot 4 weken.",
+    a: "Gemiddeld binnen 1 tot 2 weken.",
   },
   {
     q: "Kan ik zelf wijzigingen doen?",
