@@ -40,7 +40,7 @@ export const AboutPreview = () => {
             <Reveal delay={80}>
               <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-6 leading-tight">
                 Een lokale ondernemer{" "}
-                <span className="text-foreground/40">die uw regio kent</span>
+                <span className="text-accent-orange">die uw regio kent</span>
               </h2>
             </Reveal>
             <Reveal delay={160}>
