@@ -149,29 +149,43 @@
     @apply bg-dark text-dark-foreground;
   }
   
-  /* Premium Buttons — orange CTA */
+  /* Premium Buttons — blue primary */
   .btn-primary {
     @apply bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-medium transition-all duration-200;
     font-size: 0.9375rem;
-    box-shadow: 0 10px 30px -12px hsl(24 95% 56% / 0.55);
+    box-shadow: 0 10px 30px -12px hsl(214 57% 39% / 0.55);
   }
 
   .btn-primary:hover {
     @apply bg-primary-deep;
     transform: translateY(-1px);
+    box-shadow: 0 14px 34px -12px hsl(217 63% 27% / 0.65);
+  }
+
+  /* Accent CTA — orange, use only for the single most important call to action */
+  .btn-accent {
+    @apply text-white px-7 py-3.5 rounded-full font-medium transition-all duration-200;
+    font-size: 0.9375rem;
+    background-color: hsl(var(--accent-orange));
+    box-shadow: 0 10px 30px -12px hsl(24 95% 56% / 0.55);
+  }
+
+  .btn-accent:hover {
+    background-color: hsl(20 90% 48%);
+    transform: translateY(-1px);
     box-shadow: 0 14px 34px -12px hsl(20 90% 48% / 0.65);
   }
-  
+
   .btn-outline {
     @apply border border-white/30 text-white px-7 py-3.5 rounded-full font-medium transition-all duration-200 hover:bg-white/10;
     font-size: 0.9375rem;
   }
-  
+
   .btn-outline-dark {
     @apply border border-border text-foreground px-7 py-3.5 rounded-full font-medium transition-all duration-200 hover:border-primary hover:text-primary;
     font-size: 0.9375rem;
   }
-  
+
   .btn-ghost {
     @apply text-foreground px-6 py-3 rounded-full font-medium transition-colors duration-200 hover:text-primary;
     font-size: 0.9375rem;
