@@ -18,7 +18,7 @@ const features: Feature[] = [
     kicker: "Ontwerp met karakter",
     title: "Maatwerk webdesign",
     description:
-      "Elke website begint met een uniek ontwerp dat past bij uw merk. Geen templates, geen standaard­oplossingen — een uitstraling die aansluit op wie u bent.",
+      "Elke website begint met een uniek ontwerp dat past bij uw merk. Geen templates, geen standaard­oplossingen, een uitstraling die aansluit op wie u bent.",
     bullets: [
       "Volledig op maat, geen thema's",
       "Ontwerp­voorstel binnen een week",
@@ -30,7 +30,7 @@ const features: Feature[] = [
     kicker: "Snel & modern",
     title: "Razendsnelle websites",
     description:
-      "Uw website wordt gebouwd met de nieuwste technieken. Perfect leesbaar op elk scherm en supersnel — cruciaal voor bezoekers én Google.",
+      "Uw website wordt gebouwd met de nieuwste technieken. Perfect leesbaar op elk scherm en supersnel, cruciaal voor bezoekers én Google.",
     bullets: [
       "Perfecte weergave op mobiel, tablet en desktop",
       "Laadtijden onder de seconde",
@@ -54,7 +54,7 @@ const features: Feature[] = [
     kicker: "Zorgeloos hosten",
     title: "Hosting en onderhoud",
     description:
-      "Na livegang blijf ik betrokken. Hosting, updates, back-ups en support — u hoeft er niet naar om te kijken en bereikt mij altijd direct.",
+      "Na livegang blijf ik betrokken. Hosting, updates, back-ups en support, u hoeft er niet naar om te kijken en bereikt mij altijd direct.",
     bullets: [
       "99,9% uptime met dagelijkse back-ups",
       "Wijzigingen binnen 24 uur doorgevoerd",
@@ -71,7 +71,7 @@ const FeaturePreview = ({ id }: { id: string }) => {
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
             Ontwerp­voorstel
           </p>
-          <span className="text-xs text-muted-foreground">v1.0 — concept</span>
+          <span className="text-xs text-muted-foreground">v1.0, concept</span>
         </div>
         <div className="grid grid-cols-3 gap-3">
           {[
@@ -285,7 +285,7 @@ export const WorkflowFeatures = () => {
           </Reveal>
           <Reveal delay={80}>
             <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-              Van ontwerp tot livegang en alles daarna — alles onder één dak,
+              Van ontwerp tot livegang en alles daarna, alles onder één dak,
               met korte lijnen en persoonlijk contact.
             </p>
           </Reveal>
@@ -371,7 +371,7 @@ export const WorkflowFeatures = () => {
             })}
           </div>
 
-          {/* Preview panel — matches accordion column height */}
+          {/* Preview panel, matches accordion column height */}
           <div className="h-full">
             <div className="rounded-3xl glass-strong p-4 md:p-6 h-full flex">
               <div className="rounded-2xl glass w-full flex-1 flex flex-col justify-center p-5 md:p-7">
