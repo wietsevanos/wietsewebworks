@@ -149,15 +149,17 @@
     @apply bg-dark text-dark-foreground;
   }
   
-  /* Premium Buttons */
+  /* Premium Buttons — orange CTA */
   .btn-primary {
     @apply bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-medium transition-all duration-200;
     font-size: 0.9375rem;
+    box-shadow: 0 10px 30px -12px hsl(24 95% 56% / 0.55);
   }
-  
+
   .btn-primary:hover {
     @apply bg-primary-deep;
     transform: translateY(-1px);
+    box-shadow: 0 14px 34px -12px hsl(20 90% 48% / 0.65);
   }
   
   .btn-outline {
