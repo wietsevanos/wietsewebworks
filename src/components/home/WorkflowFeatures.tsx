@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Plus, X, Check, ArrowUpRight, Gauge, Search, Shield } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
 
@@ -245,32 +245,22 @@ const FeaturePreview = ({ id }: { id: string }) => {
 
 export const WorkflowFeatures = () => {
   const [openId, setOpenId] = useState<string>(features[0].id);
-  const [progress, setProgress] = useState(0);
-  const startRef = useRef<number>(Date.now());
-  const pausedRef = useRef(false);
 
-  // Auto-cycle through features; progress bar reflects time until next.
+  // Auto-cycle through features. Progress bar uses a CSS animation for smoothness.
   useEffect(() => {
-    startRef.current = Date.now();
-    setProgress(0);
-    const tick = setInterval(() => {
-      if (pausedRef.current) return;
-      const elapsed = Date.now() - startRef.current;
-      const pct = Math.min(100, (elapsed / CYCLE_MS) * 100);
-      setProgress(pct);
-      if (elapsed >= CYCLE_MS) {
-        const idx = features.findIndex((f) => f.id === openId);
-        const next = features[(idx + 1) % features.length].id;
-        setOpenId(next);
-      }
-    }, 50);
-    return () => clearInterval(tick);
+    const timeout = setTimeout(() => {
+      const idx = features.findIndex((f) => f.id === openId);
+      const next = features[(idx + 1) % features.length].id;
+      setOpenId(next);
+    }, CYCLE_MS);
+    return () => clearTimeout(timeout);
   }, [openId]);
 
   const handleSelect = (id: string) => {
     if (id === openId) return;
     setOpenId(id);
   };
+
 
   return (
     <section className="relative py-24 md:py-32 surface-aurora overflow-hidden">
@@ -354,9 +344,26 @@ export const WorkflowFeatures = () => {
                         {isOpen && (
                           <div className="mt-4 h-1 w-full rounded-full bg-black/5 overflow-hidden">
                             <div
-                              className="h-full bg-[hsl(var(--accent-orange))] rounded-full transition-[width] duration-100 ease-linear"
-                              style={{ width: `${progress}%` }}
+                              key={openId}
+                              className="h-full bg-[hsl(var(--accent-orange))] rounded-full"
+                              style={{
+                                animation: `workflowProgress ${CYCLE_MS}ms linear forwards`,
+                                willChange: "width",
+                              }}
                             />
+                          </div>
+                        )}
+
+                        {/* Mobile-only preview directly under the open item */}
+                        {isOpen && (
+                          <div className="lg:hidden mt-5">
+                            <div className="rounded-2xl glass-strong p-3">
+                              <div className="rounded-xl glass w-full p-5">
+                                <div key={openId} className="animate-fade-in">
+                                  <FeaturePreview id={openId} />
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         )}
                       </div>
@@ -367,8 +374,9 @@ export const WorkflowFeatures = () => {
             })}
           </div>
 
+
           {/* Preview panel, matches accordion column height */}
-          <div className="h-full">
+          <div className="hidden lg:block h-full">
             <div className="rounded-3xl glass-strong p-4 md:p-6 h-full flex">
               <div className="rounded-2xl glass w-full flex-1 flex flex-col justify-center p-5 md:p-7">
                 <div key={openId} className="animate-fade-in">

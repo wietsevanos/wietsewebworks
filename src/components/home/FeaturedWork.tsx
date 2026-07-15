@@ -113,24 +113,36 @@ export const FeaturedWork = () => {
       <div aria-hidden className="pointer-events-none absolute -top-40 right-0 w-[36rem] h-[36rem] rounded-full bg-[hsl(var(--brand-light))]/20 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -bottom-40 -left-20 w-[32rem] h-[32rem] rounded-full bg-[hsl(var(--accent-orange))]/10 blur-3xl" />
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-14 md:mb-20">
-          <Reveal>
-            <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">
-              Recent werk
-            </p>
-          </Reveal>
-          <Reveal delay={80}>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-5 leading-tight">
-              Een greep uit{" "}
-              <span className="text-foreground/40">recente projecten</span>
-            </h2>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Van financiële dienstverlening tot lokale retail en beauty, elk
-              project op maat ontworpen en gebouwd met aandacht voor uitstraling
-              en resultaat.
-            </p>
+        <div className="mb-14 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <div className="max-w-3xl">
+            <Reveal>
+              <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">
+                Recent werk
+              </p>
+            </Reveal>
+            <Reveal delay={80}>
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-5 leading-tight">
+                Een greep uit{" "}
+                <span className="text-foreground/40">recente projecten</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Van financiële dienstverlening tot lokale retail en beauty, elk
+                project op maat ontworpen en gebouwd met aandacht voor uitstraling
+                en resultaat.
+              </p>
+            </Reveal>
+          </div>
+
+          <Reveal delay={200} className="md:shrink-0">
+            <Link
+              to="/werk"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full glass text-primary font-medium text-[0.9375rem] border border-primary/25 shadow-sm backdrop-blur transition-all duration-300 hover:gap-3 hover:border-primary/50 hover:shadow-md"
+            >
+              Bekijk alle projecten
+              <ArrowRight size={16} />
+            </Link>
           </Reveal>
         </div>
 
@@ -141,18 +153,6 @@ export const FeaturedWork = () => {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={200}>
-          <div className="flex justify-start md:justify-center mt-14 md:mt-16">
-            <Link
-              to="/werk"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full glass text-primary font-medium text-[0.9375rem] border border-primary/25 shadow-sm backdrop-blur transition-all duration-300 hover:gap-3 hover:border-primary/50 hover:shadow-md"
-            >
-              Bekijk alle projecten
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
