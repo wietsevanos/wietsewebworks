@@ -116,7 +116,7 @@ const About = () => {
       </section>
 
       {/* Waarden */}
-      <section className="py-24 md:py-32 bg-secondary">
+      <section className="py-24 md:py-32 surface-aurora">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16 max-w-2xl mx-auto">
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
@@ -130,7 +130,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {waarden.map((w, i) => (
               <Reveal key={w.title} delay={i * 80}>
-                <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
+                <div className="glass rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300 h-full">
                   <div className="h-1 bg-primary w-12 mb-6 rounded-full transition-all duration-300 hover:w-20" />
                   <h3 className="text-lg font-semibold text-foreground mb-3">
                     {w.title}
@@ -146,7 +146,7 @@ const About = () => {
       </section>
 
       {/* Regio */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 surface-aurora-strong">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">

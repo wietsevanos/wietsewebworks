@@ -47,7 +47,7 @@ const Hosting = () => {
       />
 
       {/* Wat zit erbij */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 surface-aurora">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16 max-w-2xl mx-auto">
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
@@ -76,9 +76,9 @@ const Hosting = () => {
       </section>
 
       {/* Prijskaart */}
-      <section className="py-24 md:py-32 bg-secondary">
+      <section className="py-24 md:py-32 surface-aurora-strong">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="rounded-2xl bg-white border border-border/60 p-10 md:p-12 text-center shadow-sm">
+          <div className="rounded-3xl glass-strong p-10 md:p-12 text-center">
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
               Eén tarief
             </p>
