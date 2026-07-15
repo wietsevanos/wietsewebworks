@@ -180,27 +180,44 @@
 
 @layer utilities {
   .text-gradient-orange {
-    background: linear-gradient(135deg, hsl(226 60% 24%) 0%, hsl(212 95% 48%) 55%, hsl(200 95% 58%) 100%);
+    background: linear-gradient(135deg, hsl(224 64% 22%) 0%, hsl(214 57% 39%) 45%, hsl(24 95% 56%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .bg-gradient-mist {
-    background: var(--gradient-mist);
+  .text-gradient-warm {
+    background: linear-gradient(135deg, hsl(24 95% 56%) 0%, hsl(22 96% 65%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .bg-gradient-soft {
-    background: var(--gradient-soft);
-  }
+  .bg-gradient-mist { background: var(--gradient-mist); }
+  .bg-gradient-soft { background: var(--gradient-soft); }
+  .bg-gradient-warm { background: var(--gradient-warm); }
+  .bg-gradient-navy { background: var(--gradient-navy); }
 
-  .bg-tint-indigo {
-    background-color: hsl(var(--accent-indigo) / 0.05);
-  }
+  .bg-brand-navy { background-color: hsl(var(--brand-navy)); }
+  .bg-brand-mid { background-color: hsl(var(--brand-mid)); }
+  .bg-brand-blue { background-color: hsl(var(--brand-blue)); }
+  .bg-brand-light { background-color: hsl(var(--brand-light)); }
+  .bg-brand-soft { background-color: hsl(var(--brand-soft)); }
+  .bg-brand-tint { background-color: hsl(var(--brand-tint)); }
 
-  .bg-tint-teal {
-    background-color: hsl(var(--accent-teal) / 0.05);
-  }
+  .text-brand-navy { color: hsl(var(--brand-navy)); }
+  .text-brand-blue { color: hsl(var(--brand-blue)); }
+
+  .text-accent-orange { color: hsl(var(--accent-orange)); }
+  .bg-accent-orange { background-color: hsl(var(--accent-orange)); }
+  .bg-accent-orange\/10 { background-color: hsl(var(--accent-orange) / 0.10); }
+  .bg-accent-orange\/15 { background-color: hsl(var(--accent-orange) / 0.15); }
+  .border-accent-orange { border-color: hsl(var(--accent-orange)); }
+  .ring-accent-orange { --tw-ring-color: hsl(var(--accent-orange)); }
+
+  .bg-tint-orange { background-color: hsl(var(--accent-orange) / 0.06); }
+  .bg-tint-indigo { background-color: hsl(var(--accent-indigo) / 0.05); }
+  .bg-tint-teal { background-color: hsl(var(--accent-teal) / 0.05); }
 
   .text-accent-indigo { color: hsl(var(--accent-indigo)); }
   .text-accent-violet { color: hsl(var(--accent-violet)); }
