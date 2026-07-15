@@ -65,7 +65,7 @@ export const Navbar = () => {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               to="/contact"
-              className="px-6 py-2.5 rounded-full border-2 border-foreground/20 text-foreground font-medium text-[0.9375rem] hover:border-primary hover:text-primary transition-colors"
+              className="nav-contact-btn px-6 py-2.5 rounded-full border-2 border-foreground/20 text-foreground font-medium text-[0.9375rem] hover:border-primary hover:text-primary transition-colors"
             >
               Contact
             </Link>
