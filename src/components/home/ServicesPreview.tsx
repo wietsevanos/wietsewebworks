@@ -69,7 +69,7 @@ export const ServicesPreview = () => {
             const a = accents[i % accents.length];
             return (
             <Reveal key={service.title} delay={i * 80}>
-              <div className="group h-full p-8 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.07] hover:border-white/20">
+              <div className="group h-full p-8 rounded-2xl glass-on-dark">
                 <div className={`w-10 h-10 rounded-full ${a.bg} flex items-center justify-center mb-6 transition-all duration-300 ${a.hover} group-hover:scale-110`}>
                   <div className={`w-2 h-2 rounded-full ${a.dot}`} />
                 </div>
