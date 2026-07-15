@@ -52,13 +52,13 @@ const Vision = () => {
       />
 
       {/* Steps */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 surface-aurora">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {steps.map((step, i) => (
                 <Reveal key={step.number} delay={i * 80}>
-                  <div className="group flex gap-6 md:gap-10 p-8 rounded-xl bg-white border border-border/60 hover:border-primary/30 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+                  <div className="group flex gap-6 md:gap-10 p-8 rounded-2xl glass hover:-translate-y-0.5 transition-all duration-300">
                     <div className="flex-shrink-0">
                       <span className="text-4xl md:text-5xl font-semibold text-primary/30 group-hover:text-primary transition-colors duration-300">
                         {step.number}
@@ -81,7 +81,7 @@ const Vision = () => {
       </section>
 
       {/* Reassurance block */}
-      <section className="py-24 md:py-32 bg-secondary">
+      <section className="py-24 md:py-32 surface-aurora-strong">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal>
             <div className="max-w-2xl mx-auto text-center">

@@ -169,7 +169,7 @@ const HostingIncludeItem = ({ item }: { item: HostingItem }) => {
   const [open, setOpen] = useState(false);
   const Icon = item.icon;
   return (
-    <div className="group bg-white rounded-2xl border border-border/60 hover:border-primary/30 transition-all hover:shadow-[0_10px_30px_-15px_hsl(210_95%_50%/0.2)]">
+    <div className="group glass rounded-2xl transition-all hover:-translate-y-0.5">
       <div className="flex items-center gap-3 px-4 py-3.5">
         <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-primary/15">
           <Icon className="w-4 h-4 text-primary" />
@@ -236,7 +236,7 @@ const BuildProgress = () => {
   }, []);
 
   return (
-    <div className="mt-16 bg-white rounded-3xl border border-border/60 shadow-sm p-8 md:p-14">
+    <div className="mt-16 glass-strong rounded-3xl p-8 md:p-14">
       <div className="text-center mb-10">
         <p className="text-primary font-medium mb-3 text-xs tracking-[0.2em] uppercase">
           Van idee tot livegang
@@ -285,7 +285,7 @@ const Prijzen = () => {
       />
 
       {/* Intro + count-up */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 surface-aurora">
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
           <Reveal>
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
@@ -325,7 +325,7 @@ const Prijzen = () => {
           <Reveal delay={150}>
             <div
               ref={priceRef}
-              className="bg-secondary rounded-2xl p-10 md:p-14 text-center border border-border/60"
+              className="glass-strong rounded-3xl p-10 md:p-14 text-center"
             >
               <p className="text-sm uppercase tracking-wide text-primary font-medium mb-4">
                 Vanaf
@@ -342,7 +342,7 @@ const Prijzen = () => {
       </section>
 
       {/* Waarom vanaf €495 */}
-      <section className="py-24 md:py-32 bg-secondary">
+      <section className="py-24 md:py-32 surface-aurora-strong">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
@@ -358,7 +358,7 @@ const Prijzen = () => {
               const Icon = c.icon;
               return (
                 <Reveal key={c.title} delay={i * 80}>
-                  <div className="group bg-white rounded-2xl p-8 border border-border/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 h-full">
+                  <div className="group glass rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 h-full">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 transition-colors group-hover:bg-primary/15">
                       <Icon className="w-5 h-5 text-primary" />
                     </div>
@@ -377,7 +377,7 @@ const Prijzen = () => {
       </section>
 
       {/* Standaard checklist */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 surface-aurora">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-14">
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
@@ -391,7 +391,7 @@ const Prijzen = () => {
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {checklist.map((item, i) => (
               <Reveal key={item} delay={i * 60} direction="up" distance={12}>
-                <li className="flex items-start gap-3 bg-secondary/60 rounded-xl px-5 py-4 border border-border/50">
+                <li className="flex items-start gap-3 glass rounded-xl px-5 py-4">
                   <span className="mt-0.5 w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
                     <Check className="w-3.5 h-3.5 text-white" />
                   </span>
@@ -411,7 +411,7 @@ const Prijzen = () => {
 
 
       {/* Tussentekst: persoonlijke uitleg */}
-      <section className="py-24 md:py-32 bg-secondary/40">
+      <section className="py-24 md:py-32 surface-aurora-strong">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <Reveal>
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight mb-6">
@@ -435,7 +435,7 @@ const Prijzen = () => {
       </section>
 
 
-      <section className="relative py-24 md:py-36 bg-background overflow-hidden">
+      <section className="relative py-24 md:py-36 surface-aurora overflow-hidden">
         {/* Ambient accent glows */}
         <div
           aria-hidden
@@ -552,7 +552,7 @@ const Prijzen = () => {
 
 
       {/* E-mail uitklap */}
-      <section className="py-24 md:py-32 bg-secondary">
+      <section className="py-24 md:py-32 surface-aurora-strong">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12">
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
@@ -566,7 +566,7 @@ const Prijzen = () => {
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem
               value="mail-only"
-              className="bg-white border border-border/60 rounded-2xl overflow-hidden data-[state=open]:shadow-md transition-shadow"
+              className="glass rounded-2xl overflow-hidden data-[state=open]:shadow-md transition-shadow"
             >
               <div className="border-b border-border/60">
                 <img
@@ -672,7 +672,7 @@ const Prijzen = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 surface-aurora">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12">
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
@@ -688,7 +688,7 @@ const Prijzen = () => {
               <AccordionItem
                 key={f.q}
                 value={`faq-${i}`}
-                className="bg-secondary/60 border border-border/60 rounded-xl px-6"
+                className="glass rounded-2xl px-6"
               >
                 <AccordionTrigger className="hover:no-underline py-5 text-left font-medium text-foreground">
                   {f.q}

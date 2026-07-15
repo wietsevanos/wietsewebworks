@@ -81,7 +81,7 @@ const FAQ = () => {
         description="Antwoorden op de vragen die ondernemers mij het vaakst stellen, over prijzen, doorlooptijd, hosting en samenwerken."
       />
 
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 surface-aurora">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
@@ -89,7 +89,7 @@ const FAQ = () => {
                 <Reveal key={index} delay={index * 50}>
                   <AccordionItem
                     value={`item-${index}`}
-                    className="border-0 rounded-xl bg-muted/30 px-6 data-[state=open]:bg-primary/5 data-[state=open]:ring-1 data-[state=open]:ring-primary/20 transition-all duration-300 hover:bg-muted/50"
+                    className="border-0 rounded-2xl glass px-6 data-[state=open]:ring-1 data-[state=open]:ring-primary/25 transition-all duration-300"
                   >
                     <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-5 text-[0.9375rem] gap-4 [&>svg]:text-primary [&>svg]:w-5 [&>svg]:h-5">
                       <span className="flex items-center gap-3">
