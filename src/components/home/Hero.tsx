@@ -138,7 +138,7 @@ const HeroMockup = () => {
           </div>
 
           {/* Wide hero banner */}
-          <div className="relative aspect-[16/7] overflow-hidden bg-gradient-to-br from-primary via-accent-indigo to-primary-navy">
+          <div className="relative aspect-[16/5.5] overflow-hidden bg-gradient-to-br from-primary via-accent-indigo to-primary-navy">
             <div
               className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,hsl(0_0%_100%/0.28),transparent_55%),radial-gradient(circle_at_85%_90%,hsl(186_80%_60%/0.4),transparent_50%),radial-gradient(circle_at_65%_10%,hsl(262_70%_65%/0.25),transparent_55%)]"
               style={{
