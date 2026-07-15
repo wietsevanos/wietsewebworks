@@ -193,6 +193,40 @@
 }
 
 @layer utilities {
+  /* Premium CTA panel — subtle running animations */
+  .cta-panel {
+    background-image:
+      radial-gradient(circle at 20% 30%, hsl(214 57% 39% / 0.35), transparent 55%),
+      radial-gradient(circle at 80% 70%, hsl(24 95% 56% / 0.18), transparent 60%);
+    background-color: hsl(var(--brand-navy));
+  }
+  .cta-orb-a {
+    background: radial-gradient(circle, hsl(24 95% 56% / 0.35) 0%, transparent 65%);
+    animation: cta-drift-a 18s ease-in-out infinite;
+  }
+  .cta-orb-b {
+    background: radial-gradient(circle, hsl(var(--brand-light) / 0.35) 0%, transparent 65%);
+    animation: cta-drift-b 22s ease-in-out infinite;
+  }
+  .cta-sweep {
+    background: linear-gradient(115deg, transparent 40%, hsl(0 0% 100% / 0.06) 50%, transparent 60%);
+    background-size: 250% 100%;
+    animation: cta-sweep 9s linear infinite;
+  }
+  @keyframes cta-drift-a {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(60px, 40px) scale(1.08); }
+  }
+  @keyframes cta-drift-b {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-50px, -30px) scale(1.1); }
+  }
+  @keyframes cta-sweep {
+    0% { background-position: 200% 0; }
+    100% { background-position: -100% 0; }
+  }
+
+
   .text-gradient-orange {
     background: linear-gradient(135deg, hsl(224 64% 22%) 0%, hsl(214 57% 39%) 45%, hsl(24 95% 56%) 100%);
     -webkit-background-clip: text;
