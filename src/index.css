@@ -193,25 +193,41 @@
 }
 
 @layer utilities {
-  /* Premium CTA panel — subtle running animations */
+  /* Premium CTA panel — subtle, slow, glassy motion */
   .cta-panel {
     background-image:
-      radial-gradient(circle at 20% 30%, hsl(214 57% 39% / 0.35), transparent 55%),
-      radial-gradient(circle at 80% 70%, hsl(24 95% 56% / 0.18), transparent 60%);
+      radial-gradient(circle at 20% 30%, hsl(214 57% 39% / 0.28), transparent 55%),
+      radial-gradient(circle at 80% 70%, hsl(24 95% 56% / 0.14), transparent 60%);
     background-color: hsl(var(--brand-navy));
   }
   .cta-orb-a {
-    background: radial-gradient(circle, hsl(24 95% 56% / 0.35) 0%, transparent 65%);
-    animation: cta-drift-a 18s ease-in-out infinite;
+    background: radial-gradient(circle, hsl(24 95% 56% / 0.22) 0%, transparent 65%);
+    animation: cta-drift-a 32s ease-in-out infinite;
   }
   .cta-orb-b {
-    background: radial-gradient(circle, hsl(var(--brand-light) / 0.35) 0%, transparent 65%);
-    animation: cta-drift-b 22s ease-in-out infinite;
+    background: radial-gradient(circle, hsl(var(--brand-light) / 0.22) 0%, transparent 65%);
+    animation: cta-drift-b 40s ease-in-out infinite;
   }
-  .cta-sweep {
-    background: linear-gradient(115deg, transparent 40%, hsl(0 0% 100% / 0.06) 50%, transparent 60%);
-    background-size: 250% 100%;
-    animation: cta-sweep 9s linear infinite;
+  /* Thin horizontal glow lines that drift slowly */
+  .cta-bar {
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--accent-orange-soft) / 0.45) 50%, transparent 100%);
+    filter: blur(0.5px);
+  }
+  .cta-bar-1 {
+    top: 32%;
+    animation: cta-bar-move 22s linear infinite;
+  }
+  .cta-bar-2 {
+    top: 68%;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--brand-light) / 0.4) 50%, transparent 100%);
+    animation: cta-bar-move 28s linear infinite reverse;
+    animation-delay: -10s;
+  }
+  /* Slow glass reflection */
+  .cta-reflection {
+    background: linear-gradient(115deg, transparent 42%, hsl(0 0% 100% / 0.05) 50%, transparent 58%);
+    background-size: 300% 100%;
+    animation: cta-reflection 16s linear infinite;
   }
   @keyframes cta-drift-a {
     0%, 100% { transform: translate(0, 0) scale(1); }
@@ -221,10 +237,18 @@
     0%, 100% { transform: translate(0, 0) scale(1); }
     50% { transform: translate(-50px, -30px) scale(1.1); }
   }
-  @keyframes cta-sweep {
+  @keyframes cta-bar-move {
+    0% { transform: translateX(-60%); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translateX(60%); opacity: 0; }
+  }
+  @keyframes cta-reflection {
     0% { background-position: 200% 0; }
     100% { background-position: -100% 0; }
   }
+
+
 
 
   .text-gradient-orange {
