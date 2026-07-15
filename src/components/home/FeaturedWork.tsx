@@ -143,10 +143,10 @@ export const FeaturedWork = () => {
         </div>
 
         <Reveal delay={200}>
-          <div className="flex justify-center mt-14 md:mt-16">
+          <div className="flex justify-start md:justify-center mt-14 md:mt-16">
             <Link
               to="/werk"
-              className="inline-flex items-center gap-2 text-primary font-medium text-[0.9375rem] border-b border-primary/40 pb-1 transition-all duration-200 hover:gap-3 hover:border-primary"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full glass text-primary font-medium text-[0.9375rem] border border-primary/25 shadow-sm backdrop-blur transition-all duration-300 hover:gap-3 hover:border-primary/50 hover:shadow-md"
             >
               Bekijk alle projecten
               <ArrowRight size={16} />
