@@ -7,7 +7,7 @@ export const Positioning = () => {
       <div aria-hidden className="pointer-events-none absolute -top-40 -left-40 w-[34rem] h-[34rem] rounded-full bg-[hsl(var(--brand-light))]/25 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -bottom-40 -right-40 w-[34rem] h-[34rem] rounded-full bg-[hsl(var(--accent-orange))]/10 blur-3xl" />
       <div className="relative max-w-5xl mx-auto px-6">
-        <div className="glass-strong rounded-3xl px-8 md:px-14 py-14 md:py-20 text-center">
+        <div className="text-center">
           <Reveal>
             <p className="text-accent-indigo font-medium mb-4 text-sm tracking-wide uppercase">
               Mijn aanpak
