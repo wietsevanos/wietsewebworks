@@ -29,9 +29,11 @@ export const Hero = () => {
               className="flex flex-col sm:flex-row sm:flex-wrap gap-4 animate-fade-up"
               style={{ animationDelay: "0.2s" }}
             >
-              <Link to="/contact" className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto">
-                Vraag een offerte aan
-                <ArrowRight size={18} />
+              <Link to="/contact" className="btn-glass-blue inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+                <span className="inline-flex items-center gap-2">
+                  Vraag een offerte aan
+                  <ArrowRight size={18} />
+                </span>
               </Link>
               <Link to="/werk" className="btn-outline inline-flex items-center justify-center w-full sm:w-auto">
                 Bekijk mijn werk
