@@ -22,29 +22,22 @@ const steps = [
     number: "03",
     title: "Ontwerp",
     description:
-      "Op basis van de intake maak ik een eerste ontwerp, volledig gratis en zonder verplichtingen. U ziet direct hoe uw nieuwe website eruit gaat zien.",
+      "Op basis van de intake maak ik een eerste ontwerp, volledig gratis en zonder verplichtingen. Dankzij slimme AI-ondersteuning ziet u in korte tijd een eerste werkende versie van uw website — zie de toelichting hieronder.",
   },
   {
     number: "04",
-    title: "AI-versnelde eerste versie",
-    description:
-      "Met behulp van geavanceerde AI-ondersteuning realiseer ik in korte tijd een eerste werkende versie van uw website. U krijgt daardoor snel inzicht in de uitstraling, structuur en richting en kunt in een vroeg stadium gericht feedback geven. Alle ontwerpkeuzes, afwerking en kwaliteitscontrole blijven volledig in mijn eigen hand: AI versnelt het proces, vakmanschap bepaalt het resultaat.",
-    highlight: true,
-  },
-  {
-    number: "05",
     title: "Revisies",
     description:
       "Drie revisierondes zijn standaard inbegrepen. Doordat de basis er sneller staat, is er meer ruimte voor verfijning, optimalisatie en maatwerk tot het exact past bij uw bedrijf.",
   },
   {
-    number: "06",
+    number: "05",
     title: "Livegang",
     description:
       "Na uw goedkeuring werk ik de website volledig af en plaats deze online op uw eigen domeinnaam. Alles wordt zorgvuldig getest voor lancering.",
   },
   {
-    number: "07",
+    number: "06",
     title: "Onderhoud",
     description:
       "Na livegang blijf ik uw website beveiligen, updaten en monitoren. U heeft één vast aanspreekpunt voor vragen en aanpassingen.",
