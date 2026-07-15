@@ -16,7 +16,7 @@ export const Positioning = () => {
           <Reveal delay={80}>
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-8 leading-tight">
               Online net zo professioneel overkomen{" "}
-              <span className="text-foreground/40">als in het echt</span>
+              <span className="text-accent-orange">als in het echt</span>
             </h2>
           </Reveal>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">

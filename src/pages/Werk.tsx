@@ -244,7 +244,7 @@ const Werk = () => {
     <Layout>
       <PageHeader
         label="Geselecteerd werk"
-        title="Recente" titleMuted="projecten"
+        title="Recente" titleMuted="projecten" titleMutedClassName="text-[hsl(var(--accent-orange-soft))]"
         description="Een selectie van websites die ik mocht ontwerpen en bouwen voor lokale ondernemers, horecazaken, salons en zakelijke professionals. Elk project is op maat gemaakt, met aandacht voor uitstraling, gebruiksgemak en resultaat."
       />
 

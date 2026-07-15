@@ -4,11 +4,12 @@ interface PageHeaderProps {
   label: string;
   title: string;
   titleMuted?: string;
+  titleMutedClassName?: string;
   description: string;
   backgroundImage?: string;
 }
 
-export const PageHeader = ({ label, title, titleMuted, description, backgroundImage }: PageHeaderProps) => {
+export const PageHeader = ({ label, title, titleMuted, titleMutedClassName = "text-white/45", description, backgroundImage }: PageHeaderProps) => {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
       {/* Orange Wave Background - only show if no custom image */}
@@ -34,7 +35,7 @@ export const PageHeader = ({ label, title, titleMuted, description, backgroundIm
           </p>
           <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6 leading-tight">
             {title}
-            {titleMuted && <> <span className="text-white/45">{titleMuted}</span></>}
+            {titleMuted && <> <span className={titleMutedClassName}>{titleMuted}</span></>}
           </h1>
           <p className="text-xl text-white/85 leading-relaxed">
             {description}
