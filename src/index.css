@@ -40,7 +40,6 @@
     --accent-teal: 214 47% 56%;
     --accent-turquoise: 214 47% 56%;
     --accent-copper: 24 95% 56%;
-...
     --gradient-hero: linear-gradient(140deg, hsl(224 64% 15%) 0%, hsl(217 63% 27%) 45%, hsl(214 57% 39%) 100%);
     --gradient-soft: linear-gradient(180deg, hsl(214 70% 98%) 0%, hsl(214 60% 95%) 100%);
     --gradient-mist: linear-gradient(160deg, hsl(214 70% 97%) 0%, hsl(24 95% 97%) 100%);
