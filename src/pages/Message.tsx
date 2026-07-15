@@ -42,7 +42,7 @@ const Message = () => {
         description="Bel, app of mail, u krijgt altijd direct persoonlijk antwoord van Wietse. Vragen stellen en kennismaken is altijd vrijblijvend."
       />
 
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 surface-aurora">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
             {/* Contact Info */}
@@ -91,7 +91,7 @@ const Message = () => {
                 </div>
               </div>
 
-              <div className="relative rounded-2xl border border-border/70 bg-secondary/50 p-7">
+              <div className="relative rounded-2xl glass p-7">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                   <p className="text-xs font-medium uppercase tracking-[0.15em] text-foreground/70">
@@ -158,7 +158,7 @@ const Message = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-secondary p-8 rounded-xl">
+            <div className="glass-strong p-8 rounded-2xl">
               <h3 className="text-lg font-semibold text-foreground mb-6">
                 Stuur een bericht
               </h3>
