@@ -9,7 +9,7 @@ const d = (ms: number): CSSProperties => ({ animationDelay: `${ms}ms` });
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden py-20 lg:py-28">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-[calc(80px+5rem)] pb-20 lg:py-28">
       <OrangeWaveBackground />
 
       <div className="max-w-[92rem] mx-auto px-6 w-full relative z-10">
