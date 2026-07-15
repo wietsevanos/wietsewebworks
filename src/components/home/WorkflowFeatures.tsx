@@ -245,6 +245,32 @@ const FeaturePreview = ({ id }: { id: string }) => {
 
 export const WorkflowFeatures = () => {
   const [openId, setOpenId] = useState<string>(features[0].id);
+  const [progress, setProgress] = useState(0);
+  const startRef = useRef<number>(Date.now());
+  const pausedRef = useRef(false);
+
+  // Auto-cycle through features; progress bar reflects time until next.
+  useEffect(() => {
+    startRef.current = Date.now();
+    setProgress(0);
+    const tick = setInterval(() => {
+      if (pausedRef.current) return;
+      const elapsed = Date.now() - startRef.current;
+      const pct = Math.min(100, (elapsed / CYCLE_MS) * 100);
+      setProgress(pct);
+      if (elapsed >= CYCLE_MS) {
+        const idx = features.findIndex((f) => f.id === openId);
+        const next = features[(idx + 1) % features.length].id;
+        setOpenId(next);
+      }
+    }, 50);
+    return () => clearInterval(tick);
+  }, [openId]);
+
+  const handleSelect = (id: string) => {
+    if (id === openId) return;
+    setOpenId(id);
+  };
 
   return (
     <section className="relative py-24 md:py-32 bg-[hsl(var(--brand-tint))] overflow-hidden">
