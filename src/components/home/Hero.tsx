@@ -74,7 +74,7 @@ const HeroMockup = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover scale-110"
+          className="w-full h-full object-cover scale-[1.6]"
         />
       </div>
     </div>
