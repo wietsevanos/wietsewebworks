@@ -195,32 +195,10 @@ const Message = () => {
                   <h3 className="text-2xl font-semibold text-foreground mb-3">
                     Bedankt voor uw bericht
                   </h3>
-                  <p className="text-[0.9375rem] leading-relaxed text-muted-foreground max-w-sm mb-8">
+                  <p className="text-[0.9375rem] leading-relaxed text-muted-foreground max-w-sm">
                     Uw bericht is goed aangekomen. Wietse neemt persoonlijk contact met u op,
                     doorgaans binnen één werkdag.
                   </p>
-
-                  <div className="w-full max-w-sm rounded-xl glass p-5 mb-8 text-left">
-                    <p className="text-xs font-medium uppercase tracking-[0.15em] text-foreground/70 mb-3">
-                      Liever direct contact?
-                    </p>
-                    <div className="space-y-2.5 text-sm">
-                      <a href="tel:+31647872734" className="flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors">
-                        <Phone className="w-4 h-4 text-primary" /> 06 47872734
-                      </a>
-                      <a href="mailto:wietsevanos@gmail.com" className="flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors">
-                        <Mail className="w-4 h-4 text-primary" /> wietsevanos@gmail.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => setIsSent(false)}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ArrowLeft size={14} /> Nog een bericht sturen
-                  </button>
                 </div>
               ) : (
                 <>
