@@ -176,11 +176,55 @@ const Message = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Contact Form / Success */}
             <div className="glass-strong p-8 rounded-2xl">
-              <h3 className="text-lg font-semibold text-foreground mb-6">
-                Stuur een bericht
-              </h3>
+              {isSent ? (
+                <div className="flex flex-col items-center text-center py-6 animate-in fade-in zoom-in-95 duration-500">
+                  <div className="relative mb-6">
+                    <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl" aria-hidden />
+                    <div className="relative w-20 h-20 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
+                      <Check className="w-10 h-10 text-primary" strokeWidth={2.5} />
+                    </div>
+                  </div>
+
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary mb-3">
+                    Verzonden
+                  </p>
+                  <h3 className="text-2xl font-semibold text-foreground mb-3">
+                    Bedankt voor uw bericht
+                  </h3>
+                  <p className="text-[0.9375rem] leading-relaxed text-muted-foreground max-w-sm mb-8">
+                    Uw bericht is goed aangekomen. Wietse neemt persoonlijk contact met u op,
+                    doorgaans binnen één werkdag.
+                  </p>
+
+                  <div className="w-full max-w-sm rounded-xl glass p-5 mb-8 text-left">
+                    <p className="text-xs font-medium uppercase tracking-[0.15em] text-foreground/70 mb-3">
+                      Liever direct contact?
+                    </p>
+                    <div className="space-y-2.5 text-sm">
+                      <a href="tel:+31647872734" className="flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors">
+                        <Phone className="w-4 h-4 text-primary" /> 06 47872734
+                      </a>
+                      <a href="mailto:wietsevanos@gmail.com" className="flex items-center gap-2.5 text-muted-foreground hover:text-primary transition-colors">
+                        <Mail className="w-4 h-4 text-primary" /> wietsevanos@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setIsSent(false)}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <ArrowLeft size={14} /> Nog een bericht sturen
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <h3 className="text-lg font-semibold text-foreground mb-6">
+                    Stuur een bericht
+                  </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
