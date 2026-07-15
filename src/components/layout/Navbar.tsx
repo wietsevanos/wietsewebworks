@@ -26,10 +26,8 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/85 backdrop-blur-xl shadow-[0_4px_30px_-12px_rgba(0,0,0,0.08)]"
-          : "bg-white/60 backdrop-blur-md"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+        scrolled ? "nav-glass" : "nav-solid"
       }`}
     >
       <div className="w-full px-6 lg:px-10">
