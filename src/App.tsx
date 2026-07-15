@@ -15,6 +15,7 @@ import Prijzen from "./pages/Prijzen";
 import Hosting from "./pages/Hosting";
 import Privacy from "./pages/Privacy";
 import Voorwaarden from "./pages/Voorwaarden";
+import SeoHaarlem from "./pages/SeoHaarlem";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
