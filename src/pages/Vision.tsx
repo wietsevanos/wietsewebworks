@@ -2,6 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
+import { AIBuildMockup } from "@/components/shared/AIBuildMockup";
+import { Sparkles } from "lucide-react";
 
 const steps = [
   {
@@ -24,18 +26,25 @@ const steps = [
   },
   {
     number: "04",
-    title: "Revisies",
+    title: "AI-versnelde eerste versie",
     description:
-      "Drie revisierondes zijn standaard inbegrepen. Zo scherp ik het ontwerp aan tot het exact past bij uw bedrijf en uw wensen.",
+      "Met behulp van geavanceerde AI-ondersteuning realiseer ik in korte tijd een eerste werkende versie van uw website. U krijgt daardoor snel inzicht in de uitstraling, structuur en richting en kunt in een vroeg stadium gericht feedback geven. Alle ontwerpkeuzes, afwerking en kwaliteitscontrole blijven volledig in mijn eigen hand: AI versnelt het proces, vakmanschap bepaalt het resultaat.",
+    highlight: true,
   },
   {
     number: "05",
-    title: "Livegang",
+    title: "Revisies",
     description:
-      "Na uw goedkeuring bouw ik de website en plaats deze online op uw eigen domeinnaam. Alles wordt zorgvuldig getest voor lancering.",
+      "Drie revisierondes zijn standaard inbegrepen. Doordat de basis er sneller staat, is er meer ruimte voor verfijning, optimalisatie en maatwerk tot het exact past bij uw bedrijf.",
   },
   {
     number: "06",
+    title: "Livegang",
+    description:
+      "Na uw goedkeuring werk ik de website volledig af en plaats deze online op uw eigen domeinnaam. Alles wordt zorgvuldig getest voor lancering.",
+  },
+  {
+    number: "07",
     title: "Onderhoud",
     description:
       "Na livegang blijf ik uw website beveiligen, updaten en monitoren. U heeft één vast aanspreekpunt voor vragen en aanpassingen.",
@@ -48,8 +57,9 @@ const Vision = () => {
       <PageHeader
         label="Van idee tot livegang"
         title="Werkwijze"
-        description="In zes duidelijke stappen naar een professionele website. Transparant, persoonlijk en zonder ingewikkelde technische verhalen."
+        description="In zeven duidelijke stappen naar een professionele website. Transparant, persoonlijk en zonder ingewikkelde technische verhalen."
       />
+
 
       {/* Steps */}
       <section className="py-24 md:py-32 surface-aurora">
