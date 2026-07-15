@@ -34,6 +34,7 @@ const Message = () => {
         description: "Bedankt voor uw bericht, u krijgt zo snel mogelijk antwoord van Wietse zelf.",
       });
       setFormData({ name: "", email: "", company: "", subject: "", message: "" });
+      setIsSent(true);
     } catch (err) {
       console.error(err);
       toast({
