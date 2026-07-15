@@ -24,12 +24,12 @@ const Message = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const body = new FormData();
-      Object.entries(formData).forEach(([k, v]) => body.append(k, v));
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+      if (error) throw error;
+      if (!data?.ok) throw new Error(data?.error || "Verzenden mislukt");
 
-      const res = await fetch("/contact.php", { method: "POST", body });
-      const data = await res.json().catch(() => ({ ok: false }));
-      if (!res.ok || !data.ok) throw new Error(data.error || "Verzenden mislukt");
 
       toast({
         title: "Bericht verzonden",
