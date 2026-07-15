@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { Mail, Phone, MapPin, Send, Info, ChevronDown } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Info, ChevronDown, Check, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
 
 const Message = () => {
   const { toast } = useToast();
