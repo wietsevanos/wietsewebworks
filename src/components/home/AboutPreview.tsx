@@ -16,7 +16,7 @@ export const AboutPreview = () => {
       <div aria-hidden className="pointer-events-none absolute -top-40 -left-40 w-[34rem] h-[34rem] rounded-full bg-[hsl(var(--brand-light))]/20 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -bottom-40 -right-24 w-[30rem] h-[30rem] rounded-full bg-[hsl(var(--accent-orange))]/10 blur-3xl" />
       <div className="relative max-w-6xl mx-auto px-6">
-        <div className="glass-strong rounded-3xl p-8 md:p-14 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Portrait */}
           <Reveal direction="right" className="order-2 lg:order-1 flex justify-center">
             <div className="relative group">
