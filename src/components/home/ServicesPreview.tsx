@@ -70,10 +70,10 @@ export const ServicesPreview = () => {
                 <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full ${a.bg} flex items-center justify-center mb-3 md:mb-6 transition-all duration-300 ${a.hover} group-hover:scale-110`}>
                   <div className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full ${a.dot}`} />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-3">
+                <h3 className="text-base md:text-lg font-semibold text-white mb-1.5 md:mb-3">
                   {service.title}
                 </h3>
-                <p className="text-white/65 text-[0.9375rem] leading-relaxed">
+                <p className="text-white/65 text-sm md:text-[0.9375rem] leading-relaxed">
                   {service.description}
                 </p>
               </div>
