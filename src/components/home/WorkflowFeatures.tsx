@@ -71,34 +71,34 @@ const FeaturePreview = ({ id }: { id: string }) => {
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
             Ontwerp­voorstel
           </p>
-          <span className="text-xs text-muted-foreground">v1.0, concept</span>
+          <span className="text-xs text-muted-foreground">v1.0</span>
         </div>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
           {[
             { label: "Hero", tone: "bg-[hsl(var(--accent-orange))]" },
-            { label: "Over ons", tone: "bg-white ring-1 ring-black/5" },
+            { label: "Over", tone: "bg-white ring-1 ring-black/5" },
             { label: "Diensten", tone: "bg-white ring-1 ring-black/5" },
           ].map((c, i) => (
             <div
               key={i}
               className={`aspect-[4/5] rounded-xl ${c.tone} p-3 flex flex-col justify-between shadow-sm`}
             >
-              <div className={`h-1.5 w-8 rounded-full ${i === 0 ? "bg-white/60" : "bg-primary/40"}`} />
+              <div className={`h-1.5 w-7 rounded-full ${i === 0 ? "bg-white/60" : "bg-primary/40"}`} />
               <div className="space-y-1.5">
                 <div className={`h-1.5 rounded-full ${i === 0 ? "bg-white/70" : "bg-foreground/20"} w-full`} />
                 <div className={`h-1.5 rounded-full ${i === 0 ? "bg-white/40" : "bg-foreground/10"} w-2/3`} />
-                <p className={`pt-2 text-[0.65rem] font-medium ${i === 0 ? "text-white" : "text-foreground/70"}`}>
+                <p className={`pt-1.5 text-[0.65rem] font-medium ${i === 0 ? "text-white" : "text-foreground/70"}`}>
                   {c.label}
                 </p>
               </div>
             </div>
           ))}
         </div>
-        <div className="flex items-center gap-2 pt-2">
-          <span className="w-6 h-6 rounded-full bg-[hsl(var(--brand-navy))]" />
-          <span className="w-6 h-6 rounded-full bg-[hsl(var(--accent-orange))]" />
-          <span className="w-6 h-6 rounded-full bg-[hsl(var(--brand-light))]" />
-          <span className="w-6 h-6 rounded-full bg-white ring-1 ring-black/10" />
+        <div className="flex items-center gap-2 pt-1">
+          <span className="w-5 h-5 rounded-full bg-[hsl(var(--brand-navy))]" />
+          <span className="w-5 h-5 rounded-full bg-[hsl(var(--accent-orange))]" />
+          <span className="w-5 h-5 rounded-full bg-[hsl(var(--brand-light))]" />
+          <span className="w-5 h-5 rounded-full bg-white ring-1 ring-black/10" />
           <span className="ml-auto text-xs text-muted-foreground">Kleurpalet</span>
         </div>
       </div>
@@ -107,50 +107,31 @@ const FeaturePreview = ({ id }: { id: string }) => {
 
   if (id === "development") {
     return (
-      <div className="space-y-5">
+      <div className="space-y-4">
         <div className="flex items-center justify-between">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
-            Performance rapport
+            Performance
           </p>
           <span className="text-xs text-muted-foreground flex items-center gap-1">
             <Gauge size={12} /> live
           </span>
         </div>
-        <div className="grid grid-cols-3 gap-3">
-          {[
-            { v: "0.8s", l: "Laadtijd" },
-            { v: "100", l: "Performance" },
-            { v: "A+", l: "Beveiliging" },
-          ].map((s, i) => (
-            <div
-              key={i}
-              className={`rounded-xl p-4 ${
-                i === 0 ? "bg-[hsl(var(--accent-orange))] text-white" : "bg-white ring-1 ring-black/5"
-              }`}
-            >
-              <p className={`text-2xl font-semibold tracking-tight ${i === 0 ? "text-white" : "text-foreground"}`}>
-                {s.v}
-              </p>
-              <p className={`text-[0.7rem] mt-1 ${i === 0 ? "text-white/80" : "text-muted-foreground"}`}>
-                {s.l}
-              </p>
-            </div>
-          ))}
+        <div className="rounded-xl bg-[hsl(var(--accent-orange))] text-white p-5 flex items-end justify-between">
+          <div>
+            <p className="text-[0.7rem] uppercase tracking-wider text-white/80">Laadtijd</p>
+            <p className="text-4xl font-semibold tracking-tight mt-1">0.8s</p>
+          </div>
+          <Gauge size={36} className="text-white/70" />
         </div>
-        <div className="space-y-2 pt-1">
-          {[
-            { l: "Desktop", w: "w-[96%]" },
-            { l: "Tablet", w: "w-[93%]" },
-            { l: "Mobiel", w: "w-[91%]" },
-          ].map((row, i) => (
-            <div key={i} className="flex items-center gap-3">
-              <span className="text-xs w-14 text-muted-foreground">{row.l}</span>
-              <div className="flex-1 h-2 rounded-full bg-black/5 overflow-hidden">
-                <div className={`h-full ${row.w} rounded-full bg-[hsl(var(--brand-navy))]`} />
-              </div>
-              <span className="text-xs font-medium text-foreground/70">{row.w.match(/\d+/)?.[0]}</span>
-            </div>
-          ))}
+        <div className="grid grid-cols-2 gap-3">
+          <div className="rounded-xl bg-white ring-1 ring-black/5 p-4">
+            <p className="text-2xl font-semibold text-foreground">100</p>
+            <p className="text-[0.7rem] text-muted-foreground mt-1">Performance</p>
+          </div>
+          <div className="rounded-xl bg-white ring-1 ring-black/5 p-4">
+            <p className="text-2xl font-semibold text-foreground">A+</p>
+            <p className="text-[0.7rem] text-muted-foreground mt-1">Beveiliging</p>
+          </div>
         </div>
       </div>
     );
@@ -158,7 +139,7 @@ const FeaturePreview = ({ id }: { id: string }) => {
 
   if (id === "seo") {
     return (
-      <div className="space-y-5">
+      <div className="space-y-4">
         <div className="flex items-center justify-between">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
             Zoekresultaten
@@ -169,28 +150,25 @@ const FeaturePreview = ({ id }: { id: string }) => {
         </div>
         <div className="space-y-2">
           {[
-            { q: "webdesigner haarlem", pos: "#1", up: true },
-            { q: "website laten maken", pos: "#3", up: true },
-            { q: "lokale webdesign", pos: "#2", up: true },
+            { q: "webdesigner haarlem", pos: "#1" },
+            { q: "website laten maken", pos: "#3" },
+            { q: "lokale webdesign", pos: "#2" },
           ].map((r, i) => (
             <div
               key={i}
               className="flex items-center justify-between rounded-lg bg-white ring-1 ring-black/5 px-4 py-3"
             >
-              <div className="flex items-center gap-3 min-w-0">
-                <span className="text-xs font-mono text-muted-foreground">{r.q}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[0.7rem] text-emerald-600 font-medium">▲ 4</span>
-                <span className="text-sm font-semibold text-[hsl(var(--accent-orange))]">{r.pos}</span>
-              </div>
+              <span className="text-sm text-foreground/80 truncate">{r.q}</span>
+              <span className="text-sm font-semibold text-[hsl(var(--accent-orange))] ml-3">
+                {r.pos}
+              </span>
             </div>
           ))}
         </div>
-        <div className="rounded-xl bg-[hsl(var(--brand-navy))] p-4 text-white flex items-center justify-between">
+        <div className="rounded-xl bg-[hsl(var(--brand-navy))] p-5 text-white flex items-center justify-between">
           <div>
             <p className="text-[0.7rem] text-white/70 uppercase tracking-wider">Organisch verkeer</p>
-            <p className="text-2xl font-semibold mt-1">+184%</p>
+            <p className="text-3xl font-semibold mt-1">+184%</p>
           </div>
           <ArrowUpRight size={28} className="text-[hsl(var(--accent-orange-soft))]" />
         </div>
@@ -200,48 +178,47 @@ const FeaturePreview = ({ id }: { id: string }) => {
 
   // support
   return (
-    <div className="space-y-5">
+    <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
-          Status &amp; support
+          Support
         </p>
         <span className="text-xs text-emerald-600 flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-          Alles operationeel
+          Operationeel
         </span>
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div className="rounded-xl bg-[hsl(var(--accent-orange))] text-white p-4">
-          <p className="text-2xl font-semibold">99,98%</p>
-          <p className="text-[0.7rem] text-white/80 mt-1">Uptime laatste 90 dagen</p>
+          <p className="text-2xl font-semibold">99,9%</p>
+          <p className="text-[0.7rem] text-white/80 mt-1">Uptime</p>
         </div>
         <div className="rounded-xl bg-white ring-1 ring-black/5 p-4">
           <p className="text-2xl font-semibold text-foreground">&lt; 2u</p>
-          <p className="text-[0.7rem] text-muted-foreground mt-1">Gemiddelde reactietijd</p>
+          <p className="text-[0.7rem] text-muted-foreground mt-1">Reactietijd</p>
         </div>
       </div>
       <div className="rounded-xl bg-white ring-1 ring-black/5 p-4 space-y-3">
-        <p className="text-xs text-muted-foreground">Recente activiteit</p>
         {[
-          { t: "Back-up voltooid", s: "vandaag, 03:00" },
-          { t: "SSL-certificaat vernieuwd", s: "gisteren" },
-          { t: "Tekstwijziging doorgevoerd", s: "2 dagen geleden" },
+          { t: "Back-up voltooid", s: "vandaag" },
+          { t: "SSL vernieuwd", s: "gisteren" },
         ].map((a, i) => (
           <div key={i} className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-full bg-[hsl(var(--brand-soft))] flex items-center justify-center">
+            <div className="w-7 h-7 rounded-full bg-[hsl(var(--brand-soft))] flex items-center justify-center shrink-0">
               <Shield size={14} className="text-[hsl(var(--brand-blue))]" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-foreground truncate">{a.t}</p>
               <p className="text-[0.7rem] text-muted-foreground">{a.s}</p>
             </div>
-            <Check size={14} className="text-emerald-500" />
+            <Check size={14} className="text-emerald-500 shrink-0" />
           </div>
         ))}
       </div>
     </div>
   );
 };
+
 
 export const WorkflowFeatures = () => {
   const [openId, setOpenId] = useState<string>(features[0].id);
