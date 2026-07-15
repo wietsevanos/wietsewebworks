@@ -645,6 +645,26 @@ const Prijzen = () => {
                     centraal wilt beheren.
                   </p>
                 </div>
+                <div className="mt-6 pt-6 border-t border-border/60 flex items-center gap-4 bg-foreground rounded-xl p-5">
+                  <img
+                    src={cloudmonstersLogo.url}
+                    alt="CloudMonsters"
+                    className="h-10 w-auto flex-shrink-0"
+                    loading="lazy"
+                  />
+                  <p className="text-sm text-white/80 leading-relaxed">
+                    Geleverd via onze partner{" "}
+                    <a
+                      href="https://cloudmonsters.nl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white font-medium hover:text-primary transition-colors"
+                    >
+                      CloudMonsters.nl
+                    </a>
+                    . Prijs €12,49 per maand, exclusief btw.
+                  </p>
+                </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
