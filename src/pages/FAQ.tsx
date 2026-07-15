@@ -37,8 +37,7 @@ const faqs = [
   },
   {
     question: "Hoe lang duurt het voordat mijn website online staat?",
-    answer:
-      "Gemiddeld staat uw website binnen 2 tot 4 weken online. De doorlooptijd hangt af van de omvang van de website en hoe snel u feedback en materiaal kunt aanleveren.",
+    answer: "Gemiddeld staat uw website binnen 1 tot 2 weken online. De doorlooptijd hangt af van de omvang van de website en hoe snel u feedback en materiaal kunt aanleveren.",
   },
   {
     question: "Werken jullie alleen in Haarlem?",
