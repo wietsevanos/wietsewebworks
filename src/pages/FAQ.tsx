@@ -13,7 +13,7 @@ const faqs = [
   {
     question: "Wat kost een website bij Wietse Webworks?",
     answer:
-      "Een website begint bij €495 en loopt op tot ongeveer €1.200, afhankelijk van de omvang, de gewenste functionaliteiten en het aantal pagina's. Het eerste ontwerp is altijd gratis, zodat u zonder verplichtingen kunt zien wat u krijgt.",
+      "Een website begint bij €495 en loopt op tot €1.200, afhankelijk van de omvang, de gewenste functionaliteiten en het aantal pagina's. Het eerste ontwerp is altijd gratis, zodat u zonder verplichtingen kunt zien wat u krijgt.",
   },
   {
     question: "Wordt er btw berekend?",
