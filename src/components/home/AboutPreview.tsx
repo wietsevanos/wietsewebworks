@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
-import portrait from "@/assets/wietse-portrait.png.asset.json";
+import portrait from "@/assets/wietse-portrait.jpg.asset.json";
 import { Reveal } from "@/components/shared/Reveal";
 
 const usps = [
