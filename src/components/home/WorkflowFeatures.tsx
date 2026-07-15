@@ -309,7 +309,7 @@ export const WorkflowFeatures = () => {
                 >
                   <button
                     type="button"
-                    onClick={() => setOpenId(isOpen ? "" : f.id)}
+                    onClick={() => handleSelect(f.id)}
                     className="w-full flex items-start justify-between gap-4 text-left px-6 py-5"
                   >
                     <div className="flex-1 min-w-0">
