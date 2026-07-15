@@ -107,7 +107,8 @@ export const FeaturedWork = () => {
           </Reveal>
           <Reveal delay={80}>
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-5 leading-tight">
-              Een greep uit recente projecten
+              Een greep uit{" "}
+              <span className="text-foreground/40">recente projecten</span>
             </h2>
           </Reveal>
           <Reveal delay={160}>
