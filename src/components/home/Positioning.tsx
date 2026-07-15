@@ -2,12 +2,12 @@ import { Reveal } from "@/components/shared/Reveal";
 
 export const Positioning = () => {
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-mist overflow-hidden">
+    <section className="relative py-24 md:py-32 surface-aurora overflow-hidden">
       {/* subtle depth accents */}
-      <div aria-hidden className="pointer-events-none absolute -top-40 -left-40 w-[32rem] h-[32rem] rounded-full bg-primary/[0.06] blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -bottom-40 -right-40 w-[32rem] h-[32rem] rounded-full bg-accent-indigo/10 blur-3xl" />
-      <div className="relative max-w-6xl mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center">
+      <div aria-hidden className="pointer-events-none absolute -top-40 -left-40 w-[34rem] h-[34rem] rounded-full bg-[hsl(var(--brand-light))]/25 blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute -bottom-40 -right-40 w-[34rem] h-[34rem] rounded-full bg-[hsl(var(--accent-orange))]/10 blur-3xl" />
+      <div className="relative max-w-5xl mx-auto px-6">
+        <div className="glass-strong rounded-3xl px-8 md:px-14 py-14 md:py-20 text-center">
           <Reveal>
             <p className="text-accent-indigo font-medium mb-4 text-sm tracking-wide uppercase">
               Mijn aanpak
@@ -19,7 +19,7 @@ export const Positioning = () => {
               <span className="text-accent-orange">als in het echt</span>
             </h2>
           </Reveal>
-          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             <Reveal delay={160}>
               <p>
                 Veel lokale ondernemers hebben een verouderde website, een trage
