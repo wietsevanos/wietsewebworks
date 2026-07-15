@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Plus, X, Check, ArrowUpRight, Gauge, Search, Shield } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
+
+const CYCLE_MS = 6000;
 
 type Feature = {
   id: string;
@@ -243,6 +245,32 @@ const FeaturePreview = ({ id }: { id: string }) => {
 
 export const WorkflowFeatures = () => {
   const [openId, setOpenId] = useState<string>(features[0].id);
+  const [progress, setProgress] = useState(0);
+  const startRef = useRef<number>(Date.now());
+  const pausedRef = useRef(false);
+
+  // Auto-cycle through features; progress bar reflects time until next.
+  useEffect(() => {
+    startRef.current = Date.now();
+    setProgress(0);
+    const tick = setInterval(() => {
+      if (pausedRef.current) return;
+      const elapsed = Date.now() - startRef.current;
+      const pct = Math.min(100, (elapsed / CYCLE_MS) * 100);
+      setProgress(pct);
+      if (elapsed >= CYCLE_MS) {
+        const idx = features.findIndex((f) => f.id === openId);
+        const next = features[(idx + 1) % features.length].id;
+        setOpenId(next);
+      }
+    }, 50);
+    return () => clearInterval(tick);
+  }, [openId]);
+
+  const handleSelect = (id: string) => {
+    if (id === openId) return;
+    setOpenId(id);
+  };
 
   return (
     <section className="relative py-24 md:py-32 bg-[hsl(var(--brand-tint))] overflow-hidden">
@@ -261,7 +289,11 @@ export const WorkflowFeatures = () => {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
+        <div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-stretch"
+          onMouseEnter={() => { pausedRef.current = true; }}
+          onMouseLeave={() => { pausedRef.current = false; startRef.current = Date.now() - (progress / 100) * CYCLE_MS; }}
+        >
           {/* Accordion */}
           <div className="space-y-4">
             {features.map((f) => {
@@ -277,7 +309,7 @@ export const WorkflowFeatures = () => {
                 >
                   <button
                     type="button"
-                    onClick={() => setOpenId(isOpen ? "" : f.id)}
+                    onClick={() => handleSelect(f.id)}
                     className="w-full flex items-start justify-between gap-4 text-left px-6 py-5"
                   >
                     <div className="flex-1 min-w-0">
@@ -323,7 +355,10 @@ export const WorkflowFeatures = () => {
                         </ul>
                         {isOpen && (
                           <div className="mt-4 h-1 w-full rounded-full bg-black/5 overflow-hidden">
-                            <div className="h-full w-1/3 bg-[hsl(var(--accent-orange))] rounded-full" />
+                            <div
+                              className="h-full bg-[hsl(var(--accent-orange))] rounded-full transition-[width] duration-100 ease-linear"
+                              style={{ width: `${progress}%` }}
+                            />
                           </div>
                         )}
                       </div>
@@ -334,19 +369,13 @@ export const WorkflowFeatures = () => {
             })}
           </div>
 
-          {/* Preview panel */}
-          <div className="lg:sticky lg:top-24">
-            <div className="rounded-3xl bg-secondary/60 p-4 md:p-6 ring-1 ring-black/5 shadow-[0_30px_80px_-40px_rgba(15,30,60,0.35)]">
-              <div className="rounded-2xl bg-background p-5 md:p-7 min-h-[420px]">
-                {openId ? (
-                  <div key={openId} className="animate-fade-in">
-                    <FeaturePreview id={openId} />
-                  </div>
-                ) : (
-                  <div className="h-full min-h-[380px] flex items-center justify-center text-sm text-muted-foreground">
-                    Kies een onderwerp om meer te zien
-                  </div>
-                )}
+          {/* Preview panel — matches accordion column height */}
+          <div className="h-full">
+            <div className="rounded-3xl bg-secondary/60 p-4 md:p-6 ring-1 ring-black/5 shadow-[0_30px_80px_-40px_rgba(15,30,60,0.35)] h-full flex">
+              <div className="rounded-2xl bg-background p-5 md:p-7 w-full flex-1 flex flex-col justify-center">
+                <div key={openId} className="animate-fade-in">
+                  <FeaturePreview id={openId} />
+                </div>
               </div>
             </div>
           </div>
