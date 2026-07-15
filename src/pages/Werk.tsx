@@ -172,23 +172,23 @@ const ProjectCard = ({ project }: { project: Project }) => {
       className="group block"
     >
       {/* Mockup wrapper with offset accent */}
-      <div className="relative">
-        {/* Offset accent shadow */}
+      <div className="relative [perspective:1200px]">
+        {/* Offset accent shadow — subtiel */}
         <div
           aria-hidden
-          className="absolute inset-0 rounded-2xl bg-primary translate-x-1 translate-y-1 transition-all duration-500 ease-out group-hover:translate-x-2 group-hover:translate-y-2 group-hover:bg-primary-deep"
+          className="absolute inset-0 rounded-2xl bg-primary/25 translate-x-0.5 translate-y-0.5 blur-[2px] transition-all duration-500 ease-out group-hover:translate-x-1.5 group-hover:translate-y-1.5 group-hover:bg-primary/40"
         />
 
-        {/* Browser mockup */}
-        <div className="relative rounded-2xl overflow-hidden bg-secondary/60 ring-1 ring-black/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] transition-all duration-500 ease-out group-hover:-translate-x-1.5 group-hover:-translate-y-1.5 group-hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.25)]">
+        {/* Browser mockup — glassy */}
+        <div className="relative rounded-2xl overflow-hidden glass ring-1 ring-white/40 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-2 group-hover:-rotate-[0.6deg] group-hover:scale-[1.015] group-hover:shadow-[0_30px_60px_-25px_hsl(217_63%_27%/0.35)]">
           {/* Chrome bar */}
-          <div className="flex items-center gap-3 px-4 py-2.5 bg-secondary border-b border-black/5">
+          <div className="flex items-center gap-3 px-4 py-2.5 bg-white/40 backdrop-blur-md border-b border-white/40">
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
               <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
               <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
             </div>
-            <div className="flex-1 h-6 rounded-md bg-background/80 flex items-center justify-center px-3 text-[0.7rem] text-muted-foreground/80 font-medium truncate">
+            <div className="flex-1 h-6 rounded-md bg-white/60 backdrop-blur-sm flex items-center justify-center px-3 text-[0.7rem] text-muted-foreground/80 font-medium truncate">
               {getDomain(project.url)}
             </div>
             <div className="w-6" />
