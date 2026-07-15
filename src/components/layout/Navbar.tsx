@@ -83,7 +83,7 @@ export const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="nav-menu-btn lg:hidden p-2 text-foreground"
             aria-label="Menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
