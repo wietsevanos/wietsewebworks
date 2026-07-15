@@ -24,7 +24,7 @@ export const GlassCTA = ({
   return (
     <section className="bg-secondary/50 py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="cta-panel relative overflow-hidden rounded-[36px] border border-white/10 bg-[hsl(var(--brand-navy))] px-8 py-20 md:px-20 md:py-28 shadow-[0_40px_100px_-40px_rgba(8,15,40,0.7)]">
+        <div className="cta-panel relative overflow-hidden rounded-[36px] border border-white/10 px-8 py-20 md:px-20 md:py-28 shadow-[0_40px_100px_-40px_rgba(8,15,40,0.7)]">
           {/* Slow drifting orange blob */}
           <div aria-hidden className="cta-orb-a pointer-events-none absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full blur-3xl" />
           {/* Slow drifting blue blob */}
