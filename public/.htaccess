@@ -33,7 +33,3 @@
 # Geen directory listing
 Options -Indexes
 
-# Beveilig configuratie- en verborgen bestanden
-<FilesMatch "^(contact-config\.php|\.env|composer\.(json|lock))$">
-  Require all denied
-</FilesMatch>
