@@ -46,7 +46,7 @@ const FeaturedCard = ({ project }: { project: FeaturedProject }) => (
     href={project.url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group block"
+    className="group flex flex-col h-full"
   >
     {/* Mockup wrapper with offset accent */}
     <div className="relative [perspective:1200px]">
