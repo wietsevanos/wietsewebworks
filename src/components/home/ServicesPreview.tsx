@@ -37,24 +37,28 @@ const services = [
 
 export const ServicesPreview = () => {
   const accents = [
-    { text: "text-primary", bg: "bg-primary/10", hover: "group-hover:bg-primary/20", dot: "bg-primary" },
-    { text: "text-accent-indigo", bg: "bg-accent-indigo/10", hover: "group-hover:bg-accent-indigo/20", dot: "bg-[hsl(var(--accent-indigo))]" },
-    { text: "text-accent-teal", bg: "bg-accent-teal/10", hover: "group-hover:bg-accent-teal/20", dot: "bg-[hsl(var(--accent-teal))]" },
-    { text: "text-accent-violet", bg: "bg-accent-violet/10", hover: "group-hover:bg-accent-violet/20", dot: "bg-[hsl(var(--accent-violet))]" },
-    { text: "text-accent-copper", bg: "bg-accent-copper/10", hover: "group-hover:bg-accent-copper/20", dot: "bg-[hsl(var(--accent-copper))]" },
-    { text: "text-primary-deep", bg: "bg-[hsl(var(--primary-deep))]/10", hover: "group-hover:bg-[hsl(var(--primary-deep))]/20", dot: "bg-[hsl(var(--primary-deep))]" },
+    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--brand-light))]" },
+    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--accent-orange))]" },
+    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-white" },
+    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--brand-light))]" },
+    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--accent-orange-soft))]" },
+    { bg: "bg-white/10", hover: "group-hover:bg-white/15", dot: "bg-[hsl(var(--brand-light))]" },
   ];
   return (
-    <section className="py-24 md:py-32 bg-secondary">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-navy">
+      {/* Ambient glows for depth */}
+      <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 w-[36rem] h-[36rem] rounded-full bg-[hsl(var(--brand-light))]/10 blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute -bottom-32 -right-24 w-[32rem] h-[32rem] rounded-full bg-[hsl(var(--accent-orange))]/10 blur-3xl" />
+
+      <div className="relative max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <Reveal>
-            <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">
+            <p className="text-[hsl(var(--accent-orange-soft))] font-medium mb-4 text-sm tracking-[0.2em] uppercase">
               Wat ik doe
             </p>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight">
               Alles onder één dak
             </h2>
           </Reveal>
@@ -65,14 +69,14 @@ export const ServicesPreview = () => {
             const a = accents[i % accents.length];
             return (
             <Reveal key={service.title} delay={i * 80}>
-              <div className="service-card group h-full hover:-translate-y-1">
+              <div className="group h-full p-8 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.07] hover:border-white/20">
                 <div className={`w-10 h-10 rounded-full ${a.bg} flex items-center justify-center mb-6 transition-all duration-300 ${a.hover} group-hover:scale-110`}>
                   <div className={`w-2 h-2 rounded-full ${a.dot}`} />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">
+                <h3 className="text-lg font-semibold text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">
+                <p className="text-white/65 text-[0.9375rem] leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -86,7 +90,7 @@ export const ServicesPreview = () => {
           <div className="text-center mt-14">
             <Link
               to="/werk"
-              className="btn-outline-dark inline-flex items-center gap-2 group"
+              className="btn-outline inline-flex items-center gap-2 group"
             >
               Bekijk mijn werk
               <ArrowRight
