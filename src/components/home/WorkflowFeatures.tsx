@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Plus, X, Check, ArrowUpRight, Gauge, Search, Shield } from "lucide-react";
+import { Reveal } from "@/components/shared/Reveal";
 
 const CYCLE_MS = 6000;
 import { Reveal } from "@/components/shared/Reveal";
