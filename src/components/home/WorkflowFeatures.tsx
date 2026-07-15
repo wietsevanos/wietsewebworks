@@ -376,7 +376,7 @@ export const WorkflowFeatures = () => {
 
 
           {/* Preview panel, matches accordion column height */}
-          <div className="h-full">
+          <div className="hidden lg:block h-full">
             <div className="rounded-3xl glass-strong p-4 md:p-6 h-full flex">
               <div className="rounded-2xl glass w-full flex-1 flex flex-col justify-center p-5 md:p-7">
                 <div key={openId} className="animate-fade-in">
