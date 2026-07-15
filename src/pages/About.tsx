@@ -30,12 +30,12 @@ const About = () => {
     <Layout>
       <section className="pt-24 md:pt-28 pb-20 md:pb-24 bg-background">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-[auto,1fr] gap-10 lg:gap-14 items-start max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[auto,1fr] gap-6 lg:gap-14 items-start max-w-5xl mx-auto">
             {/* Visual */}
-            <div className="flex justify-center lg:justify-start lg:sticky lg:top-28">
-              <div className="relative group">
-                <div className="absolute -left-3 top-0 bottom-0 w-1 bg-primary rounded-full" />
-                <div className="w-64 h-80 md:w-72 md:h-[24rem] overflow-hidden rounded-2xl shadow-xl transition-transform duration-500 group-hover:-translate-y-1">
+            <div className="flex justify-center lg:justify-start lg:sticky lg:top-28 -mb-2 lg:mb-0">
+              <div className="relative group w-full max-w-sm lg:max-w-none lg:w-auto">
+                <div className="absolute -left-2 lg:-left-3 top-2 bottom-2 w-1 bg-primary rounded-full" />
+                <div className="w-full aspect-[4/5] lg:w-72 lg:h-[24rem] overflow-hidden rounded-2xl shadow-xl ring-1 ring-border/50 transition-transform duration-500 group-hover:-translate-y-1">
                   <img
                     src={portrait.url}
                     alt="Wietse van Os, oprichter Wietse Webworks"
@@ -91,8 +91,8 @@ const About = () => {
                   is en u zich volledig kunt richten op uw onderneming.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-4 mt-8">
-                <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+              <div className="flex flex-nowrap gap-3 mt-8">
+                <Link to="/contact" className="btn-primary inline-flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap">
                   Neem contact op
                   <ArrowRight size={18} />
                 </Link>
@@ -100,7 +100,7 @@ const About = () => {
                   href="https://wa.me/31647872734"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline-dark inline-flex items-center gap-2"
+                  className="btn-outline-dark inline-flex items-center justify-center gap-2 flex-1 sm:flex-none whitespace-nowrap"
                 >
                   <img
                     src={whatsappLogo.url}
