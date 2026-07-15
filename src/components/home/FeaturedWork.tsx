@@ -87,7 +87,7 @@ const FeaturedCard = ({ project }: { project: FeaturedProject }) => (
     </div>
 
     {/* Meta below */}
-    <div className="pt-6">
+    <div className="pt-6 flex flex-col flex-1">
       <div className="flex flex-wrap items-center gap-2 mb-2">
         <span className="text-[0.7rem] font-semibold tracking-wider uppercase text-primary">
           {project.tag}
@@ -99,7 +99,7 @@ const FeaturedCard = ({ project }: { project: FeaturedProject }) => (
       <p className="text-muted-foreground text-[0.9375rem] leading-relaxed">
         {project.short}
       </p>
-      <span className="inline-flex items-center gap-1.5 mt-4 text-primary font-medium text-sm border-b border-primary/40 pb-0.5 transition-all duration-200 group-hover:gap-2.5 group-hover:border-primary">
+      <span className="inline-flex items-center gap-1.5 mt-auto pt-4 text-primary font-medium text-sm w-fit border-b border-primary/40 pb-0.5 transition-all duration-200 group-hover:gap-2.5 group-hover:border-primary">
         Bekijk de live site
         <ArrowUpRight size={15} />
       </span>
