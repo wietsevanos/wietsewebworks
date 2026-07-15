@@ -154,7 +154,7 @@ const faqs = [
   },
   {
     q: "Kan ik zelf wijzigingen doen?",
-    a: "Dat kan, maar ik neem het onderhoud en de technische zaken graag uit handen.",
+    a: "Nee, wijzigingen aan de website verlopen altijd via mij. Zo blijft het ontwerp consistent, de techniek stabiel en de laadsnelheid optimaal. U geeft simpelweg door wat er aangepast moet worden, ik zorg dat het netjes en snel wordt doorgevoerd. Kleine wijzigingen zijn inbegrepen bij het hosting- en onderhoudsabonnement.",
   },
 ];
 
