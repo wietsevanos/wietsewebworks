@@ -16,7 +16,7 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-stretch">
           {/* Text column */}
           <div className="lg:col-span-5 max-w-2xl flex flex-col justify-center">
-            <p className="text-white/85 font-medium mb-5 text-sm tracking-wide uppercase animate-fade-up">
+            <p className="text-[hsl(var(--accent-orange))] font-medium mb-5 text-sm tracking-wide uppercase animate-fade-up">
               WIETSE WEBWORKS
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-white leading-[1.15] mb-8 animate-fade-up">
