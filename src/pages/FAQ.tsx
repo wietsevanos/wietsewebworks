@@ -28,7 +28,7 @@ const faqs = [
   {
     question: "Krijg ik ook een zakelijk e-mailadres?",
     answer:
-      "Ja, dat kan. Via Microsoft 365 Business Basic krijgt u voor €12,49 per maand extra een professioneel e-mailadres op uw eigen domein, inclusief Outlook, Teams, agenda en cloudopslag.",
+      "Ja, dat kan. Via Microsoft 365 Mail Only krijgt u voor €12,49 per maand (excl. btw) een professioneel e-mailadres op uw eigen domein, inclusief Outlook, agenda en contactpersonen. Dit wordt geleverd via onze partner CloudMonsters.",
   },
   {
     question: "Hoeveel revisierondes zijn inbegrepen?",
