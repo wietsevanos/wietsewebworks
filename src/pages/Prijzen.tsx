@@ -586,6 +586,7 @@ const Prijzen = () => {
                     </p>
                     <p className="text-lg font-semibold text-foreground">
                       Microsoft 365 Mail Only
+                      <span className="text-muted-foreground font-normal"> · €12,49 p/m (excl. btw)</span>
                     </p>
                   </div>
                 </div>
