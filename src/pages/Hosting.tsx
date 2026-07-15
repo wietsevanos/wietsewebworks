@@ -96,8 +96,9 @@ const Hosting = () => {
               <ArrowRight size={18} />
             </Link>
             <p className="mt-6 text-sm text-muted-foreground">
-              Wilt u ook een professioneel e-mailadres? Microsoft 365 Business
-              Basic kunt u toevoegen voor €12,49 per maand extra.
+              Wilt u ook een professioneel e-mailadres? Microsoft 365 Mail Only
+              kunt u toevoegen voor €12,49 per maand (excl. btw), geleverd via
+              onze partner CloudMonsters.
             </p>
           </div>
         </div>
