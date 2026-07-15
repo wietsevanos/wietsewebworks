@@ -246,8 +246,34 @@ const HeroMockup = () => {
             </div>
           </div>
         </div>
+              </div>
+              {/* Slow-moving screen reflection */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 overflow-hidden rounded-[14px]"
+              >
+                <div
+                  className="absolute -inset-y-8 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/12 to-transparent"
+                  style={{ animation: "monitorSheen 9s ease-in-out infinite" }}
+                />
+              </div>
+              {/* Subtle inner glass ring */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-[14px] ring-1 ring-inset ring-white/10"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Neck */}
+        <div className="relative w-16 h-3 bg-gradient-to-b from-white/25 via-white/10 to-white/[0.04] ring-1 ring-white/15 ring-b-0 rounded-b-[3px]" />
+        {/* Base */}
+        <div className="relative w-40 h-1.5 rounded-full bg-gradient-to-b from-white/20 to-white/5 ring-1 ring-white/15 shadow-[0_6px_18px_-6px_rgba(0,0,0,0.6)]" />
       </div>
     </div>
   );
+};
+
 };
 
