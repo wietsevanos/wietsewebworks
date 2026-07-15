@@ -267,9 +267,10 @@ const HeroMockup = () => {
         </div>
 
         {/* Neck */}
-        <div className="relative w-16 h-3 bg-gradient-to-b from-white/25 via-white/10 to-white/[0.04] ring-1 ring-white/15 ring-b-0 rounded-b-[3px]" />
+        <div className="relative w-24 h-6 bg-gradient-to-b from-white/25 via-white/12 to-white/[0.05] ring-1 ring-white/15 border-t-0 rounded-b-[6px]" />
         {/* Base */}
-        <div className="relative w-40 h-1.5 rounded-full bg-gradient-to-b from-white/20 to-white/5 ring-1 ring-white/15 shadow-[0_6px_18px_-6px_rgba(0,0,0,0.6)]" />
+        <div className="relative w-64 h-2.5 rounded-full bg-gradient-to-b from-white/25 to-white/[0.06] ring-1 ring-white/15 shadow-[0_10px_28px_-8px_rgba(0,0,0,0.7)]" />
+
       </div>
     </div>
   );
