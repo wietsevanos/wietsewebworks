@@ -645,7 +645,7 @@ const Prijzen = () => {
                     centraal wilt beheren.
                   </p>
                 </div>
-                <div className="mt-6 pt-6 border-t border-border/60 flex flex-col sm:flex-row sm:items-center gap-4 bg-foreground rounded-xl p-5">
+                <div className="mt-6 pt-6 border-t border-border/60 flex flex-col items-start sm:flex-row sm:items-center gap-4 bg-foreground rounded-xl p-5">
                   <img
                     src={cloudmonstersLogo.url}
                     alt="CloudMonsters"
