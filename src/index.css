@@ -724,10 +724,25 @@
   }
 
   @keyframes referralStepCard {
-    0%, 100% { border-color: hsl(var(--border) / 0.6); box-shadow: none; }
-    12%, 24% {
-      border-color: hsl(var(--accent-orange) / 0.35);
-      box-shadow: 0 16px 40px -26px hsl(var(--accent-orange) / 0.5);
+    0%, 100% {
+      border-color: hsl(var(--border) / 0.6);
+      box-shadow: none;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    9% {
+      border-color: hsl(var(--accent-orange) / 0.4);
+      box-shadow: 0 22px 50px -28px hsl(var(--accent-orange) / 0.55);
+      transform: translate3d(6px, -5px, 0) scale(1.018);
+    }
+    22% {
+      border-color: hsl(var(--accent-orange) / 0.32);
+      box-shadow: 0 18px 44px -28px hsl(var(--accent-orange) / 0.45);
+      transform: translate3d(3px, -3px, 0) scale(1.01);
+    }
+    33% {
+      border-color: hsl(var(--border) / 0.6);
+      box-shadow: none;
+      transform: translate3d(0, 0, 0) scale(1);
     }
   }
   @keyframes referralStepIcon {
@@ -735,31 +750,70 @@
       color: hsl(var(--primary) / 0.7);
       background-color: hsl(var(--primary) / 0.05);
       box-shadow: 0 0 0 1px hsl(var(--primary) / 0.15);
+      transform: scale(1) rotate(0deg);
     }
-    12%, 24% {
+    8% {
+      color: hsl(var(--accent-orange));
+      background-color: hsl(var(--accent-orange) / 0.12);
+      box-shadow: 0 0 0 1px hsl(var(--accent-orange) / 0.35),
+        0 0 22px -4px hsl(var(--accent-orange) / 0.45);
+      transform: scale(1.08) rotate(-3deg);
+    }
+    16% {
+      transform: scale(1.03) rotate(1.5deg);
+    }
+    24% {
       color: hsl(var(--accent-orange));
       background-color: hsl(var(--accent-orange) / 0.08);
       box-shadow: 0 0 0 1px hsl(var(--accent-orange) / 0.3);
+      transform: scale(1.04) rotate(0deg);
+    }
+    34% {
+      color: hsl(var(--primary) / 0.7);
+      background-color: hsl(var(--primary) / 0.05);
+      box-shadow: 0 0 0 1px hsl(var(--primary) / 0.15);
+      transform: scale(1) rotate(0deg);
     }
   }
   @keyframes referralStepNum {
-    0%, 100% { color: hsl(var(--primary) / 0.4); }
-    12%, 24% { color: hsl(var(--accent-orange)); }
+    0%, 100% { color: hsl(var(--primary) / 0.4); letter-spacing: 0.025em; }
+    9%  { color: hsl(var(--accent-orange)); letter-spacing: 0.12em; }
+    24% { color: hsl(var(--accent-orange)); letter-spacing: 0.08em; }
+    34% { color: hsl(var(--primary) / 0.4); letter-spacing: 0.025em; }
+  }
+  /* Light sweep across the active card */
+  @keyframes referralSheen {
+    0%, 100% { transform: translateX(-120%); opacity: 0; }
+    4%       { opacity: 1; }
+    26%      { transform: translateX(120%); opacity: 0; }
+  }
+  /* Soft halo behind the active icon */
+  @keyframes referralHalo {
+    0%, 100% { opacity: 0; transform: scale(0.7); }
+    8%       { opacity: 0.55; transform: scale(1); }
+    26%      { opacity: 0; transform: scale(1.45); }
   }
 
-  .referral-step { animation: referralStepCard 6s ease-in-out infinite; }
-  .referral-step-icon { animation: referralStepIcon 6s ease-in-out infinite; }
+  .referral-step { animation: referralStepCard 6s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+  .referral-step-icon { animation: referralStepIcon 6s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
   .referral-step-num { animation: referralStepNum 6s ease-in-out infinite; }
+  .referral-sheen { animation: referralSheen 6s ease-in-out infinite; }
+  .referral-halo { animation: referralHalo 6s ease-out infinite; }
   .referral-step:hover,
   .referral-step:hover .referral-step-icon,
-  .referral-step:hover .referral-step-num { animation-play-state: paused; }
+  .referral-step:hover .referral-step-num,
+  .referral-step:hover .referral-sheen,
+  .referral-step:hover .referral-halo { animation-play-state: paused; }
 
   @media (prefers-reduced-motion: reduce) {
     .referral-step,
     .referral-step-icon,
-    .referral-step-num { animation: none; }
+    .referral-step-num,
+    .referral-sheen,
+    .referral-halo { animation: none; }
   }
 }
+
 
 
 
