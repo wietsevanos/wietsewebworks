@@ -19,6 +19,8 @@ import {
 const steps = [
   {
     number: "01",
+    icon: MessageCircle,
+
     title: "Kennismaking",
     description:
       "Een vrijblijvend eerste gesprek, telefonisch, via WhatsApp of op locatie in Haarlem. Ik leer uw bedrijf, uw doelgroep en uw wensen kennen.",
