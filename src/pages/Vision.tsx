@@ -39,7 +39,7 @@ const steps = [
     icon: PenTool,
     title: "Ontwerp",
     description:
-      "Op basis van de intake maak ik een eerste ontwerp, volledig gratis en zonder verplichtingen. Dankzij slimme AI-ondersteuning ziet u in korte tijd een eerste werkende versie van uw website — zie de toelichting hieronder.",
+      "Op basis van de intake maak ik een eerste ontwerp, volledig gratis en zonder verplichtingen. Dankzij slimme AI-ondersteuning ziet u in korte tijd een eerste werkende versie van uw website, zie de toelichting hieronder.",
   },
   {
     number: "04",
