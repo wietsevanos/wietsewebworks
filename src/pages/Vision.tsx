@@ -3,7 +3,9 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
 import { AIBuildMockup } from "@/components/shared/AIBuildMockup";
+import { ProcessTimeline, StepLink } from "@/components/vision/ProcessTimeline";
 import { Sparkles } from "lucide-react";
+
 
 const steps = [
   {
