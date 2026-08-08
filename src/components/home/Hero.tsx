@@ -253,7 +253,8 @@ const HeroMockup = () => {
                     </div>
 
                     {/* Content section under banner */}
-                    <div className="px-4 md:px-8 py-2.5 md:py-5">
+                    <div className="flex-1 min-h-0 overflow-hidden px-3 md:px-8 py-1.5 md:py-5">
+
                       <div className="flex items-end justify-between mb-2 md:mb-4">
                         <div className="space-y-1.5">
                           <div className="h-1.5 md:h-2 w-16 md:w-24 rounded-full bg-foreground/80 hero-bar" style={d(2350)} />
