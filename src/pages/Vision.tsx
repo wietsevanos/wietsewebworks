@@ -105,7 +105,7 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
         <div
           className={`flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl ring-1 transition-colors duration-500 ${
             done
-              ? "bg-accent/10 ring-accent/30 text-accent"
+              ? "bg-[hsl(var(--accent-orange)/0.1)] ring-[hsl(var(--accent-orange)/0.3)] text-[hsl(var(--accent-orange))]"
               : "bg-primary/5 ring-primary/15 text-primary/70"
           }`}
         >
@@ -116,7 +116,7 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
           <div className="flex items-baseline gap-3">
             <span
               className={`text-xs font-semibold tracking-[0.18em] tabular-nums transition-colors duration-500 ${
-                done ? "text-accent" : "text-primary/50"
+                done ? "text-[hsl(var(--accent-orange))]" : "text-primary/50"
               }`}
             >
               {step.number}
@@ -132,7 +132,7 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
           {step.number === "03" && (
             <a
               href="#ai-toelichting"
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:gap-2.5 transition-all duration-300"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--accent-orange))] hover:gap-2.5 transition-all duration-300"
             >
               Meer over AI
               <ArrowRight size={14} strokeWidth={1.75} />
