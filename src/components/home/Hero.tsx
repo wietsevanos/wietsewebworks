@@ -66,9 +66,9 @@ export const Hero = () => {
       <OrangeWaveBackground />
 
       <div className="max-w-[92rem] mx-auto px-6 w-full relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-stretch">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Text column */}
-          <div className="lg:col-span-5 max-w-2xl flex flex-col justify-center">
+          <div className="lg:col-span-5 max-w-2xl flex flex-col justify-center self-center">
             <p className="text-[hsl(var(--accent-orange))] font-medium mb-5 text-sm tracking-wide uppercase animate-fade-up">
               WIETSE WEBWORKS
             </p>
@@ -350,7 +350,7 @@ const HeroMockup = () => {
         {/* Smartphone — floats subtly in front of the monitor (desktop/tablet only) */}
         <div
           aria-hidden
-          className="hidden md:block absolute right-[7%] lg:right-[9%] bottom-[10%] lg:bottom-[12%] w-[118px] lg:w-[152px] z-20"
+          className="hidden md:block absolute right-[-2%] lg:right-[-2%] bottom-[42px] lg:bottom-[52px] w-[118px] lg:w-[152px] z-20"
           style={{ animation: "phoneFloat 7s ease-in-out infinite" }}
         >
           {/* Single phone body */}
