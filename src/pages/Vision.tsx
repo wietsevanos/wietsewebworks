@@ -128,14 +128,15 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
         </div>
 
         <div
-          className={`hidden sm:flex flex-shrink-0 h-14 w-14 items-center justify-center rounded-2xl ring-1 transition-colors duration-500 ${
+          className={`hidden sm:flex flex-shrink-0 h-20 w-20 items-center justify-center rounded-2xl ring-1 transition-colors duration-500 ${
             done
               ? "bg-[hsl(var(--accent-orange)/0.08)] ring-[hsl(var(--accent-orange)/0.25)] text-[hsl(var(--accent-orange))]"
               : "bg-primary/5 ring-primary/15 text-primary/70"
           }`}
         >
-          <Icon size={30} strokeWidth={1.25} />
+          <Icon size={42} strokeWidth={1.25} />
         </div>
+
       </div>
 
     </div>
