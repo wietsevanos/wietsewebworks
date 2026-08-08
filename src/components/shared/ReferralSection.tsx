@@ -16,8 +16,10 @@ const referralSteps = [
   {
     number: "03",
     icon: Gift,
-    title: "Nieuwe website + 1 maand gratis",
+    title: "U krijgt 1 maand gratis",
+    note: "Dat bespaart u € 37,95 aan hosting en onderhoud",
   },
+
 ];
 
 export const ReferralSection = () => {
