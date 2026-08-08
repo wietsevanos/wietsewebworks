@@ -21,43 +21,44 @@ const SITE_THEMES: SiteTheme[] = [
     url: "hetlokalerestaurant.nl",
     badge: "Menukaart",
     nav: ["Menu", "Reserveren", "Over", "Contact"],
-    brand: "linear-gradient(135deg, hsl(24 95% 56%), hsl(14 80% 45%))",
+    brand: "linear-gradient(135deg, hsl(214 85% 55%), hsl(224 65% 30%))",
     banner:
-      "linear-gradient(135deg, hsl(220 55% 22%) 0%, hsl(224 60% 14%) 55%, hsl(18 70% 30%) 100%)",
-    accent: "hsl(24 95% 56%)",
-    tiles: ["hsl(24 95% 56%)", "hsl(200 60% 45%)", "hsl(150 45% 40%)"],
+      "linear-gradient(135deg, hsl(220 55% 22%) 0%, hsl(224 60% 14%) 55%, hsl(214 70% 28%) 100%)",
+    accent: "hsl(24 92% 56%)",
+    tiles: ["hsl(214 85% 55%)", "hsl(204 70% 48%)", "hsl(24 92% 56%)"],
   },
   {
     url: "buurtwinkel.nl",
     badge: "Nieuw",
     nav: ["Shop", "Aanbod", "Over", "Contact"],
-    brand: "linear-gradient(135deg, hsl(214 85% 55%), hsl(224 70% 35%))",
+    brand: "linear-gradient(135deg, hsl(204 80% 52%), hsl(220 70% 32%))",
     banner:
-      "linear-gradient(135deg, hsl(214 70% 40%) 0%, hsl(224 65% 18%) 60%, hsl(200 70% 30%) 100%)",
-    accent: "hsl(214 85% 58%)",
-    tiles: ["hsl(214 85% 55%)", "hsl(186 70% 45%)", "hsl(262 55% 60%)"],
+      "linear-gradient(135deg, hsl(214 65% 32%) 0%, hsl(224 62% 15%) 60%, hsl(206 60% 26%) 100%)",
+    accent: "hsl(204 85% 62%)",
+    tiles: ["hsl(204 80% 52%)", "hsl(214 75% 45%)", "hsl(24 92% 56%)"],
   },
   {
     url: "kapsalonstijl.nl",
     badge: "Afspraak",
     nav: ["Behandelingen", "Prijzen", "Team", "Contact"],
-    brand: "linear-gradient(135deg, hsl(262 60% 60%), hsl(224 60% 30%))",
+    brand: "linear-gradient(135deg, hsl(214 80% 58%), hsl(24 90% 55%))",
     banner:
-      "linear-gradient(135deg, hsl(262 45% 32%) 0%, hsl(224 60% 16%) 60%, hsl(300 35% 30%) 100%)",
-    accent: "hsl(262 65% 68%)",
-    tiles: ["hsl(262 60% 62%)", "hsl(330 50% 58%)", "hsl(214 70% 55%)"],
+      "linear-gradient(135deg, hsl(224 58% 20%) 0%, hsl(222 62% 13%) 60%, hsl(212 55% 26%) 100%)",
+    accent: "hsl(24 92% 58%)",
+    tiles: ["hsl(24 92% 56%)", "hsl(214 80% 55%)", "hsl(204 65% 48%)"],
   },
   {
     url: "adviesbureau.nl",
     badge: "Zakelijk",
     nav: ["Diensten", "Werk", "Over", "Contact"],
-    brand: "linear-gradient(135deg, hsl(186 70% 45%), hsl(214 70% 35%))",
+    brand: "linear-gradient(135deg, hsl(214 75% 48%), hsl(224 70% 28%))",
     banner:
-      "linear-gradient(135deg, hsl(224 60% 20%) 0%, hsl(222 62% 12%) 55%, hsl(186 60% 26%) 100%)",
-    accent: "hsl(186 75% 50%)",
-    tiles: ["hsl(186 70% 45%)", "hsl(214 75% 52%)", "hsl(24 90% 58%)"],
+      "linear-gradient(135deg, hsl(224 60% 20%) 0%, hsl(222 62% 12%) 55%, hsl(214 55% 24%) 100%)",
+    accent: "hsl(214 85% 62%)",
+    tiles: ["hsl(214 75% 48%)", "hsl(204 70% 52%)", "hsl(24 92% 56%)"],
   },
 ];
+
 
 export const Hero = () => {
   return (
