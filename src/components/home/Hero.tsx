@@ -207,11 +207,11 @@ const HeroMockup = () => {
 
                     {/* Wide hero banner */}
                     <div
-                      className="relative aspect-[16/5.5] overflow-hidden"
+                      className="relative aspect-[16/4.6] md:aspect-[16/5.5] overflow-hidden"
                       style={{ background: theme.banner }}
                     >
                       <div
-                        className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,hsl(0_0%_100%/0.24),transparent_55%),radial-gradient(circle_at_85%_90%,hsl(186_80%_60%/0.32),transparent_50%),radial-gradient(circle_at_65%_10%,hsl(24_90%_60%/0.22),transparent_55%)]"
+                        className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,hsl(0_0%_100%/0.18),transparent_55%),radial-gradient(circle_at_85%_90%,hsl(214_85%_60%/0.30),transparent_52%),radial-gradient(circle_at_68%_8%,hsl(24_90%_58%/0.18),transparent_55%)]"
                         style={{
                           backgroundSize: "180% 180%, 200% 200%, 220% 220%",
                           animation: "heroGradientDrift 14s ease-in-out infinite",
