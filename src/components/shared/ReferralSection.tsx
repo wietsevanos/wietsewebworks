@@ -124,42 +124,44 @@ export const ReferralSection = () => {
               <div className="space-y-4">
                 {referralSteps.map((step, i) => {
                   const Icon = step.icon;
+                  const isActive = activeIndex === i;
                   return (
                     <div
                       key={step.number}
+                      data-active={isActive ? "true" : undefined}
                       className="group referral-step relative glass rounded-2xl border border-border/60 px-5 py-5 md:px-6 md:py-6 transition-all duration-300 will-change-transform hover:-translate-y-[3px] hover:border-primary/30 hover:shadow-[0_16px_40px_-24px_hsl(var(--primary)/0.45)]"
-                      style={{ animationDelay: `${i * 2}s` }}
                     >
                       <div
                         className="pointer-events-none absolute inset-0 rounded-2xl overflow-hidden"
                         aria-hidden="true"
                       >
-                        <div
-                          className="referral-sheen absolute inset-y-0 -left-1/3 w-1/3 skew-x-[-18deg]"
-                          style={{
-                            background:
-                              "linear-gradient(90deg, transparent, hsl(var(--accent-orange) / 0.10), transparent)",
-                            animationDelay: `${i * 2}s`,
-                          }}
-                        />
+                        {isActive && (
+                          <div
+                            className="referral-sheen absolute inset-y-0 -left-1/3 w-1/3 skew-x-[-18deg]"
+                            style={{
+                              background:
+                                "linear-gradient(90deg, transparent, hsl(var(--accent-orange) / 0.10), transparent)",
+                            }}
+                          />
+                        )}
                       </div>
                       <div className="flex items-center gap-4 md:gap-5">
                         <div className="relative flex-shrink-0">
-                          <div
-                            className="referral-halo pointer-events-none absolute inset-0 rounded-2xl"
-                            aria-hidden="true"
-                            style={{
-                              background:
-                                "radial-gradient(circle, hsl(var(--accent-orange) / 0.35), transparent 70%)",
-                              animationDelay: `${i * 2}s`,
-                            }}
-                          />
-                          <div className="referral-step-icon relative z-10 h-[52px] w-[52px] md:h-[60px] md:w-[60px] rounded-2xl bg-primary/5 ring-1 ring-primary/15 flex items-center justify-center text-primary/70 transition-colors duration-300 group-hover:bg-[hsl(var(--accent-orange)/0.08)] group-hover:ring-[hsl(var(--accent-orange)/0.3)] group-hover:text-[hsl(var(--accent-orange))]"
-                            style={{ animationDelay: `${i * 2}s` }}
-                          >
+                          {isActive && (
+                            <div
+                              className="referral-halo pointer-events-none absolute inset-0 rounded-2xl"
+                              aria-hidden="true"
+                              style={{
+                                background:
+                                  "radial-gradient(circle, hsl(var(--accent-orange) / 0.35), transparent 70%)",
+                              }}
+                            />
+                          )}
+                          <div className="referral-step-icon relative z-10 h-[52px] w-[52px] md:h-[60px] md:w-[60px] rounded-2xl bg-primary/5 ring-1 ring-primary/15 flex items-center justify-center text-primary/70 transition-colors duration-300 group-hover:bg-[hsl(var(--accent-orange)/0.08)] group-hover:ring-[hsl(var(--accent-orange)/0.3)] group-hover:text-[hsl(var(--accent-orange))]">
                             <Icon size={26} strokeWidth={1.25} />
                           </div>
                         </div>
+
 
                         <div className="min-w-0">
                           <span className="referral-step-num block text-xs font-semibold tabular-nums tracking-wide text-primary/40 transition-colors duration-300 group-hover:text-primary"
