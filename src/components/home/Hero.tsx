@@ -326,7 +326,7 @@ const HeroMockup = () => {
 
           {/* Aluminium neck */}
           <div
-            className="relative w-20 md:w-28 h-7 md:h-10"
+            className="relative w-14 md:w-28 h-5 md:h-10"
             style={{
               background:
                 "linear-gradient(90deg, hsl(220 14% 42%) 0%, hsl(218 16% 72%) 22%, hsl(220 18% 84%) 42%, hsl(218 14% 60%) 70%, hsl(222 18% 36%) 100%)",
@@ -336,7 +336,7 @@ const HeroMockup = () => {
           />
           {/* Aluminium base */}
           <div
-            className="relative w-40 md:w-56 h-2 md:h-2.5 rounded-full"
+            className="relative w-28 md:w-56 h-1.5 md:h-2.5 rounded-full"
             style={{
               background:
                 "linear-gradient(180deg, hsl(220 18% 80%) 0%, hsl(220 14% 58%) 45%, hsl(222 20% 34%) 100%)",
@@ -344,6 +344,7 @@ const HeroMockup = () => {
                 "0 1px 0 0 hsl(0 0% 100% / 0.4) inset, 0 14px 30px -10px hsl(224 64% 6% / 0.85)",
             }}
           />
+
         </div>
 
         {/* Smartphone — floats subtly in front of the monitor (desktop/tablet only) */}
