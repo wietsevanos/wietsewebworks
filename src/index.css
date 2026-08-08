@@ -250,6 +250,50 @@
 
 @layer utilities {
   /* ============================================================
+     Cookie consent — navy glass surface
+     ============================================================ */
+  .cookie-glass {
+    background: linear-gradient(180deg, hsl(224 55% 13% / 0.86) 0%, hsl(222 58% 10% / 0.92) 100%);
+    backdrop-filter: blur(24px) saturate(150%);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    border: 1px solid hsl(0 0% 100% / 0.12);
+    box-shadow:
+      0 1px 0 0 hsl(0 0% 100% / 0.10) inset,
+      0 30px 80px -28px hsl(224 64% 6% / 0.7);
+  }
+  .cookie-btn {
+    @apply inline-flex items-center justify-center h-10 px-4 rounded-full text-[0.8125rem] font-medium transition-all duration-200;
+    background: hsl(0 0% 100% / 0.06);
+    border: 1px solid hsl(0 0% 100% / 0.16);
+    color: hsl(0 0% 100% / 0.9);
+  }
+  .cookie-btn:hover {
+    background: hsl(0 0% 100% / 0.12);
+    border-color: hsl(0 0% 100% / 0.32);
+    transform: translateY(-1px);
+  }
+  .cookie-btn-primary {
+    background: linear-gradient(180deg, hsl(214 62% 48% / 0.95) 0%, hsl(214 57% 39% / 0.95) 100%);
+    border-color: hsl(214 70% 70% / 0.45);
+    color: hsl(0 0% 100%);
+  }
+  .cookie-btn-primary:hover {
+    background: linear-gradient(180deg, hsl(214 66% 53% / 1) 0%, hsl(214 60% 43% / 1) 100%);
+    border-color: hsl(214 80% 80% / 0.6);
+  }
+  .cookie-fab {
+    background: linear-gradient(180deg, hsl(224 55% 14% / 0.85) 0%, hsl(222 58% 10% / 0.9) 100%);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    border: 1px solid hsl(0 0% 100% / 0.16);
+    box-shadow: 0 14px 34px -14px hsl(224 64% 6% / 0.7);
+  }
+  .cookie-fab:hover {
+    border-color: hsl(214 70% 70% / 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* ============================================================
      Glassmorphism system — consistent across the whole site
      ============================================================ */
   .glass {

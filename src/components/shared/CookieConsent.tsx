@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Cookie, X, Check, ChevronDown } from "lucide-react";
+import { ShieldCheck, X } from "lucide-react";
 
 const STORAGE_KEY = "ww_cookie_consent_v1";
 
 type Prefs = {
   necessary: true;
   analytics: boolean;
-  marketing: boolean;
   timestamp: string;
 };
 
@@ -21,155 +20,174 @@ const loadPrefs = (): Prefs | null => {
   }
 };
 
-const savePrefs = (prefs: Prefs) => {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
-  } catch {
-    /* ignore */
-  }
+const applyConsent = (prefs: Prefs) => {
+  // Non-essential scripts may only load after explicit consent.
+  window.dispatchEvent(new CustomEvent("ww-cookie-consent", { detail: prefs }));
 };
 
 export const CookieConsent = () => {
-  const [visible, setVisible] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [decided, setDecided] = useState(true);
+  const [showPrefs, setShowPrefs] = useState(false);
   const [analytics, setAnalytics] = useState(false);
-  const [marketing, setMarketing] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [panelHeight, setPanelHeight] = useState(0);
 
   useEffect(() => {
     const existing = loadPrefs();
-    if (!existing) {
-      const t = setTimeout(() => setVisible(true), 600);
-      return () => clearTimeout(t);
+    if (existing) {
+      setAnalytics(existing.analytics);
+      applyConsent(existing);
+      setDecided(true);
+      return;
     }
+    setDecided(false);
+    const t = setTimeout(() => setOpen(true), 600);
+    return () => clearTimeout(t);
   }, []);
 
-  const commit = (a: boolean, m: boolean) => {
-    savePrefs({
+  useEffect(() => {
+    setPanelHeight(showPrefs ? panelRef.current?.scrollHeight ?? 0 : 0);
+  }, [showPrefs, analytics]);
+
+  const commit = (a: boolean) => {
+    const prefs: Prefs = {
       necessary: true,
       analytics: a,
-      marketing: m,
       timestamp: new Date().toISOString(),
-    });
-    setVisible(false);
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+    } catch {
+      /* ignore */
+    }
+    applyConsent(prefs);
+    setAnalytics(a);
+    setDecided(true);
+    setOpen(false);
+    setShowPrefs(false);
   };
 
-  const acceptAll = () => commit(true, true);
-  const rejectAll = () => commit(false, false);
-  const saveChoices = () => commit(analytics, marketing);
-
-  if (!visible) return null;
+  if (!open) {
+    if (!decided) return null;
+    return (
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label="Cookievoorkeuren aanpassen"
+        className="cookie-fab fixed bottom-5 right-5 z-[60] w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white/80 hover:text-white transition-all duration-300 animate-fade-in"
+      >
+        <ShieldCheck size={18} />
+      </button>
+    );
+  }
 
   return (
     <div
       role="dialog"
-      aria-live="polite"
-      aria-label="Cookie voorkeuren"
-      className="fixed inset-x-0 bottom-0 z-[60] px-4 pb-4 sm:px-6 sm:pb-6 pointer-events-none"
+      aria-modal="false"
+      aria-label="Cookievoorkeuren"
+      className="fixed z-[60] inset-x-0 bottom-0 px-[5vw] pb-5 sm:inset-x-auto sm:right-6 sm:bottom-6 sm:left-auto sm:px-0 sm:pb-0 pointer-events-none"
     >
       <div
-        className="pointer-events-auto mx-auto max-w-3xl rounded-2xl glass-strong overflow-hidden animate-fade-up"
-        style={{ animationDuration: "500ms" }}
+        className="cookie-glass pointer-events-auto w-full sm:w-[380px] mx-auto rounded-[22px] sm:rounded-2xl overflow-hidden animate-fade-up"
+        style={{ animationDuration: "420ms" }}
       >
-        {/* Header row */}
-        <div className="flex items-start gap-4 p-5 sm:p-6">
-          <div className="hidden sm:flex shrink-0 w-11 h-11 rounded-full bg-[hsl(var(--accent-orange))]/12 items-center justify-center">
-            <Cookie size={20} className="text-[hsl(var(--accent-orange))]" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-1.5">
-              <h2 className="text-[0.95rem] sm:text-base font-semibold text-foreground">
-                Uw privacy, uw keuze
-              </h2>
+        <div className="p-5 sm:p-6">
+          <div className="flex items-start gap-3">
+            <div className="shrink-0 w-9 h-9 rounded-full bg-white/[0.07] border border-white/10 flex items-center justify-center">
+              <ShieldCheck size={16} className="text-white/80" />
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Deze website gebruikt functionele cookies om goed te werken, en
-              optioneel analytische cookies om de site te verbeteren. U bepaalt
-              zelf wat u toestaat. Lees meer in ons{" "}
-              <Link
-                to="/privacybeleid"
-                className="text-foreground underline decoration-foreground/30 underline-offset-2 hover:decoration-foreground"
+            <div className="flex-1 min-w-0">
+              <h2 className="text-[0.95rem] font-semibold text-white">Uw privacy, uw keuze</h2>
+              <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-white/60">
+                We gebruiken functionele cookies om de website goed te laten werken. Voor
+                aanvullende cookies vragen we eerst uw toestemming.{" "}
+                <Link
+                  to="/privacybeleid"
+                  className="text-white/80 underline decoration-white/25 underline-offset-2 hover:decoration-white/70"
+                >
+                  Privacybeleid
+                </Link>
+              </p>
+            </div>
+            {decided && (
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label="Sluiten"
+                className="shrink-0 -mr-1 -mt-1 w-7 h-7 rounded-full flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/10 transition-colors"
               >
-                privacybeleid
-              </Link>
-              .
-            </p>
+                <X size={14} />
+              </button>
+            )}
           </div>
-          <button
-            type="button"
-            onClick={rejectAll}
-            aria-label="Sluiten en alleen noodzakelijke cookies toestaan"
-            className="shrink-0 -mr-1 -mt-1 w-8 h-8 rounded-full flex items-center justify-center text-foreground/50 hover:text-foreground hover:bg-black/5 transition-colors"
-          >
-            <X size={16} />
-          </button>
-        </div>
 
-        {/* Details */}
-        {showDetails && (
-          <div className="px-5 sm:px-6 pb-2 animate-fade-in">
-            <div className="rounded-xl bg-white/50 ring-1 ring-black/5 divide-y divide-black/5">
-              <CookieRow
-                title="Noodzakelijk"
-                description="Vereist voor basisfunctionaliteit zoals navigatie en beveiliging. Altijd actief."
-                checked
-                disabled
-              />
-              <CookieRow
-                title="Analytisch"
-                description="Anonieme statistieken zodat we de website kunnen verbeteren."
-                checked={analytics}
-                onChange={setAnalytics}
-              />
-              <CookieRow
-                title="Marketing"
-                description="Voor gepersonaliseerde content en advertenties op andere websites."
-                checked={marketing}
-                onChange={setMarketing}
-              />
+          {/* Preferences panel */}
+          <div
+            className="overflow-hidden transition-[height,opacity] duration-400 ease-out"
+            style={{
+              height: panelHeight,
+              opacity: showPrefs ? 1 : 0,
+              transitionDuration: "400ms",
+            }}
+            aria-hidden={!showPrefs}
+          >
+            <div ref={panelRef} className="pt-4">
+              <div className="rounded-xl border border-white/10 bg-white/[0.04] divide-y divide-white/10">
+                <CookieRow
+                  title="Noodzakelijk"
+                  description="Altijd actief, noodzakelijk voor de werking van de website."
+                  checked
+                  disabled
+                />
+                <CookieRow
+                  title="Analytisch"
+                  description="Help ons begrijpen hoe bezoekers de website gebruiken."
+                  checked={analytics}
+                  onChange={setAnalytics}
+                />
+              </div>
             </div>
           </div>
-        )}
 
-        {/* Actions */}
-        <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 flex flex-col-reverse sm:flex-row sm:items-center gap-2.5 sm:gap-3">
-          <button
-            type="button"
-            onClick={() => setShowDetails((v) => !v)}
-            className="inline-flex items-center justify-center gap-1.5 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors sm:mr-auto"
-          >
-            {showDetails ? "Details verbergen" : "Voorkeuren instellen"}
-            <ChevronDown
-              size={14}
-              className={`transition-transform ${showDetails ? "rotate-180" : ""}`}
-            />
-          </button>
-
-          {showDetails ? (
-            <button
-              type="button"
-              onClick={saveChoices}
-              className="inline-flex items-center justify-center gap-1.5 h-10 px-5 rounded-full text-sm font-medium border border-foreground/15 text-foreground hover:border-foreground/40 hover:bg-black/[0.03] transition-colors"
-            >
-              Keuze opslaan
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={rejectAll}
-              className="inline-flex items-center justify-center h-10 px-5 rounded-full text-sm font-medium border border-foreground/15 text-foreground hover:border-foreground/40 hover:bg-black/[0.03] transition-colors"
-            >
-              Alleen noodzakelijk
-            </button>
-          )}
-
-          <button
-            type="button"
-            onClick={acceptAll}
-            className="inline-flex items-center justify-center gap-1.5 h-10 px-5 rounded-full text-sm font-semibold bg-[hsl(var(--accent-orange))] text-white shadow-[0_10px_30px_-12px_hsl(var(--accent-orange)/0.6)] hover:brightness-[1.05] transition-all"
-          >
-            <Check size={14} strokeWidth={3} />
-            Alles accepteren
-          </button>
+          {/* Actions */}
+          <div className="mt-5 grid grid-cols-3 gap-2">
+            {showPrefs ? (
+              <>
+                <button type="button" onClick={() => commit(false)} className="cookie-btn">
+                  Weigeren
+                </button>
+                <button
+                  type="button"
+                  onClick={() => commit(analytics)}
+                  className="cookie-btn col-span-2"
+                >
+                  Voorkeuren opslaan
+                </button>
+              </>
+            ) : (
+              <>
+                <button type="button" onClick={() => commit(false)} className="cookie-btn">
+                  Weigeren
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowPrefs(true)}
+                  className="cookie-btn"
+                >
+                  Voorkeuren
+                </button>
+                <button
+                  type="button"
+                  onClick={() => commit(true)}
+                  className="cookie-btn cookie-btn-primary"
+                >
+                  Accepteren
+                </button>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -191,10 +209,8 @@ const CookieRow = ({
 }) => (
   <div className="flex items-start gap-3 p-3.5">
     <div className="flex-1 min-w-0">
-      <p className="text-sm font-medium text-foreground">{title}</p>
-      <p className="text-xs text-muted-foreground leading-relaxed mt-0.5">
-        {description}
-      </p>
+      <p className="text-[0.8125rem] font-medium text-white">{title}</p>
+      <p className="text-xs text-white/50 leading-relaxed mt-0.5">{description}</p>
     </div>
     <button
       type="button"
@@ -203,14 +219,12 @@ const CookieRow = ({
       aria-label={title}
       disabled={disabled}
       onClick={() => !disabled && onChange?.(!checked)}
-      className={`relative shrink-0 mt-1 w-10 h-6 rounded-full transition-colors ${
-        checked
-          ? "bg-[hsl(var(--accent-orange))]"
-          : "bg-black/15"
-      } ${disabled ? "opacity-60 cursor-not-allowed" : "cursor-pointer"}`}
+      className={`relative shrink-0 mt-0.5 w-10 h-6 rounded-full transition-colors ${
+        checked ? "bg-primary" : "bg-white/15"
+      } ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
     >
       <span
-        className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow-sm transition-transform ${
+        className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow-sm transition-transform duration-200 ${
           checked ? "translate-x-4" : "translate-x-0"
         }`}
       />
