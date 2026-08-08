@@ -395,7 +395,7 @@ const HeroMockup = () => {
               {/* Notch */}
               <div className="absolute top-[3px] left-1/2 -translate-x-1/2 w-8 lg:w-12 h-[5px] lg:h-[7px] rounded-full bg-[hsl(224_26%_8%)] z-10" />
 
-              <div key={tick} className="aspect-[9/19] flex flex-col animate-fade-in">
+              <div key={tick} className="aspect-[9/16] flex flex-col animate-fade-in">
                 {/* Mobile hero */}
                 <div
                   className="relative px-2 pt-4 pb-3 lg:px-3 lg:pt-5 lg:pb-4"
