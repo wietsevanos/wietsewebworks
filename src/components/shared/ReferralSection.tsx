@@ -1,6 +1,8 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Reveal } from "@/components/shared/Reveal";
 import { ArrowRight, Users, Send, Gift } from "lucide-react";
+
 
 const referralSteps: {
   number: string;
