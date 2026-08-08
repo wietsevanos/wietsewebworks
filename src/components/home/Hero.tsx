@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MousePointer2 } from "lucide-react";
 import { OrangeWaveBackground } from "@/components/shared/OrangeWaveBackground";
 
-const HERO_LOOP_MS = 8000;
-const d = (ms: number): CSSProperties => ({ animationDelay: `${ms}ms` });
+const HERO_LOOP_MS = 6200;
+// Stagger scale — spreads the build-up over a longer part of each cycle
+const d = (ms: number): CSSProperties => ({
+  animationDelay: `${Math.round(ms * 1.3)}ms`,
+});
 
 type SiteTheme = {
   url: string;
@@ -62,11 +65,12 @@ const SITE_THEMES: SiteTheme[] = [
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-[calc(80px+2rem)] pb-20 lg:py-28">
+    <section className="relative lg:min-h-[85vh] flex items-center overflow-hidden pt-[calc(80px+1.5rem)] pb-10 lg:py-28">
       <OrangeWaveBackground />
 
       <div className="max-w-[92rem] mx-auto px-6 w-full relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div className="grid lg:grid-cols-12 gap-9 lg:gap-10 items-center">
+
           {/* Text column */}
           <div className="lg:col-span-5 max-w-2xl flex flex-col justify-center self-center">
             <p className="text-[hsl(var(--accent-orange))] font-medium mb-5 text-sm tracking-wide uppercase animate-fade-up">
@@ -123,7 +127,7 @@ const HeroMockup = () => {
   const theme = SITE_THEMES[tick % SITE_THEMES.length];
 
   return (
-    <div className="relative group [perspective:1600px] w-full lg:h-full flex flex-col items-center justify-center pb-8 lg:pb-0">
+    <div className="relative group [perspective:1600px] w-full lg:h-full flex flex-col items-center justify-center pb-2 lg:pb-0">
       {/* Ambient floor shadow */}
       <div
         aria-hidden
@@ -164,8 +168,108 @@ const HeroMockup = () => {
                     <div className="w-4 md:w-6" />
                   </div>
 
+                  {/* Mobile site layout — split hero + tiles */}
+                  <div
+                    key={`m-${tick}`}
+                    className="md:hidden relative bg-white animate-fade-in flex-1 min-h-0 flex flex-col"
+                  >
+                    {/* Nav */}
+                    <div className="flex items-center justify-between px-3 py-1.5 border-b border-black/[0.05]">
+                      <div className="flex items-center gap-1.5 hero-anim-l" style={d(80)}>
+                        <span
+                          className="w-3.5 h-3.5 rounded-[5px]"
+                          style={{ background: theme.brand }}
+                        />
+                        <span className="text-[0.6rem] font-semibold tracking-tight text-foreground">
+                          Uw&nbsp;Merk
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {theme.nav.slice(0, 2).map((l, i) => (
+                          <span
+                            key={l}
+                            className="text-[0.5rem] font-medium text-foreground/50 hero-anim"
+                            style={d(220 + i * 120)}
+                          >
+                            {l}
+                          </span>
+                        ))}
+                        <span
+                          className="h-4 px-2 rounded-full text-white text-[0.5rem] font-semibold flex items-center hero-anim-r"
+                          style={{ ...d(520), background: theme.accent }}
+                        >
+                          Offerte
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Split hero: copy left, visual card right */}
+                    <div className="flex-1 min-h-0 flex">
+                      <div
+                        className="relative w-[58%] px-3 py-2.5 flex flex-col justify-center overflow-hidden"
+                        style={{ background: theme.banner }}
+                      >
+                        <div
+                          className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,hsl(0_0%_100%/0.18),transparent_58%),radial-gradient(circle_at_90%_95%,hsl(214_85%_60%/0.30),transparent_55%)]"
+                          style={{
+                            backgroundSize: "180% 180%, 210% 210%",
+                            animation: "heroGradientDrift 14s ease-in-out infinite",
+                          }}
+                        />
+                        <div className="relative">
+                          <div
+                            className="inline-flex w-fit items-center gap-1 px-1.5 py-[1px] rounded-full bg-white/15 backdrop-blur text-white text-[0.42rem] font-semibold tracking-wider uppercase mb-1.5 hero-anim"
+                            style={d(760)}
+                          >
+                            <span
+                              className="w-1 h-1 rounded-full"
+                              style={{ background: theme.accent }}
+                            />
+                            {theme.badge}
+                          </div>
+                          <div className="space-y-1">
+                            <div className="h-2 w-[92%] rounded-full bg-white/90 hero-bar" style={d(950)} />
+                            <div className="h-2 w-[64%] rounded-full bg-white/70 hero-bar" style={d(1100)} />
+                          </div>
+                          <div
+                            className="mt-2 h-4 w-fit px-2 rounded-full bg-white text-[0.45rem] font-semibold flex items-center gap-1 hero-anim-pop"
+                            style={{ ...d(1450), color: theme.accent }}
+                          >
+                            Aan de slag
+                            <ArrowRight size={8} />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Right column: stacked mini cards */}
+                      <div className="w-[42%] bg-secondary/60 px-2 py-2 flex flex-col gap-1.5 justify-center">
+                        {theme.tiles.map((dot, i) => (
+                          <div
+                            key={`${tick}-mob-${i}`}
+                            className="flex items-center gap-1.5 rounded-[6px] bg-white border border-black/[0.05] px-1.5 py-1 shadow-sm hero-anim-r"
+                            style={d(1750 + i * 380)}
+                          >
+                            <span
+                              className="w-2.5 h-2.5 rounded-[3px] shrink-0"
+                              style={{ background: dot }}
+                            />
+                            <span className="flex-1 space-y-[3px]">
+                              <span className="block h-1 w-[70%] rounded-full bg-foreground/55" />
+                              <span className="block h-1 w-[95%] rounded-full bg-foreground/12" />
+                            </span>
+                          </div>
+                        ))}
+                        <div
+                          className="mt-0.5 h-3 rounded-full hero-anim-pop"
+                          style={{ ...d(3100), background: theme.accent, opacity: 0.85 }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Fake site content — rebuilds every cycle via key */}
-                  <div key={tick} className="relative bg-white animate-fade-in flex-1 min-h-0 flex flex-col">
+                  <div key={tick} className="hidden md:flex relative bg-white animate-fade-in flex-1 min-h-0 flex-col">
+
                     {/* Nav */}
                     <div className="flex items-center justify-between px-3 md:px-8 py-1.5 md:py-4 border-b border-black/[0.04]">
 
