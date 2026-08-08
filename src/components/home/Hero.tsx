@@ -66,9 +66,9 @@ export const Hero = () => {
       <OrangeWaveBackground />
 
       <div className="max-w-[92rem] mx-auto px-6 w-full relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-stretch">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Text column */}
-          <div className="lg:col-span-5 max-w-2xl flex flex-col justify-center">
+          <div className="lg:col-span-5 max-w-2xl flex flex-col justify-center self-center">
             <p className="text-[hsl(var(--accent-orange))] font-medium mb-5 text-sm tracking-wide uppercase animate-fade-up">
               WIETSE WEBWORKS
             </p>
