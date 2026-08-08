@@ -65,11 +65,12 @@ const SITE_THEMES: SiteTheme[] = [
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-[calc(80px+2rem)] pb-20 lg:py-28">
+    <section className="relative lg:min-h-[85vh] flex items-center overflow-hidden pt-[calc(80px+1.5rem)] pb-10 lg:py-28">
       <OrangeWaveBackground />
 
       <div className="max-w-[92rem] mx-auto px-6 w-full relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div className="grid lg:grid-cols-12 gap-9 lg:gap-10 items-center">
+
           {/* Text column */}
           <div className="lg:col-span-5 max-w-2xl flex flex-col justify-center self-center">
             <p className="text-[hsl(var(--accent-orange))] font-medium mb-5 text-sm tracking-wide uppercase animate-fade-up">
