@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MousePointer2 } from "lucide-react";
 import { OrangeWaveBackground } from "@/components/shared/OrangeWaveBackground";
 
-const HERO_LOOP_MS = 8000;
-const d = (ms: number): CSSProperties => ({ animationDelay: `${ms}ms` });
+const HERO_LOOP_MS = 6200;
+// Stagger scale — spreads the build-up over a longer part of each cycle
+const d = (ms: number): CSSProperties => ({
+  animationDelay: `${Math.round(ms * 1.3)}ms`,
+});
 
 type SiteTheme = {
   url: string;
