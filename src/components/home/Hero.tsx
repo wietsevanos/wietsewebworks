@@ -199,7 +199,7 @@ const HeroMockup = () => {
 
                     {/* Wide hero banner */}
                     <div
-                      className="relative shrink-0 aspect-[16/3.4] md:aspect-[16/5.5] overflow-hidden"
+                      className="relative flex-1 min-h-0 md:flex-none md:shrink-0 md:aspect-[16/5.5] overflow-hidden"
                       style={{ background: theme.banner }}
                     >
                       <div
@@ -211,7 +211,7 @@ const HeroMockup = () => {
                       />
 
                       {/* Hero copy overlay */}
-                      <div className="absolute inset-0 flex flex-col justify-center px-5 md:px-10 max-w-[62%]">
+                      <div className="absolute inset-0 flex flex-col justify-center px-5 md:px-10 max-w-[70%] md:max-w-[62%]">
                         <div
                           className="inline-flex w-fit items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/15 backdrop-blur text-white text-[0.5rem] md:text-[0.55rem] font-semibold tracking-wider uppercase mb-2 md:mb-2.5 hero-anim"
                           style={d(900)}
@@ -222,11 +222,11 @@ const HeroMockup = () => {
                           />
                           {theme.badge}
                         </div>
-                        <div className="space-y-1 md:space-y-1.5">
-                          <div className="h-2 md:h-2.5 w-[85%] rounded-full bg-white/90 hero-bar" style={d(1050)} />
-                          <div className="h-2 md:h-2.5 w-[65%] rounded-full bg-white/90 hero-bar" style={d(1200)} />
+                        <div className="space-y-1.5 md:space-y-1.5">
+                          <div className="h-2.5 md:h-2.5 w-[85%] rounded-full bg-white/90 hero-bar" style={d(1050)} />
+                          <div className="h-2.5 md:h-2.5 w-[60%] rounded-full bg-white/90 hero-bar" style={d(1200)} />
                         </div>
-                        <div className="mt-2 md:mt-3 space-y-1 max-w-[75%]">
+                        <div className="hidden md:block mt-2 md:mt-3 space-y-1 max-w-[75%]">
                           <div className="h-1 rounded-full bg-white/40 hero-bar" style={d(1400)} />
                           <div className="h-1 rounded-full bg-white/40 w-[80%] hero-bar" style={d(1520)} />
                         </div>
@@ -241,7 +241,7 @@ const HeroMockup = () => {
 
                       {/* Floating tile */}
                       <div
-                        className="absolute right-3 md:right-4 bottom-3 md:bottom-4 bg-white/95 backdrop-blur rounded-md px-2 py-1.5 shadow-lg flex items-center gap-2 hero-anim-pop"
+                        className="hidden md:flex absolute right-3 md:right-4 bottom-3 md:bottom-4 bg-white/95 backdrop-blur rounded-md px-2 py-1.5 shadow-lg items-center gap-2 hero-anim-pop"
                         style={d(2050)}
                       >
                         <span
@@ -255,8 +255,8 @@ const HeroMockup = () => {
                       </div>
                     </div>
 
-                    {/* Content section under banner */}
-                    <div className="flex-1 min-h-0 overflow-hidden px-3 md:px-8 py-1.5 md:py-5">
+                    {/* Content section under banner — desktop only */}
+                    <div className="hidden md:flex flex-1 min-h-0 overflow-hidden px-3 md:px-8 py-1.5 md:py-5 flex-col">
 
                       <div className="hidden md:flex items-end justify-between mb-2 md:mb-4">
                         <div className="space-y-1.5">
@@ -289,6 +289,7 @@ const HeroMockup = () => {
                         ))}
                       </div>
                     </div>
+
 
 
                     {/* Floating cursor — moves and taps subtly */}
