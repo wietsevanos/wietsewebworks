@@ -164,9 +164,8 @@ export const ReferralSection = () => {
 
 
                         <div className="min-w-0">
-                          <span className="referral-step-num block text-xs font-semibold tabular-nums tracking-wide text-primary/40 transition-colors duration-300 group-hover:text-primary"
-                            style={{ animationDelay: `${i * 2}s` }}
-                          >
+                          <span className="referral-step-num block text-xs font-semibold tabular-nums tracking-wide text-primary/40 transition-colors duration-300 group-hover:text-primary">
+
                             {step.number}
                           </span>
                           <h3 className="mt-1 text-[0.9375rem] md:text-base font-medium text-foreground">
