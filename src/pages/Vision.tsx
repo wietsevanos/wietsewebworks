@@ -6,7 +6,7 @@ import { Reveal } from "@/components/shared/Reveal";
 import { AIBuildMockup } from "@/components/shared/AIBuildMockup";
 import {
   Sparkles,
-  MessageCircle,
+  Handshake,
   ClipboardList,
   PenTool,
   RefreshCw,
@@ -19,7 +19,7 @@ import {
 const steps = [
   {
     number: "01",
-    icon: MessageCircle,
+    icon: Handshake,
 
     title: "Kennismaking",
     description:
