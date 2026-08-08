@@ -286,11 +286,6 @@ const HeroMockup = () => {
                           </div>
                         ))}
                       </div>
-
-                            </div>
-                          </div>
-                        ))}
-                      </div>
                     </div>
 
 
