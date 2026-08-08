@@ -13,6 +13,8 @@ import {
   Rocket,
   ShieldCheck,
   ArrowRight,
+  Zap,
+  Eye,
 } from "lucide-react";
 
 
