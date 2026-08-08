@@ -137,31 +137,20 @@ const HeroMockup = () => {
           className="relative w-full flex flex-col items-center"
           style={{ animation: "monitorFloat 7s ease-in-out infinite" }}
         >
-          {/* Chassis */}
+          {/* Single bezel */}
           <div
-            className="relative w-full rounded-[16px] md:rounded-[20px] p-[8px] md:p-[10px]"
+            className="relative w-full rounded-[10px] md:rounded-[14px] p-[6px] md:p-[9px]"
             style={{
-              background:
-                "linear-gradient(160deg, hsl(220 18% 82%) 0%, hsl(218 16% 68%) 22%, hsl(220 14% 55%) 55%, hsl(222 18% 42%) 100%)",
-              boxShadow:
-                "0 1px 0 0 hsl(0 0% 100% / 0.55) inset, 0 -2px 6px 0 hsl(224 40% 12% / 0.4) inset, 0 40px 90px -32px hsl(224 64% 6% / 0.85), 0 8px 20px -10px hsl(224 64% 6% / 0.6)",
+              background: "hsl(224 24% 10%)",
+              boxShadow: "0 26px 60px -28px hsl(224 64% 6% / 0.8)",
             }}
           >
-            {/* Thin dark bezel */}
-            <div
-              className="relative rounded-[10px] md:rounded-[12px] p-[5px] md:p-[7px]"
-              style={{
-                background:
-                  "linear-gradient(180deg, hsl(224 22% 11%) 0%, hsl(224 24% 8%) 100%)",
-                boxShadow:
-                  "0 0 0 1px hsl(224 30% 4% / 0.9), 0 2px 6px 0 hsl(0 0% 0% / 0.5) inset",
-              }}
-            >
-              {/* Screen */}
-              <div className="relative rounded-[6px] md:rounded-[8px] overflow-hidden bg-white">
-                <div className="relative w-full flex flex-col bg-white">
-                  {/* Chrome bar */}
-                  <div className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-secondary border-b border-black/5">
+            {/* Screen */}
+            <div className="relative rounded-[4px] md:rounded-[6px] overflow-hidden bg-white aspect-[16/9] md:aspect-auto flex flex-col">
+              <div className="relative w-full flex flex-col bg-white flex-1 min-h-0">
+                {/* Chrome bar */}
+                <div className="flex items-center gap-2 md:gap-3 px-2.5 md:px-4 py-1 md:py-2.5 bg-secondary border-b border-black/5">
+
                     <div className="flex gap-1.5">
                       <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[#ff5f57]" />
                       <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[#febc2e]" />
