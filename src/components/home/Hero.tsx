@@ -326,30 +326,9 @@ const HeroMockup = () => {
                   </div>
                 </div>
 
-                {/* Slow-moving screen reflection */}
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 overflow-hidden rounded-[6px] md:rounded-[8px]"
-                >
-                  <div
-                    className="absolute -inset-y-8 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                    style={{ animation: "monitorSheen 9s ease-in-out infinite" }}
-                  />
-                </div>
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 rounded-[6px] md:rounded-[8px] ring-1 ring-inset ring-black/20"
-                />
               </div>
             </div>
 
-            {/* Chin highlight */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-x-8 bottom-[3px] h-[2px] rounded-full"
-              style={{ background: "linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.35), transparent)" }}
-            />
-          </div>
 
           {/* Aluminium neck */}
           <div
