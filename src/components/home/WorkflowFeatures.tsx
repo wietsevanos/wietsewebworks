@@ -222,21 +222,36 @@ const FeaturePreview = ({ id }: { id: string }) => {
 
 export const WorkflowFeatures = () => {
   const [openId, setOpenId] = useState<string>(features[0].id);
+  const [isDesktop, setIsDesktop] = useState(false);
 
-  // Auto-cycle through features. Progress bar uses a CSS animation for smoothness.
   useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  // Auto-cycle through features on desktop only. Mobile stays fully manual.
+  useEffect(() => {
+    if (!isDesktop) return;
     const timeout = setTimeout(() => {
       const idx = features.findIndex((f) => f.id === openId);
       const next = features[(idx + 1) % features.length].id;
       setOpenId(next);
     }, CYCLE_MS);
     return () => clearTimeout(timeout);
-  }, [openId]);
+  }, [openId, isDesktop]);
 
   const handleSelect = (id: string) => {
-    if (id === openId) return;
+    if (id === openId) {
+      // On mobile the user can collapse the open item; desktop keeps one open.
+      if (!isDesktop) setOpenId("");
+      return;
+    }
     setOpenId(id);
   };
+
 
 
   return (
