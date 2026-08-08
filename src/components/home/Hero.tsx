@@ -326,24 +326,54 @@ const HeroMockup = () => {
 
           {/* Aluminium neck */}
           <div
-            className="relative w-14 md:w-28 h-5 md:h-10"
+            className="relative w-14 md:w-28 h-5 md:h-10 -mt-px"
             style={{
               background:
-                "linear-gradient(90deg, hsl(220 14% 42%) 0%, hsl(218 16% 72%) 22%, hsl(220 18% 84%) 42%, hsl(218 14% 60%) 70%, hsl(222 18% 36%) 100%)",
-              clipPath: "polygon(14% 0, 86% 0, 96% 100%, 4% 100%)",
-              boxShadow: "0 10px 24px -14px hsl(224 64% 6% / 0.9)",
+                "linear-gradient(90deg, hsl(222 18% 44%) 0%, hsl(220 14% 66%) 14%, hsl(218 18% 86%) 34%, hsl(220 16% 92%) 46%, hsl(219 14% 70%) 62%, hsl(221 16% 50%) 84%, hsl(223 20% 34%) 100%)",
+              clipPath: "polygon(16% 0, 84% 0, 95% 100%, 5% 100%)",
+              boxShadow: "0 12px 26px -16px hsl(224 64% 6% / 0.9)",
             }}
-          />
+          >
+            {/* soft vertical sheen */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, hsl(0 0% 100% / 0.35) 0%, transparent 38%, hsl(224 40% 10% / 0.22) 100%)",
+              }}
+            />
+          </div>
+
           {/* Aluminium base */}
-          <div
-            className="relative w-28 md:w-56 h-1.5 md:h-2.5 rounded-full"
-            style={{
-              background:
-                "linear-gradient(180deg, hsl(220 18% 80%) 0%, hsl(220 14% 58%) 45%, hsl(222 20% 34%) 100%)",
-              boxShadow:
-                "0 1px 0 0 hsl(0 0% 100% / 0.4) inset, 0 14px 30px -10px hsl(224 64% 6% / 0.85)",
-            }}
-          />
+          <div className="relative w-28 md:w-56">
+            {/* top plate */}
+            <div
+              className="relative h-2 md:h-3 rounded-t-[4px] rounded-b-[10px]"
+              style={{
+                background:
+                  "linear-gradient(180deg, hsl(220 20% 94%) 0%, hsl(220 16% 78%) 30%, hsl(220 14% 58%) 62%, hsl(223 22% 36%) 100%)",
+                boxShadow:
+                  "0 1px 0 0 hsl(0 0% 100% / 0.55) inset, 0 -1px 0 0 hsl(224 40% 12% / 0.25) inset, 0 16px 30px -12px hsl(224 64% 6% / 0.85)",
+              }}
+            >
+              {/* horizontal specular highlight */}
+              <div
+                className="absolute inset-x-[8%] top-0 h-[45%] rounded-full"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.7), transparent)",
+                  filter: "blur(1px)",
+                }}
+              />
+            </div>
+            {/* contact shadow under the base */}
+            <div
+              aria-hidden
+              className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 w-[86%] h-2 rounded-[50%] blur-md"
+              style={{ background: "hsl(224 64% 6% / 0.55)" }}
+            />
+          </div>
+
 
         </div>
 
