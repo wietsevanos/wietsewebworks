@@ -4,8 +4,8 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
 import { AIBuildMockup } from "@/components/shared/AIBuildMockup";
+import aiIllustratie from "@/assets/ai-illustratie.png.asset.json";
 import {
-  Sparkles,
   Handshake,
   ClipboardList,
   PenTool,
