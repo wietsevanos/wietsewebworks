@@ -127,7 +127,7 @@ const HeroMockup = () => {
   const theme = SITE_THEMES[tick % SITE_THEMES.length];
 
   return (
-    <div className="relative group [perspective:1600px] w-full lg:h-full flex flex-col items-center justify-center pb-8 lg:pb-0">
+    <div className="relative group [perspective:1600px] w-full lg:h-full flex flex-col items-center justify-center pb-2 lg:pb-0">
       {/* Ambient floor shadow */}
       <div
         aria-hidden
