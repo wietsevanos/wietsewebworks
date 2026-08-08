@@ -165,75 +165,86 @@ const Vision = () => {
 
       {/* AI-versnelde eerste versie — toelichting bij stap 03 */}
       <section id="ai-toelichting" className="pb-24 md:pb-32 surface-aurora scroll-mt-24">
-        <div className="mx-auto max-w-[960px] px-6">
+        <div className="mx-auto max-w-[1000px] px-6">
           <Reveal>
-            <div className="rounded-2xl glass border border-border/60 p-8 md:p-12">
-              <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
-                <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-[hsl(var(--accent-orange)/0.08)] ring-1 ring-[hsl(var(--accent-orange)/0.25)] text-[hsl(var(--accent-orange))]">
-                  <Sparkles size={30} strokeWidth={1.25} />
+            <div className="flex items-start gap-5 md:gap-8">
+              <span className="flex-shrink-0 select-none text-4xl md:text-5xl font-semibold tabular-nums text-primary/30 leading-none pt-1">
+                03
+              </span>
+              <div className="min-w-0">
+                <div className="text-[0.65rem] font-semibold tracking-[0.18em] uppercase text-[hsl(var(--accent-orange))] mb-3">
+                  Toelichting bij stap 03
                 </div>
-                <div className="min-w-0">
-                  <div className="text-[0.65rem] font-semibold tracking-[0.18em] uppercase text-[hsl(var(--accent-orange))] mb-3">
-                    Toelichting bij stap 03
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                    Zo werk ik in de ontwerpfase met AI
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed text-[0.9375rem] max-w-2xl">
-                    In stap 03 gebruik ik geavanceerde AI-ondersteuning om in korte tijd een
-                    eerste werkende versie van uw website te realiseren. U krijgt daardoor
-                    sneller inzicht in de uitstraling, structuur en richting en kunt in een
-                    vroeg stadium gericht feedback geven. Alle ontwerpkeuzes, afwerking en
-                    kwaliteitscontrole blijven volledig in mijn eigen hand: AI versnelt het
-                    proces, vakmanschap bepaalt het resultaat.
-                  </p>
-                </div>
+                <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+                  Zo werk ik in de ontwerpfase met AI
+                </h2>
               </div>
+            </div>
+          </Reveal>
 
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                {[
-                  {
-                    icon: Zap,
-                    title: "Sneller resultaat",
-                    text: "Binnen enkele dagen een eerste werkende versie in plaats van weken wachten.",
-                  },
-                  {
-                    icon: Eye,
-                    title: "Eerder inzicht",
-                    text: "U ziet direct de uitstraling en structuur en kunt vroeg bijsturen.",
-                  },
-                  {
-                    icon: PenTool,
-                    title: "Menselijk vakmanschap",
-                    text: "Ontwerpkeuzes, afwerking en controle blijven volledig in mijn hand.",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="rounded-2xl border border-border/60 bg-background/40 p-5 transition-colors duration-300 hover:border-primary/30"
-                  >
-                    <item.icon size={26} strokeWidth={1.25} className="text-primary/70" />
-                    <h3 className="mt-3 text-sm font-semibold text-foreground">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-muted-foreground">
-                      {item.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
+          <div className="mt-12 grid gap-10 md:gap-14 md:grid-cols-2 md:items-center">
+            <Reveal>
+              <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">
+                In stap 03 gebruik ik geavanceerde AI-ondersteuning om in korte tijd een
+                eerste werkende versie van uw website te realiseren. U krijgt daardoor
+                sneller inzicht in de uitstraling, structuur en richting en kunt in een
+                vroeg stadium gericht feedback geven. Alle ontwerpkeuzes, afwerking en
+                kwaliteitscontrole blijven volledig in mijn eigen hand: AI versnelt het
+                proces, vakmanschap bepaalt het resultaat.
+              </p>
+            </Reveal>
+            <Reveal delay={100}>
+              <img
+                src={aiIllustratie.url}
+                alt="Illustratie van samenwerken met AI in de ontwerpfase"
+                loading="lazy"
+                className="w-full rounded-2xl"
+              />
+            </Reveal>
+          </div>
 
-              <div className="mt-10 pt-8 border-t border-border/60">
-                <AIBuildMockup />
-                <p className="mt-6 text-xs text-muted-foreground/80 leading-relaxed max-w-2xl">
-                  Het resultaat: kortere doorlooptijden zonder concessies aan
-                  kwaliteit, strategie of persoonlijke begeleiding.
+          <div className="mt-16 md:mt-20 grid gap-10 sm:grid-cols-3">
+            {[
+              {
+                icon: Zap,
+                title: "Sneller resultaat",
+                text: "Binnen enkele dagen een eerste werkende versie in plaats van weken wachten.",
+              },
+              {
+                icon: Eye,
+                title: "Eerder inzicht",
+                text: "U ziet direct de uitstraling en structuur en kunt vroeg bijsturen.",
+              },
+              {
+                icon: PenTool,
+                title: "Menselijk vakmanschap",
+                text: "Ontwerpkeuzes, afwerking en controle blijven volledig in mijn hand.",
+              },
+            ].map((item, i) => (
+              <Reveal key={item.title} delay={i * 80}>
+                <item.icon size={28} strokeWidth={1.25} className="text-primary/70" />
+                <h3 className="mt-4 text-sm font-semibold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                  {item.text}
                 </p>
-              </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={120}>
+            <div className="mt-16 md:mt-20">
+              <AIBuildMockup />
+              <p className="mt-6 text-xs text-muted-foreground/80 leading-relaxed max-w-2xl">
+                Het resultaat: kortere doorlooptijden zonder concessies aan
+                kwaliteit, strategie of persoonlijke begeleiding.
+              </p>
             </div>
           </Reveal>
         </div>
       </section>
+
 
 
       {/* Reassurance block */}
