@@ -171,7 +171,7 @@ const Vision = () => {
           <div>
             <Reveal>
               <div className="max-w-2xl mb-8">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-accent/10 ring-1 ring-accent/25 text-[0.65rem] font-semibold tracking-wider uppercase text-accent mb-4">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-[hsl(var(--accent-orange)/0.1)] ring-1 ring-[hsl(var(--accent-orange)/0.25)] text-[0.65rem] font-semibold tracking-wider uppercase text-[hsl(var(--accent-orange))] mb-4">
                   <Sparkles size={11} strokeWidth={1.5} />
                   Toelichting bij stap 03
                 </div>
