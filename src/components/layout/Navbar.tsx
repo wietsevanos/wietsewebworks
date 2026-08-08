@@ -74,9 +74,10 @@ export const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp 06 47 87 27 34"
-              className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary-deep transition-all duration-200 hover:scale-105 hover:shadow-[0_8px_24px_-8px_hsl(var(--primary))]"
+              className="group relative w-12 h-12 shrink-0 rounded-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary to-primary-deep ring-1 ring-inset ring-primary-foreground/25 shadow-[0_6px_18px_-8px_hsl(var(--primary)/0.9)] transition-all duration-300 hover:scale-105 hover:shadow-[0_12px_28px_-8px_hsl(var(--primary)/0.95)]"
             >
-              <img src={whatsappLogo.url} alt="WhatsApp" className="w-5 h-5 object-contain" style={{ filter: "brightness(0) invert(1)" }} />
+              <span aria-hidden className="pointer-events-none absolute inset-x-1 top-0.5 h-1/2 rounded-full bg-gradient-to-b from-primary-foreground/30 to-transparent" />
+              <img src={whatsappLogo.url} alt="WhatsApp" className="relative w-[22px] h-[22px] object-contain transition-transform duration-300 group-hover:scale-110" style={{ filter: "brightness(0) invert(1)" }} />
             </a>
           </div>
 
