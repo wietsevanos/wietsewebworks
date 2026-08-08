@@ -54,8 +54,13 @@ export const ReferralSection = () => {
                 </p>
                 <p>
                   Komt daar uiteindelijk een nieuwe klant uit, dan ontvangt u
-                  van mij een maand gratis hosting en onderhoud.
+                  van mij een maand gratis hosting en onderhoud. Dat bespaart u{" "}
+                  <span className="font-semibold text-[hsl(var(--accent-orange))]">
+                    € 37,95
+                  </span>
+                  .
                 </p>
+
               </div>
 
               <p className="mt-6 text-[0.8125rem] leading-relaxed text-muted-foreground/80 max-w-md">
