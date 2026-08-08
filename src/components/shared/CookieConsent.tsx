@@ -75,9 +75,9 @@ export const CookieConsent = () => {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Cookievoorkeuren aanpassen"
-        className="cookie-fab fixed bottom-5 right-5 z-[60] w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white/80 hover:text-white transition-all duration-300 animate-fade-in"
+        className="cookie-fab group fixed bottom-5 right-5 z-[60] w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white/80 hover:text-white transition-all duration-300 animate-fade-in"
       >
-        <ShieldCheck size={18} />
+        <ShieldCheck size={18} className="transition-colors group-hover:text-[hsl(var(--accent-orange))]" />
       </button>
     );
   }
@@ -95,8 +95,8 @@ export const CookieConsent = () => {
       >
         <div className="p-5 sm:p-6">
           <div className="flex items-start gap-3">
-            <div className="shrink-0 w-9 h-9 rounded-full bg-white/[0.07] border border-white/10 flex items-center justify-center">
-              <ShieldCheck size={16} className="text-white/80" />
+            <div className="shrink-0 w-9 h-9 rounded-full bg-[hsl(var(--accent-orange))]/12 border border-[hsl(var(--accent-orange))]/25 flex items-center justify-center">
+              <ShieldCheck size={16} className="text-[hsl(var(--accent-orange))]" />
             </div>
             <div className="flex-1 min-w-0">
               <h2 className="text-[0.95rem] font-semibold text-white">Uw privacy, uw keuze</h2>
@@ -105,7 +105,7 @@ export const CookieConsent = () => {
                 aanvullende cookies vragen we eerst uw toestemming.{" "}
                 <Link
                   to="/privacybeleid"
-                  className="text-white/80 underline decoration-white/25 underline-offset-2 hover:decoration-white/70"
+                  className="text-white/80 underline decoration-[hsl(var(--accent-orange))]/50 underline-offset-2 hover:text-[hsl(var(--accent-orange-soft))] hover:decoration-[hsl(var(--accent-orange))]"
                 >
                   Privacybeleid
                 </Link>
@@ -220,7 +220,7 @@ const CookieRow = ({
       disabled={disabled}
       onClick={() => !disabled && onChange?.(!checked)}
       className={`relative shrink-0 mt-0.5 w-10 h-6 rounded-full transition-colors ${
-        checked ? "bg-primary" : "bg-white/15"
+        checked ? "bg-[hsl(var(--accent-orange))]" : "bg-white/15"
       } ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
     >
       <span
