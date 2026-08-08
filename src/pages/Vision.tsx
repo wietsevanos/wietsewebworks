@@ -128,14 +128,15 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
         </div>
 
         <div
-          className={`hidden sm:flex flex-shrink-0 h-14 w-14 items-center justify-center rounded-2xl ring-1 transition-colors duration-500 ${
+          className={`hidden sm:flex flex-shrink-0 h-20 w-20 items-center justify-center rounded-2xl ring-1 transition-colors duration-500 ${
             done
               ? "bg-[hsl(var(--accent-orange)/0.08)] ring-[hsl(var(--accent-orange)/0.25)] text-[hsl(var(--accent-orange))]"
               : "bg-primary/5 ring-primary/15 text-primary/70"
           }`}
         >
-          <Icon size={30} strokeWidth={1.25} />
+          <Icon size={42} strokeWidth={1.25} />
         </div>
+
       </div>
 
     </div>
@@ -164,7 +165,7 @@ const Vision = () => {
       </section>
 
       {/* AI-versnelde eerste versie — toelichting bij stap 03 */}
-      <section id="ai-toelichting" className="pb-24 md:pb-32 surface-aurora scroll-mt-24">
+      <section id="ai-toelichting" className="pt-28 md:pt-40 pb-24 md:pb-32 surface-aurora scroll-mt-24">
         <div className="mx-auto max-w-[1000px] px-6">
           <Reveal>
             <div className="flex items-start gap-5 md:gap-8">
