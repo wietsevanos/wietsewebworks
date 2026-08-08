@@ -30,8 +30,42 @@ const referralSteps: {
 ];
 
 export const ReferralSection = () => {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let timer: number | undefined;
+    const start = () => {
+      if (timer) return;
+      setActiveIndex(0);
+      timer = window.setInterval(() => {
+        setActiveIndex((prev) => (prev + 1) % referralSteps.length);
+      }, 2000);
+    };
+    const stop = () => {
+      if (timer) window.clearInterval(timer);
+      timer = undefined;
+      setActiveIndex(-1);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? start() : stop()),
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      if (timer) window.clearInterval(timer);
+    };
+  }, []);
+
   return (
-    <section className="py-20 md:py-28 surface-aurora">
+    <section ref={sectionRef} className="py-20 md:py-28 surface-aurora">
+
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid gap-12 md:gap-16 lg:grid-cols-2 lg:items-center">
           {/* Left — copy */}
