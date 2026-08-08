@@ -373,11 +373,11 @@ const HeroMockup = () => {
           />
         </div>
 
-        {/* Smartphone — floats subtly in front of the monitor */}
+        {/* Smartphone — floats subtly in front of the monitor (desktop/tablet only) */}
         <div
           aria-hidden
-          className="absolute right-1 md:right-4 lg:right-6 bottom-3 lg:bottom-6 w-[70px] sm:w-[88px] lg:w-[116px] z-20"
-          style={{ animation: "phoneFloat 6s ease-in-out infinite" }}
+          className="hidden md:block absolute right-2 lg:right-4 bottom-6 lg:bottom-8 w-[104px] lg:w-[136px] z-20"
+          style={{ animation: "phoneFloat 7s ease-in-out infinite" }}
         >
           <div
             className="relative rounded-[14px] lg:rounded-[20px] p-[3px] lg:p-[4px]"
