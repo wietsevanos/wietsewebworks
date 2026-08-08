@@ -101,30 +101,15 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
         transition: `opacity 600ms cubic-bezier(0.22,1,0.36,1) ${index * 70}ms, transform 600ms cubic-bezier(0.22,1,0.36,1) ${index * 70}ms, border-color 300ms, box-shadow 300ms`,
       }}
     >
-      <div className="flex items-start gap-5 md:gap-7">
-        <div
-          className={`flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl ring-1 transition-colors duration-500 ${
-            done
-              ? "bg-[hsl(var(--accent-orange)/0.1)] ring-[hsl(var(--accent-orange)/0.3)] text-[hsl(var(--accent-orange))]"
-              : "bg-primary/5 ring-primary/15 text-primary/70"
-          }`}
-        >
-          <Icon size={20} strokeWidth={1.5} />
-        </div>
+      <div className="flex items-start gap-5 md:gap-8">
+        <span className="flex-shrink-0 select-none text-4xl md:text-5xl font-semibold tabular-nums text-primary/30 group-hover:text-primary transition-colors duration-300 leading-none pt-0.5">
+          {step.number}
+        </span>
 
         <div className="min-w-0 flex-1">
-          <div className="flex items-baseline gap-3">
-            <span
-              className={`text-xs font-semibold tracking-[0.18em] tabular-nums transition-colors duration-500 ${
-                done ? "text-[hsl(var(--accent-orange))]" : "text-primary/50"
-              }`}
-            >
-              {step.number}
-            </span>
-            <h3 className="text-lg md:text-xl font-semibold text-foreground">
-              {step.title}
-            </h3>
-          </div>
+          <h3 className="text-lg md:text-xl font-semibold text-foreground">
+            {step.title}
+          </h3>
           <p className="mt-2 text-muted-foreground leading-relaxed text-[0.9375rem]">
             {step.description}
           </p>
@@ -139,7 +124,18 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
             </a>
           )}
         </div>
+
+        <div
+          className={`hidden sm:flex flex-shrink-0 h-14 w-14 items-center justify-center rounded-2xl ring-1 transition-colors duration-500 ${
+            done
+              ? "bg-[hsl(var(--accent-orange)/0.08)] ring-[hsl(var(--accent-orange)/0.25)] text-[hsl(var(--accent-orange))]"
+              : "bg-primary/5 ring-primary/15 text-primary/70"
+          }`}
+        >
+          <Icon size={30} strokeWidth={1.25} />
+        </div>
       </div>
+
     </div>
   );
 };
