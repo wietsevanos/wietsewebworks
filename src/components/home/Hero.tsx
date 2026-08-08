@@ -137,46 +137,36 @@ const HeroMockup = () => {
           className="relative w-full flex flex-col items-center"
           style={{ animation: "monitorFloat 7s ease-in-out infinite" }}
         >
-          {/* Chassis */}
+          {/* Single bezel */}
           <div
-            className="relative w-full rounded-[16px] md:rounded-[20px] p-[8px] md:p-[10px]"
+            className="relative w-full rounded-[10px] md:rounded-[14px] p-[6px] md:p-[9px]"
             style={{
-              background:
-                "linear-gradient(160deg, hsl(220 18% 82%) 0%, hsl(218 16% 68%) 22%, hsl(220 14% 55%) 55%, hsl(222 18% 42%) 100%)",
-              boxShadow:
-                "0 1px 0 0 hsl(0 0% 100% / 0.55) inset, 0 -2px 6px 0 hsl(224 40% 12% / 0.4) inset, 0 40px 90px -32px hsl(224 64% 6% / 0.85), 0 8px 20px -10px hsl(224 64% 6% / 0.6)",
+              background: "hsl(224 24% 10%)",
+              boxShadow: "0 26px 60px -28px hsl(224 64% 6% / 0.8)",
             }}
           >
-            {/* Thin dark bezel */}
-            <div
-              className="relative rounded-[10px] md:rounded-[12px] p-[5px] md:p-[7px]"
-              style={{
-                background:
-                  "linear-gradient(180deg, hsl(224 22% 11%) 0%, hsl(224 24% 8%) 100%)",
-                boxShadow:
-                  "0 0 0 1px hsl(224 30% 4% / 0.9), 0 2px 6px 0 hsl(0 0% 0% / 0.5) inset",
-              }}
-            >
-              {/* Screen */}
-              <div className="relative rounded-[6px] md:rounded-[8px] overflow-hidden bg-white">
-                <div className="relative w-full flex flex-col bg-white">
-                  {/* Chrome bar */}
-                  <div className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-secondary border-b border-black/5">
+            {/* Screen */}
+            <div className="relative rounded-[4px] md:rounded-[6px] overflow-hidden bg-white aspect-[16/9] md:aspect-auto flex flex-col">
+              <div className="relative w-full flex flex-col bg-white flex-1 min-h-0">
+                {/* Chrome bar */}
+                <div className="flex items-center gap-2 md:gap-3 px-2.5 md:px-4 py-1 md:py-2.5 bg-secondary border-b border-black/5">
+
                     <div className="flex gap-1.5">
                       <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[#ff5f57]" />
                       <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[#febc2e]" />
                       <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[#28c840]" />
                     </div>
-                    <div className="flex-1 h-5 md:h-6 rounded-md bg-background/80 flex items-center justify-center px-3 text-[0.6rem] md:text-[0.7rem] text-muted-foreground/80 font-medium truncate">
+                    <div className="flex-1 h-4 md:h-6 rounded-md bg-background/80 flex items-center justify-center px-3 text-[0.5rem] md:text-[0.7rem] text-muted-foreground/80 font-medium truncate">
                       {theme.url}
                     </div>
                     <div className="w-4 md:w-6" />
                   </div>
 
                   {/* Fake site content — rebuilds every cycle via key */}
-                  <div key={tick} className="relative bg-white animate-fade-in">
+                  <div key={tick} className="relative bg-white animate-fade-in flex-1 min-h-0 flex flex-col">
                     {/* Nav */}
-                    <div className="flex items-center justify-between px-4 md:px-8 py-2 md:py-4 border-b border-black/[0.04]">
+                    <div className="flex items-center justify-between px-3 md:px-8 py-1.5 md:py-4 border-b border-black/[0.04]">
+
                       <div className="flex items-center gap-2 hero-anim-l" style={d(80)}>
                         <span
                           className="w-4 h-4 md:w-5 md:h-5 rounded-md"
@@ -207,7 +197,7 @@ const HeroMockup = () => {
 
                     {/* Wide hero banner */}
                     <div
-                      className="relative aspect-[16/4.6] md:aspect-[16/5.5] overflow-hidden"
+                      className="relative shrink-0 aspect-[16/3.4] md:aspect-[16/5.5] overflow-hidden"
                       style={{ background: theme.banner }}
                     >
                       <div
@@ -264,8 +254,9 @@ const HeroMockup = () => {
                     </div>
 
                     {/* Content section under banner */}
-                    <div className="px-4 md:px-8 py-2.5 md:py-5">
-                      <div className="flex items-end justify-between mb-2 md:mb-4">
+                    <div className="flex-1 min-h-0 overflow-hidden px-3 md:px-8 py-1.5 md:py-5">
+
+                      <div className="hidden md:flex items-end justify-between mb-2 md:mb-4">
                         <div className="space-y-1.5">
                           <div className="h-1.5 md:h-2 w-16 md:w-24 rounded-full bg-foreground/80 hero-bar" style={d(2350)} />
                           <div className="h-1 md:h-1.5 w-24 md:w-40 rounded-full bg-foreground/15 hero-bar" style={d(2470)} />
@@ -276,19 +267,19 @@ const HeroMockup = () => {
                         />
                       </div>
 
-                      <div className="grid grid-cols-3 gap-2 md:gap-3">
+                      <div className="grid grid-cols-3 gap-1.5 md:gap-3">
                         {theme.tiles.map((dot, i) => (
                           <div
                             key={`${tick}-${i}`}
-                            className="rounded-lg border border-black/[0.05] bg-white p-1.5 md:p-3 hero-anim"
+                            className="rounded-md md:rounded-lg border border-black/[0.05] bg-white p-1 md:p-3 hero-anim"
                             style={d(2800 + i * 180)}
                           >
                             <span
-                              className="inline-block w-3 h-3 md:w-4 md:h-4 rounded-md mb-1.5"
+                              className="inline-block w-2.5 h-2.5 md:w-4 md:h-4 rounded md:rounded-md mb-1 md:mb-1.5"
                               style={{ background: dot }}
                             />
                             <div className="space-y-1">
-                              <div className="h-1.5 rounded-full bg-foreground/60 w-[80%] hero-bar" style={d(3050 + i * 180)} />
+                              <div className="h-1 md:h-1.5 rounded-full bg-foreground/60 w-[80%] hero-bar" style={d(3050 + i * 180)} />
                               <div className="h-1 rounded-full bg-foreground/10 hero-bar" style={d(3150 + i * 180)} />
                               <div className="hidden md:block h-1 rounded-full bg-foreground/10 w-[70%] hero-bar" style={d(3250 + i * 180)} />
                             </div>
@@ -326,30 +317,9 @@ const HeroMockup = () => {
                   </div>
                 </div>
 
-                {/* Slow-moving screen reflection */}
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 overflow-hidden rounded-[6px] md:rounded-[8px]"
-                >
-                  <div
-                    className="absolute -inset-y-8 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                    style={{ animation: "monitorSheen 9s ease-in-out infinite" }}
-                  />
-                </div>
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 rounded-[6px] md:rounded-[8px] ring-1 ring-inset ring-black/20"
-                />
               </div>
             </div>
 
-            {/* Chin highlight */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-x-8 bottom-[3px] h-[2px] rounded-full"
-              style={{ background: "linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.35), transparent)" }}
-            />
-          </div>
 
           {/* Aluminium neck */}
           <div
@@ -376,24 +346,20 @@ const HeroMockup = () => {
         {/* Smartphone — floats subtly in front of the monitor (desktop/tablet only) */}
         <div
           aria-hidden
-          className="hidden md:block absolute right-2 lg:right-4 bottom-6 lg:bottom-8 w-[104px] lg:w-[136px] z-20"
+          className="hidden md:block absolute right-[10%] lg:right-[14%] bottom-6 lg:bottom-8 w-[100px] lg:w-[128px] z-20"
           style={{ animation: "phoneFloat 7s ease-in-out infinite" }}
         >
+          {/* Single phone body */}
           <div
-            className="relative rounded-[14px] lg:rounded-[20px] p-[3px] lg:p-[4px]"
+            className="relative rounded-[14px] lg:rounded-[18px] overflow-hidden bg-white"
             style={{
-              background:
-                "linear-gradient(150deg, hsl(220 16% 74%) 0%, hsl(220 14% 48%) 45%, hsl(222 20% 32%) 100%)",
-              boxShadow:
-                "0 1px 0 0 hsl(0 0% 100% / 0.5) inset, 0 26px 50px -20px hsl(224 64% 6% / 0.9)",
+              border: "3px solid hsl(224 26% 10%)",
+              boxShadow: "0 20px 40px -18px hsl(224 64% 6% / 0.75)",
             }}
           >
-            <div
-              className="relative rounded-[11px] lg:rounded-[16px] overflow-hidden bg-white"
-              style={{ boxShadow: "0 0 0 1.5px hsl(224 26% 8%)" }}
-            >
-              {/* Notch */}
-              <div className="absolute top-[3px] left-1/2 -translate-x-1/2 w-8 lg:w-12 h-[5px] lg:h-[7px] rounded-full bg-[hsl(224_26%_8%)] z-10" />
+            {/* Notch */}
+            <div className="absolute top-[3px] left-1/2 -translate-x-1/2 w-8 lg:w-12 h-[5px] lg:h-[7px] rounded-full bg-[hsl(224_26%_8%)] z-10" />
+
 
               <div key={tick} className="aspect-[9/16] flex flex-col animate-fade-in">
                 {/* Mobile hero */}
@@ -449,15 +415,8 @@ const HeroMockup = () => {
                 </div>
               </div>
 
-              {/* Screen sheen */}
-              <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                <div
-                  className="absolute -inset-y-6 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/14 to-transparent"
-                  style={{ animation: "monitorSheen 11s ease-in-out infinite" }}
-                />
-              </div>
-            </div>
           </div>
+
         </div>
       </div>
     </div>
