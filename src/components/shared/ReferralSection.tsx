@@ -73,37 +73,25 @@ export const ReferralSection = () => {
           {/* Right — referral flow */}
           <Reveal delay={120}>
             <div className="relative">
-              {/* Connecting line — vertical (all breakpoints) */}
-              <div
-                className="pointer-events-none absolute left-[35px] md:left-[39px] top-10 bottom-10 w-px overflow-hidden"
-                aria-hidden="true"
-              >
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-primary/25 to-primary/10" />
-                <div
-                  className="absolute left-1/2 h-16 w-px -translate-x-1/2"
-                  style={{
-                    background:
-                      "linear-gradient(to bottom, transparent, hsl(var(--accent-orange) / 0.9), transparent)",
-                    boxShadow: "0 0 12px 2px hsl(var(--accent-orange) / 0.35)",
-                    animation: "referralTravelY 6s linear infinite",
-                  }}
-                />
-              </div>
-
               <div className="space-y-4">
-                {referralSteps.map((step) => {
+                {referralSteps.map((step, i) => {
                   const Icon = step.icon;
                   return (
                     <div
                       key={step.number}
-                      className="group relative glass rounded-2xl border border-border/60 px-5 py-5 md:px-6 md:py-6 transition-all duration-300 will-change-transform hover:-translate-y-[3px] hover:border-primary/30 hover:shadow-[0_16px_40px_-24px_hsl(var(--primary)/0.45)]"
+                      className="group referral-step relative glass rounded-2xl border border-border/60 px-5 py-5 md:px-6 md:py-6 transition-all duration-300 will-change-transform hover:-translate-y-[3px] hover:border-primary/30 hover:shadow-[0_16px_40px_-24px_hsl(var(--primary)/0.45)]"
+                      style={{ animationDelay: `${i * 2}s` }}
                     >
                       <div className="flex items-center gap-4 md:gap-5">
-                        <div className="relative z-10 flex-shrink-0 h-[52px] w-[52px] md:h-[60px] md:w-[60px] rounded-2xl bg-primary/5 ring-1 ring-primary/15 flex items-center justify-center text-primary/70 transition-colors duration-300 group-hover:bg-[hsl(var(--accent-orange)/0.08)] group-hover:ring-[hsl(var(--accent-orange)/0.3)] group-hover:text-[hsl(var(--accent-orange))]">
+                        <div className="referral-step-icon relative z-10 flex-shrink-0 h-[52px] w-[52px] md:h-[60px] md:w-[60px] rounded-2xl bg-primary/5 ring-1 ring-primary/15 flex items-center justify-center text-primary/70 transition-colors duration-300 group-hover:bg-[hsl(var(--accent-orange)/0.08)] group-hover:ring-[hsl(var(--accent-orange)/0.3)] group-hover:text-[hsl(var(--accent-orange))]"
+                          style={{ animationDelay: `${i * 2}s` }}
+                        >
                           <Icon size={26} strokeWidth={1.25} />
                         </div>
                         <div className="min-w-0">
-                          <span className="block text-xs font-semibold tabular-nums tracking-wide text-primary/40 transition-colors duration-300 group-hover:text-primary">
+                          <span className="referral-step-num block text-xs font-semibold tabular-nums tracking-wide text-primary/40 transition-colors duration-300 group-hover:text-primary"
+                            style={{ animationDelay: `${i * 2}s` }}
+                          >
                             {step.number}
                           </span>
                           <h3 className="mt-1 text-[0.9375rem] md:text-base font-medium text-foreground">
@@ -115,6 +103,7 @@ export const ReferralSection = () => {
                   );
                 })}
               </div>
+
 
               <p className="mt-6 text-xs text-muted-foreground/75 leading-relaxed">
                 Een kleine tip uit uw netwerk kan zomaar het begin zijn van een
