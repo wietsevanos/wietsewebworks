@@ -159,7 +159,7 @@ const HeroMockup = () => {
             >
               {/* Screen */}
               <div className="relative rounded-[6px] md:rounded-[8px] overflow-hidden bg-white">
-                <div className="relative w-full flex flex-col bg-white transition-transform duration-700 ease-out group-hover:-translate-y-0.5">
+                <div className="relative w-full flex flex-col bg-white">
                   {/* Chrome bar */}
                   <div className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 bg-secondary border-b border-black/5">
                     <div className="flex gap-1.5">
