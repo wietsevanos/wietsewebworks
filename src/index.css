@@ -657,8 +657,8 @@
     50%      { transform: translateY(-6px); }
   }
   @keyframes phoneFloat {
-    0%, 100% { transform: translateY(0) rotate(-2deg); }
-    50%      { transform: translateY(-10px) rotate(-1deg); }
+    0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+    50%      { transform: translateY(-7px) rotate(-0.5deg); }
   }
 
   @keyframes monitorSheen {
