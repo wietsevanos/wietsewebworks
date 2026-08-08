@@ -202,14 +202,9 @@ const Vision = () => {
 
           <div className="mt-12 grid gap-10 md:gap-14 md:grid-cols-2 md:items-center">
             <Reveal>
-              <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">
-                In stap 03 gebruik ik geavanceerde AI-ondersteuning om in korte tijd een
-                eerste werkende versie van uw website te realiseren. U krijgt daardoor
-                sneller inzicht in de uitstraling, structuur en richting en kunt in een
-                vroeg stadium gericht feedback geven. Alle ontwerpkeuzes, afwerking en
-                kwaliteitscontrole blijven volledig in mijn eigen hand: AI versnelt het
-                proces, vakmanschap bepaalt het resultaat.
-              </p>
+            <p className="text-muted-foreground leading-relaxed text-[0.9375rem] whitespace-pre-line">
+              {"In stap 03 gebruik ik geavanceerde AI-ondersteuning om in korte tijd een eerste werkende versie van uw website te realiseren. U krijgt daardoor sneller inzicht in de uitstraling, structuur en richting en kunt in een vroeg stadium gericht feedback geven.\n\nAlle ontwerpkeuzes, afwerking en kwaliteitscontrole blijven volledig in mijn eigen hand: AI versnelt het proces, vakmanschap bepaalt het resultaat."}
+            </p>
             </Reveal>
             <Reveal delay={100}>
               <img
