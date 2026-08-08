@@ -264,11 +264,11 @@ const HeroMockup = () => {
                     </div>
 
                     {/* Content section under banner */}
-                    <div className="px-4 md:px-8 py-3 md:py-4">
-                      <div className="flex items-end justify-between mb-3 md:mb-4">
+                    <div className="px-4 md:px-8 py-2.5 md:py-5">
+                      <div className="flex items-end justify-between mb-2 md:mb-4">
                         <div className="space-y-1.5">
-                          <div className="h-2 w-20 md:w-24 rounded-full bg-foreground/80 hero-bar" style={d(2350)} />
-                          <div className="h-1.5 w-32 md:w-40 rounded-full bg-foreground/20 hero-bar" style={d(2470)} />
+                          <div className="h-1.5 md:h-2 w-16 md:w-24 rounded-full bg-foreground/80 hero-bar" style={d(2350)} />
+                          <div className="h-1 md:h-1.5 w-24 md:w-40 rounded-full bg-foreground/15 hero-bar" style={d(2470)} />
                         </div>
                         <div
                           className="h-1 w-12 rounded-full hidden md:block hero-bar"
@@ -280,22 +280,23 @@ const HeroMockup = () => {
                         {theme.tiles.map((dot, i) => (
                           <div
                             key={`${tick}-${i}`}
-                            className="rounded-lg border border-black/[0.06] bg-white p-2 md:p-3 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-md hero-anim"
+                            className="rounded-lg border border-black/[0.05] bg-white p-1.5 md:p-3 hero-anim"
                             style={d(2800 + i * 180)}
                           >
                             <span
-                              className="inline-block w-3.5 h-3.5 md:w-4 md:h-4 rounded mb-1.5"
+                              className="inline-block w-3 h-3 md:w-4 md:h-4 rounded-md mb-1.5"
                               style={{ background: dot }}
                             />
                             <div className="space-y-1">
-                              <div className="h-1.5 rounded-full bg-foreground/70 w-[80%] hero-bar" style={d(3050 + i * 180)} />
-                              <div className="h-1 rounded-full bg-foreground/15 hero-bar" style={d(3150 + i * 180)} />
-                              <div className="h-1 rounded-full bg-foreground/15 w-[70%] hero-bar" style={d(3250 + i * 180)} />
+                              <div className="h-1.5 rounded-full bg-foreground/60 w-[80%] hero-bar" style={d(3050 + i * 180)} />
+                              <div className="h-1 rounded-full bg-foreground/10 hero-bar" style={d(3150 + i * 180)} />
+                              <div className="hidden md:block h-1 rounded-full bg-foreground/10 w-[70%] hero-bar" style={d(3250 + i * 180)} />
                             </div>
                           </div>
                         ))}
                       </div>
                     </div>
+
 
                     {/* Floating cursor — moves and taps subtly */}
                     <div
