@@ -93,10 +93,16 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
     return () => io.disconnect();
   }, []);
 
+  const isDark = step.number === "03";
+
   return (
     <div
       ref={ref}
-      className="group relative rounded-2xl glass border border-border/60 px-6 py-6 md:px-8 md:py-7 transition-all duration-300 hover:-translate-y-[3px] hover:border-primary/30 hover:shadow-[0_12px_30px_-18px_hsl(var(--primary)/0.35)]"
+      className={`group relative rounded-2xl px-6 py-6 md:px-8 md:py-7 transition-all duration-300 hover:-translate-y-[3px] ${
+        isDark
+          ? "bg-[hsl(var(--primary)/0.96)] border border-white/10 shadow-[0_24px_60px_-30px_hsl(var(--primary)/0.8)] hover:border-[hsl(var(--accent-orange)/0.4)]"
+          : "glass border border-border/60 hover:border-primary/30 hover:shadow-[0_12px_30px_-18px_hsl(var(--primary)/0.35)]"
+      }`}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "none" : "translate3d(0, 18px, 0)",
@@ -104,15 +110,21 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
       }}
     >
       <div className="flex items-start gap-5 md:gap-8">
-        <span className="flex-shrink-0 select-none text-4xl md:text-5xl font-semibold tabular-nums text-primary/30 group-hover:text-primary transition-colors duration-300 leading-none pt-0.5">
+        <span
+          className={`flex-shrink-0 select-none text-4xl md:text-5xl font-semibold tabular-nums transition-colors duration-300 leading-none pt-0.5 ${
+            isDark
+              ? "text-white/35 group-hover:text-white"
+              : "text-primary/30 group-hover:text-primary"
+          }`}
+        >
           {step.number}
         </span>
 
         <div className="min-w-0 flex-1">
-          <h3 className="text-lg md:text-xl font-semibold text-foreground">
+          <h3 className={`text-lg md:text-xl font-semibold ${isDark ? "text-white" : "text-foreground"}`}>
             {step.title}
           </h3>
-          <p className="mt-2 text-muted-foreground leading-relaxed text-[0.9375rem]">
+          <p className={`mt-2 leading-relaxed text-[0.9375rem] ${isDark ? "text-white/70" : "text-muted-foreground"}`}>
             {step.description}
           </p>
 
@@ -129,13 +141,18 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
 
         <div
           className={`hidden sm:flex flex-shrink-0 h-20 w-20 items-center justify-center rounded-2xl ring-1 transition-colors duration-500 ${
-            done
-              ? "bg-[hsl(var(--accent-orange)/0.08)] ring-[hsl(var(--accent-orange)/0.25)] text-[hsl(var(--accent-orange))]"
-              : "bg-primary/5 ring-primary/15 text-primary/70"
+            isDark
+              ? done
+                ? "bg-[hsl(var(--accent-orange)/0.18)] ring-[hsl(var(--accent-orange)/0.45)] text-[hsl(var(--accent-orange))]"
+                : "bg-white/5 ring-white/15 text-white/80"
+              : done
+                ? "bg-[hsl(var(--accent-orange)/0.08)] ring-[hsl(var(--accent-orange)/0.25)] text-[hsl(var(--accent-orange))]"
+                : "bg-primary/5 ring-primary/15 text-primary/70"
           }`}
         >
           <Icon size={42} strokeWidth={1.25} />
         </div>
+
 
       </div>
 
