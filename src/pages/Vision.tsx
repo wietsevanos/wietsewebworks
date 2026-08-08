@@ -165,7 +165,7 @@ const Vision = () => {
       </section>
 
       {/* AI-versnelde eerste versie — toelichting bij stap 03 */}
-      <section id="ai-toelichting" className="pb-24 md:pb-32 surface-aurora scroll-mt-24">
+      <section id="ai-toelichting" className="pt-28 md:pt-40 pb-24 md:pb-32 surface-aurora scroll-mt-24">
         <div className="mx-auto max-w-[1000px] px-6">
           <Reveal>
             <div className="flex items-start gap-5 md:gap-8">
