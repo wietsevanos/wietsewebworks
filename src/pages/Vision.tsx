@@ -62,6 +62,88 @@ const steps = [
   },
 ];
 
+type Step = (typeof steps)[number];
+
+const StepCard = ({ step, index }: { step: Step; index: number }) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
+  const [done, setDone] = useState(false);
+  const Icon = step.icon;
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      setVisible(true);
+      setDone(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setVisible(true);
+          if (e.intersectionRatio > 0.85) setDone(true);
+        });
+      },
+      { threshold: [0.15, 0.9], rootMargin: "0px 0px -40px 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className="group relative rounded-2xl glass border border-border/60 px-6 py-6 md:px-8 md:py-7 transition-all duration-300 hover:-translate-y-[3px] hover:border-primary/30 hover:shadow-[0_12px_30px_-18px_hsl(var(--primary)/0.35)]"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "none" : "translate3d(0, 18px, 0)",
+        transition: `opacity 600ms cubic-bezier(0.22,1,0.36,1) ${index * 70}ms, transform 600ms cubic-bezier(0.22,1,0.36,1) ${index * 70}ms, border-color 300ms, box-shadow 300ms`,
+      }}
+    >
+      <div className="flex items-start gap-5 md:gap-7">
+        <div
+          className={`flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl ring-1 transition-colors duration-500 ${
+            done
+              ? "bg-accent/10 ring-accent/30 text-accent"
+              : "bg-primary/5 ring-primary/15 text-primary/70"
+          }`}
+        >
+          <Icon size={20} strokeWidth={1.5} />
+        </div>
+
+        <div className="min-w-0 flex-1">
+          <div className="flex items-baseline gap-3">
+            <span
+              className={`text-xs font-semibold tracking-[0.18em] tabular-nums transition-colors duration-500 ${
+                done ? "text-accent" : "text-primary/50"
+              }`}
+            >
+              {step.number}
+            </span>
+            <h3 className="text-lg md:text-xl font-semibold text-foreground">
+              {step.title}
+            </h3>
+          </div>
+          <p className="mt-2 text-muted-foreground leading-relaxed text-[0.9375rem]">
+            {step.description}
+          </p>
+
+          {step.number === "03" && (
+            <a
+              href="#ai-toelichting"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:gap-2.5 transition-all duration-300"
+            >
+              Meer over AI
+              <ArrowRight size={14} strokeWidth={1.75} />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Vision = () => {
   return (
     <Layout>
@@ -71,33 +153,15 @@ const Vision = () => {
         description="In zes duidelijke stappen naar een professionele website. Transparant, persoonlijk en zonder ingewikkelde technische verhalen."
       />
 
-
       {/* Steps */}
       <section className="py-24 md:py-32 surface-aurora">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
-              {steps.map((step, i) => (
-                <Reveal key={step.number} delay={i * 80}>
-                  <div className="group flex gap-6 md:gap-10 p-8 rounded-2xl glass hover:-translate-y-0.5 transition-all duration-300">
-                    <div className="flex-shrink-0">
-                      <span className="text-4xl md:text-5xl font-semibold text-primary/30 group-hover:text-primary transition-colors duration-300">
-                        {step.number}
-                      </span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+        <div className="mx-auto max-w-[960px] px-6">
+          <div className="space-y-4 md:space-y-5">
+            {steps.map((step, i) => (
+              <StepCard key={step.number} step={step} index={i} />
+            ))}
           </div>
+
         </div>
       </section>
 
