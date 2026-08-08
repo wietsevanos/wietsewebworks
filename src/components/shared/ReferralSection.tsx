@@ -124,7 +124,13 @@ export const ReferralSection = () => {
                           <h3 className="mt-1 text-[0.9375rem] md:text-base font-medium text-foreground">
                             {step.title}
                           </h3>
+                          {step.note && (
+                            <p className="mt-1.5 text-[0.8125rem] font-medium text-[hsl(var(--accent-orange))]">
+                              {step.note}
+                            </p>
+                          )}
                         </div>
+
                       </div>
                     </div>
                   );
