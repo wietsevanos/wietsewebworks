@@ -1,9 +1,20 @@
+import { useEffect, useRef, useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
 import { AIBuildMockup } from "@/components/shared/AIBuildMockup";
-import { Sparkles } from "lucide-react";
+import {
+  Sparkles,
+  MessageCircle,
+  ClipboardList,
+  PenTool,
+  RefreshCw,
+  Rocket,
+  ShieldCheck,
+  ArrowRight,
+} from "lucide-react";
+
 
 const steps = [
   {
