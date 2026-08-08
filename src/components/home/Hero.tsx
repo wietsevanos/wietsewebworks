@@ -137,16 +137,18 @@ const HeroMockup = () => {
           className="relative w-full flex flex-col items-center"
           style={{ animation: "monitorFloat 7s ease-in-out infinite" }}
         >
-          {/* Single bezel */}
+          {/* Single silver bezel */}
           <div
-            className="relative w-full rounded-[10px] md:rounded-[14px] p-[6px] md:p-[9px]"
+            className="relative w-full rounded-[12px] md:rounded-[16px] p-[7px] md:p-[10px]"
             style={{
-              background: "hsl(224 24% 10%)",
-              boxShadow: "0 26px 60px -28px hsl(224 64% 6% / 0.8)",
+              background:
+                "linear-gradient(160deg, hsl(220 16% 88%) 0%, hsl(220 12% 76%) 45%, hsl(220 14% 66%) 100%)",
+              boxShadow: "0 24px 55px -28px hsl(224 64% 6% / 0.7)",
             }}
           >
             {/* Screen */}
-            <div className="relative rounded-[4px] md:rounded-[6px] overflow-hidden bg-white aspect-[16/9] md:aspect-auto flex flex-col">
+            <div className="relative rounded-[5px] md:rounded-[7px] overflow-hidden bg-white aspect-[16/9] md:aspect-auto flex flex-col">
+
               <div className="relative w-full flex flex-col bg-white flex-1 min-h-0">
                 {/* Chrome bar */}
                 <div className="flex items-center gap-2 md:gap-3 px-2.5 md:px-4 py-1 md:py-2.5 bg-secondary border-b border-black/5">
