@@ -6,20 +6,22 @@ import { Reveal } from "@/components/shared/Reveal";
 import { AIBuildMockup } from "@/components/shared/AIBuildMockup";
 import {
   Sparkles,
-  MessageCircle,
+  Handshake,
   ClipboardList,
   PenTool,
   RefreshCw,
   Rocket,
   ShieldCheck,
   ArrowRight,
+  Zap,
+  Eye,
 } from "lucide-react";
 
 
 const steps = [
   {
     number: "01",
-    icon: MessageCircle,
+    icon: Handshake,
 
     title: "Kennismaking",
     description:
@@ -101,30 +103,15 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
         transition: `opacity 600ms cubic-bezier(0.22,1,0.36,1) ${index * 70}ms, transform 600ms cubic-bezier(0.22,1,0.36,1) ${index * 70}ms, border-color 300ms, box-shadow 300ms`,
       }}
     >
-      <div className="flex items-start gap-5 md:gap-7">
-        <div
-          className={`flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl ring-1 transition-colors duration-500 ${
-            done
-              ? "bg-[hsl(var(--accent-orange)/0.1)] ring-[hsl(var(--accent-orange)/0.3)] text-[hsl(var(--accent-orange))]"
-              : "bg-primary/5 ring-primary/15 text-primary/70"
-          }`}
-        >
-          <Icon size={20} strokeWidth={1.5} />
-        </div>
+      <div className="flex items-start gap-5 md:gap-8">
+        <span className="flex-shrink-0 select-none text-4xl md:text-5xl font-semibold tabular-nums text-primary/30 group-hover:text-primary transition-colors duration-300 leading-none pt-0.5">
+          {step.number}
+        </span>
 
         <div className="min-w-0 flex-1">
-          <div className="flex items-baseline gap-3">
-            <span
-              className={`text-xs font-semibold tracking-[0.18em] tabular-nums transition-colors duration-500 ${
-                done ? "text-[hsl(var(--accent-orange))]" : "text-primary/50"
-              }`}
-            >
-              {step.number}
-            </span>
-            <h3 className="text-lg md:text-xl font-semibold text-foreground">
-              {step.title}
-            </h3>
-          </div>
+          <h3 className="text-lg md:text-xl font-semibold text-foreground">
+            {step.title}
+          </h3>
           <p className="mt-2 text-muted-foreground leading-relaxed text-[0.9375rem]">
             {step.description}
           </p>
@@ -139,7 +126,18 @@ const StepCard = ({ step, index }: { step: Step; index: number }) => {
             </a>
           )}
         </div>
+
+        <div
+          className={`hidden sm:flex flex-shrink-0 h-14 w-14 items-center justify-center rounded-2xl ring-1 transition-colors duration-500 ${
+            done
+              ? "bg-[hsl(var(--accent-orange)/0.08)] ring-[hsl(var(--accent-orange)/0.25)] text-[hsl(var(--accent-orange))]"
+              : "bg-primary/5 ring-primary/15 text-primary/70"
+          }`}
+        >
+          <Icon size={30} strokeWidth={1.25} />
+        </div>
       </div>
+
     </div>
   );
 };
@@ -168,40 +166,75 @@ const Vision = () => {
       {/* AI-versnelde eerste versie — toelichting bij stap 03 */}
       <section id="ai-toelichting" className="pb-24 md:pb-32 surface-aurora scroll-mt-24">
         <div className="mx-auto max-w-[960px] px-6">
-          <div>
-            <Reveal>
-              <div className="max-w-2xl mb-8">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-[hsl(var(--accent-orange)/0.1)] ring-1 ring-[hsl(var(--accent-orange)/0.25)] text-[0.65rem] font-semibold tracking-wider uppercase text-[hsl(var(--accent-orange))] mb-4">
-                  <Sparkles size={11} strokeWidth={1.5} />
-                  Toelichting bij stap 03
+          <Reveal>
+            <div className="rounded-2xl glass border border-border/60 p-8 md:p-12">
+              <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
+                <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-[hsl(var(--accent-orange)/0.08)] ring-1 ring-[hsl(var(--accent-orange)/0.25)] text-[hsl(var(--accent-orange))]">
+                  <Sparkles size={30} strokeWidth={1.25} />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                  Zo werk ik in de ontwerpfase met AI
-                </h2>
-                <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">
-                  In stap 03 gebruik ik geavanceerde AI-ondersteuning om in korte tijd een
-                  eerste werkende versie van uw website te realiseren. U krijgt daardoor
-                  sneller inzicht in de uitstraling, structuur en richting en kunt in een
-                  vroeg stadium gericht feedback geven. Alle ontwerpkeuzes, afwerking en
-                  kwaliteitscontrole blijven volledig in mijn eigen hand: AI versnelt het
-                  proces, vakmanschap bepaalt het resultaat.
-                </p>
+                <div className="min-w-0">
+                  <div className="text-[0.65rem] font-semibold tracking-[0.18em] uppercase text-[hsl(var(--accent-orange))] mb-3">
+                    Toelichting bij stap 03
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+                    Zo werk ik in de ontwerpfase met AI
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed text-[0.9375rem] max-w-2xl">
+                    In stap 03 gebruik ik geavanceerde AI-ondersteuning om in korte tijd een
+                    eerste werkende versie van uw website te realiseren. U krijgt daardoor
+                    sneller inzicht in de uitstraling, structuur en richting en kunt in een
+                    vroeg stadium gericht feedback geven. Alle ontwerpkeuzes, afwerking en
+                    kwaliteitscontrole blijven volledig in mijn eigen hand: AI versnelt het
+                    proces, vakmanschap bepaalt het resultaat.
+                  </p>
+                </div>
               </div>
-            </Reveal>
 
-            <Reveal delay={120}>
-              <div className="rounded-2xl glass border border-border/60 p-6 md:p-8">
+              <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                {[
+                  {
+                    icon: Zap,
+                    title: "Sneller resultaat",
+                    text: "Binnen enkele dagen een eerste werkende versie in plaats van weken wachten.",
+                  },
+                  {
+                    icon: Eye,
+                    title: "Eerder inzicht",
+                    text: "U ziet direct de uitstraling en structuur en kunt vroeg bijsturen.",
+                  },
+                  {
+                    icon: PenTool,
+                    title: "Menselijk vakmanschap",
+                    text: "Ontwerpkeuzes, afwerking en controle blijven volledig in mijn hand.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl border border-border/60 bg-background/40 p-5 transition-colors duration-300 hover:border-primary/30"
+                  >
+                    <item.icon size={26} strokeWidth={1.25} className="text-primary/70" />
+                    <h3 className="mt-3 text-sm font-semibold text-foreground">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-muted-foreground">
+                      {item.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-10 pt-8 border-t border-border/60">
                 <AIBuildMockup />
                 <p className="mt-6 text-xs text-muted-foreground/80 leading-relaxed max-w-2xl">
                   Het resultaat: kortere doorlooptijden zonder concessies aan
                   kwaliteit, strategie of persoonlijke begeleiding.
                 </p>
-
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </section>
+
 
       {/* Reassurance block */}
       <section className="py-24 md:py-32 surface-aurora-strong">
