@@ -376,24 +376,20 @@ const HeroMockup = () => {
         {/* Smartphone — floats subtly in front of the monitor (desktop/tablet only) */}
         <div
           aria-hidden
-          className="hidden md:block absolute right-2 lg:right-4 bottom-6 lg:bottom-8 w-[104px] lg:w-[136px] z-20"
+          className="hidden md:block absolute right-[10%] lg:right-[14%] bottom-6 lg:bottom-8 w-[100px] lg:w-[128px] z-20"
           style={{ animation: "phoneFloat 7s ease-in-out infinite" }}
         >
+          {/* Single phone body */}
           <div
-            className="relative rounded-[14px] lg:rounded-[20px] p-[3px] lg:p-[4px]"
+            className="relative rounded-[14px] lg:rounded-[18px] overflow-hidden bg-white"
             style={{
-              background:
-                "linear-gradient(150deg, hsl(220 16% 74%) 0%, hsl(220 14% 48%) 45%, hsl(222 20% 32%) 100%)",
-              boxShadow:
-                "0 1px 0 0 hsl(0 0% 100% / 0.5) inset, 0 26px 50px -20px hsl(224 64% 6% / 0.9)",
+              border: "3px solid hsl(224 26% 10%)",
+              boxShadow: "0 20px 40px -18px hsl(224 64% 6% / 0.75)",
             }}
           >
-            <div
-              className="relative rounded-[11px] lg:rounded-[16px] overflow-hidden bg-white"
-              style={{ boxShadow: "0 0 0 1.5px hsl(224 26% 8%)" }}
-            >
-              {/* Notch */}
-              <div className="absolute top-[3px] left-1/2 -translate-x-1/2 w-8 lg:w-12 h-[5px] lg:h-[7px] rounded-full bg-[hsl(224_26%_8%)] z-10" />
+            {/* Notch */}
+            <div className="absolute top-[3px] left-1/2 -translate-x-1/2 w-8 lg:w-12 h-[5px] lg:h-[7px] rounded-full bg-[hsl(224_26%_8%)] z-10" />
+
 
               <div key={tick} className="aspect-[9/16] flex flex-col animate-fade-in">
                 {/* Mobile hero */}
