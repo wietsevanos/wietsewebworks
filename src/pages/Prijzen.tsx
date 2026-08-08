@@ -671,6 +671,9 @@ const Prijzen = () => {
         </div>
       </section>
 
+      {/* Referral programma */}
+      <ReferralSection />
+
       {/* FAQ */}
       <section className="py-24 md:py-32 surface-aurora">
         <div className="max-w-3xl mx-auto px-6">
