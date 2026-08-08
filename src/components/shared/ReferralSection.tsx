@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import { Reveal } from "@/components/shared/Reveal";
 import { ArrowRight, Users, Send, Gift } from "lucide-react";
 
-const referralSteps = [
+const referralSteps: {
+  number: string;
+  icon: typeof Users;
+  title: string;
+  note?: string;
+}[] = [
   {
     number: "01",
     icon: Users,
@@ -16,8 +21,10 @@ const referralSteps = [
   {
     number: "03",
     icon: Gift,
-    title: "Nieuwe website + 1 maand gratis",
+    title: "U krijgt 1 maand gratis",
+    note: "Dat bespaart u € 37,95 aan hosting en onderhoud",
   },
+
 ];
 
 export const ReferralSection = () => {
@@ -47,8 +54,13 @@ export const ReferralSection = () => {
                 </p>
                 <p>
                   Komt daar uiteindelijk een nieuwe klant uit, dan ontvangt u
-                  van mij een maand gratis hosting en onderhoud.
+                  van mij een maand gratis hosting en onderhoud. Dat bespaart u{" "}
+                  <span className="font-semibold text-[hsl(var(--accent-orange))]">
+                    € 37,95
+                  </span>
+                  .
                 </p>
+
               </div>
 
               <p className="mt-6 text-[0.8125rem] leading-relaxed text-muted-foreground/80 max-w-md">
@@ -122,7 +134,13 @@ export const ReferralSection = () => {
                           <h3 className="mt-1 text-[0.9375rem] md:text-base font-medium text-foreground">
                             {step.title}
                           </h3>
+                          {step.note && (
+                            <p className="mt-1.5 text-[0.8125rem] font-medium text-[hsl(var(--accent-orange))]">
+                              {step.note}
+                            </p>
+                          )}
                         </div>
+
                       </div>
                     </div>
                   );
