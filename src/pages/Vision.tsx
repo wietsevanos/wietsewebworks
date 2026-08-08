@@ -186,7 +186,7 @@ const Vision = () => {
         <div className="mx-auto max-w-[1000px] px-6">
           <Reveal>
             <div className="flex items-start gap-5 md:gap-8">
-              <span className="flex-shrink-0 select-none text-4xl md:text-5xl font-semibold tabular-nums text-primary/30 leading-none pt-1">
+              <span className="flex-shrink-0 select-none text-6xl md:text-8xl font-semibold tabular-nums text-primary/30 leading-none">
                 03
               </span>
               <div className="min-w-0">
