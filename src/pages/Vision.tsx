@@ -166,19 +166,19 @@ const Vision = () => {
       </section>
 
       {/* AI-versnelde eerste versie — toelichting bij stap 03 */}
-      <section className="py-24 md:py-32 surface-aurora-strong">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+      <section id="ai-toelichting" className="pb-24 md:pb-32 surface-aurora scroll-mt-24">
+        <div className="mx-auto max-w-[960px] px-6">
+          <div>
             <Reveal>
-              <div className="text-center max-w-2xl mx-auto mb-12">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 ring-1 ring-primary/25 text-[0.65rem] font-semibold tracking-wider uppercase text-primary mb-4">
-                  <Sparkles size={11} />
+              <div className="max-w-2xl mb-8">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-accent/10 ring-1 ring-accent/25 text-[0.65rem] font-semibold tracking-wider uppercase text-accent mb-4">
+                  <Sparkles size={11} strokeWidth={1.5} />
                   Toelichting bij stap 03
                 </div>
                 <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
                   Zo werk ik in de ontwerpfase met AI
                 </h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">
                   In stap 03 gebruik ik geavanceerde AI-ondersteuning om in korte tijd een
                   eerste werkende versie van uw website te realiseren. U krijgt daardoor
                   sneller inzicht in de uitstraling, structuur en richting en kunt in een
@@ -190,14 +190,13 @@ const Vision = () => {
             </Reveal>
 
             <Reveal delay={120}>
-              <div className="relative overflow-hidden rounded-2xl p-[1px] bg-gradient-to-br from-primary/60 via-accent-indigo/40 to-accent-turquoise/60">
-                <div className="relative rounded-[calc(1rem-1px)] bg-background/70 backdrop-blur-xl p-8 md:p-10">
-                  <AIBuildMockup />
-                  <p className="mt-6 text-xs text-muted-foreground/80 leading-relaxed max-w-2xl">
-                    Het resultaat: kortere doorlooptijden zonder concessies aan
-                    kwaliteit, strategie of persoonlijke begeleiding.
-                  </p>
-                </div>
+              <div className="rounded-2xl glass border border-border/60 p-6 md:p-8">
+                <AIBuildMockup />
+                <p className="mt-6 text-xs text-muted-foreground/80 leading-relaxed max-w-2xl">
+                  Het resultaat: kortere doorlooptijden zonder concessies aan
+                  kwaliteit, strategie of persoonlijke begeleiding.
+                </p>
+
               </div>
             </Reveal>
           </div>
