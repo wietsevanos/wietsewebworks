@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import { Reveal } from "@/components/shared/Reveal";
 import { ArrowRight, Users, Send, Gift } from "lucide-react";
 
-const referralSteps = [
+const referralSteps: {
+  number: string;
+  icon: typeof Users;
+  title: string;
+  note?: string;
+}[] = [
   {
     number: "01",
     icon: Users,
