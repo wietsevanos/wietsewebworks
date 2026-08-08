@@ -27,30 +27,35 @@ const steps = [
   },
   {
     number: "02",
+    icon: ClipboardList,
     title: "Intake",
     description:
       "We bepalen samen de doelen van uw website: welke uitstraling past bij uw bedrijf, wat moet de website opleveren en welke functionaliteiten heeft u nodig.",
   },
   {
     number: "03",
+    icon: PenTool,
     title: "Ontwerp",
     description:
       "Op basis van de intake maak ik een eerste ontwerp, volledig gratis en zonder verplichtingen. Dankzij slimme AI-ondersteuning ziet u in korte tijd een eerste werkende versie van uw website — zie de toelichting hieronder.",
   },
   {
     number: "04",
+    icon: RefreshCw,
     title: "Revisies",
     description:
       "Drie revisierondes zijn standaard inbegrepen. Doordat de basis er sneller staat, is er meer ruimte voor verfijning, optimalisatie en maatwerk tot het exact past bij uw bedrijf.",
   },
   {
     number: "05",
+    icon: Rocket,
     title: "Livegang",
     description:
       "Na uw goedkeuring werk ik de website volledig af en plaats deze online op uw eigen domeinnaam. Alles wordt zorgvuldig getest voor lancering.",
   },
   {
     number: "06",
+    icon: ShieldCheck,
     title: "Onderhoud",
     description:
       "Na livegang blijf ik uw website beveiligen, updaten en monitoren. U heeft één vast aanspreekpunt voor vragen en aanpassingen.",
