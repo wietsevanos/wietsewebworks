@@ -449,15 +449,8 @@ const HeroMockup = () => {
                 </div>
               </div>
 
-              {/* Screen sheen */}
-              <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                <div
-                  className="absolute -inset-y-6 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/14 to-transparent"
-                  style={{ animation: "monitorSheen 11s ease-in-out infinite" }}
-                />
-              </div>
-            </div>
           </div>
+
         </div>
       </div>
     </div>
