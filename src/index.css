@@ -704,6 +704,24 @@
     90%  { opacity: 1; transform: translate(120px, 310px); }
     100% { opacity: 0; transform: translate(120px, 310px); }
   }
+
+  /* Referral flow — traveling light along the connecting line */
+  @keyframes referralTravelY {
+    0%   { top: 0%; opacity: 0; }
+    8%   { opacity: 1; }
+    92%  { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+  @keyframes referralTravelX {
+    0%   { left: 0%; opacity: 0; }
+    8%   { opacity: 1; }
+    92%  { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  @keyframes referralGlowPulse {
+    0%, 100% { opacity: 0.35; }
+    50%      { opacity: 0.75; }
+  }
 }
 
 
