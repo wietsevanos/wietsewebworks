@@ -139,7 +139,7 @@ const HeroMockup = () => {
         >
           {/* Chassis */}
           <div
-            className="relative w-full rounded-[16px] md:rounded-[20px] p-[8px] md:p-[10px] transition-transform duration-700 ease-out group-hover:-translate-y-1"
+            className="relative w-full rounded-[16px] md:rounded-[20px] p-[8px] md:p-[10px]"
             style={{
               background:
                 "linear-gradient(160deg, hsl(220 18% 82%) 0%, hsl(218 16% 68%) 22%, hsl(220 14% 55%) 55%, hsl(222 18% 42%) 100%)",
