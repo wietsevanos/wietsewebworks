@@ -197,7 +197,7 @@ const HeroMockup = () => {
 
                     {/* Wide hero banner */}
                     <div
-                      className="relative aspect-[16/4.6] md:aspect-[16/5.5] overflow-hidden"
+                      className="relative shrink-0 aspect-[16/3.4] md:aspect-[16/5.5] overflow-hidden"
                       style={{ background: theme.banner }}
                     >
                       <div
