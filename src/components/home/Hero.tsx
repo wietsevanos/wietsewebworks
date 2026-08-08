@@ -137,16 +137,18 @@ const HeroMockup = () => {
           className="relative w-full flex flex-col items-center"
           style={{ animation: "monitorFloat 7s ease-in-out infinite" }}
         >
-          {/* Single bezel */}
+          {/* Single silver bezel */}
           <div
-            className="relative w-full rounded-[10px] md:rounded-[14px] p-[6px] md:p-[9px]"
+            className="relative w-full rounded-[12px] md:rounded-[16px] p-[7px] md:p-[10px]"
             style={{
-              background: "hsl(224 24% 10%)",
-              boxShadow: "0 26px 60px -28px hsl(224 64% 6% / 0.8)",
+              background:
+                "linear-gradient(160deg, hsl(220 16% 88%) 0%, hsl(220 12% 76%) 45%, hsl(220 14% 66%) 100%)",
+              boxShadow: "0 24px 55px -28px hsl(224 64% 6% / 0.7)",
             }}
           >
             {/* Screen */}
-            <div className="relative rounded-[4px] md:rounded-[6px] overflow-hidden bg-white aspect-[16/9] md:aspect-auto flex flex-col">
+            <div className="relative rounded-[5px] md:rounded-[7px] overflow-hidden bg-white aspect-[16/9] md:aspect-auto flex flex-col">
+
               <div className="relative w-full flex flex-col bg-white flex-1 min-h-0">
                 {/* Chrome bar */}
                 <div className="flex items-center gap-2 md:gap-3 px-2.5 md:px-4 py-1 md:py-2.5 bg-secondary border-b border-black/5">
@@ -197,7 +199,7 @@ const HeroMockup = () => {
 
                     {/* Wide hero banner */}
                     <div
-                      className="relative shrink-0 aspect-[16/3.4] md:aspect-[16/5.5] overflow-hidden"
+                      className="relative flex-1 min-h-0 md:flex-none md:shrink-0 md:aspect-[16/5.5] overflow-hidden"
                       style={{ background: theme.banner }}
                     >
                       <div
@@ -209,7 +211,7 @@ const HeroMockup = () => {
                       />
 
                       {/* Hero copy overlay */}
-                      <div className="absolute inset-0 flex flex-col justify-center px-5 md:px-10 max-w-[62%]">
+                      <div className="absolute inset-0 flex flex-col justify-center px-5 md:px-10 max-w-[70%] md:max-w-[62%]">
                         <div
                           className="inline-flex w-fit items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/15 backdrop-blur text-white text-[0.5rem] md:text-[0.55rem] font-semibold tracking-wider uppercase mb-2 md:mb-2.5 hero-anim"
                           style={d(900)}
@@ -220,11 +222,11 @@ const HeroMockup = () => {
                           />
                           {theme.badge}
                         </div>
-                        <div className="space-y-1 md:space-y-1.5">
-                          <div className="h-2 md:h-2.5 w-[85%] rounded-full bg-white/90 hero-bar" style={d(1050)} />
-                          <div className="h-2 md:h-2.5 w-[65%] rounded-full bg-white/90 hero-bar" style={d(1200)} />
+                        <div className="space-y-1.5 md:space-y-1.5">
+                          <div className="h-2.5 md:h-2.5 w-[85%] rounded-full bg-white/90 hero-bar" style={d(1050)} />
+                          <div className="h-2.5 md:h-2.5 w-[60%] rounded-full bg-white/90 hero-bar" style={d(1200)} />
                         </div>
-                        <div className="mt-2 md:mt-3 space-y-1 max-w-[75%]">
+                        <div className="hidden md:block mt-2 md:mt-3 space-y-1 max-w-[75%]">
                           <div className="h-1 rounded-full bg-white/40 hero-bar" style={d(1400)} />
                           <div className="h-1 rounded-full bg-white/40 w-[80%] hero-bar" style={d(1520)} />
                         </div>
@@ -239,7 +241,7 @@ const HeroMockup = () => {
 
                       {/* Floating tile */}
                       <div
-                        className="absolute right-3 md:right-4 bottom-3 md:bottom-4 bg-white/95 backdrop-blur rounded-md px-2 py-1.5 shadow-lg flex items-center gap-2 hero-anim-pop"
+                        className="hidden md:flex absolute right-3 md:right-4 bottom-3 md:bottom-4 bg-white/95 backdrop-blur rounded-md px-2 py-1.5 shadow-lg items-center gap-2 hero-anim-pop"
                         style={d(2050)}
                       >
                         <span
@@ -253,8 +255,8 @@ const HeroMockup = () => {
                       </div>
                     </div>
 
-                    {/* Content section under banner */}
-                    <div className="flex-1 min-h-0 overflow-hidden px-3 md:px-8 py-1.5 md:py-5">
+                    {/* Content section under banner — desktop only */}
+                    <div className="hidden md:flex flex-1 min-h-0 overflow-hidden px-3 md:px-8 py-1.5 md:py-5 flex-col">
 
                       <div className="hidden md:flex items-end justify-between mb-2 md:mb-4">
                         <div className="space-y-1.5">
@@ -287,6 +289,7 @@ const HeroMockup = () => {
                         ))}
                       </div>
                     </div>
+
 
 
                     {/* Floating cursor — moves and taps subtly */}
@@ -323,7 +326,7 @@ const HeroMockup = () => {
 
           {/* Aluminium neck */}
           <div
-            className="relative w-20 md:w-28 h-7 md:h-10"
+            className="relative w-14 md:w-28 h-5 md:h-10"
             style={{
               background:
                 "linear-gradient(90deg, hsl(220 14% 42%) 0%, hsl(218 16% 72%) 22%, hsl(220 18% 84%) 42%, hsl(218 14% 60%) 70%, hsl(222 18% 36%) 100%)",
@@ -333,7 +336,7 @@ const HeroMockup = () => {
           />
           {/* Aluminium base */}
           <div
-            className="relative w-40 md:w-56 h-2 md:h-2.5 rounded-full"
+            className="relative w-28 md:w-56 h-1.5 md:h-2.5 rounded-full"
             style={{
               background:
                 "linear-gradient(180deg, hsl(220 18% 80%) 0%, hsl(220 14% 58%) 45%, hsl(222 20% 34%) 100%)",
@@ -341,24 +344,25 @@ const HeroMockup = () => {
                 "0 1px 0 0 hsl(0 0% 100% / 0.4) inset, 0 14px 30px -10px hsl(224 64% 6% / 0.85)",
             }}
           />
+
         </div>
 
         {/* Smartphone — floats subtly in front of the monitor (desktop/tablet only) */}
         <div
           aria-hidden
-          className="hidden md:block absolute right-[10%] lg:right-[14%] bottom-6 lg:bottom-8 w-[100px] lg:w-[128px] z-20"
+          className="hidden md:block absolute right-[7%] lg:right-[9%] bottom-[10%] lg:bottom-[12%] w-[118px] lg:w-[152px] z-20"
           style={{ animation: "phoneFloat 7s ease-in-out infinite" }}
         >
           {/* Single phone body */}
           <div
-            className="relative rounded-[14px] lg:rounded-[18px] overflow-hidden bg-white"
+            className="relative rounded-[18px] lg:rounded-[22px] overflow-hidden bg-white"
             style={{
-              border: "3px solid hsl(224 26% 10%)",
-              boxShadow: "0 20px 40px -18px hsl(224 64% 6% / 0.75)",
+              border: "5px solid hsl(220 14% 78%)",
+              boxShadow: "0 22px 42px -18px hsl(224 64% 6% / 0.7)",
             }}
           >
             {/* Notch */}
-            <div className="absolute top-[3px] left-1/2 -translate-x-1/2 w-8 lg:w-12 h-[5px] lg:h-[7px] rounded-full bg-[hsl(224_26%_8%)] z-10" />
+            <div className="absolute top-[4px] left-1/2 -translate-x-1/2 w-9 lg:w-12 h-[5px] lg:h-[7px] rounded-full bg-[hsl(224_26%_8%)] z-10" />
 
 
               <div key={tick} className="aspect-[9/16] flex flex-col animate-fade-in">
@@ -372,12 +376,8 @@ const HeroMockup = () => {
                       className="w-3 h-3 lg:w-4 lg:h-4 rounded-[4px] hero-anim-l"
                       style={{ ...d(200), background: theme.brand }}
                     />
-                    <span className="flex flex-col gap-[2px] hero-anim-r" style={d(300)}>
-                      <span className="block w-3 lg:w-4 h-[1.5px] rounded-full bg-white/70" />
-                      <span className="block w-3 lg:w-4 h-[1.5px] rounded-full bg-white/70" />
-                      <span className="block w-3 lg:w-4 h-[1.5px] rounded-full bg-white/70" />
-                    </span>
                   </div>
+
                   <div className="space-y-1 lg:space-y-1.5">
                     <div className="h-1.5 lg:h-2 w-[90%] rounded-full bg-white/90 hero-bar" style={d(900)} />
                     <div className="h-1.5 lg:h-2 w-[62%] rounded-full bg-white/70 hero-bar" style={d(1050)} />
