@@ -722,7 +722,45 @@
     0%, 100% { opacity: 0.35; }
     50%      { opacity: 0.75; }
   }
+
+  @keyframes referralStepCard {
+    0%, 100% { border-color: hsl(var(--border) / 0.6); box-shadow: none; }
+    12%, 24% {
+      border-color: hsl(var(--accent-orange) / 0.35);
+      box-shadow: 0 16px 40px -26px hsl(var(--accent-orange) / 0.5);
+    }
+  }
+  @keyframes referralStepIcon {
+    0%, 100% {
+      color: hsl(var(--primary) / 0.7);
+      background-color: hsl(var(--primary) / 0.05);
+      box-shadow: 0 0 0 1px hsl(var(--primary) / 0.15);
+    }
+    12%, 24% {
+      color: hsl(var(--accent-orange));
+      background-color: hsl(var(--accent-orange) / 0.08);
+      box-shadow: 0 0 0 1px hsl(var(--accent-orange) / 0.3);
+    }
+  }
+  @keyframes referralStepNum {
+    0%, 100% { color: hsl(var(--primary) / 0.4); }
+    12%, 24% { color: hsl(var(--accent-orange)); }
+  }
+
+  .referral-step { animation: referralStepCard 6s ease-in-out infinite; }
+  .referral-step-icon { animation: referralStepIcon 6s ease-in-out infinite; }
+  .referral-step-num { animation: referralStepNum 6s ease-in-out infinite; }
+  .referral-step:hover,
+  .referral-step:hover .referral-step-icon,
+  .referral-step:hover .referral-step-num { animation-play-state: paused; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .referral-step,
+    .referral-step-icon,
+    .referral-step-num { animation: none; }
+  }
 }
+
 
 
 
