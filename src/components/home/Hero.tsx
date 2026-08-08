@@ -176,7 +176,7 @@ const HeroMockup = () => {
                   {/* Fake site content — rebuilds every cycle via key */}
                   <div key={tick} className="relative bg-white animate-fade-in">
                     {/* Nav */}
-                    <div className="flex items-center justify-between px-4 md:px-8 py-2.5 md:py-4 border-b border-black/[0.04]">
+                    <div className="flex items-center justify-between px-4 md:px-8 py-2 md:py-4 border-b border-black/[0.04]">
                       <div className="flex items-center gap-2 hero-anim-l" style={d(80)}>
                         <span
                           className="w-4 h-4 md:w-5 md:h-5 rounded-md"
