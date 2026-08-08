@@ -156,16 +156,17 @@ const HeroMockup = () => {
                       <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[#febc2e]" />
                       <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[#28c840]" />
                     </div>
-                    <div className="flex-1 h-5 md:h-6 rounded-md bg-background/80 flex items-center justify-center px-3 text-[0.6rem] md:text-[0.7rem] text-muted-foreground/80 font-medium truncate">
+                    <div className="flex-1 h-4 md:h-6 rounded-md bg-background/80 flex items-center justify-center px-3 text-[0.5rem] md:text-[0.7rem] text-muted-foreground/80 font-medium truncate">
                       {theme.url}
                     </div>
                     <div className="w-4 md:w-6" />
                   </div>
 
                   {/* Fake site content — rebuilds every cycle via key */}
-                  <div key={tick} className="relative bg-white animate-fade-in">
+                  <div key={tick} className="relative bg-white animate-fade-in flex-1 min-h-0 flex flex-col">
                     {/* Nav */}
-                    <div className="flex items-center justify-between px-4 md:px-8 py-2 md:py-4 border-b border-black/[0.04]">
+                    <div className="flex items-center justify-between px-3 md:px-8 py-1.5 md:py-4 border-b border-black/[0.04]">
+
                       <div className="flex items-center gap-2 hero-anim-l" style={d(80)}>
                         <span
                           className="w-4 h-4 md:w-5 md:h-5 rounded-md"
