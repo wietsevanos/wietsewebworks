@@ -350,19 +350,19 @@ const HeroMockup = () => {
         {/* Smartphone — floats subtly in front of the monitor (desktop/tablet only) */}
         <div
           aria-hidden
-          className="hidden md:block absolute right-[10%] lg:right-[14%] bottom-6 lg:bottom-8 w-[100px] lg:w-[128px] z-20"
+          className="hidden md:block absolute right-[4%] lg:right-[6%] bottom-[6%] lg:bottom-[8%] w-[118px] lg:w-[152px] z-20"
           style={{ animation: "phoneFloat 7s ease-in-out infinite" }}
         >
           {/* Single phone body */}
           <div
-            className="relative rounded-[14px] lg:rounded-[18px] overflow-hidden bg-white"
+            className="relative rounded-[18px] lg:rounded-[22px] overflow-hidden bg-white"
             style={{
-              border: "3px solid hsl(224 26% 10%)",
-              boxShadow: "0 20px 40px -18px hsl(224 64% 6% / 0.75)",
+              border: "5px solid hsl(220 14% 78%)",
+              boxShadow: "0 22px 42px -18px hsl(224 64% 6% / 0.7)",
             }}
           >
             {/* Notch */}
-            <div className="absolute top-[3px] left-1/2 -translate-x-1/2 w-8 lg:w-12 h-[5px] lg:h-[7px] rounded-full bg-[hsl(224_26%_8%)] z-10" />
+            <div className="absolute top-[4px] left-1/2 -translate-x-1/2 w-9 lg:w-12 h-[5px] lg:h-[7px] rounded-full bg-[hsl(224_26%_8%)] z-10" />
 
 
               <div key={tick} className="aspect-[9/16] flex flex-col animate-fade-in">
@@ -376,12 +376,8 @@ const HeroMockup = () => {
                       className="w-3 h-3 lg:w-4 lg:h-4 rounded-[4px] hero-anim-l"
                       style={{ ...d(200), background: theme.brand }}
                     />
-                    <span className="flex flex-col gap-[2px] hero-anim-r" style={d(300)}>
-                      <span className="block w-3 lg:w-4 h-[1.5px] rounded-full bg-white/70" />
-                      <span className="block w-3 lg:w-4 h-[1.5px] rounded-full bg-white/70" />
-                      <span className="block w-3 lg:w-4 h-[1.5px] rounded-full bg-white/70" />
-                    </span>
                   </div>
+
                   <div className="space-y-1 lg:space-y-1.5">
                     <div className="h-1.5 lg:h-2 w-[90%] rounded-full bg-white/90 hero-bar" style={d(900)} />
                     <div className="h-1.5 lg:h-2 w-[62%] rounded-full bg-white/70 hero-bar" style={d(1050)} />
