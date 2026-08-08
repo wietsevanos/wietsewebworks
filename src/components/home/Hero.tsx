@@ -256,7 +256,7 @@ const HeroMockup = () => {
                     {/* Content section under banner */}
                     <div className="flex-1 min-h-0 overflow-hidden px-3 md:px-8 py-1.5 md:py-5">
 
-                      <div className="flex items-end justify-between mb-2 md:mb-4">
+                      <div className="hidden md:flex items-end justify-between mb-2 md:mb-4">
                         <div className="space-y-1.5">
                           <div className="h-1.5 md:h-2 w-16 md:w-24 rounded-full bg-foreground/80 hero-bar" style={d(2350)} />
                           <div className="h-1 md:h-1.5 w-24 md:w-40 rounded-full bg-foreground/15 hero-bar" style={d(2470)} />
@@ -267,21 +267,26 @@ const HeroMockup = () => {
                         />
                       </div>
 
-                      <div className="grid grid-cols-3 gap-2 md:gap-3">
+                      <div className="grid grid-cols-3 gap-1.5 md:gap-3">
                         {theme.tiles.map((dot, i) => (
                           <div
                             key={`${tick}-${i}`}
-                            className="rounded-lg border border-black/[0.05] bg-white p-1.5 md:p-3 hero-anim"
+                            className="rounded-md md:rounded-lg border border-black/[0.05] bg-white p-1 md:p-3 hero-anim"
                             style={d(2800 + i * 180)}
                           >
                             <span
-                              className="inline-block w-3 h-3 md:w-4 md:h-4 rounded-md mb-1.5"
+                              className="inline-block w-2.5 h-2.5 md:w-4 md:h-4 rounded md:rounded-md mb-1 md:mb-1.5"
                               style={{ background: dot }}
                             />
                             <div className="space-y-1">
-                              <div className="h-1.5 rounded-full bg-foreground/60 w-[80%] hero-bar" style={d(3050 + i * 180)} />
+                              <div className="h-1 md:h-1.5 rounded-full bg-foreground/60 w-[80%] hero-bar" style={d(3050 + i * 180)} />
                               <div className="h-1 rounded-full bg-foreground/10 hero-bar" style={d(3150 + i * 180)} />
                               <div className="hidden md:block h-1 rounded-full bg-foreground/10 w-[70%] hero-bar" style={d(3250 + i * 180)} />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
                             </div>
                           </div>
                         ))}
