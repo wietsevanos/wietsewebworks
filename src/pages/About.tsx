@@ -2,9 +2,10 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import portrait from "@/assets/wietse-portrait.jpg.asset.json";
-import fotoLaptop from "@/assets/wietse-laptop-trap.jpg.asset.json";
 import fotoTrap from "@/assets/wietse-trap-boog.jpg.asset.json";
 import fotoWerkplek from "@/assets/wietse-werkplek.jpg.asset.json";
+import fotoTrapZit from "@/assets/wietse-trap-zit.jpg.asset.json";
+
 import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
@@ -119,12 +120,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* Fotogalerij */}
-      <section className="pb-20 md:pb-28 bg-background">
+      {/* Werkwijze met foto */}
+      <section className="pb-24 md:pb-28 bg-background">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            <Reveal className="md:col-span-2">
-              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[16/10] h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+            <Reveal>
+              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[4/3]">
                 <img
                   src={fotoWerkplek.url}
                   alt="Wietse aan het werk aan de eettafel in Haarlem"
@@ -133,39 +134,24 @@ const About = () => {
                 />
               </figure>
             </Reveal>
-            <Reveal delay={100}>
-              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[16/10] md:aspect-auto md:h-full">
-                <img
-                  src={fotoTrap.url}
-                  alt="Wietse loopt met laptop de trap af"
-                  loading="lazy"
-                  className="w-full h-full object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-105"
-                />
-              </figure>
-            </Reveal>
-            <Reveal delay={180}>
-              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[4/5] h-full">
-                <img
-                  src={fotoLaptop.url}
-                  alt="Wietse werkt op zijn laptop op de trap"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </figure>
-            </Reveal>
-            <Reveal delay={260} className="md:col-span-2">
-              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[16/10] md:h-full">
-                <img
-                  src={portrait.url}
-                  alt="Portret van Wietse van Os"
-                  loading="lazy"
-                  className="w-full h-full object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105"
-                />
-              </figure>
+            <Reveal delay={120}>
+              <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
+                Zo werk ik
+              </p>
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-5">
+                Eén vast aanspreekpunt, van eerste schets tot livegang
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">
+                Elk project begint met een gesprek over uw bedrijf en uw klanten.
+                Daarna ontwerp en bouw ik alles zelf, zodat u tussentijds gewoon
+                kunt meekijken en bijsturen. Geen wachttijden, geen tussenlagen,
+                gewoon korte lijnen en een website die klopt.
+              </p>
             </Reveal>
           </div>
         </div>
       </section>
+
 
       {/* Waarden */}
       <section className="py-24 md:py-32 surface-aurora">
@@ -197,25 +183,69 @@ const About = () => {
         </div>
       </section>
 
-      {/* Regio */}
-      <section className="py-24 md:py-32 surface-aurora-strong">
+      {/* Nieuwe foto: rustmoment */}
+      <section className="py-24 md:py-28 bg-background">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
-              Regio
-            </p>
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-              Lokaal betrokken, landelijk actief
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              De focus ligt op Haarlem, Bloemendaal en Heemstede, maar ik werk
-              met plezier voor klanten door heel Nederland. Dankzij korte
-              digitale lijnen en persoonlijk contact voelt de samenwerking altijd
-              dichtbij, of u nu om de hoek of aan de andere kant van het land zit.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr,0.9fr] gap-8 lg:gap-14 items-center">
+            <Reveal>
+              <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
+                Werken vanuit Haarlem
+              </p>
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-5">
+                Flexibel, bereikbaar en altijd betrokken
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">
+                Of ik nu thuis achter mijn bureau zit of onderweg ben tussen
+                colleges door: uw vraag blijft nooit lang liggen. Even bellen of
+                appen kan altijd, en aanpassingen pak ik meestal dezelfde dag nog op.
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[4/5]">
+                <img
+                  src={fotoTrapZit.url}
+                  alt="Wietse werkt op zijn laptop op de trap"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </figure>
+            </Reveal>
           </div>
         </div>
       </section>
+
+      {/* Regio */}
+      <section className="py-24 md:py-32 surface-aurora-strong">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <Reveal>
+              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[3/4] max-h-[30rem]">
+                <img
+                  src={fotoTrap.url}
+                  alt="Wietse loopt met laptop de trap af"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-105"
+                />
+              </figure>
+            </Reveal>
+            <Reveal delay={120}>
+              <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
+                Regio
+              </p>
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                Lokaal betrokken, landelijk actief
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                De focus ligt op Haarlem, Bloemendaal en Heemstede, maar ik werk
+                met plezier voor klanten door heel Nederland. Dankzij korte
+                digitale lijnen en persoonlijk contact voelt de samenwerking altijd
+                dichtbij, of u nu om de hoek of aan de andere kant van het land zit.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
 
 
       <GlassCTA
