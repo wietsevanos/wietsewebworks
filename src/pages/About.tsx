@@ -56,11 +56,13 @@ const About = () => {
                     className="w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                {/* Mobiel: strak accentstreepje onder de foto */}
-                <div
-                  aria-hidden
-                  className="lg:hidden mx-auto mt-5 h-[3px] w-16 rounded-full bg-gradient-to-r from-transparent via-primary to-transparent"
-                />
+                {/* Mobiel: links uitgelijnd accent onder de foto */}
+                <div aria-hidden className="lg:hidden mt-5 flex items-center gap-2">
+                  <span className="h-[3px] w-10 rounded-full bg-primary" />
+                  <span className="h-[3px] w-2 rounded-full bg-primary/50" />
+                  <span className="h-[3px] w-1 rounded-full bg-primary/25" />
+                </div>
+
                 <div className="hidden lg:block absolute -bottom-3 -right-3 w-20 h-20 bg-primary/15 rounded-2xl -z-10 transition-all duration-500 group-hover:bg-primary/25" />
               </div>
             </div>
