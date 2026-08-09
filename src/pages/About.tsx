@@ -2,9 +2,10 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import portrait from "@/assets/wietse-portrait.jpg.asset.json";
-import fotoLaptop from "@/assets/wietse-laptop-trap.jpg.asset.json";
 import fotoTrap from "@/assets/wietse-trap-boog.jpg.asset.json";
 import fotoWerkplek from "@/assets/wietse-werkplek.jpg.asset.json";
+import fotoTrapZit from "@/assets/wietse-trap-zit.jpg.asset.json";
+
 import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
 import { GlassCTA } from "@/components/shared/GlassCTA";
 import { Reveal } from "@/components/shared/Reveal";
