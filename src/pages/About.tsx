@@ -38,17 +38,33 @@ const About = () => {
             {/* Visual */}
             <div className="flex justify-center lg:justify-start lg:sticky lg:top-28 -mb-2 lg:mb-0">
               <div className="relative group w-full max-w-sm lg:max-w-none lg:w-auto">
-                <div className="absolute -left-2 lg:-left-3 top-2 bottom-2 w-1 bg-primary rounded-full" />
-                <div className="w-full aspect-[4/5] lg:w-72 lg:h-[24rem] overflow-hidden rounded-2xl shadow-xl ring-1 ring-border/50 transition-transform duration-500 group-hover:-translate-y-1">
+                {/* Desktop accentlijn */}
+                <div className="hidden lg:block absolute -left-3 top-2 bottom-2 w-1 bg-primary rounded-full" />
+                {/* Mobiel: zachte blauwe gloed achter de foto */}
+                <div
+                  aria-hidden
+                  className="lg:hidden absolute -inset-4 -z-10 rounded-[2rem] blur-2xl opacity-70"
+                  style={{
+                    background:
+                      "radial-gradient(60% 60% at 50% 40%, hsl(var(--primary) / 0.22), transparent 70%)",
+                  }}
+                />
+                <div className="w-full aspect-[4/5] lg:w-72 lg:h-[24rem] overflow-hidden rounded-2xl shadow-xl ring-1 ring-primary/10 lg:ring-border/50 transition-transform duration-500 group-hover:-translate-y-1">
                   <img
                     src={portrait.url}
                     alt="Wietse van Os, oprichter Wietse Webworks"
                     className="w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="absolute -bottom-3 -right-3 w-20 h-20 bg-primary/15 rounded-2xl -z-10 transition-all duration-500 group-hover:bg-primary/25" />
+                {/* Mobiel: strak accentstreepje onder de foto */}
+                <div
+                  aria-hidden
+                  className="lg:hidden mx-auto mt-5 h-[3px] w-16 rounded-full bg-gradient-to-r from-transparent via-primary to-transparent"
+                />
+                <div className="hidden lg:block absolute -bottom-3 -right-3 w-20 h-20 bg-primary/15 rounded-2xl -z-10 transition-all duration-500 group-hover:bg-primary/25" />
               </div>
             </div>
+
 
             {/* Introduction */}
             <div>
