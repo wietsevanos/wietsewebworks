@@ -162,7 +162,7 @@ const About = () => {
                   src={fotoWerkplek.url}
                   alt="Wietse aan het werk aan de eettafel in Haarlem"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-right transition-transform duration-700 group-hover:scale-105"
                 />
               </figure>
             </Reveal>
