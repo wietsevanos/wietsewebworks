@@ -39,7 +39,7 @@ const About = () => {
                   <img
                     src={portrait.url}
                     alt="Wietse van Os, oprichter Wietse Webworks"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="absolute -bottom-3 -right-3 w-20 h-20 bg-primary/15 rounded-2xl -z-10 transition-all duration-500 group-hover:bg-primary/25" />
