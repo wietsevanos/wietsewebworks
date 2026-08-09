@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import portrait from "@/assets/wietse-portrait.jpg.asset.json";
+import portrait from "@/assets/wietse-portrait-v2.jpg.asset.json";
 import fotoTrap from "@/assets/wietse-trap-boog.jpg.asset.json";
 import fotoWerkplek from "@/assets/wietse-werkplek.jpg.asset.json";
 import fotoTrapZit from "@/assets/wietse-trap-zit.jpg.asset.json";
