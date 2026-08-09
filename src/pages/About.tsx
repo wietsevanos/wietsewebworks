@@ -125,16 +125,6 @@ const About = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             <Reveal>
-              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[4/3]">
-                <img
-                  src={fotoWerkplek.url}
-                  alt="Wietse aan het werk aan de eettafel in Haarlem"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </figure>
-            </Reveal>
-            <Reveal delay={120}>
               <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
                 Zo werk ik
               </p>
@@ -148,6 +138,17 @@ const About = () => {
                 gewoon korte lijnen en een website die klopt.
               </p>
             </Reveal>
+            <Reveal delay={120}>
+              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[4/3]">
+                <img
+                  src={fotoWerkplek.url}
+                  alt="Wietse aan het werk aan de eettafel in Haarlem"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </figure>
+            </Reveal>
+
           </div>
         </div>
       </section>
