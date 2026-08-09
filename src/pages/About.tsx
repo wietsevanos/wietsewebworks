@@ -119,6 +119,54 @@ const About = () => {
         </div>
       </section>
 
+      {/* Fotogalerij */}
+      <section className="pb-20 md:pb-28 bg-background">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            <Reveal className="md:col-span-2">
+              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[16/10] h-full">
+                <img
+                  src={fotoWerkplek.url}
+                  alt="Wietse aan het werk aan de eettafel in Haarlem"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </figure>
+            </Reveal>
+            <Reveal delay={100}>
+              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[16/10] md:aspect-auto md:h-full">
+                <img
+                  src={fotoTrap.url}
+                  alt="Wietse loopt met laptop de trap af"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-105"
+                />
+              </figure>
+            </Reveal>
+            <Reveal delay={180}>
+              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[4/5] h-full">
+                <img
+                  src={fotoLaptop.url}
+                  alt="Wietse werkt op zijn laptop op de trap"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </figure>
+            </Reveal>
+            <Reveal delay={260} className="md:col-span-2">
+              <figure className="group relative overflow-hidden rounded-2xl ring-1 ring-border/50 aspect-[16/10] md:h-full">
+                <img
+                  src={portrait.url}
+                  alt="Portret van Wietse van Os"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105"
+                />
+              </figure>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* Waarden */}
       <section className="py-24 md:py-32 surface-aurora">
         <div className="max-w-6xl mx-auto px-6">
