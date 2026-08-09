@@ -11,11 +11,11 @@ const Index = () => {
   return (
     <Layout>
       <Hero />
-      <Positioning />
       <FeaturedWork />
+      <Positioning />
+      <AboutPreview />
       <ServicesPreview />
       <WorkflowFeatures />
-      <AboutPreview />
       <GlassCTA />
     </Layout>
   );
