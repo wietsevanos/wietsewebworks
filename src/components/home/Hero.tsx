@@ -117,8 +117,25 @@ export const Hero = () => {
   );
 };
 
+// Rendert alleen de layout die bij het huidige formaat hoort:
+// scheelt op mobiel honderden DOM-nodes + animaties, desktop blijft identiek.
+const useIsDesktopViewport = () => {
+  const query = "(min-width: 768px)";
+  const [isDesktop, setIsDesktop] = useState(() =>
+    typeof window === "undefined" ? true : window.matchMedia(query).matches
+  );
+  useEffect(() => {
+    const mql = window.matchMedia(query);
+    const onChange = () => setIsDesktop(mql.matches);
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, []);
+  return isDesktop;
+};
+
 const HeroMockup = () => {
   const [tick, setTick] = useState(0);
+  const isDesktop = useIsDesktopViewport();
   useEffect(() => {
     const id = setInterval(() => setTick((t) => t + 1), HERO_LOOP_MS);
     return () => clearInterval(id);
@@ -169,7 +186,7 @@ const HeroMockup = () => {
                   </div>
 
                   {/* Mobile site layout — split hero + tiles */}
-                  <div
+                  {!isDesktop && <div
                     key={`m-${tick}`}
                     className="md:hidden relative bg-white animate-fade-in flex-1 min-h-0 flex flex-col"
                   >
@@ -265,10 +282,11 @@ const HeroMockup = () => {
                         />
                       </div>
                     </div>
-                  </div>
+                  </div>}
+
 
                   {/* Fake site content — rebuilds every cycle via key */}
-                  <div key={tick} className="hidden md:flex relative bg-white animate-fade-in flex-1 min-h-0 flex-col">
+                  {isDesktop && <div key={tick} className="hidden md:flex relative bg-white animate-fade-in flex-1 min-h-0 flex-col">
 
                     {/* Nav */}
                     <div className="flex items-center justify-between px-3 md:px-8 py-1.5 md:py-4 border-b border-black/[0.04]">
@@ -421,7 +439,9 @@ const HeroMockup = () => {
                         />
                       </div>
                     </div>
-                  </div>
+
+                  </div>}
+
                 </div>
 
               </div>

@@ -17,7 +17,7 @@ export const OrangeWaveBackground = () => {
 
       {/* Deep navy shadow — top left */}
       <div
-        className="absolute -top-1/4 -left-1/4 w-3/4 h-3/4"
+        className="hidden md:block absolute -top-1/4 -left-1/4 w-3/4 h-3/4"
         style={{
           background: `radial-gradient(ellipse at center,
             hsla(224, 64%, 10%, 0.55) 0%,
@@ -30,7 +30,7 @@ export const OrangeWaveBackground = () => {
 
       {/* Mid-blue highlight — center */}
       <div
-        className="absolute top-1/4 left-1/3 w-2/3 h-2/3"
+        className="hidden md:block absolute top-1/4 left-1/3 w-2/3 h-2/3"
         style={{
           background: `radial-gradient(ellipse at center,
             hsla(214, 60%, 55%, 0.32) 0%,
@@ -43,7 +43,7 @@ export const OrangeWaveBackground = () => {
 
       {/* Deeper navy — bottom right */}
       <div
-        className="absolute -bottom-1/4 -right-1/4 w-3/4 h-3/4"
+        className="hidden md:block absolute -bottom-1/4 -right-1/4 w-3/4 h-3/4"
         style={{
           background: `radial-gradient(ellipse at center,
             hsla(224, 64%, 12%, 0.6) 0%,
@@ -56,7 +56,7 @@ export const OrangeWaveBackground = () => {
 
       {/* Warm orange glow — right, brand accent */}
       <div
-        className="absolute -top-16 -right-24 w-2/3 h-2/3"
+        className="hidden md:block absolute -top-16 -right-24 w-2/3 h-2/3"
         style={{
           background: `radial-gradient(ellipse at 75% 30%,
             hsla(24, 95%, 56%, 0.35) 0%,
@@ -69,7 +69,7 @@ export const OrangeWaveBackground = () => {
 
       {/* Soft orange spark — bottom left */}
       <div
-        className="absolute bottom-0 left-0 w-1/2 h-1/2"
+        className="hidden md:block absolute bottom-0 left-0 w-1/2 h-1/2"
         style={{
           background: `radial-gradient(ellipse at 25% 80%,
             hsla(22, 96%, 65%, 0.22) 0%,
@@ -82,13 +82,26 @@ export const OrangeWaveBackground = () => {
 
       {/* Sharp orange highlight — subtle warm spark */}
       <div
-        className="absolute top-1/3 right-1/4 w-1/3 h-1/3"
+        className="hidden md:block absolute top-1/3 right-1/4 w-1/3 h-1/3"
         style={{
           background: `radial-gradient(ellipse at center,
             hsla(24, 95%, 56%, 0.18) 0%,
             transparent 70%
           )`,
           filter: 'blur(60px)',
+        }}
+      />
+
+      {/* Mobiel: zelfde sfeer, maar zonder dure blur-filters (identieke desktopweergave blijft hierboven) */}
+      <div
+        aria-hidden
+        className="md:hidden absolute inset-0"
+        style={{
+          background: `radial-gradient(60% 55% at 12% 8%, hsla(224, 64%, 10%, 0.5) 0%, transparent 70%),
+            radial-gradient(70% 60% at 88% 18%, hsla(24, 95%, 56%, 0.3) 0%, transparent 68%),
+            radial-gradient(65% 60% at 55% 55%, hsla(214, 60%, 55%, 0.26) 0%, transparent 72%),
+            radial-gradient(60% 55% at 15% 92%, hsla(22, 96%, 65%, 0.16) 0%, transparent 70%),
+            radial-gradient(70% 60% at 95% 95%, hsla(224, 64%, 12%, 0.5) 0%, transparent 70%)`,
         }}
       />
 

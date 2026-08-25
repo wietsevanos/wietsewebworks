@@ -30,6 +30,8 @@ export const Footer = () => {
               <img
                 src={logo.url}
                 alt="Wietse Webworks"
+                loading="lazy"
+                decoding="async"
                 className="h-9 w-auto object-contain"
                 style={{ filter: "invert(1) brightness(2)" }}
               />
@@ -77,6 +79,8 @@ export const Footer = () => {
                   <img
                     src={whatsappLogo.url}
                     alt=""
+                    loading="lazy"
+                    decoding="async"
                     className="w-4 h-4 object-contain opacity-60 group-hover:opacity-100 transition-opacity"
                     style={{ filter: "brightness(0) invert(1)" }}
                   />
