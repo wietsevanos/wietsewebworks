@@ -44,6 +44,7 @@ export const Navbar = () => {
             <img
               src={logo.url}
               alt="Wietse Webworks"
+              decoding="async"
               className="nav-logo h-10 w-auto object-contain transition-[filter] duration-500"
             />
           </Link>

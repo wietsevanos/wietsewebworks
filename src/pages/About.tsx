@@ -53,6 +53,8 @@ const About = () => {
                   <img
                     src={portrait.url}
                     alt="Wietse van Os, oprichter Wietse Webworks"
+                    decoding="async"
+                    fetchPriority="high"
                     className="w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -128,6 +130,8 @@ const About = () => {
                   <img
                     src={whatsappLogo.url}
                     alt=""
+                    loading="lazy"
+                    decoding="async"
                     className="w-5 h-5 object-contain"
                   />
                   <span className="hidden sm:inline text-sm font-medium text-foreground">WhatsApp</span>
