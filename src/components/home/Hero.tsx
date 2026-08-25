@@ -282,7 +282,8 @@ const HeroMockup = () => {
                         />
                       </div>
                     </div>
-                  </div>
+                  </div>}
+
 
                   {/* Fake site content — rebuilds every cycle via key */}
                   {isDesktop && <div key={tick} className="hidden md:flex relative bg-white animate-fade-in flex-1 min-h-0 flex-col">
