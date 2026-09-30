@@ -14,6 +14,7 @@ const Index = () => {
       <Hero />
       <FeaturedWork />
       <Positioning />
+      <WebsiteCheck />
       <AboutPreview />
       <ServicesPreview />
       <WorkflowFeatures />
