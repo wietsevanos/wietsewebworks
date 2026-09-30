@@ -77,7 +77,7 @@ export const WebsiteCheck = () => {
                     distance={0}
                   >
                     <div className="group flex items-center gap-4 md:gap-5 py-4 md:py-5 border-b border-border/70">
-                      <span className="hidden sm:block w-6 flex-shrink-0 text-xs tabular-nums tracking-[0.15em] text-muted-foreground/50 transition-colors duration-300 group-hover:text-accent-orange">
+                      <span className="w-6 flex-shrink-0 text-[0.6875rem] tabular-nums tracking-[0.15em] text-muted-foreground/50 transition-colors duration-300 group-hover:text-accent-orange">
                         0{i + 1}
                       </span>
                       <span className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 border border-border/80 bg-background flex items-center justify-center text-primary/70 transition-all duration-300 group-hover:border-primary/40 group-hover:bg-primary/[0.06] group-hover:text-primary">
