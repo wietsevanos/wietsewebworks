@@ -137,13 +137,13 @@ export const WebsiteCheck = () => {
                   className="pointer-events-none absolute -inset-6 rounded-full bg-[hsl(var(--primary-glow))]/15 blur-3xl hidden md:block"
                 />
                 <img
-                  src="/assets/websitecheck-mockup-v2.webp"
+                  src="/assets/websitecheck-illustratie.webp"
                   alt="Illustratie van een moderne website met webshop en klantbeoordelingen"
-                  width={1100}
-                  height={619}
+                  width={1033}
+                  height={612}
                   loading="lazy"
                   decoding="async"
-                  className="relative w-full h-auto rounded-2xl transition-transform duration-500 hover:scale-[1.02]"
+                  className="relative w-full h-auto transition-transform duration-500 hover:scale-[1.02]"
                 />
               </div>
             </Reveal>
