@@ -2,7 +2,6 @@ import { useRef, type MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock, Eye, MessageSquare, Palette, Smartphone } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
-import mockupImg from "@/assets/websitecheck-mockup.webp";
 
 type Signaal = {
   text: string;
@@ -138,13 +137,13 @@ export const WebsiteCheck = () => {
                   className="pointer-events-none absolute -inset-6 rounded-full bg-[hsl(var(--primary-glow))]/15 blur-3xl hidden md:block"
                 />
                 <img
-                  src={mockupImg}
-                  alt="Moderne website op laptop en telefoon"
-                  width={1100}
-                  height={825}
+                  src="/assets/websitecheck-illustratie.webp"
+                  alt="Illustratie van een moderne website met webshop en klantbeoordelingen"
+                  width={1033}
+                  height={612}
                   loading="lazy"
                   decoding="async"
-                  className="relative w-full h-auto rounded-2xl mix-blend-multiply transition-transform duration-500 hover:scale-[1.02]"
+                  className="relative w-full h-auto transition-transform duration-500 hover:scale-[1.02]"
                 />
               </div>
             </Reveal>
@@ -176,6 +175,12 @@ export const WebsiteCheck = () => {
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link
+                to="/werk"
+                className="btn-ghost inline-flex items-center gap-1.5 whitespace-nowrap"
+              >
+                Bekijk mijn werk
+              </Link>
+              <Link
                 to="/contact"
                 className="btn-primary inline-flex items-center gap-2 group"
               >
@@ -184,12 +189,6 @@ export const WebsiteCheck = () => {
                   size={18}
                   className="transition-transform duration-200 group-hover:translate-x-1"
                 />
-              </Link>
-              <Link
-                to="/werk"
-                className="btn-ghost inline-flex items-center gap-1.5 whitespace-nowrap"
-              >
-                Bekijk mijn werk
               </Link>
             </div>
           </div>
