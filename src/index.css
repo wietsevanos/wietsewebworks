@@ -808,3 +808,35 @@
 
 
 
+
+  /* WebsiteCheck — premium signaalkaarten */
+  .signaal-card {
+    border-radius: 0;
+  }
+  .signaal-icon {
+    background: linear-gradient(140deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 55%, hsl(var(--accent-orange)) 130%);
+    box-shadow: 0 10px 24px -12px hsl(var(--primary) / 0.55), inset 0 1px 0 hsl(0 0% 100% / 0.25);
+  }
+  .signaal-card:hover .signaal-icon {
+    background: linear-gradient(140deg, hsl(var(--primary-glow)) 0%, hsl(var(--accent-orange)) 110%);
+    box-shadow: 0 12px 28px -12px hsl(var(--accent-orange) / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.3);
+  }
+  .signaal-spot {
+    background: radial-gradient(
+      220px circle at var(--mx, 50%) var(--my, 50%),
+      hsl(var(--primary-glow) / 0.16),
+      hsl(var(--accent-orange) / 0.07) 45%,
+      transparent 70%
+    );
+  }
+  .signaal-sheen {
+    background: linear-gradient(90deg, transparent, hsl(var(--accent-orange) / 0.08), transparent);
+    animation: signaal-sheen-sweep 1.4s ease-out forwards;
+  }
+  @keyframes signaal-sheen-sweep {
+    from { transform: translateX(0) skewX(-18deg); }
+    to { transform: translateX(420%) skewX(-18deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .signaal-sheen { animation: none; }
+  }
