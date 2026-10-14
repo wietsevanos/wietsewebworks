@@ -2,6 +2,7 @@ import { useRef, type MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock, Eye, MessageSquare, Palette, Smartphone } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
+import mockupImg from "@/assets/websitecheck-mockup.webp";
 
 type Signaal = {
   text: string;
@@ -130,14 +131,21 @@ export const WebsiteCheck = () => {
               </p>
             </Reveal>
             <Reveal delay={220}>
-              <div className="mt-8 hidden lg:flex items-center gap-3">
-                <span
-                  className="h-px w-10"
-                  style={{ backgroundImage: "var(--gradient-warm)" }}
+              <div className="relative mt-10 md:mt-12">
+                {/* Zachte gloed achter de mockup */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -inset-6 rounded-full bg-[hsl(var(--primary-glow))]/15 blur-3xl hidden md:block"
                 />
-                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
-                  Vijf signalen om naar te kijken
-                </span>
+                <img
+                  src={mockupImg}
+                  alt="Moderne website op laptop en telefoon"
+                  width={1100}
+                  height={825}
+                  loading="lazy"
+                  decoding="async"
+                  className="relative w-full h-auto mix-blend-multiply transition-transform duration-500 hover:scale-[1.02]"
+                />
               </div>
             </Reveal>
           </div>
