@@ -144,7 +144,7 @@ export const WebsiteCheck = () => {
                   height={825}
                   loading="lazy"
                   decoding="async"
-                  className="relative w-full h-auto mix-blend-multiply transition-transform duration-500 hover:scale-[1.02]"
+                  className="relative w-full h-auto rounded-2xl mix-blend-multiply transition-transform duration-500 hover:scale-[1.02]"
                 />
               </div>
             </Reveal>
