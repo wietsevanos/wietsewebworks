@@ -136,15 +136,17 @@ export const WebsiteCheck = () => {
                   aria-hidden
                   className="pointer-events-none absolute -inset-6 rounded-full bg-[hsl(var(--primary-glow))]/15 blur-3xl hidden md:block"
                 />
-                <img
-                  src="/assets/websitecheck-illustratie.webp"
-                  alt="Illustratie van een moderne website met webshop en klantbeoordelingen"
-                  width={1033}
-                  height={612}
-                  loading="lazy"
-                  decoding="async"
-                  className="relative w-full h-auto transition-transform duration-500 hover:scale-[1.02]"
-                />
+                <div className="relative overflow-hidden rounded-3xl border border-white/70 shadow-[0_40px_90px_-50px_hsl(var(--primary-deep)/0.55)]">
+                  <img
+                    src="/assets/websitecheck-illustratie-v2.webp"
+                    alt="Illustratie van een moderne website met webshop en klantbeoordelingen"
+                    width={1100}
+                    height={619}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-auto transition-transform duration-500 hover:scale-[1.02]"
+                  />
+                </div>
               </div>
             </Reveal>
           </div>
