@@ -34,9 +34,9 @@ export const WebsiteCheck = () => {
       />
 
       <div className="relative max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.92fr),minmax(0,1.08fr)] gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Vraag */}
-          <div className="lg:sticky lg:top-28">
+          <div>
             <Reveal>
               <p className="text-primary font-medium mb-4 text-sm tracking-[0.2em] uppercase">
                 Een website die met uw bedrijf meegaat
@@ -55,6 +55,14 @@ export const WebsiteCheck = () => {
                 hij niet meer aan bij uw bedrijf, dan kan dat onnodig klanten
                 kosten.
               </p>
+            </Reveal>
+            <Reveal delay={220}>
+              <div className="mt-8 hidden lg:flex items-center gap-3">
+                <span className="h-px w-10 bg-accent-orange/60" />
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
+                  Vijf signalen om naar te kijken
+                </span>
+              </div>
             </Reveal>
           </div>
 
@@ -76,14 +84,19 @@ export const WebsiteCheck = () => {
                     direction="none"
                     distance={0}
                   >
-                    <div className="group flex items-center gap-4 md:gap-5 py-4 md:py-5 border-b border-border/70">
-                      <span className="w-6 flex-shrink-0 text-[0.6875rem] tabular-nums tracking-[0.15em] text-muted-foreground/50 transition-colors duration-300 group-hover:text-accent-orange">
+                    <div className="group relative flex items-center gap-4 md:gap-5 py-4 md:py-[1.125rem] border-b border-border/70 transition-colors duration-300 hover:bg-primary/[0.035]">
+                      {/* Actieve accentlijn links */}
+                      <span
+                        aria-hidden
+                        className="absolute left-0 top-1/2 -translate-y-1/2 h-0 w-[2px] bg-accent-orange transition-all duration-300 group-hover:h-3/5"
+                      />
+                      <span className="w-8 flex-shrink-0 text-right text-[0.6875rem] tabular-nums tracking-[0.15em] text-muted-foreground/50 transition-colors duration-300 group-hover:text-accent-orange">
                         0{i + 1}
                       </span>
-                      <span className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 border border-border/80 bg-background flex items-center justify-center text-primary/70 transition-all duration-300 group-hover:border-primary/40 group-hover:bg-primary/[0.06] group-hover:text-primary">
+                      <span className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 border border-border/80 bg-background flex items-center justify-center text-primary/70 transition-all duration-300 group-hover:border-accent-orange/50 group-hover:bg-accent-orange/[0.07] group-hover:text-accent-orange">
                         <Icon size={18} strokeWidth={1.75} />
                       </span>
-                      <p className="text-[0.9375rem] md:text-base text-foreground/85 leading-snug transition-transform duration-300 group-hover:translate-x-0.5">
+                      <p className="text-[0.9375rem] md:text-base text-foreground/85 leading-snug transition-all duration-300 group-hover:translate-x-1 group-hover:text-foreground">
                         {s.text}
                       </p>
                     </div>
